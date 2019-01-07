@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2019/01/05 12:48:22.000.663,=\\Mac\Home\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2019/01/05 13:02:15.000.147,\\Mac\Home\Documents\Embarcadero\Studio\Projects\Exercicio01\uPrincipal.pas=\\Mac\Home\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2019/01/05 13:02:15.000.147,\\Mac\Home\Documents\Embarcadero\Studio\Projects\Exercicio01\uPrincipal.dfm=\\Mac\Home\Documents\Embarcadero\Studio\Projects\Unit1.dfm</Transaction>
+    <Transaction>2019/01/05 13:02:27.000.647,\\Mac\Home\Documents\Embarcadero\Studio\Projects\Exercicio01\Calculadora.dproj=\\Mac\Home\Documents\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
+    <Transaction>2019/01/05 14:07:55.000.679,=\\Mac\Home\Documents\Embarcadero\Studio\Projects\Exercicio01\Unit1.pas</Transaction>
+    <Transaction>2019/01/05 14:28:08.000.710,\\Mac\Home\Documents\Embarcadero\Studio\Projects\Exercicio01\uIOperacaoMatematica.pas=\\Mac\Home\Documents\Embarcadero\Studio\Projects\Exercicio01\Unit1.pas</Transaction>
+    <Transaction>2019/01/05 14:35:15.000.304,=\\Mac\Home\Documents\Embarcadero\Studio\Projects\Exercicio01\Unit1.pas</Transaction>
+    <Transaction>2019/01/05 14:54:02.000.054,\\Mac\Home\Documents\Embarcadero\Studio\Projects\Exercicio01\uCalculadora.pas=\\Mac\Home\Documents\Embarcadero\Studio\Projects\Exercicio01\Unit1.pas</Transaction>
+    <Transaction>2019/01/05 15:38:23.000.082,=\\Mac\Home\Documents\Embarcadero\Studio\Projects\Exercicio01\Unit1.pas</Transaction>
+    <Transaction>2019/01/05 15:38:47.000.067,\\Mac\Home\Documents\Embarcadero\Studio\Projects\Exercicio01\uSomar.pas=\\Mac\Home\Documents\Embarcadero\Studio\Projects\Exercicio01\Unit1.pas</Transaction>
+    <Transaction>2019/01/05 18:12:18.000.291,=\\Mac\Home\Documents\Embarcadero\Studio\Projects\Exercicio01\Unit1.pas</Transaction>
+    <Transaction>2019/01/05 18:12:57.000.682,\\Mac\Home\Documents\Embarcadero\Studio\Projects\Exercicio01\uSubtrair.pas=\\Mac\Home\Documents\Embarcadero\Studio\Projects\Exercicio01\Unit1.pas</Transaction>
+    <Transaction>2019/01/05 18:31:28.000.118,=\\Mac\Home\Documents\Embarcadero\Studio\Projects\Exercicio01\Unit1.pas</Transaction>
+    <Transaction>2019/01/05 18:31:45.000.400,\\Mac\Home\Documents\Embarcadero\Studio\Projects\Exercicio01\uDividir.pas=\\Mac\Home\Documents\Embarcadero\Studio\Projects\Exercicio01\Unit1.pas</Transaction>
+    <Transaction>2019/01/05 18:36:24.000.588,=\\Mac\Home\Documents\Embarcadero\Studio\Projects\Exercicio01\Unit1.pas</Transaction>
+    <Transaction>2019/01/05 18:36:39.000.321,\\Mac\Home\Documents\Embarcadero\Studio\Projects\Exercicio01\uMultiplicar.pas=\\Mac\Home\Documents\Embarcadero\Studio\Projects\Exercicio01\Unit1.pas</Transaction>
+  </Transactions>
+</BorlandProject>

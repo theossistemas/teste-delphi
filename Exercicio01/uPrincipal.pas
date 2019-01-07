@@ -227,14 +227,6 @@ begin
   if (TipoOperacao is TDividir)     then Op := (TipoOperacao as TDividir);
   if (TipoOperacao is TMultiplicar) then Op := (TipoOperacao as TMultiplicar);
 
-  {
-  if Calculadora.PrimeiraOperacao then
-  begin
-    Calculadora.Valor01 := StrToFloatDef(EdtVlr01.Text,0);
-    Calculadora.Valor02 := StrToFloatDef(EdtVlr02.Text,0);
-  end;
-  }
-
   Calculadora.Valor01 := StrToFloatDef(EdtVlr01.Text,0);
   Calculadora.Valor02 := StrToFloatDef(EdtVlr02.Text,0);
 

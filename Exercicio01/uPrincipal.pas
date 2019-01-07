@@ -257,7 +257,6 @@ end;
 procedure TFrmPrincipal.VerificarValoresDigitados(Sender: TObject;
   var Key: Char);
 begin
-  MmoHistorico.Lines.Add(Sender.ClassName);
   if (Sender is TEdit)
   then
     if ((Sender as TEdit).Name = 'EdtVlr02') and (Key = #13)

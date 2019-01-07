@@ -27,6 +27,8 @@ type TCalculadora = Class
    FResultado:Double;
    FUltimaOperacao : IOperacaoMatematica;
   private
+    FValor01: Double;
+    FValor02: Double;
     function GetBaseCalculo: Double;
     procedure SetBaseCalculo(const Value: Double);
     function GetImpostoA: Double;
@@ -44,6 +46,8 @@ type TCalculadora = Class
     property Resultado:Double read FResultado write FResultado;
     property PrimeiraOperacao:Boolean read FPrimeiraOperacao write FPrimeiraOperacao;
     property UltimaOperacao:IOperacaoMatematica read FUltimaOperacao write FUltimaOperacao;
+    property Valor01:Double read FValor01 write FValor01;
+    property Valor02:Double read FValor02 write FValor02;
     procedure CalcularImpostoA;
     procedure CalcularImpostoB;
     procedure CalcularImpostoC;

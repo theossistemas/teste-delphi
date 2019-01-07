@@ -227,25 +227,28 @@ begin
   if (TipoOperacao is TDividir)     then Op := (TipoOperacao as TDividir);
   if (TipoOperacao is TMultiplicar) then Op := (TipoOperacao as TMultiplicar);
 
-  with Calculadora do
+  {
+  if Calculadora.PrimeiraOperacao then
   begin
-      if EdtVlr02.Text <> '' then
-      begin
-        Op.Valor01 := StrToFloatDef(EdtVlr01.Text,0);
-        Op.Valor02 := StrToFloatDef(EdtVlr02.Text,0);
-      end;
-      Resultado  := Op.Calcular();
-      EdtVlr01.Text := FloatToStr(Resultado);
-      EdtVlr02.Clear;
-      EdtVlr02.SetFocus;
+    Calculadora.Valor01 := StrToFloatDef(EdtVlr01.Text,0);
+    Calculadora.Valor02 := StrToFloatDef(EdtVlr02.Text,0);
   end;
+  }
 
-  case Op.SinalOperacao of
-    '+': MemoriaCalculo(Format('%f [+] %f = %f',[Op.Valor01,Op.Valor02,Calculadora.Resultado]));
-    '-': MemoriaCalculo(Format('%f [-] %f = %f',[Op.Valor01,Op.Valor02,Calculadora.Resultado]));
-    '/': MemoriaCalculo(Format('%f [/] %f = %f',[Op.Valor01,Op.Valor02,Calculadora.Resultado]));
-    '*': MemoriaCalculo(Format('%f [*] %f = %f',[Op.Valor01,Op.Valor02,Calculadora.Resultado]));
-  end;
+  Calculadora.Valor01 := StrToFloatDef(EdtVlr01.Text,0);
+  Calculadora.Valor02 := StrToFloatDef(EdtVlr02.Text,0);
+
+  Op.Valor01 := Calculadora.Valor01;
+  Op.Valor02 := Calculadora.Valor02;
+
+  Calculadora.Resultado     := Op.Calcular();
+  EdtVlr01.Text := FloatToStr(Calculadora.Resultado);
+  EdtVlr02.Clear;
+  EdtVlr02.Text := '0';
+  EdtVlr02.SetFocus;
+  EdtVlr02.SelectAll;
+
+  MemoriaCalculo(Format('%f [%s] %f = %f',[Op.Valor01,Op.SinalOperacao,Op.Valor02,Calculadora.Resultado]));
 
   Calculadora.PrimeiraOperacao := False;
   Calculadora.UltimaOperacao   := Op;
@@ -257,6 +260,7 @@ end;
 procedure TFrmPrincipal.VerificarValoresDigitados(Sender: TObject;
   var Key: Char);
 begin
+
   if (Sender is TEdit)
   then
     if ((Sender as TEdit).Name = 'EdtVlr02') and (Key = #13)

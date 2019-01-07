@@ -83,6 +83,9 @@ object FrmPrincipal: TFrmPrincipal
     Top = 51
     Width = 121
     Height = 21
+    Hint = 'Pressione Enter para realizar a '#250'ltima opera'#231#227'o'
+    ParentShowHint = False
+    ShowHint = True
     TabOrder = 2
   end
   object EdtResultado: TEdit

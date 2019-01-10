@@ -1,0 +1,60 @@
+unit CFuncionario;
+
+interface
+
+uses Classes;
+
+type
+  TFuncionario = class
+    { Private declarations }
+    private
+      FNome: String;
+      FCpf: String;
+      FSalario: Currency;
+      FListaDependetes: TList;
+    { Public declarations }
+    public
+      procedure setNome(const valor: String);
+      procedure setCpf(const valor: String);
+      procedure setSalario(const valor: Currency);
+
+      function getNome: String;
+      function getCpf: String;
+      function getSalario: Currency;
+  end;
+
+implementation
+
+{ TFuncionario }
+
+function TFuncionario.getNome: String;
+begin
+  result := self.FNome;
+end;
+
+function TFuncionario.getCpf: String;
+begin
+  result := self.FCpf;
+end;
+
+function TFuncionario.getSalario: Currency;
+begin
+  result := self.FSalario;
+end;
+
+procedure TFuncionario.setNome(const valor: String);
+begin
+  self.FNome := valor;
+end;
+
+procedure TFuncionario.setCpf(const valor: String);
+begin
+  self.FCpf := valor;
+end;
+
+procedure TFuncionario.setSalario(const valor: Currency);
+begin
+  self.FSalario := valor;
+end;
+
+end.

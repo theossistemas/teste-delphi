@@ -3,7 +3,7 @@ unit UDM;
 interface
 
 uses
-  SysUtils, Classes, Dialogs, DBXpress, FMTBcd, DB, DBClient, Provider, SqlExpr, CFuncionario, CDependente, CListaDependente;
+  SysUtils, Classes, Dialogs, DBXpress, FMTBcd, DB, DBClient, Provider, SqlExpr, CFuncionario, CDependente;
 
 type
   TDM = class(TDataModule)
@@ -21,9 +21,8 @@ type
     { Private declarations }
   public
     { Public declarations }
-    function geNextIdFuncionario: integer;
-    function geNextIdDependente: integer;
-    function inserirFuncionario(oFuncionario: TFuncionario; oListaDependente: TListaDependente): Boolean;
+    function geNextId(const generator: String): integer;
+    function inserirFuncionario(oFuncionario: TFuncionario): Boolean;
     function inserirDependente(oDependente: TDependente): Boolean;
   end;
 
@@ -36,14 +35,14 @@ implementation
 
 { TDM }
 
-function TDM.geNextIdFuncionario: integer;
+function TDM.geNextId(const generator: String): integer;
 var
   _qry: TSQLDataSet;
 begin
   _qry := TSQLDataSet.Create(Self);
   try
     _qry.SQLConnection := Self.DBSQLConnection;
-    _qry.CommandText := 'SELECT GEN_ID( GEN_FUNCIONARIO_ID, 1 ) FROM RDB$DATABASE;';
+    _qry.CommandText := 'SELECT GEN_ID( ' + generator + ', 1 ) FROM RDB$DATABASE;';
     _qry.Open;
     Result := _qry.Fields[0].AsInteger;
   finally
@@ -51,29 +50,14 @@ begin
   end;
 end;
 
-function TDM.geNextIdDependente: integer;
-var
-  _qry: TSQLDataSet;
-begin
-  _qry := TSQLDataSet.Create(Self);
-  try
-    _qry.SQLConnection := Self.DBSQLConnection;
-    _qry.CommandText := 'SELECT GEN_ID( GEN_DEPENDENTE_ID, 1 ) FROM RDB$DATABASE;';
-    _qry.Open;
-    Result := _qry.Fields[0].AsInteger;
-  finally
-    _qry.Free;
-  end;
-end;
-
-function TDM.inserirFuncionario(oFuncionario: TFuncionario; oListaDependente: TListaDependente): Boolean;
+function TDM.inserirFuncionario(oFuncionario: TFuncionario): Boolean;
 var
   i: SmallInt;
   idFuncionario: Integer;
   oDependente: TDependente;
 begin
 
-  idFuncionario := self.geNextIdFuncionario;
+  idFuncionario := self.geNextId('GEN_FUNCIONARIO_ID');
 
   dsInserirFuncionario.Params[0].AsInteger := idFuncionario;
   dsInserirFuncionario.Params[1].AsString := oFuncionario.getNome;
@@ -86,9 +70,9 @@ begin
 
     oDependente := TDependente.Create;
     try
-      for i:=0 to oListaDependente.getLista.Count-1 do
+      for i:=0 to oFuncionario.getLista.Count-1 do
       begin
-        oDependente := oListaDependente.getLista.Items[i];
+        oDependente := oFuncionario.getLista.Items[i];
 
         oDependente.setIdFuncionario(idFuncionario);
 
@@ -108,7 +92,7 @@ end;
 
 function TDM.inserirDependente(oDependente: TDependente): Boolean;
 begin
-  dsInserirDependente.Params[0].AsInteger := self.geNextIdDependente;
+  dsInserirDependente.Params[0].AsInteger := self.geNextId('GEN_DEPENDENTE_ID');;
   dsInserirDependente.Params[1].AsInteger := oDependente.getIdFuncionario;
   dsInserirDependente.Params[2].AsString := oDependente.getNome;
   if oDependente.getIsCalculaIR then

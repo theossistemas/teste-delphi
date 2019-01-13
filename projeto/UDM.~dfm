@@ -5,7 +5,7 @@ object DM: TDM
   Height = 317
   Width = 473
   object DBSQLConnection: TSQLConnection
-    ConnectionName = 'AvaliacaoDB1'
+    ConnectionName = 'AvaliacaoTheos'
     DriverName = 'Interbase'
     GetDriverFunc = 'getSQLDriverINTERBASE'
     LibraryName = 'dbexpint.dll'
@@ -26,7 +26,6 @@ object DM: TDM
       'Interbase TransIsolation=ReadCommited'
       'Trim Char=False')
     VendorLib = 'gds32.dll'
-    Connected = True
     Left = 40
     Top = 16
   end

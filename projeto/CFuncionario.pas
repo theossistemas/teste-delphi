@@ -2,7 +2,7 @@ unit CFuncionario;
 
 interface
 
-uses Classes;
+uses Classes, SysUtils, CDependente;
 
 type
   TFuncionario = class
@@ -13,8 +13,14 @@ type
       FSalario: Currency;
       FInss: Currency;
       FIr: Currency;
+      FListaDependente: TList;
     { Public declarations }
     public
+      constructor Create;
+      Destructor Destroy; override;
+      procedure adicionar(oDependente: TDependente);
+      function getLista: TList;
+
       procedure setNome(const valor: String);
       procedure setCpf(const valor: String);
       procedure setSalario(const valor: Currency);
@@ -80,6 +86,27 @@ end;
 procedure TFuncionario.setIr(const valor: Currency);
 begin
   self.FIr := valor;
+end;
+
+procedure TFuncionario.adicionar(oDependente: TDependente);
+begin
+  self.FListaDependente.Add(oDependente);
+end;
+
+constructor TFuncionario.Create;
+begin
+  self.FListaDependente := TList.Create;
+end;
+
+destructor TFuncionario.Destroy;
+begin
+  FreeAndNil(self.FListaDependente);
+  inherited;
+end;
+
+function TFuncionario.getLista: TList;
+begin
+  result := self.FListaDependente;
 end;
 
 end.

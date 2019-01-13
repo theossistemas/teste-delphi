@@ -42,7 +42,6 @@ begin
       oFuncionario.setIr( (oFuncionario.getSalario - (contador * 100)) * (15/100) );
 
     oFuncionario.setSalario( oFuncionario.getSalario - oFuncionario.getInss - oFuncionario.getIr );
-
   finally
   end;
 end;

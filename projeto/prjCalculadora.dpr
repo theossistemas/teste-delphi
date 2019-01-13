@@ -10,8 +10,7 @@ uses
   CDependente in 'CDependente.pas',
   FrmFuncionario in 'FrmFuncionario.pas' {FFuncionario},
   UDM in 'UDM.pas' {DM: TDataModule},
-  BFuncionario in 'BFuncionario.pas',
-  CListaDependente in 'CListaDependente.pas';
+  BFuncionario in 'BFuncionario.pas';
 
 {$R *.res}
 

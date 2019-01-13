@@ -5,7 +5,7 @@ interface
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
   Dialogs, StdCtrls, Grids, DBGrids, BFuncionario, CFuncionario, CDependente,
-  CListaDependente, Math, DB, DBClient;
+  Math, DB, DBClient;
 
 type
   TFFuncionario = class(TForm)
@@ -36,7 +36,6 @@ type
     { Private declarations }
     oFuncionario: TFuncionario;
     oDependente: TDependente;
-    oListaDependente: TListaDependente;
     oBFuncionario: TBFuncionario;
   public
     { Public declarations }
@@ -54,24 +53,21 @@ procedure TFFuncionario.FormCreate(Sender: TObject);
 begin
   oFuncionario := TFuncionario.Create;
   oDependente := TDependente.Create;
-  oListaDependente := TListaDependente.Create;
   oBFuncionario := TBFuncionario.Create;
   cdsDependente.CreateDataSet;
 end;
 
 procedure TFFuncionario.btnIncluirDependenteClick(Sender: TObject);
 begin
-  if not Assigned(oDependente) then
-    oDependente := TDependente.Create;
+  if not Assigned(oFuncionario) then
+    oFuncionario := TFuncionario.Create;
 
-  if not Assigned(oListaDependente) then
-    oListaDependente := TListaDependente.Create;
-
+  oDependente := TDependente.Create;
   oDependente.setNome(edtNomeDependente.Text);
   oDependente.setIsCalculaIR(cbCalculaIR.Checked);
   oDependente.setIsCalculaINSS(cbCalculaINSS.Checked);
 
-  oListaDependente.adicionar(oDependente);
+  oFuncionario.adicionar(oDependente);
 
   cdsDependente.Insert;
   cdsDependente.FieldByName('nome').AsString := edtNomeDependente.Text;
@@ -89,7 +85,7 @@ begin
   oFuncionario.setCpf(edtCpf.Text);
   oFuncionario.setSalario(StrToFloatDef(edtSalario.Text, ZeroValue));
 
-  oBFuncionario.inserir(oFuncionario, oListaDependente);
+  oBFuncionario.inserir(oFuncionario);
 
   limpar;
 end;
@@ -107,8 +103,6 @@ begin
     FreeAndNil(oFuncionario);
   if Assigned(oDependente) then
     FreeAndNil(oDependente);
-  if Assigned(oListaDependente) then
-    FreeAndNil(oListaDependente);
 
   cdsDependente.EmptyDataSet;
 end;
@@ -119,8 +113,6 @@ begin
     FreeAndNil(oFuncionario);
   if Assigned(oDependente) then
     FreeAndNil(oDependente);
-  if Assigned(oListaDependente) then
-    FreeAndNil(oListaDependente);
   FreeAndNil(oBFuncionario);
 end;
 

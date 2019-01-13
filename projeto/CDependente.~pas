@@ -14,6 +14,8 @@ type
       FIsCalculaINSS: Boolean;
     { Public declarations }
     public
+      constructor Create(AOwner: TObject);
+
       procedure setIdFuncionario(const valor: Integer);
       procedure setNome(const valor: String);
       procedure setIsCalculaIR(const valor: Boolean);
@@ -25,21 +27,7 @@ type
       function getIsCalculaINSS: Boolean;
   end;
 
-  TListaDependente = class
-  private
-    { Private declarations }
-    FListaDependente: TList;
-
-  public
-    constructor Create;
-    Destructor Destroy; override;
-    procedure adicionar(oDependente: TDependente);
-    function getLista: TList;
-  end;
-
 implementation
-
-uses SysUtils;
 
 { TDependente }
 
@@ -83,27 +71,9 @@ begin
   self.FIdFuncionario := valor;
 end;
 
-{ TListaDependente }
-
-procedure TListaDependente.adicionar(oDependente: TDependente);
+constructor TDependente.Create(AOwner: TObject);
 begin
-  self.FListaDependente.Add(oDependente);
-end;
 
-constructor TListaDependente.Create;
-begin
-  self.FListaDependente := TList.Create;
-end;
-
-destructor TListaDependente.Destroy;
-begin
-  FreeAndNil(self.FListaDependente);
-  inherited;
-end;
-
-function TListaDependente.getLista: TList;
-begin
-  result := FListaDependente;
 end;
 
 end.

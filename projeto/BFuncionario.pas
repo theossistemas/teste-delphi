@@ -2,21 +2,21 @@ unit BFuncionario;
 
 interface
 
-uses Sysutils, CFuncionario, CDependente, CListaDependente, UDM, Math;
+uses Sysutils, CFuncionario, CDependente, UDM, Math;
 
 type
   TBFuncionario = class
   private
-    procedure atualizarImpostos(oFuncionario: TFuncionario; oListaDependente: TListaDependente);
+    procedure atualizarImpostos(oFuncionario: TFuncionario);
   public
-    function inserir(oFuncionario: TFuncionario; oListaDependente: TListaDependente): Boolean;
+    function inserir(oFuncionario: TFuncionario): Boolean;
   end;
 
 implementation
 
 { TBFuncionario }
 
-procedure TBFuncionario.atualizarImpostos(oFuncionario: TFuncionario; oListaDependente: TListaDependente);
+procedure TBFuncionario.atualizarImpostos(oFuncionario: TFuncionario);
 var
   i: SmallInt;
   contador: SmallInt;
@@ -25,17 +25,15 @@ begin
   contador := ZeroValue;
   oDependente := TDependente.Create;
   try
-    for i:=0 to oListaDependente.getLista.Count-1 do
+    for i:=0 to oFuncionario.getLista.Count-1 do
     begin
-      oDependente := oListaDependente.getLista.Items[i];
+      oDependente := oFuncionario.getLista.Items[i];
 
       if oDependente.getIsCalculaINSS then
         oFuncionario.setInss( oFuncionario.getInss + ( oFuncionario.getSalario * (8/100) ) );
 
       if oDependente.getIsCalculaIR then
-      begin
         inc(contador);
-      end;
     end;
 
     if contador > Zerovalue then
@@ -46,10 +44,10 @@ begin
   end;
 end;
 
-function TBFuncionario.inserir(oFuncionario: TFuncionario; oListaDependente: TListaDependente): Boolean;
+function TBFuncionario.inserir(oFuncionario: TFuncionario): Boolean;
 begin
-  atualizarImpostos(oFuncionario, oListaDependente);
-  result := DM.inserirFuncionario(oFuncionario, oListaDependente);
+  atualizarImpostos(oFuncionario);
+  result := DM.inserirFuncionario(oFuncionario);
 end;
 
 end.

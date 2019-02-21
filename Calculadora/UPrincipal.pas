@@ -38,6 +38,12 @@ type
     Luv2: TLabel;
     Luv3: TLabel;
     Luop: TLabel;
+    Panel2: TPanel;
+    Panel3: TPanel;
+    Panel4: TPanel;
+    LImpA: TLabel;
+    LImpB: TLabel;
+    LImpC: TLabel;
     procedure B1Click(Sender: TObject);
     procedure B3Click(Sender: TObject);
     procedure B4Click(Sender: TObject);
@@ -55,6 +61,9 @@ type
     procedure BMenosClick(Sender: TObject);
     procedure BMultClick(Sender: TObject);
     procedure BDivClick(Sender: TObject);
+    procedure BImpAClick(Sender: TObject);
+    procedure BImpBClick(Sender: TObject);
+    procedure BImpCClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -145,6 +154,11 @@ begin
   Luop.Caption := '';     // último operação escolhida digitado n1
   virgula := 0;           // Flag para controle da vírgula
   vFlag := '0';           // Flag para tratar o "=" retetidas vezes
+
+  LImpA.Caption := '';    // Limpa Visores dos Impostos
+  LImpB.Caption := '';
+  LImpC.Caption := '';
+
   vOp_cont := 0;
   PVisor.SetFocus;
 end;
@@ -230,6 +244,36 @@ begin
     end
     else
      LVisor.Caption := FormatFloat( '#,##0.00' , res_ori);
+end;
+
+procedure TFCalculadora.BImpAClick(Sender: TObject);
+begin
+  LImpA.Caption := FormatFloat( '###0' , (StrToFloat(LVisor.Caption)*(20/100))-500);
+end;
+
+procedure TFCalculadora.BImpBClick(Sender: TObject);
+begin
+  if (LImpA.Caption = '0') then
+  begin
+    ShowMessage('Calcule PRIMEIRO o valor do Imposto A');
+  end
+  else
+  LImpB.Caption := FormatFloat( '###0' , (StrToFloat(LImpA.Caption)-15));
+end;
+
+procedure TFCalculadora.BImpCClick(Sender: TObject);
+begin
+  if (LImpA.Caption = '0') then
+  begin
+    ShowMessage('Calcule PRIMEIRO o valor do Imposto A');
+  end
+  else
+    if (LImpB.Caption = '0') then
+    begin
+      ShowMessage('Calcule PRIMEIRO o valor do Imposto B');
+    end
+    else
+    LImpC.Caption := FormatFloat( '###0' , (StrToFloat(LImpA.Caption) + StrToFloat(LImpB.Caption)));
 end;
 
 procedure TFCalculadora.BMaisClick(Sender: TObject);

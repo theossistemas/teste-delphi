@@ -375,10 +375,10 @@ object FCalculadora: TFCalculadora
     end
     object BImpA: TButton
       Left = 287
-      Top = 153
-      Width = 76
-      Height = 57
-      Caption = 'Imp A'
+      Top = 162
+      Width = 218
+      Height = 90
+      Caption = 'Imposto A'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = -19
@@ -386,13 +386,14 @@ object FCalculadora: TFCalculadora
       Font.Style = []
       ParentFont = False
       TabOrder = 21
+      OnClick = BImpAClick
     end
     object BImpB: TButton
-      Left = 369
-      Top = 153
-      Width = 76
-      Height = 57
-      Caption = 'Imp B'
+      Left = 287
+      Top = 265
+      Width = 218
+      Height = 87
+      Caption = 'Imposto B'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = -19
@@ -400,13 +401,14 @@ object FCalculadora: TFCalculadora
       Font.Style = []
       ParentFont = False
       TabOrder = 22
+      OnClick = BImpBClick
     end
     object BImpC: TButton
-      Left = 451
-      Top = 153
-      Width = 76
-      Height = 57
-      Caption = 'Imp C'
+      Left = 287
+      Top = 366
+      Width = 218
+      Height = 90
+      Caption = 'Imposto C'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = -19
@@ -414,6 +416,76 @@ object FCalculadora: TFCalculadora
       Font.Style = []
       ParentFont = False
       TabOrder = 23
+      OnClick = BImpCClick
+    end
+    object Panel2: TPanel
+      Left = 304
+      Top = 153
+      Width = 185
+      Height = 41
+      Color = clWhite
+      ParentBackground = False
+      TabOrder = 24
+      object LImpA: TLabel
+        Left = 156
+        Top = 8
+        Width = 10
+        Height = 23
+        Alignment = taRightJustify
+        Caption = '0'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -19
+        Font.Name = 'Tahoma'
+        Font.Style = []
+        ParentFont = False
+      end
+    end
+    object Panel3: TPanel
+      Left = 304
+      Top = 258
+      Width = 185
+      Height = 41
+      Color = clWhite
+      ParentBackground = False
+      TabOrder = 25
+      object LImpB: TLabel
+        Left = 156
+        Top = 8
+        Width = 10
+        Height = 23
+        Alignment = taRightJustify
+        Caption = '0'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -19
+        Font.Name = 'Tahoma'
+        Font.Style = []
+        ParentFont = False
+      end
+    end
+    object Panel4: TPanel
+      Left = 304
+      Top = 358
+      Width = 185
+      Height = 41
+      Color = clWhite
+      ParentBackground = False
+      TabOrder = 26
+      object LImpC: TLabel
+        Left = 156
+        Top = 8
+        Width = 10
+        Height = 23
+        Alignment = taRightJustify
+        Caption = '0'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -19
+        Font.Name = 'Tahoma'
+        Font.Style = []
+        ParentFont = False
+      end
     end
   end
 end

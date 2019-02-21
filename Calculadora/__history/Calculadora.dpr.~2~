@@ -1,0 +1,14 @@
+program Calculadora;
+
+uses
+  Vcl.Forms,
+  UPrincipal in 'UPrincipal.pas' {FCalculador};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(TFCalculador, FCalculador);
+  Application.Run;
+end.

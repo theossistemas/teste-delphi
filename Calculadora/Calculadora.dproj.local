@@ -2,17 +2,17 @@
 <BorlandProject>
 	<Transactions>
     <Transaction>2019/02/20 10:35:30.000.442,=C:\Users\Panda\Documents\Embarcadero\Studio\Projects\Unit2.pas</Transaction>
-    <Transaction>2019/02/20 10:36:48.000.768,C:\Users\Panda\Documents\GitHub\teste-delphi\UPrincipal.dfm=C:\Users\Panda\Documents\Embarcadero\Studio\Projects\Unit2.dfm</Transaction>
-    <Transaction>2019/02/20 10:36:48.000.768,C:\Users\Panda\Documents\GitHub\teste-delphi\UPrincipal.pas=C:\Users\Panda\Documents\Embarcadero\Studio\Projects\Unit2.pas</Transaction>
-    <Transaction>2019/02/20 10:37:06.000.195,C:\Users\Panda\Documents\GitHub\teste-delphi\Calculadora.dproj=C:\Users\Panda\Documents\Embarcadero\Studio\Projects\Project2.dproj</Transaction>
+    <Transaction>2019/02/20 10:36:48.000.768,C:\Users\Panda\Documents\Embarcadero\Studio\Projects\Unit2.pas=C:\Users\Panda\Documents\GitHub\teste-delphi\UPrincipal.pas</Transaction>
+    <Transaction>2019/02/20 10:36:48.000.768,C:\Users\Panda\Documents\Embarcadero\Studio\Projects\Unit2.dfm=C:\Users\Panda\Documents\GitHub\teste-delphi\UPrincipal.dfm</Transaction>
+    <Transaction>2019/02/20 10:37:06.000.195,C:\Users\Panda\Documents\Embarcadero\Studio\Projects\Project2.dproj=C:\Users\Panda\Documents\GitHub\teste-delphi\Calculadora.dproj</Transaction>
     <Transaction>2019/02/20 10:44:52.000.746,=C:\Users\Panda\Documents\GitHub\teste-delphi\Unit1.pas</Transaction>
     <Transaction>2019/02/20 10:46:06.000.753,=C:\Users\Panda\Documents\GitHub\teste-delphi\Unit2.pas</Transaction>
-    <Transaction>2019/02/20 10:48:39.000.414,C:\Users\Panda\Documents\GitHub\teste-delphi\Classe.pas=C:\Users\Panda\Documents\GitHub\teste-delphi\Unit2.pas</Transaction>
+    <Transaction>2019/02/20 10:48:39.000.414,C:\Users\Panda\Documents\GitHub\teste-delphi\Unit2.pas=C:\Users\Panda\Documents\GitHub\teste-delphi\Classe.pas</Transaction>
     <Transaction>2019/02/21 10:19:52.000.313,=C:\Users\Panda\Documents\GitHub\teste-delphi\Calculadora\Unit1.pas</Transaction>
-    <Transaction>2019/02/21 10:20:15.000.321,C:\Users\Panda\Documents\GitHub\teste-delphi\Calculadora\Unit1.pas=C:\Users\Panda\Documents\GitHub\teste-delphi\Calculadora\Classe.pas</Transaction>
+    <Transaction>2019/02/21 10:20:15.000.321,C:\Users\Panda\Documents\GitHub\teste-delphi\Calculadora\Classe.pas=C:\Users\Panda\Documents\GitHub\teste-delphi\Calculadora\Unit1.pas</Transaction>
     <Transaction>2019/02/21 10:58:42.000.699,=C:\Users\Panda\Documents\GitHub\teste-delphi\Calculadora\TestClasse.pas</Transaction>
     <Transaction>2019/02/21 11:31:56.000.195,=C:\Users\Panda\Documents\GitHub\teste-delphi\Calculadora\Unit1.pas</Transaction>
-    <Transaction>2019/02/21 11:32:09.000.907,C:\Users\Panda\Documents\GitHub\teste-delphi\Calculadora\Unit1.pas=C:\Users\Panda\Documents\GitHub\teste-delphi\Calculadora\Testes.pas</Transaction>
-    <Transaction>2019/02/21 13:48:39.622,C:\Users\Panda\Documents\GitHub\teste-delphi\Calculadora\Testes.pas=</Transaction>
+    <Transaction>2019/02/21 11:32:09.000.907,C:\Users\Panda\Documents\GitHub\teste-delphi\Calculadora\Testes.pas=C:\Users\Panda\Documents\GitHub\teste-delphi\Calculadora\Unit1.pas</Transaction>
+    <Transaction>2019/02/21 13:48:39.000.622,C:\Users\Panda\Documents\GitHub\teste-delphi\Calculadora\Testes.pas=</Transaction>
   </Transactions>
 </BorlandProject>

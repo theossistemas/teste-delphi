@@ -71,6 +71,7 @@ type
     function trata_visor (vuop, vbtn : string) : string;
     function Soma_Btn(v1, vlr_visor : string) : string;
     function Subt_Btn(v1, vlr_visor : string) : string;
+    function Mult_Btn(v1, vlr_visor : string) : string;
     { Public declarations }
   end;
 
@@ -186,12 +187,12 @@ procedure TFCalculadora.BIgualClick(Sender: TObject);
 var
   res_ori : real; //Resultado original
 begin
+  res_ori := 0;
 
    if (Luop.Caption = '+') then   // Para Somas
    begin
     res_ori := StrToFloat(Soma_Btn(Luv1.Caption, LVisor.Caption));
    end;
-
 
    if (Luop.Caption = '-') then   // Para Subtração
    begin
@@ -207,10 +208,10 @@ begin
    begin
      if (vFlag <> '=') then
       begin
-        res_ori := StrToFloat(Luv1.Caption) * StrToFloat(LVisor.Caption);
+        res_ori := StrToFloat(Mult_Btn(Luv1.Caption, LVisor.Caption));
       end
       else
-        res_ori := StrToFloat(LVisor.Caption) * StrToFloat(Luv1.Caption);
+        res_ori := StrToFloat(Mult_Btn(LVisor.Caption, Luv1.Caption));
    end;
 
    if (Luop.Caption = 'Div') then  // Para Divisão
@@ -247,21 +248,33 @@ begin
 end;
 
 procedure TFCalculadora.BImpAClick(Sender: TObject);
+Var
+  obj: TCalc;
 begin
-  LImpA.Caption := FormatFloat( '###0' , (StrToFloat(LVisor.Caption)*(20/100))-500);
+  obj := TCalc.Create;
+  LImpA.Caption := obj.ImpA(LVisor.Caption);
+  Obj.Free;
 end;
 
 procedure TFCalculadora.BImpBClick(Sender: TObject);
+Var
+  obj: TCalc;
 begin
   if (LImpA.Caption = '0') then
   begin
     ShowMessage('Calcule PRIMEIRO o valor do Imposto A');
   end
   else
-  LImpB.Caption := FormatFloat( '###0' , (StrToFloat(LImpA.Caption)-15));
+  begin
+    obj := TCalc.Create;
+    LImpB.Caption := obj.ImpB(LImpA.Caption);
+    Obj.Free;
+  end;
 end;
 
 procedure TFCalculadora.BImpCClick(Sender: TObject);
+var
+  obj: TCalc;
 begin
   if (LImpA.Caption = '0') then
   begin
@@ -273,7 +286,11 @@ begin
       ShowMessage('Calcule PRIMEIRO o valor do Imposto B');
     end
     else
-    LImpC.Caption := FormatFloat( '###0' , (StrToFloat(LImpA.Caption) + StrToFloat(LImpB.Caption)));
+    begin
+      obj := TCalc.Create;
+      LImpC.Caption := obj.ImpC(LImpA.Caption, LImpB.Caption);
+      Obj.Free;
+    end;
 end;
 
 procedure TFCalculadora.BMaisClick(Sender: TObject);
@@ -361,9 +378,7 @@ Var
   obj: TCalc;
 begin
   obj := TCalc.Create;
-  obj.Visor := vlr_visor;
-  obj.Soma := v1;
-  result := obj.Soma;
+  result := obj.Soma(v1, vlr_visor);
   Obj.Free;
 end;
 
@@ -377,6 +392,16 @@ begin
   result := obj.Subt;
   Obj.Free;
 end;
+
+function TFCalculadora.Mult_Btn(v1, vlr_visor : string) : string;
+Var
+  obj: TCalc;
+begin
+  obj := TCalc.Create;
+  result := FormatFloat( '###0' , obj.Mult(StrToFloat(v1), StrToFloat(vlr_visor)));
+  Obj.Free;
+end;
+
 
 function TFCalculadora.trata_visor (vuop, vbtn : string) : string;
 begin

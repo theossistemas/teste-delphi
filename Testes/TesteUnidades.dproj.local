@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2019/02/21 15:07:20.000.184,=C:\Users\Panda\Documents\GitHub\teste-delphi\Testes\TestUCalc.pas</Transaction>
+    <Transaction>2019/02/21 15:07:32.000.965,=C:\Users\Panda\Documents\GitHub\teste-delphi\Calculadora\Classe.pas</Transaction>
+    <Transaction>2019/02/21 15:07:57.000.697,C:\Users\Panda\Documents\GitHub\teste-delphi\Testes\TesteUnidades.dproj=C:\Users\Panda\Documents\GitHub\teste-delphi\Testes\TesteUnidades.dproj</Transaction>
+  </Transactions>
+</BorlandProject>

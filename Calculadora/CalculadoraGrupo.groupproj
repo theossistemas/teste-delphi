@@ -6,9 +6,6 @@
         <Projects Include="Calculadora.dproj">
             <Dependencies/>
         </Projects>
-        <Projects Include="Testes\CalculadoraTests.dproj">
-            <Dependencies/>
-        </Projects>
     </ItemGroup>
     <ProjectExtensions>
         <Borland.Personality>Default.Personality.12</Borland.Personality>
@@ -26,23 +23,14 @@
     <Target Name="Calculadora:Make">
         <MSBuild Projects="Calculadora.dproj" Targets="Make"/>
     </Target>
-    <Target Name="CalculadoraTests">
-        <MSBuild Projects="Testes\CalculadoraTests.dproj"/>
-    </Target>
-    <Target Name="CalculadoraTests:Clean">
-        <MSBuild Projects="Testes\CalculadoraTests.dproj" Targets="Clean"/>
-    </Target>
-    <Target Name="CalculadoraTests:Make">
-        <MSBuild Projects="Testes\CalculadoraTests.dproj" Targets="Make"/>
-    </Target>
     <Target Name="Build">
-        <CallTarget Targets="Calculadora;CalculadoraTests"/>
+        <CallTarget Targets="Calculadora"/>
     </Target>
     <Target Name="Clean">
-        <CallTarget Targets="Calculadora:Clean;CalculadoraTests:Clean"/>
+        <CallTarget Targets="Calculadora:Clean"/>
     </Target>
     <Target Name="Make">
-        <CallTarget Targets="Calculadora:Make;CalculadoraTests:Make"/>
+        <CallTarget Targets="Calculadora:Make"/>
     </Target>
     <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
 </Project>

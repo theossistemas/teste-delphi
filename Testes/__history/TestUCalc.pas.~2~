@@ -1,0 +1,51 @@
+unit TestUCalc;
+
+interface
+
+uses
+  TestFramework, Classe;
+
+type
+
+  TestTCalc = class(TTestCase)
+  strict private
+    FCalc: TCalc;
+  public
+    procedure SetUp; override;
+    procedure TearDown; override;
+  published
+    procedure TestMult;
+//    procedure TesteSoma;
+  end;
+
+implementation
+
+procedure TestTCalc.SetUp;
+begin
+  FCalc := TCalc.Create;
+end;
+
+procedure TestTCalc.TearDown;
+begin
+  FCalc.Free;
+  FCalc := nil;
+end;
+
+procedure TestTCalc.TestMult;
+var
+  ReturnValue: double;
+  y: double;
+  x: double;
+begin
+  y := 3;
+  x := 2;
+  // Verifica se a multiplicação está ok
+  ReturnValue := FCalc.Mult(x, y);
+  CheckEquals(x*y, ReturnValue);
+  // Valida o resultado do Método
+end;
+
+initialization
+  RegisterTest(TestTCalc.Suite);
+end.
+

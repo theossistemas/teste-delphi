@@ -1,0 +1,48 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{4662978E-66F1-438D-A5D8-842663DE246D}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="FolhaFake.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Test\FolhaFakeTests.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="FolhaFake">
+        <MSBuild Projects="FolhaFake.dproj"/>
+    </Target>
+    <Target Name="FolhaFake:Clean">
+        <MSBuild Projects="FolhaFake.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="FolhaFake:Make">
+        <MSBuild Projects="FolhaFake.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="FolhaFakeTests">
+        <MSBuild Projects="Test\FolhaFakeTests.dproj"/>
+    </Target>
+    <Target Name="FolhaFakeTests:Clean">
+        <MSBuild Projects="Test\FolhaFakeTests.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="FolhaFakeTests:Make">
+        <MSBuild Projects="Test\FolhaFakeTests.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="FolhaFake;FolhaFakeTests"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="FolhaFake:Clean;FolhaFakeTests:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="FolhaFake:Make;FolhaFakeTests:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

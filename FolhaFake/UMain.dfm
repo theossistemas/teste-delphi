@@ -202,7 +202,7 @@ object FMain: TFMain
         Top = 32
         Width = 105
         Height = 25
-        Caption = 'Calcular Inss'
+        Caption = 'Calcular INSS'
         TabOrder = 3
         OnClick = BCalculaInssClick
       end
@@ -251,7 +251,7 @@ object FMain: TFMain
       Visible = False
     end
     object DBCheckBox2: TDBCheckBox
-      Left = 375
+      Left = 369
       Top = 296
       Width = 33
       Height = 17

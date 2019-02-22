@@ -2,13 +2,13 @@
 <BorlandProject>
 	<Transactions>
     <Transaction>2019/02/21 16:11:43.000.568,=C:\Users\Panda\Documents\Embarcadero\Studio\Projects\Unit2.pas</Transaction>
-    <Transaction>2019/02/21 16:12:47.000.245,C:\Users\Panda\Documents\Embarcadero\Studio\Projects\Unit2.pas=C:\temp\FolhaFake\UMain.pas</Transaction>
-    <Transaction>2019/02/21 16:12:47.000.245,C:\Users\Panda\Documents\Embarcadero\Studio\Projects\Unit2.dfm=C:\temp\FolhaFake\UMain.dfm</Transaction>
-    <Transaction>2019/02/21 16:12:58.000.394,C:\Users\Panda\Documents\Embarcadero\Studio\Projects\Project2.dproj=C:\temp\FolhaFake\FolhaFake.dproj</Transaction>
+    <Transaction>2019/02/21 16:12:47.000.245,C:\temp\FolhaFake\UMain.pas=C:\Users\Panda\Documents\Embarcadero\Studio\Projects\Unit2.pas</Transaction>
+    <Transaction>2019/02/21 16:12:47.000.245,C:\temp\FolhaFake\UMain.dfm=C:\Users\Panda\Documents\Embarcadero\Studio\Projects\Unit2.dfm</Transaction>
+    <Transaction>2019/02/21 16:12:58.000.394,C:\temp\FolhaFake\FolhaFake.dproj=C:\Users\Panda\Documents\Embarcadero\Studio\Projects\Project2.dproj</Transaction>
     <Transaction>2019/02/21 16:13:30.000.196,=C:\temp\FolhaFake\Unit1.pas</Transaction>
-    <Transaction>2019/02/21 16:13:51.000.877,C:\temp\FolhaFake\Unit1.pas=C:\temp\FolhaFake\dm.pas</Transaction>
-    <Transaction>2019/02/21 16:13:51.000.877,C:\temp\FolhaFake\Unit1.dfm=C:\temp\FolhaFake\dm.dfm</Transaction>
+    <Transaction>2019/02/21 16:13:51.000.877,C:\temp\FolhaFake\dm.pas=C:\temp\FolhaFake\Unit1.pas</Transaction>
+    <Transaction>2019/02/21 16:13:51.000.877,C:\temp\FolhaFake\dm.dfm=C:\temp\FolhaFake\Unit1.dfm</Transaction>
     <Transaction>2019/02/21 21:30:17.000.575,=C:\temp\FolhaFake\Unit1.pas</Transaction>
-    <Transaction>2019/02/21 21:31:20.000.006,C:\Users\Panda\Documents\GitHub\teste-delphi\FolhaFake\myLib.pas=C:\temp\FolhaFake\Unit1.pas</Transaction>
+    <Transaction>2019/02/21 21:31:20.000.006,C:\temp\FolhaFake\Unit1.pas=C:\Users\Panda\Documents\GitHub\teste-delphi\FolhaFake\myLib.pas</Transaction>
   </Transactions>
 </BorlandProject>

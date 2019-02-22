@@ -1,0 +1,11 @@
+unit myLib;
+
+interface
+
+uses UMain;
+
+implementation
+
+
+
+end.

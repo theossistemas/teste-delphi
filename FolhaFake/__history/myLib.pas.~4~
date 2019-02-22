@@ -1,0 +1,36 @@
+unit myLib;
+
+interface
+
+uses UMain;
+
+type
+  TFuncionario = class(TObject)
+  private
+    FNome : string;
+    FCpf : string;
+    FSalario : double;
+
+  public
+    function Calc_IR( Salario : double; NDCIR : integer): double;
+  end;
+
+  TDependente = class(TObject)
+  private
+    FNome : string;
+    FIsCalculaIR : boolean;
+    fIsCalculaINSS : boolean;
+
+  public
+                                   :
+  end;
+
+implementation
+
+  // Calcula Imposto Renda
+function TFuncionario.Calc_IR( Salario : double; NDCIR : integer): double;
+ begin
+   result := (Salario - (NDCIR * 100))*0.15;
+ end;
+
+end.

@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2019/04/19 16:14:34.000.612,=C:\Users\guilh\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit2.pas</Transaction>
+    <Transaction>2019/04/19 16:15:20.000.127,C:\Users\guilh\OneDrive\Área de Trabalho\Teste\Exercício1 - Calculadora\Calculadora.dfm=C:\Users\guilh\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit2.dfm</Transaction>
+    <Transaction>2019/04/19 16:15:20.000.127,C:\Users\guilh\OneDrive\Área de Trabalho\Teste\Exercício1 - Calculadora\Calculadora.pas=C:\Users\guilh\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit2.pas</Transaction>
+    <Transaction>2019/04/19 16:15:40.000.957,C:\Users\guilh\OneDrive\Área de Trabalho\Teste\Exercício1 - Calculadora\Projeto\ProjectCalculadora.dproj=C:\Users\guilh\OneDrive\Documentos\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
+    <Transaction>2019/04/19 16:15:52.000.357,C:\Users\guilh\OneDrive\Área de Trabalho\Teste\Exercício1 - Calculadora\Calculadora.pas=</Transaction>
+    <Transaction>2019/04/19 16:16:35.000.576,=C:\Users\guilh\OneDrive\Área de Trabalho\Teste\Exercício1 - Calculadora\Interface\Calculadora.pas</Transaction>
+    <Transaction>2019/04/19 16:25:10.000.221,C:\Users\guilh\OneDrive\Área de Trabalho\Teste\Exercício1 - Calculadora\Interface\Calculadora.pas=</Transaction>
+    <Transaction>2019/04/20 11:28:37.000.471,=C:\Users\guilh\OneDrive\Área de Trabalho\Teste\Exercício1 - Calculadora\Projeto\Unit1.pas</Transaction>
+    <Transaction>2019/04/20 11:28:54.000.014,C:\Users\guilh\OneDrive\Área de Trabalho\Teste\Exercício1 - Calculadora\Projeto\Unit1.pas=C:\Users\guilh\OneDrive\Área de Trabalho\Teste\Exercício1 - Calculadora\Interface\uCalculadora.pas</Transaction>
+    <Transaction>2019/04/20 11:28:54.000.014,C:\Users\guilh\OneDrive\Área de Trabalho\Teste\Exercício1 - Calculadora\Projeto\Unit1.dfm=C:\Users\guilh\OneDrive\Área de Trabalho\Teste\Exercício1 - Calculadora\Interface\uCalculadora.dfm</Transaction>
+    <Transaction>2019/04/20 12:27:46.000.312,=C:\Users\guilh\OneDrive\Área de Trabalho\Teste\Exercício1 - Calculadora\Projeto\Unit1.pas</Transaction>
+    <Transaction>2019/04/20 12:28:10.000.200,C:\Users\guilh\OneDrive\Área de Trabalho\Teste\Exercício1 - Calculadora\Projeto\Unit1.pas=C:\Users\guilh\OneDrive\Área de Trabalho\Teste\Exercício1 - Calculadora\Class\uImposto.pas</Transaction>
+    <Transaction>2019/04/20 12:40:29.000.259,C:\Users\guilh\OneDrive\Área de Trabalho\Teste\Exercício1 - Calculadora\Class\uImposto.pas=</Transaction>
+  </Transactions>
+</BorlandProject>

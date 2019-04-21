@@ -1,0 +1,109 @@
+unit UCone;
+
+interface
+
+uses
+    IniFiles, SysUtils, Forms, FireDAC.Comp.Client, Dialogs;
+
+type
+   TConexao = class
+   private
+      FPath: string;
+      FServidor: string;
+      FPorta: integer;
+      FDatabase: string;
+      FSenha: string;
+      FUsuario: string;
+      FDriver: string;
+      FSecao: string;
+<div style="clear:both; margin-top:0em; margin-bottom:1em;"><a href="http://www.devwilliam.com.br/delphi/cliente-ftp-com-delphi-xe6-video" target="_blank" rel="nofollow" class="u1c6ac7f447b8dd5ccfa646b662fca01a"><!-- INLINE RELATED POSTS 2/3 //--><style> .u1c6ac7f447b8dd5ccfa646b662fca01a , .u1c6ac7f447b8dd5ccfa646b662fca01a .postImageUrl , .u1c6ac7f447b8dd5ccfa646b662fca01a .centered-text-area { min-height: 80px; position: relative; } .u1c6ac7f447b8dd5ccfa646b662fca01a , .u1c6ac7f447b8dd5ccfa646b662fca01a:hover , .u1c6ac7f447b8dd5ccfa646b662fca01a:visited , .u1c6ac7f447b8dd5ccfa646b662fca01a:active { border:0!important; } .u1c6ac7f447b8dd5ccfa646b662fca01a .clearfix:after { content: ""; display: table; clear: both; } .u1c6ac7f447b8dd5ccfa646b662fca01a { display: block; transition: background-color 250ms; webkit-transition: background-color 250ms; width: 100%; opacity: 1; transition: opacity 250ms; webkit-transition: opacity 250ms; background-color: #2980B9; box-shadow: 0 1px 2px rgba(0, 0, 0, 0.17); -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.17); -o-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.17); -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.17); } .u1c6ac7f447b8dd5ccfa646b662fca01a:active , .u1c6ac7f447b8dd5ccfa646b662fca01a:hover { opacity: 1; transition: opacity 250ms; webkit-transition: opacity 250ms; background-color: #D35400; } .u1c6ac7f447b8dd5ccfa646b662fca01a .centered-text-area { width: 100%; position: relative; } .u1c6ac7f447b8dd5ccfa646b662fca01a .ctaText { border-bottom: 0 solid #fff; color: #ECF0F1; font-size: 16px; font-weight: bold; margin: 0; padding: 0; text-decoration: underline; } .u1c6ac7f447b8dd5ccfa646b662fca01a .postTitle { color: #FFFFFF; font-size: 16px; font-weight: 600; margin: 0; padding: 0; width: 100%; } .u1c6ac7f447b8dd5ccfa646b662fca01a .ctaButton { background-color: #3498DB!important; color: #ECF0F1; border: none; border-radius: 3px; box-shadow: none; font-size: 14px; font-weight: bold; line-height: 26px; moz-border-radius: 3px; text-align: center; text-decoration: none; text-shadow: none; width: 80px; min-height: 80px; background: url(http://www.devwilliam.com.br/wp-content/plugins/intelly-related-posts/assets/images/simple-arrow.png)no-repeat; position: absolute; right: 0; top: 0; } .u1c6ac7f447b8dd5ccfa646b662fca01a:hover .ctaButton { background-color: #E67E22!important; } .u1c6ac7f447b8dd5ccfa646b662fca01a .centered-text { display: table; height: 80px; padding-left: 18px; top: 0; } .u1c6ac7f447b8dd5ccfa646b662fca01a .u1c6ac7f447b8dd5ccfa646b662fca01a-content { display: table-cell; margin: 0; padding: 0; padding-right: 108px; position: relative; vertical-align: middle; width: 100%; } .u1c6ac7f447b8dd5ccfa646b662fca01a:after { content: ""; display: block; clear: both; } </style><div class="centered-text-area"><div class="centered-text" style="float: left;"><div class="u1c6ac7f447b8dd5ccfa646b662fca01a-content"><span class="ctaText">Post relacionado:</span>  <span class="postTitle">Cliente FTP com Delphi XE6 | Vídeo</span></div></div></div><div class="ctaButton"></div></a></div>
+   public
+      property Path : string read FPath write FPath;
+      property Servidor : string read FServidor write FServidor;
+      property Porta : integer read FPorta write FPorta;
+      property Database : string read FDatabase write FDatabase;
+      property Senha : string read FSenha write FSenha;
+      property Usuario : string read FUsuario write FUsuario;
+      property Driver : string read FDriver write FDriver;
+      property Secao : string read FSecao write FSecao;
+
+      constructor Create(Path: string; Secao: string);
+
+      procedure LeINI(); virtual;
+      procedure GravaINI(Usuario, Senha, Servidor, Banco: string; Porta: integer); virtual;
+      procedure Conectar(var Conexao: TFDConnection); virtual;
+   end;
+
+
+implementation
+
+// Lê o arquivo INI e carrega os parâmetros no componente TFDConnection
+procedure TConexao.Conectar(var Conexao: TFDConnection);
+begin
+     LeINI();
+
+     try
+        //Passa os parâmetros para o objeto Conexão
+        Conexao.Connected := false;
+        Conexao.LoginPrompt := false;
+        Conexao.Params.Clear;
+        Conexao.Params.Add('hostname='+ Servidor);
+        Conexao.Params.Add('user_name='+ Usuario);
+        Conexao.Params.Add('password='+ Senha);
+        Conexao.Params.Add('port='+ IntToStr(Porta));
+        Conexao.Params.Add('Database='+ Database);
+        Conexao.Params.Add('DriverID='+ Driver);
+     Except
+        on E:Exception do
+        ShowMessage('Erro ao carregar parâmetros de conexão!'#13#10 + E.Message);
+     end;
+end;
+
+// Método construtor recebe o caminho do INI e nome da Seção para Leitura
+constructor TConexao.Create(Path: string; Secao: string);
+begin
+    if FileExists(Path) then
+    begin
+       Self.Path := Path;
+       Self.Secao := Secao;
+    end
+    else
+       raise Exception.Create('Arquivo INI para configuração não encontrado.'#13#10'Aplicação será finalizada.');
+end;
+
+// Grava os parâmetros recebidos no arquivo INI
+procedure TConexao.GravaINI(Usuario, Senha, Servidor, Banco: string; Porta: integer);
+var
+    ArqIni : TIniFile;
+begin
+     ArqIni := TIniFile.Create(Path);
+     try
+        ArqIni.WriteString(Secao, 'Usuario', Usuario);
+        ArqIni.WriteString(Secao, 'Senha', Senha);
+        ArqIni.WriteString(Secao, 'Database', Banco);
+        ArqIni.WriteString(Secao, 'Servidor', Servidor);
+        ArqIni.WriteInteger(Secao, 'Porta', Porta);
+     finally
+         ArqIni.Free;
+     end;
+end;
+
+// Lê os parâmetros do arquivo INI e atribui para os atributos
+procedure TConexao.LeINI();
+var
+    ArqIni : TIniFile;
+begin
+     ArqIni := TIniFile.Create(Path);
+     try
+        Servidor    := ArqIni.ReadString(Secao, 'Servidor', '');
+        Porta       := ArqIni.ReadInteger(Secao, 'Porta', 0);
+        Database    := ArqIni.ReadString(Secao, 'Database', '');
+        Senha       := ArqIni.ReadString(Secao, 'Senha', '');
+        Usuario     := ArqIni.ReadString(Secao, 'Usuario', '');
+        Driver      := ArqIni.ReadString(Secao, 'drivername', '');
+     finally
+         ArqIni.Free;
+     end;
+end;
+
+end.

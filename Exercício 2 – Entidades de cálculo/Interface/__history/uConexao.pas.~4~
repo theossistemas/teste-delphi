@@ -1,0 +1,78 @@
+unit uConexao;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs,conexaobanco, Vcl.StdCtrls,UCone;
+
+type
+  TfrmConexao = class(TForm)
+    edtBancoDados: TEdit;
+    btn1: TButton;
+    dlgOpen1: TOpenDialog;
+    edtServidor: TEdit;
+    edtPorta: TEdit;
+    edtUsuario: TEdit;
+    edtSenha: TEdit;
+    btnGravar: TButton;
+    procedure btn1Click(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
+    procedure btnGravarClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frmConexao: TfrmConexao;
+  conexaoClass : TConexao;
+
+implementation
+
+{$R *.dfm}
+
+procedure TfrmConexao.btn1Click(Sender: TObject);
+var
+conexaobanco : TDataModule1;
+begin
+ var
+  sqlConexao:TDataModule1;
+begin
+  sqlConexao:=TDataModule1.Create(nil);
+    try
+      sqlconexao.con1.Close;
+      sqlconexao.con1.ConnectionName:='Qualquer_Nome';//não pode deixar em branco
+      sqlconexao.con1.DriverName:='FIREBIRD';
+      sqlconexao.con1.Params.LoadFromFile('TESTE.ini');
+      sqlconexao.con1.LoginPrompt:=false;
+      sqlconexao.con1.Open;
+    finally
+      sqlConexao.Free;
+    end;
+end;
+end;
+
+procedure TfrmConexao.btnGravarClick(Sender: TObject);
+begin
+ conexaoClass.GravaINI(edtUsuario.Text, edtSenha.Text, edtServidor.Text, edtBancoDados.Text, StrToInt(edtPorta.Text));
+    MessageDlg('Gravado com sucesso!', mtConfirmation, [mbOK], 0);
+
+end;
+
+procedure TfrmConexao.FormCreate(Sender: TObject);
+begin
+begin
+     conexaoClass := TConexao.Create(ExtractFilePath(Application.ExeName) + 'Config.ini', 'Conexao');
+     conexaoClass.LeINI;
+
+     edtBancoDados.Text := conexaoClass.Database;
+     edtServidor.Text   := conexaoClass.Servidor;
+     edtPorta.Text      := IntToStr(conexaoClass.Porta);
+     edtUsuario.Text    := conexaoClass.Usuario;
+     edtSenha.Text      := conexaoClass.Senha;
+end;
+end;
+
+end.

@@ -1,0 +1,38 @@
+unit uConexao;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs,conexaobanco, Vcl.StdCtrls;
+
+type
+  TfrmConexao = class(TForm)
+    edt1: TEdit;
+    btn1: TButton;
+    procedure btn1Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frmConexao: TfrmConexao;
+
+implementation
+
+{$R *.dfm}
+
+procedure TfrmConexao.btn1Click(Sender: TObject);
+var
+conexaobanco : TDataModule1;
+begin
+
+conexaobanco.con1.Params.Database := edt1.Text;
+conexaobanco.con1.Params.DriverID :='FB';
+conexaobanco.con1.Params.UserName :='SYSDBA';
+conexaobanco.con1.Params.Password :='MASTERKEY';
+end;
+
+end.

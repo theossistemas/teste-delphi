@@ -1,0 +1,44 @@
+unit uConexao;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs,conexaobanco, Vcl.StdCtrls;
+
+type
+  TfrmConexao = class(TForm)
+    edt1: TEdit;
+    btn1: TButton;
+    procedure btn1Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frmConexao: TfrmConexao;
+
+implementation
+
+{$R *.dfm}
+
+procedure TfrmConexao.btn1Click(Sender: TObject);
+var
+conexaobanco : TDataModule1;
+begin
+conexaobanco.con1.ConnectionName := 'FBCONNECTION';
+conexaobanco.con1.DriverName := 'FIREBIRD';
+//conexaobanco.con1.LibraryName := 'dbxfb.dll';
+//conexaobanco.con1.GetDriverFunc := 'getSQLDriverINTERBASE';
+//conexaobanco.con1.VendorLib := 'fbclient.dll';
+conexaobanco.con1.Params.Values['SQLDialect'] := '3';
+conexaobanco.con1.Params.Values['Database'] := edt1.Text;
+conexaobanco.con1.Params.Values['User_Name'] := 'SYSDBA';
+conexaobanco.con1.Params.Values['Password'] := 'masterkey';
+conexaobanco.con1.LoginPrompt := False;
+conexaobanco.con1.Open;
+end;
+
+end.

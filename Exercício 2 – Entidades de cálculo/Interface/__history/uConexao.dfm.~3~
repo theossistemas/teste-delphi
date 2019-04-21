@@ -1,0 +1,80 @@
+object frmConexao: TfrmConexao
+  Left = 0
+  Top = 0
+  Caption = 'frmConexao'
+  ClientHeight = 201
+  ClientWidth = 447
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  OnCreate = FormCreate
+  PixelsPerInch = 96
+  TextHeight = 13
+  object edtBancoDados: TEdit
+    Left = 16
+    Top = 24
+    Width = 121
+    Height = 21
+    TabOrder = 0
+    Text = 'edtBancoDados'
+  end
+  object btn1: TButton
+    Left = 328
+    Top = 22
+    Width = 75
+    Height = 25
+    Caption = 'btn1'
+    TabOrder = 1
+    OnClick = btn1Click
+  end
+  object edtServidor: TEdit
+    Left = 16
+    Top = 51
+    Width = 121
+    Height = 21
+    TabOrder = 2
+    Text = 'edtServidor'
+  end
+  object edtPorta: TEdit
+    Left = 16
+    Top = 78
+    Width = 121
+    Height = 21
+    TabOrder = 3
+    Text = 'edtPorta'
+  end
+  object edtUsuario: TEdit
+    Left = 16
+    Top = 105
+    Width = 121
+    Height = 21
+    TabOrder = 4
+    Text = 'edtUsuario'
+  end
+  object edtSenha: TEdit
+    Left = 16
+    Top = 132
+    Width = 121
+    Height = 21
+    CharCase = ecUpperCase
+    TabOrder = 5
+    Text = 'EDT4'
+  end
+  object btnGravar: TButton
+    Left = 328
+    Top = 53
+    Width = 75
+    Height = 25
+    Caption = 'btnGravar'
+    TabOrder = 6
+    OnClick = btnGravarClick
+  end
+  object dlgOpen1: TOpenDialog
+    Left = 224
+    Top = 80
+  end
+end

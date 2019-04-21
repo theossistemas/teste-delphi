@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2019/04/17 14:09:44.000.402,=C:\Users\guilh\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit2.pas</Transaction>
+    <Transaction>2019/04/17 14:25:14.000.598,C:\Users\guilh\OneDrive\Área de Trabalho\Teste\Exercício 2 – Entidades de cálculo\Class\Unit2.dfm=C:\Users\guilh\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit2.dfm</Transaction>
+    <Transaction>2019/04/17 14:25:14.000.598,C:\Users\guilh\OneDrive\Área de Trabalho\Teste\Exercício 2 – Entidades de cálculo\Class\Unit2.pas=C:\Users\guilh\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit2.pas</Transaction>
+    <Transaction>2019/04/17 14:26:19.000.902,C:\Users\guilh\OneDrive\Área de Trabalho\Teste\Exercício 2 – Entidades de cálculo\Projeto\Entidadesdecalculo.dproj=C:\Users\guilh\OneDrive\Documentos\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
+    <Transaction>2019/04/17 14:27:20.000.588,=C:\Users\guilh\OneDrive\Área de Trabalho\Teste\Exercício 2 – Entidades de cálculo\Interface\Unit2.pas</Transaction>
+    <Transaction>2019/04/17 14:28:15.000.808,=C:\Users\guilh\OneDrive\Área de Trabalho\Teste\Exercício 2 – Entidades de cálculo\Projeto\Unit1.pas</Transaction>
+    <Transaction>2019/04/17 14:28:29.000.569,C:\Users\guilh\OneDrive\Área de Trabalho\Teste\Exercício 2 – Entidades de cálculo\ConexaoBanco\conexaobanco.dfm=C:\Users\guilh\OneDrive\Área de Trabalho\Teste\Exercício 2 – Entidades de cálculo\Projeto\Unit1.dfm</Transaction>
+    <Transaction>2019/04/17 14:28:29.000.569,C:\Users\guilh\OneDrive\Área de Trabalho\Teste\Exercício 2 – Entidades de cálculo\ConexaoBanco\conexaobanco.pas=C:\Users\guilh\OneDrive\Área de Trabalho\Teste\Exercício 2 – Entidades de cálculo\Projeto\Unit1.pas</Transaction>
+    <Transaction>2019/04/17 15:07:12.000.356,=C:\Users\guilh\OneDrive\Área de Trabalho\Teste\Exercício 2 – Entidades de cálculo\Projeto\Unit1.pas</Transaction>
+    <Transaction>2019/04/17 15:07:44.000.682,C:\Users\guilh\OneDrive\Área de Trabalho\Teste\Exercício 2 – Entidades de cálculo\Projeto\Unit1.pas=C:\Users\guilh\OneDrive\Área de Trabalho\Teste\Exercício 2 – Entidades de cálculo\Class\Funcionario.pas</Transaction>
+    <Transaction>2019/04/17 17:08:30.000.080,=C:\Users\guilh\OneDrive\Área de Trabalho\Teste\Exercício 2 – Entidades de cálculo\Projeto\Unit1.pas</Transaction>
+    <Transaction>2019/04/17 17:11:20.000.818,C:\Users\guilh\OneDrive\Área de Trabalho\Teste\Exercício 2 – Entidades de cálculo\Projeto\Unit1.pas=C:\Users\guilh\OneDrive\Área de Trabalho\Teste\Exercício 2 – Entidades de cálculo\Class\Banco.pas</Transaction>
+    <Transaction>2019/04/19 13:40:09.000.280,=C:\Users\guilh\OneDrive\Área de Trabalho\Teste\Exercício 2 – Entidades de cálculo\Projeto\Unit1.pas</Transaction>
+    <Transaction>2019/04/19 13:46:02.000.221,C:\Users\guilh\OneDrive\Área de Trabalho\Teste\Exercício 2 – Entidades de cálculo\Interface\uConexao.dfm=C:\Users\guilh\OneDrive\Área de Trabalho\Teste\Exercício 2 – Entidades de cálculo\Projeto\Unit1.dfm</Transaction>
+    <Transaction>2019/04/19 13:46:02.000.221,C:\Users\guilh\OneDrive\Área de Trabalho\Teste\Exercício 2 – Entidades de cálculo\Interface\uConexao.pas=C:\Users\guilh\OneDrive\Área de Trabalho\Teste\Exercício 2 – Entidades de cálculo\Projeto\Unit1.pas</Transaction>
+    <Transaction>2019/04/19 14:01:42.000.628,=C:\Users\guilh\OneDrive\Área de Trabalho\Teste\Exercício 2 – Entidades de cálculo\Projeto\Unit1.pas</Transaction>
+    <Transaction>2019/04/19 14:02:27.000.810,C:\Users\guilh\OneDrive\Área de Trabalho\Teste\Exercício 2 – Entidades de cálculo\Class\UCone.pas=C:\Users\guilh\OneDrive\Área de Trabalho\Teste\Exercício 2 – Entidades de cálculo\Projeto\Unit1.pas</Transaction>
+    <Transaction>2019/04/19 14:32:18.000.815,C:\Users\guilh\OneDrive\Área de Trabalho\Teste\Exercício 2 – Entidades de cálculo\Class\UCone.pas=</Transaction>
+    <Transaction>2019/04/19 14:32:26.000.095,C:\Users\guilh\OneDrive\Área de Trabalho\Teste\Exercício 2 – Entidades de cálculo\Interface\uConexao.pas=</Transaction>
+  </Transactions>
+</BorlandProject>

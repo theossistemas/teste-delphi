@@ -1,0 +1,60 @@
+unit Banco;
+
+interface
+uses
+conexaobanco,System.SysUtils;
+type
+  TSQL = class
+  private
+  public
+  procedure insertbanco(Nome, CPF, Salario,INSS,IR: string);
+  function Getsalario(Nome: string): Double;
+  function getUltimoid: string;
+
+
+  end;
+
+implementation
+
+{ TSQL }
+
+function TSQL.Getsalario(Nome: string):Double;
+begin
+DataModule1.fdqrySQL.close;
+DataModule1.fdqrySQL.sql.clear;
+DataModule1.fdqrySQL.sql.add('SELECT FUM_SALARIO FROM FUNCIONARIO');
+DataModule1.fdqrySQL.open;
+Result:=DataModule1.fdqrySQL.FieldByName('FUM_SALARIO').value;
+end;
+
+function TSQL.getUltimoid: string;
+begin
+DataModule1.fdqrySQL.close;
+DataModule1.fdqrySQL.sql.clear;
+DataModule1.fdqrySQL.sql.add('select max(FUN_ID) from funcionario');
+DataModule1.fdqrySQL.open;
+Result:= DataModule1.fdqrySQL.FieldByName('FUM_ID').value;
+
+
+
+end;
+
+procedure TSQL.insertbanco(Nome, CPF, Salario,INSS,IR: string);
+var
+SQL: string;
+begin
+ Salario := StringReplace(Salario, ',', '.', []);
+ INSS := StringReplace(INSS, ',', '.', []);
+ IR:= StringReplace(IR, ',', '.', []);
+SQL := 'INSERT INTO Funcionario  (fun_id,fun_nome,fun_cpf,fum_salario,fun_inss,fun_ir)'+
+       ' VALUES ('+ '3' + ','+ Nome  +','+CPF+','+Salario+','+INSS+','+IR+')';
+DataModule1.fdqrySQL.close;
+DataModule1.fdqrySQL.sql.clear;
+DataModule1.fdqrySQL.sql.add(SQL);
+DataModule1.fdqrySQL.ExecSQL(true);
+
+
+DataModule1.fdqrySQL.ExecSQL();
+end;
+
+end.

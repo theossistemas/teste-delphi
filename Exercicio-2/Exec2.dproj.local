@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2019/05/15 08:22:55.000.372,=C:\Users\benevema\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2019/05/15 08:28:55.000.596,C:\Users\benevema\Documents\Embarcadero\Studio\Projects\Unit1.dfm=C:\Users\benevema\Desktop\Calculadora\EXEC02\Funcionario.dfm</Transaction>
+    <Transaction>2019/05/15 08:28:55.000.596,C:\Users\benevema\Documents\Embarcadero\Studio\Projects\Unit1.pas=C:\Users\benevema\Desktop\Calculadora\EXEC02\Funcionario.pas</Transaction>
+    <Transaction>2019/05/15 08:29:07.000.946,C:\Users\benevema\Documents\Embarcadero\Studio\Projects\Project1.dproj=C:\Users\benevema\Desktop\Calculadora\EXEC02\Exec2.dproj</Transaction>
+    <Transaction>2019/05/15 11:13:22.000.222,=C:\Users\benevema\Desktop\Calculadora\EXEC02\Unit1.pas</Transaction>
+    <Transaction>2019/05/15 11:17:46.000.895,=C:\Users\benevema\Desktop\Calculadora\EXEC02\Unit1.pas</Transaction>
+    <Transaction>2019/05/15 11:22:34.000.163,C:\Users\benevema\Desktop\Calculadora\EXEC02\ClaFun.pas=C:\Users\benevema\Desktop\Calculadora\EXEC02\Unit1.pas</Transaction>
+    <Transaction>2019/05/19 11:49:37.000.847,=C:\Users\Theus\Documents\Embarcadero\Studio\Projects\EXEC02\Unit1.pas</Transaction>
+    <Transaction>2019/05/19 12:03:31.000.986,C:\Users\Theus\Documents\Embarcadero\Studio\Projects\EXEC02\Unit1.pas=C:\Users\Theus\Documents\Embarcadero\Studio\Projects\EXEC02\ClaConexaoBanco.pas</Transaction>
+    <Transaction>2019/05/19 12:04:31.000.231,C:\Users\Theus\Documents\Embarcadero\Studio\Projects\EXEC02\ClaConexaoBanco.pas=C:\Users\Theus\Documents\Embarcadero\Studio\Projects\EXEC02\uConexaoBanco.pas</Transaction>
+    <Transaction>2019/05/19 12:10:57.000.949,=C:\Users\Theus\Documents\Embarcadero\Studio\Projects\EXEC02\Unit1.pas</Transaction>
+    <Transaction>2019/05/19 12:14:07.000.132,C:\Users\Theus\Documents\Embarcadero\Studio\Projects\EXEC02\Unit1.pas=C:\Users\Theus\Documents\Embarcadero\Studio\Projects\EXEC02\uControle.pas</Transaction>
+    <Transaction>2019/05/19 12:25:15.000.484,=C:\Users\Theus\Documents\Embarcadero\Studio\Projects\EXEC02\Unit1.pas</Transaction>
+    <Transaction>2019/05/19 12:35:29.000.743,C:\Users\Theus\Documents\Embarcadero\Studio\Projects\EXEC02\Unit1.pas=C:\Users\Theus\Documents\Embarcadero\Studio\Projects\EXEC02\uFuncionarioControle.pas</Transaction>
+    <Transaction>2019/05/19 14:33:48.000.169,C:\Users\Theus\Documents\Embarcadero\Studio\Projects\EXEC02\uFuncionarioControle.pas=C:\Users\Theus\Documents\Embarcadero\Studio\Projects\EXEC02\uDependenteControle.pas</Transaction>
+    <Transaction>2019/05/19 14:35:37.000.479,=C:\Users\Theus\Documents\Embarcadero\Studio\Projects\EXEC02\uFuncionarioControle.pas</Transaction>
+    <Transaction>2019/05/19 14:36:49.000.674,C:\Users\Theus\Documents\Embarcadero\Studio\Projects\EXEC02\ClaFun.pas=</Transaction>
+  </Transactions>
+</BorlandProject>

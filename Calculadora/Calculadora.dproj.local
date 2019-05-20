@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2019/05/13 10:24:26.000.945,=C:\Users\benevema\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2019/05/13 10:24:44.000.121,C:\Users\benevema\Documents\Embarcadero\Studio\Projects\Unit1.pas=C:\Users\benevema\Documents\Embarcadero\Studio\Projects\FormCalc.pas</Transaction>
+    <Transaction>2019/05/13 10:24:44.000.121,C:\Users\benevema\Documents\Embarcadero\Studio\Projects\Unit1.dfm=C:\Users\benevema\Documents\Embarcadero\Studio\Projects\FormCalc.dfm</Transaction>
+    <Transaction>2019/05/13 10:24:50.000.120,C:\Users\benevema\Documents\Embarcadero\Studio\Projects\Project1.dproj=C:\Users\benevema\Documents\Embarcadero\Studio\Projects\Calculadora.dproj</Transaction>
+    <Transaction>2019/05/13 11:00:16.000.252,=C:\Users\benevema\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2019/05/13 11:03:27.000.121,C:\Users\benevema\Documents\Embarcadero\Studio\Projects\Unit1.pas=C:\Users\benevema\Documents\Embarcadero\Studio\Projects\ClassCalc.pas</Transaction>
+    <Transaction>2019/05/13 14:43:50.000.494,C:\Users\benevema\Documents\Embarcadero\Studio\Projects\Calculadora.dproj=C:\Users\benevema\Desktop\Calculadora\Calculadora\Calculadora.dproj</Transaction>
+  </Transactions>
+</BorlandProject>

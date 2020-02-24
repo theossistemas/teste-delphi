@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2019/01/30 22:55:49.000.321,=C:\Users\Zanardo\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2019/01/31 00:55:55.000.925,=C:\Users\Zanardo\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2019/02/06 23:33:14.000.891,=C:\Users\Zanardo\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2019/02/07 00:10:59.000.414,=C:\Users\Zanardo\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2019/03/13 00:10:09.000.206,=C:\Users\Zanardo\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2019/03/13 00:12:34.000.967,=C:\Users\Zanardo\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2019/03/13 00:13:59.000.928,=C:\Users\Zanardo\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2020/02/20 19:55:44.000.033,=C:\Users\Zanardo\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2020/02/20 20:33:28.000.317,C:\Users\Zanardo\Documents\Embarcadero\Studio\Projects\Unit1.dfm=C:\Users\Zanardo\Desktop\Theos Sistemas\uIniciar.dfm</Transaction>
+    <Transaction>2020/02/20 20:33:28.000.317,C:\Users\Zanardo\Documents\Embarcadero\Studio\Projects\Unit1.pas=C:\Users\Zanardo\Desktop\Theos Sistemas\uIniciar.pas</Transaction>
+    <Transaction>2020/02/20 20:33:49.000.037,C:\Users\Zanardo\Documents\Embarcadero\Studio\Projects\Project1.dproj=C:\Users\Zanardo\Desktop\Theos Sistemas\TheoSistemas.dproj</Transaction>
+    <Transaction>2020/02/20 20:34:23.000.251,=C:\Users\Zanardo\Desktop\Theos Sistemas\Unit1.pas</Transaction>
+    <Transaction>2020/02/20 20:39:30.000.610,C:\Users\Zanardo\Desktop\Theos Sistemas\Unit1.pas=C:\Users\Zanardo\Desktop\Theos Sistemas\uPessoa.pas</Transaction>
+    <Transaction>2020/02/20 20:41:06.000.510,=C:\Users\Zanardo\Desktop\Theos Sistemas\Unit1.pas</Transaction>
+    <Transaction>2020/02/20 20:42:37.000.467,C:\Users\Zanardo\Desktop\Theos Sistemas\Unit1.pas=C:\Users\Zanardo\Desktop\Theos Sistemas\uFuncionario.pas</Transaction>
+    <Transaction>2020/02/20 20:44:09.000.111,=C:\Users\Zanardo\Desktop\Theos Sistemas\Unit1.pas</Transaction>
+    <Transaction>2020/02/20 20:44:16.000.079,C:\Users\Zanardo\Desktop\Theos Sistemas\Unit1.pas=C:\Users\Zanardo\Desktop\Theos Sistemas\uDependente.pas</Transaction>
+    <Transaction>2020/02/20 21:36:46.000.774,=C:\Users\Zanardo\Desktop\Theos Sistemas\Unit1.pas</Transaction>
+    <Transaction>2020/02/20 21:38:34.000.190,C:\Users\Zanardo\Desktop\Theos Sistemas\Unit1.dfm=C:\Users\Zanardo\Desktop\Theos Sistemas\uCadastroFuncionario.dfm</Transaction>
+    <Transaction>2020/02/20 21:38:34.000.190,C:\Users\Zanardo\Desktop\Theos Sistemas\Unit1.pas=C:\Users\Zanardo\Desktop\Theos Sistemas\uCadastroFuncionario.pas</Transaction>
+    <Transaction>2020/02/20 23:40:44.000.480,=C:\Users\Zanardo\Desktop\Theos Sistemas\DataModulo.pas</Transaction>
+    <Transaction>2020/02/20 23:45:21.000.559,=C:\Users\Zanardo\Desktop\Theos Sistemas\Unit1.pas</Transaction>
+    <Transaction>2020/02/20 23:45:43.000.200,C:\Users\Zanardo\Desktop\Theos Sistemas\DataModulo.pas=</Transaction>
+    <Transaction>2020/02/20 23:45:54.000.396,C:\Users\Zanardo\Desktop\Theos Sistemas\Unit1.pas=C:\Users\Zanardo\Desktop\Theos Sistemas\DataModulo.pas</Transaction>
+    <Transaction>2020/02/20 23:45:54.000.396,C:\Users\Zanardo\Desktop\Theos Sistemas\Unit1.dfm=C:\Users\Zanardo\Desktop\Theos Sistemas\DataModulo.dfm</Transaction>
+    <Transaction>2020/02/22 13:57:07.000.693,=C:\Users\Zanardo\Desktop\Theos Sistemas\Unit1.pas</Transaction>
+    <Transaction>2020/02/22 13:57:36.000.343,C:\Users\Zanardo\Desktop\Theos Sistemas\uCadastroDependente.dfm=C:\Users\Zanardo\Desktop\Theos Sistemas\Unit1.dfm</Transaction>
+    <Transaction>2020/02/22 13:57:36.000.343,C:\Users\Zanardo\Desktop\Theos Sistemas\uCadastroDependente.pas=C:\Users\Zanardo\Desktop\Theos Sistemas\Unit1.pas</Transaction>
+    <Transaction>2020/02/23 00:42:15.000.329,=C:\Users\Zanardo\Desktop\Theos Sistemas\Unit1.pas</Transaction>
+    <Transaction>2020/02/23 00:42:33.000.298,C:\Users\Zanardo\Desktop\Theos Sistemas\uCalculadora.pas=C:\Users\Zanardo\Desktop\Theos Sistemas\Unit1.pas</Transaction>
+    <Transaction>2020/02/23 00:42:33.000.298,C:\Users\Zanardo\Desktop\Theos Sistemas\uCalculadora.dfm=C:\Users\Zanardo\Desktop\Theos Sistemas\Unit1.dfm</Transaction>
+    <Transaction>2020/02/23 18:26:52.000.095,=C:\Users\Zanardo\Desktop\Theos Sistemas\Unit1.pas</Transaction>
+    <Transaction>2020/02/23 18:27:47.000.168,C:\Users\Zanardo\Desktop\Theos Sistemas\uCalculo.pas=C:\Users\Zanardo\Desktop\Theos Sistemas\Unit1.pas</Transaction>
+  </Transactions>
+</BorlandProject>

@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2020/02/23 16:24:24.000.289,=C:\Users\Zanardo\Documents\Borland Studio Projects\Unit1.pas</Transaction>
+    <Transaction>2020/02/23 16:25:08.000.664,=C:\Users\Zanardo\Documents\Borland Studio Projects\Unit2.pas</Transaction>
+    <Transaction>2020/02/23 16:26:38.000.473,C:\Users\Zanardo\Documents\Borland Studio Projects\Project1.dproj=C:\Users\Zanardo\Desktop\Theos Sistemas\Teste\Teste.dproj</Transaction>
+    <Transaction>2020/02/23 16:26:58.000.308,=C:\Users\Zanardo\Desktop\Theos Sistemas\Teste\Unit1.pas</Transaction>
+    <Transaction>2020/02/23 16:28:02.000.161,=C:\Users\Zanardo\Desktop\Theos Sistemas\uFuncionario.pas</Transaction>
+    <Transaction>2020/02/23 16:28:52.000.637,C:\Users\Zanardo\Desktop\Theos Sistemas\Teste\Unit1.pas=C:\Users\Zanardo\Desktop\Theos Sistemas\Teste\uTestCalculoFuncionario.pas</Transaction>
+    <Transaction>2020/02/23 16:29:33.000.578,=C:\Users\Zanardo\Desktop\Theos Sistemas\uPessoa.pas</Transaction>
+    <Transaction>2020/02/23 16:29:55.000.571,=C:\Users\Zanardo\Desktop\Theos Sistemas\DataModulo.pas</Transaction>
+    <Transaction>2020/02/23 16:30:06.000.767,=C:\Users\Zanardo\Desktop\Theos Sistemas\uCadastroFuncionario.pas</Transaction>
+    <Transaction>2020/02/23 16:30:15.000.178,=C:\Users\Zanardo\Desktop\Theos Sistemas\uCadastroDependente.pas</Transaction>
+    <Transaction>2020/02/23 16:30:23.000.342,=C:\Users\Zanardo\Desktop\Theos Sistemas\uDependente.pas</Transaction>
+    <Transaction>2020/02/23 18:25:58.000.006,=C:\Users\Zanardo\Desktop\Theos Sistemas\uCalculadora.pas</Transaction>
+    <Transaction>2020/02/23 18:26:08.000.596,=C:\Users\Zanardo\Desktop\Theos Sistemas\Teste\Unit1.pas</Transaction>
+    <Transaction>2020/02/23 18:33:12.000.607,=C:\Users\Zanardo\Desktop\Theos Sistemas\uCalculo.pas</Transaction>
+    <Transaction>2020/02/23 18:33:21.000.300,C:\Users\Zanardo\Desktop\Theos Sistemas\Teste\uTestCalculadora.pas=C:\Users\Zanardo\Desktop\Theos Sistemas\Teste\Unit1.pas</Transaction>
+  </Transactions>
+</BorlandProject>

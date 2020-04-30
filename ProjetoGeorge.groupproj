@@ -1,0 +1,60 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{619489A0-57A1-4D7D-9596-1CA6B3E9C49A}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="ProjetoCalculadora.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="ProjetoEntidadesCalculo.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Testes\ProjetoTestCalculadora.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="ProjetoCalculadora">
+        <MSBuild Projects="ProjetoCalculadora.dproj"/>
+    </Target>
+    <Target Name="ProjetoCalculadora:Clean">
+        <MSBuild Projects="ProjetoCalculadora.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="ProjetoCalculadora:Make">
+        <MSBuild Projects="ProjetoCalculadora.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="ProjetoEntidadesCalculo">
+        <MSBuild Projects="ProjetoEntidadesCalculo.dproj"/>
+    </Target>
+    <Target Name="ProjetoEntidadesCalculo:Clean">
+        <MSBuild Projects="ProjetoEntidadesCalculo.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="ProjetoEntidadesCalculo:Make">
+        <MSBuild Projects="ProjetoEntidadesCalculo.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="ProjetoTestCalculadora">
+        <MSBuild Projects="Testes\ProjetoTestCalculadora.dproj"/>
+    </Target>
+    <Target Name="ProjetoTestCalculadora:Clean">
+        <MSBuild Projects="Testes\ProjetoTestCalculadora.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="ProjetoTestCalculadora:Make">
+        <MSBuild Projects="Testes\ProjetoTestCalculadora.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="ProjetoCalculadora;ProjetoEntidadesCalculo;ProjetoTestCalculadora"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="ProjetoCalculadora:Clean;ProjetoEntidadesCalculo:Clean;ProjetoTestCalculadora:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="ProjetoCalculadora:Make;ProjetoEntidadesCalculo:Make;ProjetoTestCalculadora:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

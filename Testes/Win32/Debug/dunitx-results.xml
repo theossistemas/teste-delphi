@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<test-results name="C:\Users\george.silva\Documents\George\Testes\Win32\Debug\ProjetoTestCalculadora.exe" total="7" errors="0" failures="0" ignored="0" inconclusive="0" not-run="0" skipped="0" invalid="0" date="2020-04-29" time="0.001">
+  <culture-info current-culture="en" current-uiculture="en" />
+  <test-suite type="Assembly" name="ProjetoTestCalculadora.exe" executed="true" result="Success" success="True" time="0.001" asserts="0">
+    <results>
+        <test-suite type="Namespace" name="uTestCalculadora" executed="true" result="Success" success="True" time="0.000" asserts="0" >
+          <results>
+              <test-suite type="Fixture" name="TestTCalculadora" executed="True" result="Success" success="True" time="0.000" >
+                <results>
+                  <test-case name="TestSomar" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                  <test-case name="TestMultiplicar" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                  <test-case name="TestSubtrair" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                  <test-case name="TestDividir" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                  <test-case name="TestCalcularImpostoA" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                  <test-case name="TestCalcularImpostoB" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                  <test-case name="TestCalcularImpostoC" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                </results>
+              </test-suite>
+          </results>
+        </test-suite>
+    </results>
+  </test-suite>
+</test-results>

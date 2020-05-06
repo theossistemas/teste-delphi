@@ -4,7 +4,7 @@ object Form1: TForm1
   BorderIcons = [biSystemMenu]
   Caption = '.: Calculadora :.'
   ClientHeight = 202
-  ClientWidth = 155
+  ClientWidth = 154
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText

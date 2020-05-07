@@ -24,7 +24,7 @@ type
       procedure ArmazenarComandoVirgula;
       procedure ArmazenarComandoIgual;
       procedure ArmazenarComando(comando: String; indice: Integer = -1);
-      procedure Calcular();
+      function Calcular() : Integer;
       procedure ZerarCalculadora(textoVisor: String = '0');
       procedure AlimentarHistoricoCalculo;
     protected
@@ -71,10 +71,11 @@ begin
   //Igual
   end else if comando = '=' then begin
     ArmazenarComandoIgual();
-    Calcular();
-    SetLength(listaComandos, 0);
-    SetLength(listaComandos, 1);
-    listaComandos[0] := FloatToStr(resultado);
+    if Calcular() = 1 then begin
+      SetLength(listaComandos, 0);
+      SetLength(listaComandos, 1);
+      listaComandos[0] := FloatToStr(resultado);
+    end;
   end;
 end;
 
@@ -171,7 +172,7 @@ begin
   end;
 end;
 
-procedure TCalculadora.Calcular;
+function TCalculadora.Calcular() : Integer;
 var
   posicao: Integer;
   operacao: String;
@@ -189,6 +190,7 @@ begin
       end else begin
         if StrToFloat(listaComandos[posicao]) = 0 then begin
           ZerarCalculadora('Impossível dividir por zero');
+          result := -1;
           exit;
         end;
         resultado := resultado / StrToFloat(listaComandos[posicao]);
@@ -199,6 +201,8 @@ begin
   end;
 
   FVisor := FloatToStr(resultado);
+
+  result := 1;
 end;
 
 constructor TCalculadora.Create;

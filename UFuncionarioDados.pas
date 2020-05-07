@@ -28,9 +28,10 @@ begin
   FrmDM.sqlQuery.Params[2].AsFloat  := pFuncionario.Salario;
   try
     FrmDM.sqlQuery.ExecSQL();
-    Result := FrmDM.sqlQuery.RowsAffected > 0;
+    Result := True;
   except
     FrmDM.sqlQuery.Cancel;
+    Result := False;
     raise Exception.Create('Ocorreu um erro ao salvar o Funcionário');
   end;
 
@@ -40,17 +41,18 @@ begin
     for i := Pred(pFuncionario.ListaDependente.Count) downto 0 do
     begin
       FrmDM.limpaQuery;
-      FrmDM.sqlQuery.SQL.Add('UPDATE OR INSERT INTO DEPENDENTE (ID, NOME, ISCALCULAIR, ISCALCULAINSS, CPF) VALUES (p:ID, p:NOME, p:ISCALCULAIR, p:ISCALCULAINSS, p:CPF)');
+      FrmDM.sqlQuery.SQL.Add('UPDATE OR INSERT INTO DEPENDENTE (ID, NOME, ISCALCULAIR, ISCALCULAINSS, CPF) VALUES (:pID, :pNOME, :pISCALCULAIR, :pISCALCULAINSS, :pCPF)');
       FrmDM.sqlQuery.Params[0].AsInteger := pFuncionario.ListaDependente[i].ID;
       FrmDM.sqlQuery.Params[1].AsString  := pFuncionario.ListaDependente[i].Nome;
       FrmDM.sqlQuery.Params[2].AsInteger := ifthen(pFuncionario.ListaDependente[i].IsCalculaIR,1,0);
-      FrmDM.sqlQuery.Params[3].AsFloat   := ifthen(pFuncionario.ListaDependente[i].IsCalculaINSS,1,0);
-      FrmDM.sqlQuery.Params[4].AsString  := pFuncionario.ListaDependente[i].CPF;
+      FrmDM.sqlQuery.Params[3].AsInteger   := ifthen(pFuncionario.ListaDependente[i].IsCalculaINSS,1,0);
+      FrmDM.sqlQuery.Params[4].AsString  := pFuncionario.CPF;
       try
         FrmDM.sqlQuery.ExecSQL();
-        Result := FrmDM.sqlQuery.RowsAffected > 0;
+        Result := True;
       except
         FrmDM.sqlQuery.Cancel;
+        Result := False;
         raise Exception.Create('Ocorreu um erro ao salvar o Dependente');
       end;
     end;

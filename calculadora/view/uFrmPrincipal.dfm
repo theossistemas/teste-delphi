@@ -1,10 +1,10 @@
-object Form1: TForm1
+object frmPrincipal: TfrmPrincipal
   Left = 0
   Top = 0
   BorderIcons = [biSystemMenu]
   Caption = '.: Calculadora :.'
-  ClientHeight = 202
-  ClientWidth = 154
+  ClientHeight = 244
+  ClientWidth = 297
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -12,21 +12,22 @@ object Form1: TForm1
   Font.Name = 'Tahoma'
   Font.Style = []
   OldCreateOrder = False
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
   PixelsPerInch = 96
   TextHeight = 13
-  object lblBreadCrumb: TLabel
+  object lblHistoricoCalculo: TLabel
     Left = 8
     Top = 8
-    Width = 138
+    Width = 282
     Height = 13
     Alignment = taRightJustify
     AutoSize = False
-    Caption = '...'
   end
   object btnZero: TButton
-    Left = 44
-    Top = 163
-    Width = 30
+    Left = 80
+    Top = 171
+    Width = 66
     Height = 30
     Caption = '0'
     Font.Charset = DEFAULT_CHARSET
@@ -36,11 +37,12 @@ object Form1: TForm1
     Font.Style = [fsBold]
     ParentFont = False
     TabOrder = 9
+    OnClick = EnviarComando
   end
   object btnDois: TButton
-    Left = 44
-    Top = 126
-    Width = 30
+    Left = 80
+    Top = 135
+    Width = 66
     Height = 30
     Caption = '2'
     Font.Charset = DEFAULT_CHARSET
@@ -50,11 +52,12 @@ object Form1: TForm1
     Font.Style = [fsBold]
     ParentFont = False
     TabOrder = 7
+    OnClick = EnviarComando
   end
   object btnTres: TButton
-    Left = 80
-    Top = 126
-    Width = 30
+    Left = 152
+    Top = 134
+    Width = 66
     Height = 30
     Caption = '3'
     Font.Charset = DEFAULT_CHARSET
@@ -64,11 +67,12 @@ object Form1: TForm1
     Font.Style = [fsBold]
     ParentFont = False
     TabOrder = 8
+    OnClick = EnviarComando
   end
   object btnQuatro: TButton
     Left = 8
-    Top = 90
-    Width = 30
+    Top = 98
+    Width = 66
     Height = 30
     Caption = '4'
     Font.Charset = DEFAULT_CHARSET
@@ -78,11 +82,12 @@ object Form1: TForm1
     Font.Style = [fsBold]
     ParentFont = False
     TabOrder = 3
+    OnClick = EnviarComando
   end
   object btnCinco: TButton
-    Left = 44
-    Top = 90
-    Width = 30
+    Left = 80
+    Top = 99
+    Width = 66
     Height = 30
     Caption = '5'
     Font.Charset = DEFAULT_CHARSET
@@ -92,11 +97,12 @@ object Form1: TForm1
     Font.Style = [fsBold]
     ParentFont = False
     TabOrder = 4
+    OnClick = EnviarComando
   end
   object btnSete: TButton
     Left = 8
-    Top = 54
-    Width = 30
+    Top = 62
+    Width = 66
     Height = 30
     Caption = '7'
     Font.Charset = DEFAULT_CHARSET
@@ -106,11 +112,12 @@ object Form1: TForm1
     Font.Style = [fsBold]
     ParentFont = False
     TabOrder = 0
+    OnClick = EnviarComando
   end
   object btnOito: TButton
-    Left = 44
-    Top = 54
-    Width = 30
+    Left = 80
+    Top = 62
+    Width = 66
     Height = 30
     Caption = '8'
     Font.Charset = DEFAULT_CHARSET
@@ -120,11 +127,12 @@ object Form1: TForm1
     Font.Style = [fsBold]
     ParentFont = False
     TabOrder = 1
+    OnClick = EnviarComando
   end
   object btnNove: TButton
-    Left = 80
-    Top = 54
-    Width = 30
+    Left = 152
+    Top = 62
+    Width = 66
     Height = 30
     Caption = '9'
     Font.Charset = DEFAULT_CHARSET
@@ -134,11 +142,12 @@ object Form1: TForm1
     Font.Style = [fsBold]
     ParentFont = False
     TabOrder = 2
+    OnClick = EnviarComando
   end
   object btnSeis: TButton
-    Left = 80
-    Top = 90
-    Width = 30
+    Left = 152
+    Top = 98
+    Width = 66
     Height = 30
     Caption = '6'
     Font.Charset = DEFAULT_CHARSET
@@ -148,11 +157,12 @@ object Form1: TForm1
     Font.Style = [fsBold]
     ParentFont = False
     TabOrder = 5
+    OnClick = EnviarComando
   end
   object btnUm: TButton
     Left = 8
-    Top = 127
-    Width = 30
+    Top = 135
+    Width = 66
     Height = 30
     Caption = '1'
     Font.Charset = DEFAULT_CHARSET
@@ -162,63 +172,86 @@ object Form1: TForm1
     Font.Style = [fsBold]
     ParentFont = False
     TabOrder = 6
+    OnClick = EnviarComando
   end
   object btnSeparadorMilhar: TButton
-    Left = 80
-    Top = 162
-    Width = 30
+    Left = 152
+    Top = 170
+    Width = 66
     Height = 30
     Caption = ','
     TabOrder = 14
+    OnClick = EnviarComando
   end
   object btnSomar: TButton
-    Left = 116
-    Top = 54
-    Width = 30
+    Left = 224
+    Top = 62
+    Width = 66
     Height = 30
     Caption = '+'
     TabOrder = 10
+    OnClick = EnviarComando
   end
   object btnSubtrair: TButton
-    Left = 116
-    Top = 90
-    Width = 30
+    Left = 224
+    Top = 98
+    Width = 66
     Height = 30
     Caption = '-'
     TabOrder = 11
+    OnClick = EnviarComando
   end
   object btnDividir: TButton
-    Left = 116
-    Top = 126
-    Width = 30
+    Left = 224
+    Top = 134
+    Width = 66
     Height = 30
     Caption = '/'
     TabOrder = 12
+    OnClick = EnviarComando
   end
   object btnMultiplicar: TButton
-    Left = 116
-    Top = 163
-    Width = 30
+    Left = 224
+    Top = 170
+    Width = 66
     Height = 30
     Caption = '*'
     TabOrder = 13
+    OnClick = EnviarComando
   end
   object btnC: TButton
     Left = 8
-    Top = 163
-    Width = 30
+    Top = 171
+    Width = 66
     Height = 30
     Caption = 'C'
     TabOrder = 15
+    OnClick = EnviarComando
   end
   object edtVisor: TEdit
     Left = 8
     Top = 27
-    Width = 138
-    Height = 21
+    Width = 282
+    Height = 29
     TabStop = False
     Alignment = taRightJustify
     AutoSize = False
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
     TabOrder = 16
+    Text = '0'
+  end
+  object btnIgual: TButton
+    Left = 8
+    Top = 207
+    Width = 282
+    Height = 30
+    Caption = '='
+    TabOrder = 17
+    OnClick = EnviarComando
   end
 end

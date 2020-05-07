@@ -5,10 +5,10 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants,
   System.Classes, Vcl.Graphics, Vcl.Controls, Vcl.Forms, Vcl.Dialogs,
-  Vcl.StdCtrls;
+  Vcl.StdCtrls, uCalculadora;
 
 type
-  TForm1 = class(TForm)
+  TfrmPrincipal = class(TForm)
     btnZero: TButton;
     btnUm: TButton;
     btnDois: TButton;
@@ -26,18 +26,40 @@ type
     btnMultiplicar: TButton;
     btnC: TButton;
     edtVisor: TEdit;
-    lblBreadCrumb: TLabel;
+    lblHistoricoCalculo: TLabel;
+    btnIgual: TButton;
+    procedure FormCreate(Sender: TObject);
+    procedure FormDestroy(Sender: TObject);
+    procedure EnviarComando(Sender: TObject);
   private
+    Calculadora: TCalculadora;
     { Private declarations }
   public
     { Public declarations }
   end;
 
 var
-  Form1: TForm1;
+  frmPrincipal: TfrmPrincipal;
 
 implementation
 
 {$R *.dfm}
+
+procedure TfrmPrincipal.EnviarComando(Sender: TObject);
+begin
+  Calculadora.ReceberComando(TButton(Sender).Caption);
+  lblHistoricoCalculo.Caption := Calculadora.HistoricoCalculo;
+  edtVisor.Text := Calculadora.Visor;
+end;
+
+procedure TfrmPrincipal.FormCreate(Sender: TObject);
+begin
+  Calculadora := TCalculadora.Create();
+end;
+
+procedure TfrmPrincipal.FormDestroy(Sender: TObject);
+begin
+  FreeAndNil(Calculadora);
+end;
 
 end.

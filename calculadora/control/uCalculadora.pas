@@ -3,7 +3,7 @@ unit uCalculadora;
 interface
 
 uses
-  System.SysUtils, Vcl.Dialogs, uFuncoes;
+  System.SysUtils, Vcl.Dialogs, uFuncoes, uOperacoes;
 
 type
   TCalculadora = class
@@ -16,6 +16,7 @@ type
       ultimoComando: String;
       resultado: Double;
       Funcoes: TFuncoes;
+      Operacoes: TOperacoes;
       constructor Create;
       destructor Destroy;
       procedure InterpretarComando(comando: String);
@@ -24,6 +25,7 @@ type
       procedure ArmazenarComandoVirgula;
       procedure ArmazenarComandoIgual;
       procedure ArmazenarComando(comando: String; indice: Integer = -1);
+      procedure ArmazenarComandoImposto(comando: String);
       function Calcular() : Integer;
       procedure ZerarCalculadora(textoVisor: String = '0');
       procedure AlimentarHistoricoCalculo;
@@ -40,9 +42,6 @@ implementation
 { TCalculadora }
 
 procedure TCalculadora.ReceberComando(Comando: String);
-var
-  numero: Integer;
-  contador: Integer;
 begin
   InterpretarComando(Comando);
 
@@ -50,8 +49,6 @@ begin
 end;
 
 procedure TCalculadora.InterpretarComando(comando: String);
-var
-  numero: Integer;
 begin
   //Limpar
   if comando = 'C' then begin
@@ -76,6 +73,11 @@ begin
       SetLength(listaComandos, 1);
       listaComandos[0] := FloatToStr(resultado);
     end;
+  //Impostos
+  end else begin
+    ArmazenarComandoImposto(comando);
+    ultimoNumero := 0;
+    ultimaOperacao := '';
   end;
 end;
 
@@ -142,6 +144,23 @@ begin
   end;
 
   ArmazenarComando('0,');
+end;
+
+procedure TCalculadora.ArmazenarComandoImposto(comando: String);
+begin
+  if Calcular() = -1 then begin
+    exit;
+  end;
+
+  SetLength(listaComandos, 1);
+  if comando = 'Imp. A' then begin
+    listaComandos[0] := FloatToStr(Operacoes.calcularImpostoA(resultado));
+  end else if comando = 'Imp. B' then begin
+    listaComandos[0] := FloatToStr(Operacoes.calcularImpostoB(resultado));
+  end else if comando = 'Imp. C' then begin
+    listaComandos[0] := FloatToStr(Operacoes.calcularImpostoC(resultado));
+  end;
+  FVisor := listaComandos[0];
 end;
 
 procedure TCalculadora.AlimentarHistoricoCalculo;
@@ -213,11 +232,13 @@ begin
   ultimoNumero := 0;
   ultimoComando := '';
   Funcoes := TFuncoes.Create;
+  Operacoes := TOperacoes.Create;
 end;
 
 destructor TCalculadora.Destroy;
 begin
   FreeAndNil(Funcoes);
+  FreeAndNil(Operacoes);
 end;
 
 procedure TCalculadora.ZerarCalculadora(textoVisor: String = '0');

@@ -4,7 +4,8 @@ uses
   Vcl.Forms,
   uFrmPrincipal in 'view\uFrmPrincipal.pas' {frmPrincipal},
   uCalculadora in 'control\uCalculadora.pas',
-  uFuncoes in 'control\uFuncoes.pas';
+  uFuncoes in 'control\uFuncoes.pas',
+  uOperacoes in 'control\uOperacoes.pas';
 
 {$R *.res}
 

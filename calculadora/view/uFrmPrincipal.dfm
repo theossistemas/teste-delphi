@@ -242,16 +242,61 @@ object frmPrincipal: TfrmPrincipal
     Font.Name = 'Tahoma'
     Font.Style = []
     ParentFont = False
-    TabOrder = 16
+    TabOrder = 20
     Text = '0'
   end
   object btnIgual: TButton
-    Left = 8
+    Left = 224
     Top = 207
-    Width = 282
+    Width = 66
     Height = 30
     Caption = '='
+    TabOrder = 19
+    OnClick = EnviarComando
+  end
+  object btnImpostoA: TButton
+    Left = 8
+    Top = 206
+    Width = 66
+    Height = 30
+    Caption = 'Imp. A'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clNavy
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    ParentFont = False
+    TabOrder = 16
+    OnClick = EnviarComando
+  end
+  object btnImpostoB: TButton
+    Left = 80
+    Top = 207
+    Width = 66
+    Height = 30
+    Caption = 'Imp. B'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clNavy
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    ParentFont = False
     TabOrder = 17
+    OnClick = EnviarComando
+  end
+  object btnImpostoC: TButton
+    Left = 152
+    Top = 207
+    Width = 66
+    Height = 30
+    Caption = 'Imp. C'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clNavy
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    ParentFont = False
+    TabOrder = 18
     OnClick = EnviarComando
   end
 end

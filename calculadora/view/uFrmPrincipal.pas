@@ -28,6 +28,9 @@ type
     edtVisor: TEdit;
     lblHistoricoCalculo: TLabel;
     btnIgual: TButton;
+    btnImpostoA: TButton;
+    btnImpostoB: TButton;
+    btnImpostoC: TButton;
     procedure FormCreate(Sender: TObject);
     procedure FormDestroy(Sender: TObject);
     procedure EnviarComando(Sender: TObject);

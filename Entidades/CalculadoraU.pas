@@ -5,7 +5,7 @@ interface
   uses StrUtils;
 
 type
-  TOperacao = (opIsNull, opDividir, opMultiplicar, opSubtrair, opSomar, opIgual);
+  TOperacao = (opIsNull, opAdicao, opSubtracao, opMultiplicacao, opDivisao, opIgual);
   TCalculadora = class
     //procedure teste(Sender: TObject);
   private
@@ -247,12 +247,12 @@ function TCalculadora.getOperacaoToString(
   poperacao: TOperacao): String;
 begin
   case poperacao of
-    opSomar:       result := '+';
-    opSubtrair:    result := '-';
-    opMultiplicar: result := 'x';
-    opDividir:     result := '/';
-    opIgual:       result := '=';
-    opIsNull:      result := 'IsNull';        
+    opIsNull:        result := 'IsNull';  
+    opAdicao:        result := '+';
+    opSubtracao:     result := '-';
+    opMultiplicacao: result := 'x';
+    opDivisao:       result := '/';
+    opIgual:         result := '=';
   end;
 end;
 
@@ -346,22 +346,22 @@ begin
 
   setUltimaOperacao(pOperacaoAtual);
   case getOperacao of
-    opSomar:
+    opAdicao:
       begin
         vlcalculou := somar(vlNumeroA, vlNumeroB);
       end;
 
-    opSubtrair:
+    opSubtracao:
       begin
         vlcalculou := subtrair(vlNumeroA, vlNumeroB);
       end;
 
-    opMultiplicar:
+    opMultiplicacao:
       begin
         vlcalculou := multiplicar(vlNumeroA, vlNumeroB);
       end;
 
-    opDividir:
+    opDivisao:
       begin
         vlcalculou := dividir(vlNumeroA, vlNumeroB);
       end;
@@ -377,12 +377,13 @@ end;
 
 function TCalculadora.getOperacaoToConvert(poperacao: String): TOperacao;
 begin
-  case AnsiIndexStr(UpperCase(poperacao), ['+', '-', '/', 'X', '=']) of
-    0 : result := opSomar;
-    1 : result := opSubtrair;
-    2 : result := opDividir;
-    3 : result := opMultiplicar;
-    4 : result := opIgual;
+  case AnsiIndexStr(UpperCase(poperacao), ['', '+', '-', '/', 'X', '=']) of
+    0 : Result := opIsNull;
+    1 : result := opAdicao;
+    2 : result := opSubtracao;
+    3 : result := opDivisao;
+    4 : result := opMultiplicacao;
+    5 : result := opIgual;
   end;
 end;
 

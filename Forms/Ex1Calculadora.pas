@@ -4,7 +4,7 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, StdCtrls, StrUtils, ComCtrls, Buttons;
+  Dialogs, StdCtrls, ComCtrls, Buttons;
 
 type
   TEx1CalculadoraF = class(TForm)
@@ -201,13 +201,27 @@ begin
   digitarOperacao(TButton(Sender).Caption);
 end;
 
+procedure TEx1CalculadoraF.btnHistoricoClick(Sender: TObject);
+begin
+  redtHistorico.Visible := not redtHistorico.Visible;
+  if redtHistorico.Visible then
+    Width := 410
+  else
+    Width := 225;
+end;
+
+procedure TEx1CalculadoraF.btnVirgulaClick(Sender: TObject);
+begin
+  digitarNumero(TButton(Sender).Caption);
+end;
+
 procedure TEx1CalculadoraF.digitarNumero(pnumero: String);
 begin
   if vgDigitouOperacao then
   begin
     edtVisor.Clear;
     vgDigitouOperacao := False;
-  end;                             
+  end;
   edtVisor.Text := edtVisor.Text + pnumero;
 end;
 
@@ -221,43 +235,9 @@ begin
     
   vgDigitouOperacao := True;
 
-  case AnsiIndexStr(UpperCase(poperacao), ['+', '-', '/', 'X', '=']) of
-    0 : begin
-      Calculadora.setOperacao(opSomar);
-      vOperacaoAtual := opSomar;      
-    end;
-    1 : begin
-      Calculadora.setOperacao(opSubtrair);
-      vOperacaoAtual := opSubtrair;
-    end;
-    2 : begin
-      Calculadora.setOperacao(opDividir);
-      vOperacaoAtual := opDividir;
-    end;
-    3 : begin
-      Calculadora.setOperacao(opMultiplicar);
-      vOperacaoAtual := opMultiplicar;
-    end;
-    4 : vOperacaoAtual := opIgual;
-  end;
+  vOperacaoAtual := Calculadora.getOperacaoToConvert(poperacao);
 
-  Calculadora.setUltimaOperacao(vOperacaoAtual);
-
-//  if (not Calculadora.ehPrimeiraVez) and (vOperacaoAtual <> OpIgual)then
-//      Exit;
-
-  if (Calculadora.ehPrimeiraVez) then
-  begin
-    if not Calculadora.temNumeroA then
-    begin
-      Calculadora.setnumeroA(edtVisor.Text);
-    end else
-    begin
-      Calculadora.setnumeroB(edtVisor.Text);
-    end;                                                                 
-  end;
-
-  edtVisor.Text := FloatToStr(Calculadora.calcular(vHistorico, vOperacaoAtual));
+  edtVisor.Text := FloatToStr(Calculadora.calcular(edtVisor.Text, vOperacaoAtual, vHistorico));
   edtHistorico.Text := vHistorico;
 
   with Calculadora do
@@ -270,20 +250,6 @@ begin
     redtHistorico.Lines.Add('Resultado: '+getResultadotoString);
     redtHistorico.Lines.Add('');
   end;
-end;
-
-procedure TEx1CalculadoraF.btnHistoricoClick(Sender: TObject);
-begin
-  redtHistorico.Visible := not redtHistorico.Visible;
-  if redtHistorico.Visible then
-    Width := 410
-  else
-    Width := 225;
-end;
-
-procedure TEx1CalculadoraF.btnVirgulaClick(Sender: TObject);
-begin
-  digitarNumero(TButton(Sender).Caption);
 end;
 
 end.

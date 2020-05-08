@@ -2,7 +2,7 @@ unit CalculadoraU;
 
 interface
 
-//  uses;
+  uses StrUtils;
 
 type
   TOperacao = (opIsNull, opDividir, opMultiplicar, opSubtrair, opSomar, opIgual);
@@ -22,28 +22,33 @@ type
     vHistoricoCalculo: String;
 
     vEhPrimeiraVez: Boolean;
-    { Private declarations }
+
+    procedure setnumeroA(pnumeroA:String);
+    procedure setnumeroB(pnumeroB:String);
+    procedure setEhPrimeiraVez(pEhPrimeiraVez:Boolean);    
+
     function somar(pnumeroA: Real; pnumeroB: Real):Boolean;
     function subtrair(pnumeroA: Real; pnumeroB: Real):Boolean;
     function dividir(pnumeroA: Real; pnumeroB: Real):Boolean;
     function multiplicar(pnumeroA: Real; pnumeroB: Real):Boolean;
-    
+
     procedure setResultado(pvalor:Real);
     procedure setHistoricoCalculo(pvalor: String);
-
-
+    procedure setUltimaOperacao(poperacao:TOperacao);
+    { Private declarations }
+    
   public
-    function calcular(var pHistoricoCalculo:String; pOperacaoAtual :TOperacao):Real;
+    function calcular(pNumeroVisor:String; pOperacaoAtual :TOperacao; var pHistoricoCalculo:String):Real;
 
-    procedure setnumeroA(pnumeroA:String);
+    function temNumeroA():Boolean;
     function getnumeroA:Real;
     function getnumeroAtoString:String;
-    function temNumeroA():Boolean;
 
-    procedure setnumeroB(pnumeroB:String);
+
+    function temNumeroB():Boolean;
     function getnumeroB:Real;
     function getnumeroBtoString:String;
-    function temNumeroB():Boolean;
+
 
     function getResultado():Real;
     function getResultadotoString():String;
@@ -51,13 +56,11 @@ type
     procedure setOperacao(poperacao:TOperacao);
     function getOperacao:TOperacao;
 
-    procedure setUltimaOperacao(poperacao:TOperacao);
     function getUltimaOperacao:TOperacao;
     function getOperacaoToString(poperacao:TOperacao):String;
+    function getOperacaoToConvert(poperacao:String):TOperacao;
 
     function getHistoricoCalculo:string;
-
-    procedure setEhPrimeiraVez(pEhPrimeiraVez:Boolean);
     function ehPrimeiraVez():Boolean;
     constructor create();
     { Public declarations }
@@ -283,7 +286,7 @@ begin
   vHistoricoCalculo := pvalor;
 end;
 
-function TCalculadora.calcular(var pHistoricoCalculo:String; poperacaoAtual:TOperacao): Real;
+function TCalculadora.calcular(pNumeroVisor:String; pOperacaoAtual :TOperacao; var pHistoricoCalculo:String): Real;
 var vlcalculou:Boolean;
     vlNumeroA, vlNumeroB :Real;
 begin
@@ -300,26 +303,39 @@ begin
 //	* Caso não seja, a operação será executada, mas usamos o que guardamos do visor no primeiro clique de igual.
 //    Isso permite que façamos 5 / 5 * 2 (igual, igual).
 
+//
+
+  //gravar as operações, exceto a operação "=", para saber qual foi a ultima operação calculada
+  if (pOperacaoAtual <> opIgual)then
+    setOperacao(pOperacaoAtual);
+
+  if (ehPrimeiraVez) then
+  begin
+    if not temNumeroA then
+    begin
+      setnumeroA(pNumeroVisor);
+    end else
+    begin
+      setnumeroB(pNumeroVisor);
+    end;                                                                 
+  end;
+
+  //se digitou a operacao "=" duas vezes seguidas, pega o ultimo resultado e o atual e recalcula com a ultima operação
+  if (pOperacaoAtual = OpIgual) and (pOperacaoAtual = getUltimaOperacao) then
+     setnumeroA(getResultadotoString);
+
+  //se digitou a operacao "=" ou outra operação e depois outra operacao,
+  //pega o resultado atual como numeroA e aguarde o numeroB (limpe-o);
+  if ((getUltimaOperacao = OpIgual)or (getUltimaOperacao <> pOperacaoAtual))
+      and (pOperacaoAtual <> opIgual)
+      and (getUltimaOperacao <> opIsNull) then
+  begin
+    setnumeroA(getResultadotoString);
+    vtemNumeroB := False;    
+  end;     
+
   vlNumeroA := getnumeroA;
   vlNumeroB := getnumeroB;
-
-  begin
-    //se digitou a operacao "=" duas vezes seguidas, pega o ultimo resultado e o atual e recalcula com a ultima operação
-    if (pOperacaoAtual = OpIgual) and (pOperacaoAtual = getUltimaOperacao) then
-    begin
-      vlNumeroA := getResultado;
-      vlNumeroB := getnumeroB;
-    end;
-
-    //se digitou a operacao "=" ou outra operação e depois outra operacao, 
-    //pega o resultado atual como numeroA e aguarde o numeroB (limpe-o);
-    if ((getUltimaOperacao = OpIgual)or (getUltimaOperacao <> pOperacaoAtual))
-        and (pOperacaoAtual <> opIgual)
-        and (getUltimaOperacao <> opIsNull) then
-    begin
-      vlNumeroA := getResultado;
-      vtemNumeroB := False;    
-    end;
 
 //    //se digitou outra operacao e depois "=", pega o ultimo resultado e o atual e recalcula com a nova operação
 //    if (getOperacao <> pOperacaoAtual) and (pOperacaoAtual = OpIgual) then
@@ -327,8 +343,8 @@ begin
 //      vlNumeroA := getResultado;
 //      vlNumeroB := getResultado;
 //    end;
-  end;
 
+  setUltimaOperacao(pOperacaoAtual);
   case getOperacao of
     opSomar:
       begin
@@ -357,6 +373,17 @@ begin
     setEhPrimeiraVez(False);
 
   pHistoricoCalculo := getHistoricoCalculo;
+end;
+
+function TCalculadora.getOperacaoToConvert(poperacao: String): TOperacao;
+begin
+  case AnsiIndexStr(UpperCase(poperacao), ['+', '-', '/', 'X', '=']) of
+    0 : result := opSomar;
+    1 : result := opSubtrair;
+    2 : result := opDividir;
+    3 : result := opMultiplicar;
+    4 : result := opIgual;
+  end;
 end;
 
 end.

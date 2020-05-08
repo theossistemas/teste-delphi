@@ -40,6 +40,7 @@ object frmPrincipal: TfrmPrincipal
     OnClick = EnviarComando
   end
   object btnDois: TButton
+    Tag = 2
     Left = 80
     Top = 135
     Width = 66
@@ -55,6 +56,7 @@ object frmPrincipal: TfrmPrincipal
     OnClick = EnviarComando
   end
   object btnTres: TButton
+    Tag = 3
     Left = 152
     Top = 134
     Width = 66
@@ -70,6 +72,7 @@ object frmPrincipal: TfrmPrincipal
     OnClick = EnviarComando
   end
   object btnQuatro: TButton
+    Tag = 4
     Left = 8
     Top = 98
     Width = 66
@@ -85,6 +88,7 @@ object frmPrincipal: TfrmPrincipal
     OnClick = EnviarComando
   end
   object btnCinco: TButton
+    Tag = 5
     Left = 80
     Top = 99
     Width = 66
@@ -100,6 +104,7 @@ object frmPrincipal: TfrmPrincipal
     OnClick = EnviarComando
   end
   object btnSete: TButton
+    Tag = 7
     Left = 8
     Top = 62
     Width = 66
@@ -115,6 +120,7 @@ object frmPrincipal: TfrmPrincipal
     OnClick = EnviarComando
   end
   object btnOito: TButton
+    Tag = 8
     Left = 80
     Top = 62
     Width = 66
@@ -130,6 +136,7 @@ object frmPrincipal: TfrmPrincipal
     OnClick = EnviarComando
   end
   object btnNove: TButton
+    Tag = 9
     Left = 152
     Top = 62
     Width = 66
@@ -145,6 +152,7 @@ object frmPrincipal: TfrmPrincipal
     OnClick = EnviarComando
   end
   object btnSeis: TButton
+    Tag = 6
     Left = 152
     Top = 98
     Width = 66
@@ -160,6 +168,7 @@ object frmPrincipal: TfrmPrincipal
     OnClick = EnviarComando
   end
   object btnUm: TButton
+    Tag = 1
     Left = 8
     Top = 135
     Width = 66
@@ -175,6 +184,7 @@ object frmPrincipal: TfrmPrincipal
     OnClick = EnviarComando
   end
   object btnSeparadorMilhar: TButton
+    Tag = 17
     Left = 152
     Top = 170
     Width = 66
@@ -184,6 +194,7 @@ object frmPrincipal: TfrmPrincipal
     OnClick = EnviarComando
   end
   object btnSomar: TButton
+    Tag = 10
     Left = 224
     Top = 62
     Width = 66
@@ -193,6 +204,7 @@ object frmPrincipal: TfrmPrincipal
     OnClick = EnviarComando
   end
   object btnSubtrair: TButton
+    Tag = 11
     Left = 224
     Top = 98
     Width = 66
@@ -202,6 +214,7 @@ object frmPrincipal: TfrmPrincipal
     OnClick = EnviarComando
   end
   object btnDividir: TButton
+    Tag = 12
     Left = 224
     Top = 134
     Width = 66
@@ -211,6 +224,7 @@ object frmPrincipal: TfrmPrincipal
     OnClick = EnviarComando
   end
   object btnMultiplicar: TButton
+    Tag = 13
     Left = 224
     Top = 170
     Width = 66
@@ -220,6 +234,7 @@ object frmPrincipal: TfrmPrincipal
     OnClick = EnviarComando
   end
   object btnC: TButton
+    Tag = 19
     Left = 8
     Top = 171
     Width = 66
@@ -246,8 +261,9 @@ object frmPrincipal: TfrmPrincipal
     Text = '0'
   end
   object btnIgual: TButton
-    Left = 224
-    Top = 207
+    Tag = 18
+    Left = 223
+    Top = 206
     Width = 66
     Height = 30
     Caption = '='
@@ -255,6 +271,7 @@ object frmPrincipal: TfrmPrincipal
     OnClick = EnviarComando
   end
   object btnImpostoA: TButton
+    Tag = 14
     Left = 8
     Top = 206
     Width = 66
@@ -270,6 +287,7 @@ object frmPrincipal: TfrmPrincipal
     OnClick = EnviarComando
   end
   object btnImpostoB: TButton
+    Tag = 15
     Left = 80
     Top = 207
     Width = 66
@@ -285,6 +303,7 @@ object frmPrincipal: TfrmPrincipal
     OnClick = EnviarComando
   end
   object btnImpostoC: TButton
+    Tag = 16
     Left = 152
     Top = 207
     Width = 66

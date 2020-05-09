@@ -26,10 +26,14 @@ type
     btnDividir: TButton;
     btnMultiplicar: TButton;
     btnDiminuir: TButton;
-    btnIgual: TButton;
     btnApagar: TButton;
     redtHistorico: TRichEdit;
     btnHistorico: TButton;
+    btnImpostoA: TButton;
+    btnImpostoB: TButton;
+    btnImpostoC: TButton;
+    btnIgual: TButton;
+    btnNegativoPositivo: TButton;
     procedure FormKeyDown(Sender: TObject; var Key: Word;
       Shift: TShiftState);
     procedure btnSomarClick(Sender: TObject);
@@ -53,9 +57,14 @@ type
     procedure btnDiminuirClick(Sender: TObject);
     procedure btnHistoricoClick(Sender: TObject);
     procedure btnVirgulaClick(Sender: TObject);
+    procedure btnImpostoAClick(Sender: TObject);
+    procedure btnImpostoBClick(Sender: TObject);
+    procedure btnImpostoCClick(Sender: TObject);
+    procedure btnNegativoPositivoClick(Sender: TObject);
   private
     procedure digitarOperacao(poperacao:String);
     procedure digitarNumero(pnumero:String);
+    procedure montaHistorico(pHistorico, pResultado: string);
     { Private declarations }
   public
     { Public declarations }
@@ -100,6 +109,8 @@ procedure TEx1CalculadoraF.FormShow(Sender: TObject);
 begin
   Calculadora := TCalculadora.Create;
   redtHistorico.Clear;
+  btnHistorico.Click;
+  edtVisor.SetFocus;
 end;
 
 procedure TEx1CalculadoraF.btnSeteClick(Sender: TObject);
@@ -219,7 +230,7 @@ procedure TEx1CalculadoraF.btnHistoricoClick(Sender: TObject);
 begin
   redtHistorico.Visible := not redtHistorico.Visible;
   if redtHistorico.Visible then
-    Width := 410
+    Width := 436
   else
     Width := 225;
 end;
@@ -251,19 +262,76 @@ begin
 
   vOperacaoAtual := Calculadora.getOperacaoToConvert(poperacao);
 
-  edtVisor.Text := FloatToStr(Calculadora.calcular(edtVisor.Text, vOperacaoAtual, vHistorico));
+  edtVisor.Text := FloatToStr(Calculadora.calcularOperacao(edtVisor.Text, vOperacaoAtual, vHistorico));
+  edtHistorico.Text := vHistorico;
+
+  if (vOperacaoAtual = OpIgual) then
+  begin
+    with Calculadora do
+      montaHistorico(getHistoricoCalculo,getResultadotoString);
+  end;
+end;
+
+procedure TEx1CalculadoraF.montaHistorico(pHistorico, pResultado :string);
+begin                                           
+  begin
+    redtHistorico.Lines.Add(pHistorico);
+    redtHistorico.Lines.Add(pResultado);
+    redtHistorico.Lines.Add('');
+  end;
+end;
+
+procedure TEx1CalculadoraF.btnImpostoAClick(Sender: TObject);
+var
+  vHistorico: string;
+begin
+  vgDigitouOperacao := True;
+
+  edtVisor.Text := FloatToStr(Calculadora.calcularImpostoA(edtVisor.Text, vHistorico));
   edtHistorico.Text := vHistorico;
 
   with Calculadora do
-  begin
-    redtHistorico.Lines.Add('NumeroA: '+getnumeroAtoString);
-    redtHistorico.Lines.Add('NumeroB: '+getnumeroBtoString);
-    redtHistorico.Lines.Add('Operacao: '+getOperacaoToString(getOperacao));
-    redtHistorico.Lines.Add('Ultima Operacao: '+getOperacaoToString(getUltimaOperacao));
-    redtHistorico.Lines.Add('Historico: '+getHistoricoCalculo);
-    redtHistorico.Lines.Add('Resultado: '+getResultadotoString);
-    redtHistorico.Lines.Add('');
-  end;
+    montaHistorico(getHistoricoCalculo,getResultadotoString);
+end;
+
+procedure TEx1CalculadoraF.btnImpostoBClick(Sender: TObject);
+var
+  vHistorico: string;
+begin
+  vgDigitouOperacao := True;
+
+  edtVisor.Text := FloatToStr(Calculadora.calcularImpostoB(vHistorico));
+  edtHistorico.Text := vHistorico;
+
+  with Calculadora do
+    montaHistorico(getHistoricoCalculo,getResultadotoString);
+end;
+
+procedure TEx1CalculadoraF.btnImpostoCClick(Sender: TObject);
+var
+  vHistorico: string;
+begin
+  vgDigitouOperacao := True;
+
+  edtVisor.Text := FloatToStr(Calculadora.calcularImpostoC(vHistorico));
+  edtHistorico.Text := vHistorico;
+
+  with Calculadora do
+    montaHistorico(getHistoricoCalculo,getResultadotoString);
+end;
+
+procedure TEx1CalculadoraF.btnNegativoPositivoClick(Sender: TObject);
+begin
+  if (edtVisor.Text = '') then
+    Exit;
+
+  if StrToFloat(edtVisor.Text) = 0 then
+    Exit;
+
+  if StrToFloat(edtVisor.Text) > 0 then
+    edtVisor.Text := '-' + edtVisor.Text
+  else
+    edtVisor.Text := StringReplace(edtVisor.Text,'-','',[rfReplaceAll]);
 end;
 
 end.

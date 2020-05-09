@@ -16,6 +16,15 @@ type
     vnumeroB: Real;
 
     vResultado: Real;
+    
+    vVlImpostoA :Real;
+    vtemImpostoA :Boolean;
+
+    vVlImpostoB :Real;
+    vtemImpostoB :Boolean;
+
+    vVlImpostoC :Real;
+    vtemImpostoC :Boolean;
 
     voperacao: TOperacao;
     vUltimaOperacao :TOperacao;
@@ -35,10 +44,32 @@ type
     procedure setResultado(pvalor:Real);
     procedure setHistoricoCalculo(pvalor: String);
     procedure setUltimaOperacao(poperacao:TOperacao);
+
+    procedure setImpostoA(pvalor:Real);
+    function getImpostoA:Real;
+    function getImpostoAtoString:String;
+    procedure setTemImpostoA(pvalor:Boolean);
+    function temImpostoA:Boolean;
+
+    procedure setImpostoB(pvalor:Real);
+    function getImpostoB:Real;
+    function getImpostoBtoString:String;
+    procedure setTemImpostoB(pvalor:Boolean);
+    function temImpostoB:Boolean;
+
+    procedure setImpostoC(pvalor:Real);
+    function getImpostoC:Real;
+    procedure setTemImpostoC(pvalor:Boolean);
+    function temImpostoC:Boolean;
     { Private declarations }
     
   public
-    function calcular(pNumeroVisor:String; pOperacaoAtual :TOperacao; var pHistoricoCalculo:String):Real;
+    function calcularOperacao(pNumeroVisor:String; pOperacaoAtual :TOperacao; var pHistoricoCalculo:String):Real;
+
+    function calcularImpostoA(pVlBaseCalculo:String; var pHistoricoCalculo:String):Real;
+    function calcularImpostoB(var pHistoricoCalculo:String):Real;
+    function calcularImpostoC(var pHistoricoCalculo:String):Real;        
+
 
     function temNumeroA():Boolean;
     function getnumeroA:Real;
@@ -75,9 +106,12 @@ uses Variants, SysUtils;
 
 constructor TCalculadora.create;
 begin
-  vtemNumeroA := False;
-  vtemNumeroB := False;
+  vtemNumeroA    := False;
+  vtemNumeroB    := False;
   vEhPrimeiraVez := true;
+  vtemImpostoA   := False;
+  vtemImpostoB   := False;
+  vtemImpostoC   := False;
 end;
 
 function TCalculadora.getHistoricoCalculo: string;
@@ -286,7 +320,7 @@ begin
   vHistoricoCalculo := pvalor;
 end;
 
-function TCalculadora.calcular(pNumeroVisor:String; pOperacaoAtual :TOperacao; var pHistoricoCalculo:String): Real;
+function TCalculadora.calcularOperacao(pNumeroVisor:String; pOperacaoAtual :TOperacao; var pHistoricoCalculo:String): Real;
 var vlcalculou:Boolean;
     vlNumeroA, vlNumeroB :Real;
 begin
@@ -355,24 +389,8 @@ begin
     setOperacao(getUltimaOperacao);
   end;
 
-//  //se a operacao e a ultima operacao forem as mesmas e diferentes de "=", não faz nada, continua mesmo historico e mesmo resultado
-//  //ex: 110+50- resultado 160
-//  if (pOperacaoAtual <> opIgual) and (pOperacaoAtual = getUltimaOperacao)then
-//  begin
-//    pHistoricoCalculo := getHistoricoCalculo;
-//    result := getResultado;
-//    Exit;
-//  end;
-
   vlNumeroA := getnumeroA;
   vlNumeroB := getnumeroB;
-
-//    //se digitou outra operacao e depois "=", pega o ultimo resultado e o atual e recalcula com a nova operação
-//    if (getOperacao <> pOperacaoAtual) and (pOperacaoAtual = OpIgual) then
-//    begin
-//      vlNumeroA := getResultado;
-//      vlNumeroB := getResultado;
-//    end;
 
   setUltimaOperacao(pOperacaoAtual);
   case getOperacao of
@@ -416,6 +434,177 @@ begin
     5 : result := opMultiplicacao;
     6 : result := opIgual;
   end;
+end;
+
+function TCalculadora.getImpostoA: Real;
+begin
+  Result := vVlImpostoA;
+end;
+
+function TCalculadora.getImpostoB: Real;
+begin
+  Result := vVlImpostoB;
+end;
+
+function TCalculadora.getImpostoC: Real;
+begin
+  Result := vVlImpostoC;
+end;
+
+procedure TCalculadora.setImpostoA(pvalor: Real);
+begin
+  vVlImpostoA := pvalor;
+end;
+
+procedure TCalculadora.setImpostoB(pvalor: Real);
+begin
+  vVlImpostoB := pvalor;
+end;
+
+procedure TCalculadora.setImpostoC(pvalor: Real);
+begin
+  vVlImpostoC := pvalor;
+end;
+
+procedure TCalculadora.setTemImpostoA(pvalor: Boolean);
+begin
+  vtemImpostoA := pvalor;
+end;
+
+procedure TCalculadora.setTemImpostoB(pvalor: Boolean);
+begin
+  vtemImpostoB := pvalor;
+end;
+
+procedure TCalculadora.setTemImpostoC(pvalor: Boolean);
+begin
+  vtemImpostoC := pvalor;
+end;
+
+function TCalculadora.temImpostoA: Boolean;
+begin
+  result := vtemImpostoA;
+end;
+
+function TCalculadora.temImpostoB: Boolean;
+begin
+  result := vtemImpostoB;
+end;
+
+function TCalculadora.temImpostoC: Boolean;
+begin
+  result := vtemImpostoC;
+end;
+
+//* Utilizando a calculadora acima aumente as funcionalidades criando botões com cálculos específicos e
+//com os seguintes impostos abaixo em cada botão:
+
+//1º Parêntesis;
+//2º Expoentes;
+//3º Multiplicações e Divisões; (da esquerda para a direita)
+//4º Somas e Subtrações. (da esquerda para a direita)
+
+//Na ausência de parênteses, as operações realizam-se pela ordem seguinte:
+//
+//Factoriais
+//Cálculo de funções
+//Potências e raízes
+//Multiplicações e divisões
+//Adições e subtracções
+
+function TCalculadora.calcularImpostoA(pVlBaseCalculo:String;
+  var pHistoricoCalculo: String): Real;
+var vlVlBaseCaculo: Real;
+begin
+  if pVlBaseCalculo = '' then
+  begin
+    pHistoricoCalculo := 'ERRO: 1º Informe a Base de Calculo!';
+    setHistoricoCalculo(pHistoricoCalculo);
+    result := 0;
+    Exit;
+  end else
+    vlVlBaseCaculo := StrToFloat(pVlBaseCalculo);
+
+  //	* Imposto A = Base de Cálculo (Valor imposto na calculadora) * 20 % - 500.
+  result := vlVlBaseCaculo * 20/100 - 500;
+  pHistoricoCalculo := 'Imposto A: '
+                      +pVlBaseCalculo
+                      +' * 20% - 500 '
+                      +getOperacaoToString(opIgual);
+                      
+  setImpostoA(result);
+  setTemImpostoA(True);
+
+  setResultado(result);
+  setHistoricoCalculo(pHistoricoCalculo);
+end;
+
+function TCalculadora.calcularImpostoB(var pHistoricoCalculo: String): Real;
+begin
+
+  if not temImpostoA then
+  begin
+    pHistoricoCalculo := 'ERRO: 1º Calcule o Imposto A!';
+    setHistoricoCalculo(pHistoricoCalculo);
+    result := 0;
+    Exit;
+  end;
+
+  //	* Imposto B = Imposto A – 15.
+  result := getImpostoA - 15;
+  pHistoricoCalculo := 'Imposto B: '
+                      +getImpostoAtoString()
+                      +' - 15 '
+                      +getOperacaoToString(opIgual);
+
+  setImpostoB(Result);
+  setTemImpostoB(True);
+
+  setResultado(result);
+  setHistoricoCalculo(pHistoricoCalculo);
+end;
+
+function TCalculadora.calcularImpostoC(var pHistoricoCalculo: String): Real;
+begin
+  if not temImpostoA then
+  begin
+    pHistoricoCalculo := 'ERRO: 1º Calcule o Imposto A!';
+    setHistoricoCalculo(pHistoricoCalculo);
+    result := 0;
+    Exit;
+  end;
+
+  if not temImpostoB then
+  begin
+    pHistoricoCalculo := 'ERRO: 1º Calcule o Imposto B!';
+    setHistoricoCalculo(pHistoricoCalculo);
+    result := 0;
+    Exit;
+  end;  
+
+  //	* Imposto C = Imposto A + imposto B.
+  result := getImpostoA + getImpostoB;
+  pHistoricoCalculo := 'Imposto C: '
+                      +getImpostoAtoString()
+                      +getOperacaoToString(opAdicao)
+                      +getImpostoBtoString()
+                      +getOperacaoToString(opIgual);
+
+  setImpostoC(Result);
+  setTemImpostoC(True);
+
+  setResultado(result);
+  setHistoricoCalculo(pHistoricoCalculo);
+end;
+
+function TCalculadora.getImpostoAtoString: String;
+begin
+  result := FloatToStr(vVlImpostoA);
+end;
+
+function TCalculadora.getImpostoBtoString: String;
+begin
+  result := FloatToStr(vVlImpostoB);
 end;
 
 end.

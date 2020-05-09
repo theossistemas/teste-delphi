@@ -306,6 +306,7 @@ begin
 //
 
   //gravar as operações, exceto a operação "=", para saber qual foi a ultima operação calculada
+  //ou seja, getOperacao nunca terá a operação opIgual
   if (pOperacaoAtual <> opIgual)then
     setOperacao(pOperacaoAtual);
 
@@ -317,22 +318,51 @@ begin
     end else
     begin
       setnumeroB(pNumeroVisor);
-    end;                                                                 
+    end;
   end;
 
+
   //se digitou a operacao "=" duas vezes seguidas, pega o ultimo resultado e o atual e recalcula com a ultima operação
-  if (pOperacaoAtual = OpIgual) and (pOperacaoAtual = getUltimaOperacao) then
+    if (pOperacaoAtual = OpIgual) and (pOperacaoAtual = getUltimaOperacao) then
      setnumeroA(getResultadotoString);
 
+  //se digitou a operação "=" e a ultima operação foi outra, pega o ultimo resultado e joga em A e o do visor em B
+  if (pOperacaoAtual = OpIgual) and (getUltimaOperacao <> OpIgual) and (pNumeroVisor <> '')then
+  begin
+    setnumeroA(getResultadotoString);
+    setnumeroB(pNumeroVisor);
+  end;
+
   //se digitou a operacao "=" ou outra operação e depois outra operacao,
-  //pega o resultado atual como numeroA e aguarde o numeroB (limpe-o);
-  if ((getUltimaOperacao = OpIgual)or (getUltimaOperacao <> pOperacaoAtual))
+  //pega o resultado atual como numeroA e aguarde o numeroB (limpe-o) e
+  //comece as contas novamente com o resultado e o proximo numero do visor.
+  if ((getUltimaOperacao = OpIgual)and (getUltimaOperacao <> pOperacaoAtual))
       and (pOperacaoAtual <> opIgual)
       and (getUltimaOperacao <> opIsNull) then
   begin
     setnumeroA(getResultadotoString);
-    vtemNumeroB := False;    
-  end;     
+    vtemNumeroB := False;
+    setEhPrimeiraVez(true);    
+  end;
+
+  //se digitou a operação diferente de "=" e a ultima operação foi outra diferente e diferente de "=",
+  //calcula com a ultima operação
+  //ex: 760-100+ resultado 660
+  if (pOperacaoAtual <> OpIgual)
+  and ((getUltimaOperacao <> OpIgual)and (getUltimaOperacao <> pOperacaoAtual))
+  and (getUltimaOperacao <> opIsNull)then
+  begin
+    setOperacao(getUltimaOperacao);
+  end;
+
+//  //se a operacao e a ultima operacao forem as mesmas e diferentes de "=", não faz nada, continua mesmo historico e mesmo resultado
+//  //ex: 110+50- resultado 160
+//  if (pOperacaoAtual <> opIgual) and (pOperacaoAtual = getUltimaOperacao)then
+//  begin
+//    pHistoricoCalculo := getHistoricoCalculo;
+//    result := getResultado;
+//    Exit;
+//  end;
 
   vlNumeroA := getnumeroA;
   vlNumeroB := getnumeroB;
@@ -368,7 +398,7 @@ begin
   end;
 
   result := getResultado;
-  
+
   if vlcalculou then
     setEhPrimeiraVez(False);
 
@@ -377,13 +407,14 @@ end;
 
 function TCalculadora.getOperacaoToConvert(poperacao: String): TOperacao;
 begin
-  case AnsiIndexStr(UpperCase(poperacao), ['', '+', '-', '/', 'X', '=']) of
+  case AnsiIndexStr(UpperCase(poperacao), ['', '+', '-', '/', '*', 'X', '=']) of
     0 : Result := opIsNull;
     1 : result := opAdicao;
     2 : result := opSubtracao;
     3 : result := opDivisao;
     4 : result := opMultiplicacao;
-    5 : result := opIgual;
+    5 : result := opMultiplicacao;
+    6 : result := opIgual;
   end;
 end;
 

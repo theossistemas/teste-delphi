@@ -1,8 +1,8 @@
 object Ex1CalculadoraF: TEx1CalculadoraF
   Left = 457
   Top = 204
-  Width = 410
-  Height = 359
+  Width = 411
+  Height = 360
   Caption = 'Exerc'#237'cio 1 - Calculadora'
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -24,7 +24,7 @@ object Ex1CalculadoraF: TEx1CalculadoraF
     BorderStyle = bsNone
     Color = clBtnFace
     Enabled = False
-    TabOrder = 0
+    TabOrder = 19
   end
   object edtVisor: TEdit
     Left = 5
@@ -38,7 +38,7 @@ object Ex1CalculadoraF: TEx1CalculadoraF
     Font.Name = 'MS Sans Serif'
     Font.Style = []
     ParentFont = False
-    TabOrder = 1
+    TabOrder = 0
     OnKeyPress = edtVisorKeyPress
   end
   object btnSete: TButton
@@ -53,7 +53,7 @@ object Ex1CalculadoraF: TEx1CalculadoraF
     Font.Name = 'MS Sans Serif'
     Font.Style = [fsBold]
     ParentFont = False
-    TabOrder = 5
+    TabOrder = 4
     OnClick = btnSeteClick
   end
   object btnQuatro: TButton
@@ -68,7 +68,7 @@ object Ex1CalculadoraF: TEx1CalculadoraF
     Font.Name = 'MS Sans Serif'
     Font.Style = [fsBold]
     ParentFont = False
-    TabOrder = 9
+    TabOrder = 8
     OnClick = btnQuatroClick
   end
   object btnZero: TButton
@@ -83,7 +83,7 @@ object Ex1CalculadoraF: TEx1CalculadoraF
     Font.Name = 'MS Sans Serif'
     Font.Style = [fsBold]
     ParentFont = False
-    TabOrder = 17
+    TabOrder = 16
     OnClick = btnZeroClick
   end
   object bntUm: TButton
@@ -98,7 +98,7 @@ object Ex1CalculadoraF: TEx1CalculadoraF
     Font.Name = 'MS Sans Serif'
     Font.Style = [fsBold]
     ParentFont = False
-    TabOrder = 13
+    TabOrder = 12
     OnClick = bntUmClick
   end
   object btnOito: TButton
@@ -113,7 +113,7 @@ object Ex1CalculadoraF: TEx1CalculadoraF
     Font.Name = 'MS Sans Serif'
     Font.Style = [fsBold]
     ParentFont = False
-    TabOrder = 6
+    TabOrder = 5
     OnClick = btnOitoClick
   end
   object btnCinco: TButton
@@ -128,7 +128,7 @@ object Ex1CalculadoraF: TEx1CalculadoraF
     Font.Name = 'MS Sans Serif'
     Font.Style = [fsBold]
     ParentFont = False
-    TabOrder = 10
+    TabOrder = 9
     OnClick = btnCincoClick
   end
   object btnDois: TButton
@@ -143,7 +143,7 @@ object Ex1CalculadoraF: TEx1CalculadoraF
     Font.Name = 'MS Sans Serif'
     Font.Style = [fsBold]
     ParentFont = False
-    TabOrder = 14
+    TabOrder = 13
     OnClick = btnDoisClick
   end
   object btnVirgula: TButton
@@ -158,7 +158,7 @@ object Ex1CalculadoraF: TEx1CalculadoraF
     Font.Name = 'MS Sans Serif'
     Font.Style = [fsBold]
     ParentFont = False
-    TabOrder = 18
+    TabOrder = 17
     OnClick = btnVirgulaClick
   end
   object btnNove: TButton
@@ -173,7 +173,7 @@ object Ex1CalculadoraF: TEx1CalculadoraF
     Font.Name = 'MS Sans Serif'
     Font.Style = [fsBold]
     ParentFont = False
-    TabOrder = 7
+    TabOrder = 6
     OnClick = btnNoveClick
   end
   object btnSeis: TButton
@@ -188,7 +188,7 @@ object Ex1CalculadoraF: TEx1CalculadoraF
     Font.Name = 'MS Sans Serif'
     Font.Style = [fsBold]
     ParentFont = False
-    TabOrder = 11
+    TabOrder = 10
     OnClick = btnSeisClick
   end
   object btnTres: TButton
@@ -203,7 +203,7 @@ object Ex1CalculadoraF: TEx1CalculadoraF
     Font.Name = 'MS Sans Serif'
     Font.Style = [fsBold]
     ParentFont = False
-    TabOrder = 15
+    TabOrder = 14
     OnClick = btnTresClick
   end
   object btnLimpar: TButton
@@ -218,7 +218,7 @@ object Ex1CalculadoraF: TEx1CalculadoraF
     Font.Name = 'MS Sans Serif'
     Font.Style = []
     ParentFont = False
-    TabOrder = 2
+    TabOrder = 1
     OnClick = btnLimparClick
   end
   object btnSomar: TButton
@@ -233,7 +233,7 @@ object Ex1CalculadoraF: TEx1CalculadoraF
     Font.Name = 'MS Sans Serif'
     Font.Style = []
     ParentFont = False
-    TabOrder = 16
+    TabOrder = 15
     OnClick = btnSomarClick
   end
   object btnDividir: TButton
@@ -248,7 +248,7 @@ object Ex1CalculadoraF: TEx1CalculadoraF
     Font.Name = 'MS Sans Serif'
     Font.Style = []
     ParentFont = False
-    TabOrder = 4
+    TabOrder = 3
     OnClick = btnDividirClick
   end
   object btnMultiplicar: TButton
@@ -263,7 +263,7 @@ object Ex1CalculadoraF: TEx1CalculadoraF
     Font.Name = 'MS Sans Serif'
     Font.Style = []
     ParentFont = False
-    TabOrder = 8
+    TabOrder = 7
     OnClick = btnMultiplicarClick
   end
   object btnDiminuir: TButton
@@ -278,7 +278,7 @@ object Ex1CalculadoraF: TEx1CalculadoraF
     Font.Name = 'MS Sans Serif'
     Font.Style = []
     ParentFont = False
-    TabOrder = 12
+    TabOrder = 11
     OnClick = btnDiminuirClick
   end
   object btnIgual: TButton
@@ -293,7 +293,7 @@ object Ex1CalculadoraF: TEx1CalculadoraF
     Font.Name = 'MS Sans Serif'
     Font.Style = []
     ParentFont = False
-    TabOrder = 19
+    TabOrder = 18
     OnClick = btnIgualClick
   end
   object btnApagar: TButton
@@ -308,7 +308,7 @@ object Ex1CalculadoraF: TEx1CalculadoraF
     Font.Name = 'MS Sans Serif'
     Font.Style = []
     ParentFont = False
-    TabOrder = 3
+    TabOrder = 2
     OnClick = btnApagarClick
   end
   object redtHistorico: TRichEdit
@@ -317,9 +317,10 @@ object Ex1CalculadoraF: TEx1CalculadoraF
     Width = 185
     Height = 318
     Lines.Strings = (
-      'redtHistorico')
+      '')
+    ReadOnly = True
     ScrollBars = ssBoth
-    TabOrder = 20
+    TabOrder = 21
   end
   object btnHistorico: TButton
     Left = 180
@@ -327,7 +328,7 @@ object Ex1CalculadoraF: TEx1CalculadoraF
     Width = 25
     Height = 25
     Caption = 'H'
-    TabOrder = 21
+    TabOrder = 20
     OnClick = btnHistoricoClick
   end
 end

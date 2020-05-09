@@ -4,7 +4,7 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, StdCtrls, ComCtrls, Buttons;
+  Dialogs, StdCtrls, ComCtrls, Buttons, Grids;
 
 type
   TEx1CalculadoraF = class(TForm)
@@ -169,9 +169,23 @@ end;
 
 procedure TEx1CalculadoraF.edtVisorKeyPress(Sender: TObject;
   var Key: Char);
+var vlOperacao :String;
 begin
-  if not(key in ['0'..'9'])then
+  if (key in [#13,'+', '-', '/', '*', '=']) then
+  begin
+    if Key = #13 then
+      vlOperacao := '='
+    else
+      vlOperacao := Key;
+      
+    digitarOperacao(vlOperacao);
     key := #0;//anula a tecla
+    edtVisor.SelectAll;
+  end else
+  if not(key in [#8,',','0'..'9'])then
+    key := #0;//anula a tecla
+
+
 end;
 
 procedure TEx1CalculadoraF.btnSomarClick(Sender: TObject);
@@ -232,7 +246,7 @@ var
 begin
   if edtVisor.Text = '' then
     Exit;
-    
+
   vgDigitouOperacao := True;
 
   vOperacaoAtual := Calculadora.getOperacaoToConvert(poperacao);
@@ -246,7 +260,7 @@ begin
     redtHistorico.Lines.Add('NumeroB: '+getnumeroBtoString);
     redtHistorico.Lines.Add('Operacao: '+getOperacaoToString(getOperacao));
     redtHistorico.Lines.Add('Ultima Operacao: '+getOperacaoToString(getUltimaOperacao));
-    redtHistorico.Lines.Add('Historico: '+getHistoricoCalculo);    
+    redtHistorico.Lines.Add('Historico: '+getHistoricoCalculo);
     redtHistorico.Lines.Add('Resultado: '+getResultadotoString);
     redtHistorico.Lines.Add('');
   end;

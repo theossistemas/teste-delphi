@@ -11,6 +11,7 @@ object MenuPrincipalF: TMenuPrincipalF
   Font.Name = 'MS Sans Serif'
   Font.Style = []
   OldCreateOrder = False
+  OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 13
   object btnEx1Calculadora: TButton

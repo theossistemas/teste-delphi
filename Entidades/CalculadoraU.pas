@@ -7,7 +7,7 @@ interface
 type
   TOperacao = (opIsNull, opAdicao, opSubtracao, opMultiplicacao, opDivisao, opIgual);
   TCalculadora = class
-    //procedure teste(Sender: TObject);
+    
   private
     vnumeroA: Real;
     vtemNumeroA:Boolean;
@@ -88,8 +88,8 @@ type
     function getOperacao:TOperacao;
 
     function getUltimaOperacao:TOperacao;
-    function getOperacaoToString(poperacao:TOperacao):String;
-    function getOperacaoToConvert(poperacao:String):TOperacao;
+    class function getOperacaoToString(poperacao:TOperacao):String;
+    class function getOperacaoToConvert(poperacao:String):TOperacao;
 
     function getHistoricoCalculo:string;
     function ehPrimeiraVez():Boolean;
@@ -277,7 +277,7 @@ begin
   vUltimaOperacao := poperacao;
 end;
 
-function TCalculadora.getOperacaoToString(
+class function TCalculadora.getOperacaoToString(
   poperacao: TOperacao): String;
 begin
   case poperacao of
@@ -423,7 +423,7 @@ begin
   pHistoricoCalculo := getHistoricoCalculo;
 end;
 
-function TCalculadora.getOperacaoToConvert(poperacao: String): TOperacao;
+class function TCalculadora.getOperacaoToConvert(poperacao: String): TOperacao;
 begin
   case AnsiIndexStr(UpperCase(poperacao), ['', '+', '-', '/', '*', 'X', '=']) of
     0 : Result := opIsNull;

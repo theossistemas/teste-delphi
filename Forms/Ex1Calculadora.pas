@@ -61,6 +61,8 @@ type
     procedure btnImpostoBClick(Sender: TObject);
     procedure btnImpostoCClick(Sender: TObject);
     procedure btnNegativoPositivoClick(Sender: TObject);
+    procedure edtVisorKeyDown(Sender: TObject; var Key: Word;
+      Shift: TShiftState);
   private
     procedure digitarOperacao(poperacao:String);
     procedure digitarNumero(pnumero:String);
@@ -332,6 +334,12 @@ begin
     edtVisor.Text := '-' + edtVisor.Text
   else
     edtVisor.Text := StringReplace(edtVisor.Text,'-','',[rfReplaceAll]);
+end;
+
+procedure TEx1CalculadoraF.edtVisorKeyDown(Sender: TObject; var Key: Word;
+  Shift: TShiftState);
+begin
+  MenuPrincipalF.fecharForm(self, key);
 end;
 
 end.

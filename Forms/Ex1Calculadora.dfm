@@ -39,6 +39,7 @@ object Ex1CalculadoraF: TEx1CalculadoraF
     Font.Style = []
     ParentFont = False
     TabOrder = 3
+    OnKeyDown = edtVisorKeyDown
     OnKeyPress = edtVisorKeyPress
   end
   object btnSete: TButton

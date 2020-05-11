@@ -13,6 +13,19 @@ type
     dspAux: TDataSetProvider;
     dsAux: TDataSource;
     sqlMonitor: TSQLMonitor;
+    qrFuncionario: TSQLQuery;
+    qrFuncionarioID_FUNCIONARIO: TIntegerField;
+    qrFuncionarioNOME: TStringField;
+    qrFuncionarioCPF: TStringField;
+    qrFuncionarioVL_SALARIO: TFloatField;
+    dspFuncionario: TDataSetProvider;
+    dsFuncionario: TDataSource;
+    qrDependente: TSQLQuery;
+    qrDependenteID_DEPENDENTE: TIntegerField;
+    qrDependenteNOME: TStringField;
+    qrDependenteBO_CALCULA_IR: TStringField;
+    qrDependenteBO_CALCULA_INSS: TStringField;
+    qrDependenteID_FUNCIONARIO: TIntegerField;
     procedure SQLConnBeforeConnect(Sender: TObject);
   private
     { Private declarations }

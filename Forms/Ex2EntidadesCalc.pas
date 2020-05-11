@@ -14,8 +14,6 @@ type
     btnNovo: TButton;
     cdsAux: TClientDataSet;
     dsPrincipal: TDataSource;
-    qrFuncionario: TSQLQuery;
-    dspFuncionario: TDataSetProvider;
     cdsFuncionario: TClientDataSet;
     dsFuncionario: TDataSource;
     DBGrid1: TDBGrid;
@@ -27,20 +25,43 @@ type
     DBEdit3: TDBEdit;
     Label4: TLabel;
     DBEdit4: TDBEdit;
-    qrFuncionarioID_FUNCIONARIO: TIntegerField;
-    qrFuncionarioNOME: TStringField;
-    qrFuncionarioCPF: TStringField;
-    qrFuncionarioVL_SALARIO: TFloatField;
+    btnRemover: TButton;
+    cdsDependente: TClientDataSet;
     cdsFuncionarioID_FUNCIONARIO: TIntegerField;
     cdsFuncionarioNOME: TStringField;
     cdsFuncionarioCPF: TStringField;
     cdsFuncionarioVL_SALARIO: TFloatField;
-    btnRemover: TButton;
+    cdsFuncionarioqrDependente: TDataSetField;
+    grpDependentes: TGroupBox;
+    DBGrid2: TDBGrid;
+    dsDependente: TDataSource;
+    btnNovoDependente: TButton;
+    btnRemoverDependente: TButton;
+    Label5: TLabel;
+    DBEdit2: TDBEdit;
+    Label6: TLabel;
+    dbedtNOME_DEPENDENTE: TDBEdit;
+    cdsDependenteID_DEPENDENTE: TIntegerField;
+    cdsDependenteNOME: TStringField;
+    cdsDependenteBO_CALCULA_IR: TStringField;
+    cdsDependenteBO_CALCULA_INSS: TStringField;
+    cdsDependenteID_FUNCIONARIO: TIntegerField;
+    dbchkCALCULA_IR: TDBCheckBox;
+    dbchkCALCULA_INSS: TDBCheckBox;
+    medtVlIR: TMaskEdit;
+    medtVlINSS: TMaskEdit;
+    Label7: TLabel;
+    Label8: TLabel;
     procedure FormShow(Sender: TObject);
     procedure btnCancelarClick(Sender: TObject);
     procedure btnSalvarClick(Sender: TObject);
     procedure btnNovoClick(Sender: TObject);
     procedure btnRemoverClick(Sender: TObject);
+    procedure btnNovoDependenteClick(Sender: TObject);
+    procedure btnRemoverDependenteClick(Sender: TObject);
+    procedure cdsDependenteAfterInsert(DataSet: TDataSet);
+    procedure cdsFuncionarioAfterScroll(DataSet: TDataSet);
+    procedure FormCreate(Sender: TObject);
   private
     { Private declarations }
   public
@@ -93,7 +114,7 @@ var
 procedure TEx2EntidadesCalcF.FormShow(Sender: TObject);
 var i:Integer;
 begin
- try
+  try
    with ConnectionDMF do
    begin
     SQLConn.Close;
@@ -103,6 +124,7 @@ begin
    cdsFuncionario.Close;
    cdsFuncionario.Open;
    FormataCampos(cdsFuncionario,nil);
+   FormataCampos(cdsDependente,nil);
   except
     on e:Exception do
     begin
@@ -115,24 +137,6 @@ begin
           +#13+'- Se o Usuário e senha do banco estão corretos.'          
           ,self,1);
     end;
-  end;
-
-  Funcionario := TFuncionario.Create(1);
-  with Funcionario do
-  begin
-    Nome    := 'Wladeilson';
-    CPF     := 054377793944;
-    Salario := 3.000;
-
-    Dependentes.Add(TDependente.Create(1,'Fabiana Domingo das Neves', true, false,IdFuncionario));
-    Dependentes.Add(TDependente.Create(2,'Fernanda Santos de Almeida', true, false,IdFuncionario));
-    Dependentes.Add(TDependente.Create(3,'Josefa Cacilda dos Santos de Almeida', true, false,IdFuncionario));
-
-//    for i := 0 to Dependentes.Count -1 do
-//    begin
-//      cbbDependentes.AddItem(TDependente(Dependentes[i]).Nome, Dependentes[i]);
-//    end;
-
   end;
 end;
 
@@ -158,16 +162,79 @@ begin
     Insert;
     FieldByName('ID_FUNCIONARIO').AsInteger := Proximo('FUNCIONARIO', 'ID_FUNCIONARIO');
     dbedtNOME.SetFocus;
-  end;
-
+  end;   
 end;
 
 procedure TEx2EntidadesCalcF.btnRemoverClick(Sender: TObject);
 begin
-  if Pergunta('Deseja realmente remover esse funcionario(a)?', SElf) then
+  if Pergunta('Deseja realmente remover esse Funcionario(a)?', SElf) then
   begin
     cdsFuncionario.Delete;
   end;
+end;
+
+procedure TEx2EntidadesCalcF.btnNovoDependenteClick(Sender: TObject);
+begin
+  with cdsDependente do
+  begin
+    Insert;
+    FieldByName('ID_DEPENDENTE').AsInteger := ProximoFilho('DEPENDENTE', 'ID_DEPENDENTE', 'ID_FUNCIONARIO', cdsFuncionario.fieldbyName('ID_FUNCIONARIO').AsString);
+    dbedtNOME_DEPENDENTE.SetFocus;
+  end;
+end;
+
+procedure TEx2EntidadesCalcF.btnRemoverDependenteClick(Sender: TObject);
+begin
+  if Pergunta('Deseja realmente remover esse Dependente?', SElf) then
+  begin
+    cdsDependente.Delete;
+  end;
+end;
+
+procedure TEx2EntidadesCalcF.cdsDependenteAfterInsert(DataSet: TDataSet);
+begin
+  cdsDependente.FieldByName('BO_CALCULA_IR').AsString := 'NAO';
+  cdsDependente.FieldByName('BO_CALCULA_INSS').AsString := 'NAO';  
+end;
+
+procedure TEx2EntidadesCalcF.cdsFuncionarioAfterScroll(DataSet: TDataSet);
+var vIsCalculaIR, vIsCalculaINSS :Boolean;
+begin
+  with Funcionario do
+  begin
+    IdFuncionario := TClientDataSet(DataSet).FieldByName('ID_FUNCIONARIO').AsInteger;
+    Nome          := TClientDataSet(DataSet).FieldByName('NOME').AsString;
+    CPF           := TClientDataSet(DataSet).FieldByName('CPF').AsString;
+    Salario       := TClientDataSet(DataSet).FieldByName('VL_SALARIO').AsFloat;
+
+    Dependentes.Clear;
+    with cdsDependente do
+    begin
+      DisableControls;
+      First;
+      while not Eof do
+      begin
+        vIsCalculaIR   := FieldByName('BO_CALCULA_IR').AsString = 'SIM';
+        vIsCalculaINSS := FieldByName('BO_CALCULA_INSS').AsString = 'SIM';
+        Dependentes.Add(TDependente.Create(FieldByName('ID_DEPENDENTE').AsInteger
+                                          ,FieldByName('NOME').AsString
+                                          ,vIsCalculaIR
+                                          ,vIsCalculaINSS
+                                          ,FieldByName('ID_FUNCIONARIO').AsInteger));
+        Next;                                          
+      end;
+      First;
+      EnableControls;
+    end;
+
+    medtVlIR.Text := FloatToStr(CalculaIR);
+    medtVlINSS.Text := FloatToStr(CalculaINSS);
+  end;
+end;
+
+procedure TEx2EntidadesCalcF.FormCreate(Sender: TObject);
+begin
+  Funcionario := TFuncionario.Create();
 end;
 
 end.

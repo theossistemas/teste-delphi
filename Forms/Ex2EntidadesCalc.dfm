@@ -11,6 +11,7 @@ object Ex2EntidadesCalcF: TEx2EntidadesCalcF
   Font.Name = 'MS Sans Serif'
   Font.Style = []
   OldCreateOrder = False
+  OnCreate = FormCreate
   OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 13
@@ -39,12 +40,26 @@ object Ex2EntidadesCalcF: TEx2EntidadesCalcF
     FocusControl = DBEdit3
   end
   object Label4: TLabel
-    Left = 24
-    Top = 304
+    Left = 168
+    Top = 264
     Width = 47
     Height = 13
     Caption = 'Vl. Sal'#225'rio'
     FocusControl = DBEdit4
+  end
+  object Label7: TLabel
+    Left = 24
+    Top = 307
+    Width = 70
+    Height = 13
+    Caption = 'Vl IR Dedu'#231#227'o'
+  end
+  object Label8: TLabel
+    Left = 168
+    Top = 307
+    Width = 87
+    Height = 13
+    Caption = 'Vl. INSS Dedu'#231#227'o'
   end
   object btnCancelar: TBitBtn
     Left = 728
@@ -90,9 +105,9 @@ object Ex2EntidadesCalcF: TEx2EntidadesCalcF
   object DBEdit1: TDBEdit
     Left = 24
     Top = 200
-    Width = 134
+    Width = 81
     Height = 21
-    Color = clScrollBar
+    Color = clBtnFace
     DataField = 'ID_FUNCIONARIO'
     DataSource = dsFuncionario
     ReadOnly = True
@@ -101,7 +116,7 @@ object Ex2EntidadesCalcF: TEx2EntidadesCalcF
   object dbedtNOME: TDBEdit
     Left = 24
     Top = 240
-    Width = 500
+    Width = 278
     Height = 21
     DataField = 'NOME'
     DataSource = dsFuncionario
@@ -117,8 +132,8 @@ object Ex2EntidadesCalcF: TEx2EntidadesCalcF
     TabOrder = 6
   end
   object DBEdit4: TDBEdit
-    Left = 24
-    Top = 320
+    Left = 168
+    Top = 280
     Width = 134
     Height = 21
     DataField = 'VL_SALARIO'
@@ -134,6 +149,125 @@ object Ex2EntidadesCalcF: TEx2EntidadesCalcF
     TabOrder = 8
     OnClick = btnRemoverClick
   end
+  object grpDependentes: TGroupBox
+    Left = 312
+    Top = 120
+    Width = 577
+    Height = 265
+    Caption = 'Dependentes'
+    TabOrder = 9
+    object Label5: TLabel
+      Left = 24
+      Top = 176
+      Width = 84
+      Height = 13
+      Caption = 'Cod. Dependente'
+      FocusControl = DBEdit2
+    end
+    object Label6: TLabel
+      Left = 24
+      Top = 216
+      Width = 105
+      Height = 13
+      Caption = 'Nome do Dependente'
+      FocusControl = dbedtNOME_DEPENDENTE
+    end
+    object DBGrid2: TDBGrid
+      Left = 8
+      Top = 16
+      Width = 561
+      Height = 120
+      DataSource = dsDependente
+      ReadOnly = True
+      TabOrder = 0
+      TitleFont.Charset = DEFAULT_CHARSET
+      TitleFont.Color = clWindowText
+      TitleFont.Height = -11
+      TitleFont.Name = 'MS Sans Serif'
+      TitleFont.Style = []
+    end
+    object btnNovoDependente: TButton
+      Left = 16
+      Top = 136
+      Width = 75
+      Height = 25
+      Caption = 'Novo'
+      TabOrder = 1
+      OnClick = btnNovoDependenteClick
+    end
+    object btnRemoverDependente: TButton
+      Left = 96
+      Top = 136
+      Width = 75
+      Height = 25
+      Caption = 'Remover'
+      TabOrder = 2
+      OnClick = btnRemoverDependenteClick
+    end
+    object DBEdit2: TDBEdit
+      Left = 24
+      Top = 192
+      Width = 134
+      Height = 21
+      TabStop = False
+      Color = clBtnFace
+      DataField = 'ID_DEPENDENTE'
+      DataSource = dsDependente
+      ReadOnly = True
+      TabOrder = 3
+    end
+    object dbedtNOME_DEPENDENTE: TDBEdit
+      Left = 24
+      Top = 232
+      Width = 400
+      Height = 21
+      DataField = 'NOME'
+      DataSource = dsDependente
+      TabOrder = 4
+    end
+    object dbchkCALCULA_IR: TDBCheckBox
+      Left = 176
+      Top = 192
+      Width = 97
+      Height = 17
+      Caption = 'Calcula IR'
+      DataField = 'BO_CALCULA_IR'
+      DataSource = dsDependente
+      TabOrder = 5
+      ValueChecked = 'SIM'
+      ValueUnchecked = 'NAO'
+    end
+    object dbchkCALCULA_INSS: TDBCheckBox
+      Left = 264
+      Top = 192
+      Width = 97
+      Height = 17
+      Caption = 'Calcula INSS'
+      DataField = 'BO_CALCULA_INSS'
+      DataSource = dsDependente
+      TabOrder = 6
+      ValueChecked = 'SIM'
+      ValueUnchecked = 'NAO'
+    end
+  end
+  object medtVlIR: TMaskEdit
+    Left = 24
+    Top = 322
+    Width = 115
+    Height = 21
+    Color = clBtnFace
+    ReadOnly = True
+    TabOrder = 10
+  end
+  object medtVlINSS: TMaskEdit
+    Left = 168
+    Top = 321
+    Width = 115
+    Height = 21
+    Color = clBtnFace
+    ReadOnly = True
+    TabOrder = 11
+  end
   object cdsAux: TClientDataSet
     Aggregates = <>
     Params = <>
@@ -146,39 +280,13 @@ object Ex2EntidadesCalcF: TEx2EntidadesCalcF
     Left = 614
     Top = 58
   end
-  object qrFuncionario: TSQLQuery
-    MaxBlobSize = -1
-    Params = <>
-    SQL.Strings = (
-      'SELECT * FROM FUNCIONARIO')
-    SQLConnection = ConnectionDMF.SQLConn
-    Left = 680
-    Top = 24
-    object qrFuncionarioID_FUNCIONARIO: TIntegerField
-      FieldName = 'ID_FUNCIONARIO'
-      Required = True
-    end
-    object qrFuncionarioNOME: TStringField
-      FieldName = 'NOME'
-      Size = 100
-    end
-    object qrFuncionarioCPF: TStringField
-      FieldName = 'CPF'
-      Size = 15
-    end
-    object qrFuncionarioVL_SALARIO: TFloatField
-      FieldName = 'VL_SALARIO'
-    end
-  end
-  object dspFuncionario: TDataSetProvider
-    DataSet = qrFuncionario
-    Left = 718
-    Top = 24
-  end
   object cdsFuncionario: TClientDataSet
     Aggregates = <>
+    AggregatesActive = True
     Params = <>
     ProviderName = 'dspFuncionario'
+    RemoteServer = ConnectionDMF.Localconnection
+    AfterScroll = cdsFuncionarioAfterScroll
     Left = 756
     Top = 24
     object cdsFuncionarioID_FUNCIONARIO: TIntegerField
@@ -196,10 +304,49 @@ object Ex2EntidadesCalcF: TEx2EntidadesCalcF
     object cdsFuncionarioVL_SALARIO: TFloatField
       FieldName = 'VL_SALARIO'
     end
+    object cdsFuncionarioqrDependente: TDataSetField
+      FieldName = 'qrDependente'
+    end
   end
   object dsFuncionario: TDataSource
     DataSet = cdsFuncionario
     Left = 787
     Top = 24
+  end
+  object cdsDependente: TClientDataSet
+    Aggregates = <>
+    AggregatesActive = True
+    DataSetField = cdsFuncionarioqrDependente
+    Params = <>
+    AfterInsert = cdsDependenteAfterInsert
+    Left = 736
+    Top = 96
+    object cdsDependenteID_DEPENDENTE: TIntegerField
+      FieldName = 'ID_DEPENDENTE'
+      Required = True
+    end
+    object cdsDependenteNOME: TStringField
+      FieldName = 'NOME'
+      Size = 100
+    end
+    object cdsDependenteBO_CALCULA_IR: TStringField
+      FieldName = 'BO_CALCULA_IR'
+      FixedChar = True
+      Size = 3
+    end
+    object cdsDependenteBO_CALCULA_INSS: TStringField
+      FieldName = 'BO_CALCULA_INSS'
+      FixedChar = True
+      Size = 3
+    end
+    object cdsDependenteID_FUNCIONARIO: TIntegerField
+      FieldName = 'ID_FUNCIONARIO'
+      Required = True
+    end
+  end
+  object dsDependente: TDataSource
+    DataSet = cdsDependente
+    Left = 808
+    Top = 88
   end
 end

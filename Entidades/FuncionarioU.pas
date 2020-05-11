@@ -43,25 +43,69 @@ type
   private
     fIdFuncionario : Integer;  
     fnome    :String;
-    fcpf     :Real;
+    fcpf     :String;
     fsalario :Real;
     fdependentes :TList;
   public
     property IdFuncionario: Integer read fIdFuncionario write fIdFuncionario;  
     property Nome: String read fNome write fNome;
-    property CPF: Real read fcpf write fcpf;
+    property CPF: String read fcpf write fcpf;
     property Salario: Real read fsalario write fsalario;
     property Dependentes: TList read fdependentes write fdependentes;
-    constructor create(pIdFuncionario:Integer);
+    constructor create();
+    function CalculaIR:Real;
+    function CalculaINSS:Real;
   end;
 
 implementation
 
 { TFuncionario }
 
-constructor TFuncionario.create(pIdFuncionario:Integer);
+function TFuncionario.CalculaINSS: Real;
+var vlINSS, vlBase:Real;
+    i:Integer;
 begin
-  IdFuncionario := pIdFuncionario;
+//* Cálculo de INSS e IR aplicado ao funcionário usando o valor do salário como base.
+//INSS - O cálculo de INSS será descontado 8% do valor do funcionário caso o dependente calcula INSS
+// 	* Ex. Funcionário que ganha 1000,00 e que tenha dois dependentes onde o IsCalculaIR e IsCalculaINSS estejam marcados.
+// 	* INSS = 1000,00 – 8% = 80,00
+  vlBase := Salario;
+  vlINSS := 0;
+  for i := 0 to Dependentes.Count -1 do
+  begin
+    with TDependente(Dependentes[i])do
+    begin
+      if IsCalculaINSS then
+        vlINSS := vlBase * (8/100);
+    end;
+  end;
+  Result := vlINSS;
+end;
+
+function TFuncionario.CalculaIR: Real;
+var vlIR, vlBase:Real;
+    i:Integer;
+begin
+//* Cálculo de INSS e IR aplicado ao funcionário usando o valor do salário como base.
+// 	* IR – O cálculo de IR será deduzido da base, salário 100 reais para cada dependente que possuir calcula IR
+//         e por fim desconta 15% do salário do funcionário.
+// 	* Ex. Funcionário que ganha 1000,00 e que tenha dois dependentes onde o IsCalculaIR e IsCalculaINSS estejam marcados.
+// 	* IR = 1000,00 - (2 * 100) = 800,00 – 15% = 120,00.
+  vlBase := Salario;
+  for i := 0 to Dependentes.Count -1 do
+  begin
+    with TDependente(Dependentes[i])do
+    begin
+      if IsCalculaIR then
+        vlBase := vlBase - 100;
+    end;
+  end;
+  vlIR := vlBase * (15/100);
+  Result := vlIR;
+end;
+
+constructor TFuncionario.create();
+begin
   fdependentes := TList.Create;
 end;
 

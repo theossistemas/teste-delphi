@@ -26,6 +26,9 @@ type
     btNove: TButton;
     btVirgula: TButton;
     btResetar: TButton;
+    btImpostoA: TButton;
+    btImpostoB: TButton;
+    btImpostoC: TButton;
 
     procedure btUmClick(Sender: TObject);
     procedure btDoisClick(Sender: TObject);
@@ -46,6 +49,9 @@ type
     procedure btDividirClick(Sender: TObject);
     procedure btResetarClick(Sender: TObject);
     procedure btVirgulaClick(Sender: TObject);
+    procedure btImpostoAClick(Sender: TObject);
+    procedure btImpostoBClick(Sender: TObject);
+    procedure btImpostoCClick(Sender: TObject);
   private
     oObjCalculadora: TCalculadora;
     bResetarVisor: boolean;
@@ -208,8 +214,23 @@ procedure TFrm_Calculadora.btVirgulaClick(Sender: TObject);
 begin
   if Pos(',', edtVisor.Text) > 0 then
     Exit;
-    
+
   InserirValorTela(Sender);
+end;
+
+procedure TFrm_Calculadora.btImpostoAClick(Sender: TObject);
+begin
+  edtVisor.Text := oObjCalculadora.CalcularImpostoA(edtVisor.Text);
+end;
+
+procedure TFrm_Calculadora.btImpostoBClick(Sender: TObject);
+begin
+  edtVisor.Text := oObjCalculadora.CalcularImpostoB;
+end;
+
+procedure TFrm_Calculadora.btImpostoCClick(Sender: TObject);
+begin
+  edtVisor.Text := oObjCalculadora.CalcularImpostoC;
 end;
 
 end.

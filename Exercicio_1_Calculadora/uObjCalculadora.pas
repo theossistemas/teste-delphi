@@ -15,11 +15,15 @@ type
     FUltimaTeclaOperacao: boolean;                 
     FOperacaoAtual: TOperacao;
     bRealizouCalculo: boolean;
+    FImpostoA: Real;
+    FImpostoB: Real;
+    FImpostoC: Real;
 
     procedure SetUltimaTeclaOperacao(const Value: boolean);
     procedure SetSegundoValor(const Value: String);           
     procedure SetPrimeiroValor(const Value: String);
     procedure SetOperacaoAtual(const Value: TOperacao);
+
     function AtualizarNumeros(const psNumero: String): String;
   public
     Constructor Create;
@@ -28,6 +32,14 @@ type
       const psNumeroVisor: String): String;
     function GetResultado(bClicouIgual: boolean = False): String;
     procedure ResetarValores;
+
+    function CalcularImpostoA(const psNumeroVisor: String): String;
+    function CalcularImpostoB: String;
+    function CalcularImpostoC: String;
+
+    procedure SetImpostoA(const pnImpostoA: Real);
+    procedure SetImpostoB(const pnImpostoB: Real);
+    procedure SetImpostoC(const pnImpostoC: Real);
   published
     property UltimaTeclaOperacao: boolean write SetUltimaTeclaOperacao;
     property PrimeiroValor: String write SetPrimeiroValor;
@@ -46,10 +58,7 @@ const
 constructor TCalculadora.Create;
 begin
   inherited;
-  FPrimeiroValor := STRING_INDEFINIDO;
-  FSegundoValor := STRING_INDEFINIDO;
-  bRealizouCalculo := False;
-  FUltimaTeclaOperacao := False;
+  ResetarValores;
 end;
 
 function TCalculadora.GetResultado(bClicouIgual: boolean = False): String;
@@ -102,6 +111,10 @@ begin
   FPrimeiroValor := STRING_INDEFINIDO;
   FSegundoValor := STRING_INDEFINIDO;
   bRealizouCalculo := False;
+  FImpostoA := 0;
+  FImpostoB := 0;
+  FImpostoC := 0;
+  FUltimaTeclaOperacao := False;
 end;
 
 function TCalculadora.AtualizarOperacao(const poOperacaoAtual: TOperacao;
@@ -156,6 +169,52 @@ end;
 procedure TCalculadora.SetOperacaoAtual(const Value: TOperacao);
 begin
   FOperacaoAtual := Value;
+end;
+
+function TCalculadora.CalcularImpostoA(const psNumeroVisor: String): String;
+var
+  AuxImposto: Real;
+begin
+  AuxImposto := StrToFloat(psNumeroVisor);
+  AuxImposto := (AuxImposto * 0.2) - 500;
+  if AuxImposto < 0 then
+    AuxImposto := 0;
+
+  FImpostoA := AuxImposto;
+  Result := FormatFloat(MASCARA_FLOAT, FImpostoA);
+end;
+
+function TCalculadora.CalcularImpostoB: String;
+var
+  AuxImposto: Real;
+begin
+  AuxImposto := FImpostoA - 15;
+  if AuxImposto < 0 then
+    AuxImposto := 0;
+
+  FImpostoB := AuxImposto;
+  Result := FormatFloat(MASCARA_FLOAT, FImpostoB);
+end;
+
+function TCalculadora.CalcularImpostoC: String;
+begin
+  FImpostoC := FImpostoA + FImpostoB;
+  Result := FormatFloat(MASCARA_FLOAT, FImpostoC);
+end;
+
+procedure TCalculadora.SetImpostoA(const pnImpostoA: Real);
+begin
+  FImpostoA := pnImpostoA;
+end;
+
+procedure TCalculadora.SetImpostoB(const pnImpostoB: Real);
+begin
+  FImpostoB := pnImpostoB;
+end;
+
+procedure TCalculadora.SetImpostoC(const pnImpostoC: Real);
+begin
+  FImpostoC := pnImpostoC;
 end;
 
 end.

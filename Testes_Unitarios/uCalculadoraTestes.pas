@@ -20,6 +20,9 @@ type
     procedure TestGetResultadoSemPrimeiroNumero;
     procedure TestGetResultadoSemSegundoNumero;
     procedure TestGetResultadoDivisaoZero;
+    procedure TestCalcularImpostoA;
+    procedure TestCalcularImpostoB;
+    procedure TestCalcularImpostoC;
   end;
 
 implementation
@@ -36,6 +39,33 @@ procedure TCalculadoraTestes.TearDown;
 begin
   inherited;
   FCalculadora.Free;
+end;
+
+procedure TCalculadoraTestes.TestCalcularImpostoA;
+var
+ nResultado: String;
+begin
+  nResultado := FCalculadora.CalcularImpostoA('4000');
+  CheckEquals('300',nResultado,'Cálculo do imposto A está incorreto.');
+end;
+
+procedure TCalculadoraTestes.TestCalcularImpostoB;
+var
+ nResultado: String;
+begin
+  FCalculadora.SetImpostoA(450);
+  nResultado := FCalculadora.CalcularImpostoB;
+  CheckEquals('435',nResultado,'Cálculo do imposto B está incorreto.');
+end;
+
+procedure TCalculadoraTestes.TestCalcularImpostoC;
+var
+ nResultado: String;
+begin
+  FCalculadora.SetImpostoA(1000);
+  FCalculadora.SetImpostoB(985);
+  nResultado := FCalculadora.CalcularImpostoC;
+  CheckEquals('1985',nResultado,'Cálculo do imposto C está incorreto.');
 end;
 
 procedure TCalculadoraTestes.TestGetResultadoDivisao;

@@ -1,11 +1,11 @@
 object Frm_Calculadora: TFrm_Calculadora
-  Left = 1000
+  Left = 859
   Top = 272
   BorderIcons = [biSystemMenu, biMinimize]
   BorderStyle = bsSingle
   Caption = 'Calculadora'
-  ClientHeight = 327
-  ClientWidth = 240
+  ClientHeight = 324
+  ClientWidth = 333
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -18,7 +18,7 @@ object Frm_Calculadora: TFrm_Calculadora
   PixelsPerInch = 96
   TextHeight = 13
   object edtVisor: TEdit
-    Left = 20
+    Left = 120
     Top = 14
     Width = 199
     Height = 37
@@ -35,7 +35,7 @@ object Frm_Calculadora: TFrm_Calculadora
     Text = '0'
   end
   object btSomar: TButton
-    Left = 169
+    Left = 269
     Top = 211
     Width = 50
     Height = 50
@@ -50,7 +50,7 @@ object Frm_Calculadora: TFrm_Calculadora
     OnClick = btSomarClick
   end
   object btResultado: TButton
-    Left = 169
+    Left = 269
     Top = 261
     Width = 50
     Height = 50
@@ -65,7 +65,7 @@ object Frm_Calculadora: TFrm_Calculadora
     OnClick = btResultadoClick
   end
   object btSubtrair: TButton
-    Left = 169
+    Left = 269
     Top = 161
     Width = 50
     Height = 50
@@ -80,7 +80,7 @@ object Frm_Calculadora: TFrm_Calculadora
     OnClick = btSubtrairClick
   end
   object btMultiplicar: TButton
-    Left = 169
+    Left = 269
     Top = 112
     Width = 50
     Height = 50
@@ -95,7 +95,7 @@ object Frm_Calculadora: TFrm_Calculadora
     OnClick = btMultiplicarClick
   end
   object btDividir: TButton
-    Left = 169
+    Left = 269
     Top = 63
     Width = 50
     Height = 50
@@ -110,7 +110,7 @@ object Frm_Calculadora: TFrm_Calculadora
     OnClick = btDividirClick
   end
   object btUm: TButton
-    Left = 21
+    Left = 121
     Top = 211
     Width = 50
     Height = 50
@@ -125,7 +125,7 @@ object Frm_Calculadora: TFrm_Calculadora
     OnClick = btUmClick
   end
   object btDois: TButton
-    Left = 70
+    Left = 170
     Top = 211
     Width = 50
     Height = 50
@@ -140,7 +140,7 @@ object Frm_Calculadora: TFrm_Calculadora
     OnClick = btDoisClick
   end
   object btTres: TButton
-    Left = 119
+    Left = 219
     Top = 211
     Width = 50
     Height = 50
@@ -155,7 +155,7 @@ object Frm_Calculadora: TFrm_Calculadora
     OnClick = btTresClick
   end
   object btZero: TButton
-    Left = 69
+    Left = 169
     Top = 261
     Width = 50
     Height = 50
@@ -170,7 +170,7 @@ object Frm_Calculadora: TFrm_Calculadora
     OnClick = btZeroClick
   end
   object btQuatro: TButton
-    Left = 21
+    Left = 121
     Top = 161
     Width = 50
     Height = 50
@@ -185,7 +185,7 @@ object Frm_Calculadora: TFrm_Calculadora
     OnClick = btQuatroClick
   end
   object btCinco: TButton
-    Left = 70
+    Left = 170
     Top = 161
     Width = 50
     Height = 50
@@ -200,7 +200,7 @@ object Frm_Calculadora: TFrm_Calculadora
     OnClick = btCincoClick
   end
   object btSeis: TButton
-    Left = 119
+    Left = 219
     Top = 161
     Width = 50
     Height = 50
@@ -215,7 +215,7 @@ object Frm_Calculadora: TFrm_Calculadora
     OnClick = btSeisClick
   end
   object btSete: TButton
-    Left = 21
+    Left = 121
     Top = 112
     Width = 50
     Height = 50
@@ -230,7 +230,7 @@ object Frm_Calculadora: TFrm_Calculadora
     OnClick = btSeteClick
   end
   object btOito: TButton
-    Left = 70
+    Left = 170
     Top = 112
     Width = 50
     Height = 50
@@ -245,7 +245,7 @@ object Frm_Calculadora: TFrm_Calculadora
     OnClick = btOitoClick
   end
   object btNove: TButton
-    Left = 119
+    Left = 219
     Top = 112
     Width = 50
     Height = 50
@@ -260,7 +260,7 @@ object Frm_Calculadora: TFrm_Calculadora
     OnClick = btNoveClick
   end
   object btVirgula: TButton
-    Left = 119
+    Left = 219
     Top = 261
     Width = 50
     Height = 50
@@ -275,7 +275,7 @@ object Frm_Calculadora: TFrm_Calculadora
     OnClick = btVirgulaClick
   end
   object btResetar: TButton
-    Left = 119
+    Left = 219
     Top = 63
     Width = 50
     Height = 50
@@ -288,5 +288,32 @@ object Frm_Calculadora: TFrm_Calculadora
     ParentFont = False
     TabOrder = 1
     OnClick = btResetarClick
+  end
+  object btImpostoA: TButton
+    Left = 16
+    Top = 72
+    Width = 97
+    Height = 33
+    Caption = 'Imposto A'
+    TabOrder = 18
+    OnClick = btImpostoAClick
+  end
+  object btImpostoB: TButton
+    Left = 16
+    Top = 110
+    Width = 97
+    Height = 33
+    Caption = 'Imposto B'
+    TabOrder = 19
+    OnClick = btImpostoBClick
+  end
+  object btImpostoC: TButton
+    Left = 16
+    Top = 148
+    Width = 97
+    Height = 33
+    Caption = 'Imposto C'
+    TabOrder = 20
+    OnClick = btImpostoCClick
   end
 end

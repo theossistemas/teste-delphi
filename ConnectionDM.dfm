@@ -52,7 +52,6 @@ object ConnectionDMF: TConnectionDMF
     Top = 40
   end
   object sqlMonitor: TSQLMonitor
-    Active = True
     AutoSave = True
     FileName = 'C:\WladSoft\teste-delphi\SQL.SQL'
     SQLConnection = SQLConn

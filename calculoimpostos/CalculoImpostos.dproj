@@ -132,6 +132,13 @@
             <DesignClass>TDataModule</DesignClass>
         </DCCReference>
         <DCCReference Include="controller\uDependenteController.pas"/>
+        <DCCReference Include="DAO\uDmFuncionarioDependente.pas">
+            <Form>DmFuncionarioDependente</Form>
+            <FormType>dfm</FormType>
+            <DesignClass>TDataModule</DesignClass>
+        </DCCReference>
+        <DCCReference Include="model\uFuncionarioDependente.pas"/>
+        <DCCReference Include="controller\uFuncionarioDependenteController.pas"/>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>

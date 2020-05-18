@@ -12,7 +12,10 @@ uses
   uFuncionarioController in 'controller\uFuncionarioController.pas',
   uDependente in 'model\uDependente.pas',
   uDmDependente in 'DAO\uDmDependente.pas' {DmDependente: TDataModule},
-  uDependenteController in 'controller\uDependenteController.pas';
+  uDependenteController in 'controller\uDependenteController.pas',
+  uDmFuncionarioDependente in 'DAO\uDmFuncionarioDependente.pas' {DmFuncionarioDependente: TDataModule},
+  uFuncionarioDependente in 'model\uFuncionarioDependente.pas',
+  uFuncionarioDependenteController in 'controller\uFuncionarioDependenteController.pas';
 
 {$R *.res}
 
@@ -21,5 +24,6 @@ begin
   Application.MainFormOnTaskbar := True;
   Application.CreateForm(TfrmPrincipal, frmPrincipal);
   Application.CreateForm(TDmConexao, DmConexao);
+  Application.CreateForm(TDmFuncionarioDependente, DmFuncionarioDependente);
   Application.Run;
 end.

@@ -245,11 +245,12 @@ object frmCadastroFuncionario: TfrmCadastroFuncionario
         end
         object btnIncluirDependente: TButton
           Left = 426
-          Top = 18
+          Top = 20
           Width = 75
           Height = 25
           Caption = '&Incluir'
           TabOrder = 3
+          OnClick = btnIncluirDependenteClick
         end
       end
     end

@@ -28,7 +28,7 @@ end;
 function TFuncionarioDependeteController.ExcluirTodos(iIDFuncionario: Integer;
   out sErro: String): Boolean;
 begin
-  Result := DmFuncionarioDependente.ExcluirTodos(iIDFuncionario);
+  Result := DmFuncionarioDependente.ExcluirTodos(iIDFuncionario, sErro);
 end;
 
 function TFuncionarioDependeteController.Inserir(

@@ -52,6 +52,7 @@ type
     procedure btnNovoClick(Sender: TObject);
     procedure btnGravarClick(Sender: TObject);
     procedure btnPesquisarClick(Sender: TObject);
+    procedure btnIncluirDependenteClick(Sender: TObject);
   private
     bFormatando: Boolean;
     oFuncoes: TFuncoes;
@@ -67,6 +68,7 @@ type
     procedure InserirNovoFuncionario;
     procedure PesquisarFuncionarios(sNome: String);
     procedure AdicionarDependente;
+    procedure MostrarDependentesTela;
   public
     { Public declarations }
   end;
@@ -112,6 +114,14 @@ begin
   end else begin
     //
   end;
+end;
+
+procedure TfrmCadastroFuncionario.btnIncluirDependenteClick(Sender: TObject);
+begin
+  AdicionarDependente();
+  LimparPainelCadastroDependente();
+  edtNomeDependente.SetFocus();
+  MostrarDependentesTela();
 end;
 
 procedure TfrmCadastroFuncionario.btnNovoClick(Sender: TObject);
@@ -271,6 +281,31 @@ begin
   chkINSS.Checked := False;
   chkIR.Checked := False;
   strgridDependentes.RowCount := 1;
+end;
+
+procedure TfrmCadastroFuncionario.MostrarDependentesTela;
+var
+  iNovaLinha: Integer;
+  oDependente: TDependente;
+begin
+  oDependente := TDependente.Create;
+  try
+    strgridDependentes.RowCount := 1;
+    for oDependente in oFuncionario.ListaDependentes do begin
+      iNovaLinha := strgridDependentes.RowCount;
+      strgridDependentes.RowCount := iNovaLinha + 1;
+      strgridDependentes.Cells[0, iNovaLinha] := IntToStr(oDependente.ID);
+      strgridDependentes.Cells[1, iNovaLinha] := oDependente.Nome;
+      if oDependente.IsCalculaINSS then begin
+        strgridDependentes.Cells[2, iNovaLinha] := 'X';
+      end;
+      if oDependente.IsCalculaIR then begin
+        strgridDependentes.Cells[3, iNovaLinha] := 'X';
+      end;
+    end;
+  finally
+    FreeAndNil(oDependente);
+  end;
 end;
 
 procedure TfrmCadastroFuncionario.CadastrarNovoFuncionario;

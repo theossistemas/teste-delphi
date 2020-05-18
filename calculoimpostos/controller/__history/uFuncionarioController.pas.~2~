@@ -44,7 +44,7 @@ end;
 
 function TFuncionarioController.GetIDNovoFuncionario: Integer;
 begin
-  Result := DmFuncionario.GetIDNovoFuncionario();
+  Result := DmFuncionario.GetIDNovoFuncionario;
 end;
 
 function TFuncionarioController.Inserir(oFuncionario: TFuncionario;

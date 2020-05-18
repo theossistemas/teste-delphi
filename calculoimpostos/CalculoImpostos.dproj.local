@@ -4,21 +4,21 @@
     <Transaction>2020/05/05 17:01:24.000.717,=C:\Users\Free\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
     <Transaction>2020/05/09 12:53:36.000.971,=C:\Users\Free\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
     <Transaction>2020/05/09 15:47:38.000.556,=C:\Users\Free\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
-    <Transaction>2020/05/09 15:48:05.000.832,C:\Users\Free\Documents\Embarcadero\Studio\Projects\Unit1.pas=C:\Daniel Moraes\teste-delphi\calculoimpostos\view\uFrmPrincipal.pas</Transaction>
     <Transaction>2020/05/09 15:48:05.000.832,C:\Users\Free\Documents\Embarcadero\Studio\Projects\Unit1.dfm=C:\Daniel Moraes\teste-delphi\calculoimpostos\view\uFrmPrincipal.dfm</Transaction>
+    <Transaction>2020/05/09 15:48:05.000.832,C:\Users\Free\Documents\Embarcadero\Studio\Projects\Unit1.pas=C:\Daniel Moraes\teste-delphi\calculoimpostos\view\uFrmPrincipal.pas</Transaction>
     <Transaction>2020/05/09 15:48:11.000.434,C:\Users\Free\Documents\Embarcadero\Studio\Projects\Project1.dproj=C:\Daniel Moraes\teste-delphi\calculoimpostos\CalculoImpostos.dproj</Transaction>
     <Transaction>2020/05/09 15:49:14.000.372,=C:\Daniel Moraes\teste-delphi\calculoimpostos\Unit2.pas</Transaction>
-    <Transaction>2020/05/09 15:49:25.000.614,C:\Daniel Moraes\teste-delphi\calculoimpostos\Unit2.pas=C:\Daniel Moraes\teste-delphi\calculoimpostos\view\uFrmCadastroCliente.pas</Transaction>
     <Transaction>2020/05/09 15:49:25.000.614,C:\Daniel Moraes\teste-delphi\calculoimpostos\Unit2.dfm=C:\Daniel Moraes\teste-delphi\calculoimpostos\view\uFrmCadastroCliente.dfm</Transaction>
+    <Transaction>2020/05/09 15:49:25.000.614,C:\Daniel Moraes\teste-delphi\calculoimpostos\Unit2.pas=C:\Daniel Moraes\teste-delphi\calculoimpostos\view\uFrmCadastroCliente.pas</Transaction>
     <Transaction>2020/05/18 09:53:37.000.114,C:\Daniel Moraes\teste-delphi\calculoimpostos\view\uFrmCadastroCliente.dfm=C:\Daniel Moraes\teste-delphi\calculoimpostos\view\uFrmCadastroPessoa.dfm</Transaction>
     <Transaction>2020/05/18 09:53:37.000.114,C:\Daniel Moraes\teste-delphi\calculoimpostos\view\uFrmCadastroCliente.pas=C:\Daniel Moraes\teste-delphi\calculoimpostos\view\uFrmCadastroPessoa.pas</Transaction>
     <Transaction>2020/05/18 10:35:02.000.754,=C:\Daniel Moraes\teste-delphi\calculoimpostos\Unit1.pas</Transaction>
-    <Transaction>2020/05/18 10:35:22.000.505,C:\Daniel Moraes\teste-delphi\calculoimpostos\Unit1.pas=C:\Daniel Moraes\teste-delphi\calculoimpostos\view\uFrmCalculoImpostos.pas</Transaction>
     <Transaction>2020/05/18 10:35:22.000.505,C:\Daniel Moraes\teste-delphi\calculoimpostos\Unit1.dfm=C:\Daniel Moraes\teste-delphi\calculoimpostos\view\uFrmCalculoImpostos.dfm</Transaction>
+    <Transaction>2020/05/18 10:35:22.000.505,C:\Daniel Moraes\teste-delphi\calculoimpostos\Unit1.pas=C:\Daniel Moraes\teste-delphi\calculoimpostos\view\uFrmCalculoImpostos.pas</Transaction>
     <Transaction>2020/05/18 10:52:35.000.459,=C:\Daniel Moraes\teste-delphi\calculoimpostos\Unit1.pas</Transaction>
     <Transaction>2020/05/18 10:52:45.000.738,C:\Daniel Moraes\teste-delphi\calculoimpostos\Unit1.pas=C:\Daniel Moraes\teste-delphi\calculoimpostos\view\uFuncoes.pas</Transaction>
-    <Transaction>2020/05/18 11:02:20.000.420,C:\Daniel Moraes\teste-delphi\calculoimpostos\view\uFrmCadastroPessoa.pas=C:\Daniel Moraes\teste-delphi\calculoimpostos\view\uFrmCadastroFuncionario.pas</Transaction>
     <Transaction>2020/05/18 11:02:20.000.420,C:\Daniel Moraes\teste-delphi\calculoimpostos\view\uFrmCadastroPessoa.dfm=C:\Daniel Moraes\teste-delphi\calculoimpostos\view\uFrmCadastroFuncionario.dfm</Transaction>
+    <Transaction>2020/05/18 11:02:20.000.420,C:\Daniel Moraes\teste-delphi\calculoimpostos\view\uFrmCadastroPessoa.pas=C:\Daniel Moraes\teste-delphi\calculoimpostos\view\uFrmCadastroFuncionario.pas</Transaction>
     <Transaction>2020/05/18 11:48:57.000.222,=C:\Daniel Moraes\teste-delphi\calculoimpostos\Unit1.pas</Transaction>
     <Transaction>2020/05/18 11:49:04.000.782,C:\Daniel Moraes\teste-delphi\calculoimpostos\DAO\uDmConexao.dfm=C:\Daniel Moraes\teste-delphi\calculoimpostos\Unit1.dfm</Transaction>
     <Transaction>2020/05/18 11:49:04.000.782,C:\Daniel Moraes\teste-delphi\calculoimpostos\DAO\uDmConexao.pas=C:\Daniel Moraes\teste-delphi\calculoimpostos\Unit1.pas</Transaction>
@@ -27,5 +27,7 @@
     <Transaction>2020/05/18 13:39:15.000.032,=C:\Daniel Moraes\teste-delphi\calculoimpostos\Unit1.pas</Transaction>
     <Transaction>2020/05/18 13:40:17.000.780,C:\Daniel Moraes\teste-delphi\calculoimpostos\DAO\uDmFuncionario.dfm=C:\Daniel Moraes\teste-delphi\calculoimpostos\Unit1.dfm</Transaction>
     <Transaction>2020/05/18 13:40:17.000.780,C:\Daniel Moraes\teste-delphi\calculoimpostos\DAO\uDmFuncionario.pas=C:\Daniel Moraes\teste-delphi\calculoimpostos\Unit1.pas</Transaction>
+    <Transaction>2020/05/18 14:02:50.000.082,=C:\Daniel Moraes\teste-delphi\calculoimpostos\Unit1.pas</Transaction>
+    <Transaction>2020/05/18 14:05:44.000.785,C:\Daniel Moraes\teste-delphi\calculoimpostos\Unit1.pas=C:\Daniel Moraes\teste-delphi\calculoimpostos\controller\uFuncionarioController.pas</Transaction>
   </Transactions>
 </BorlandProject>

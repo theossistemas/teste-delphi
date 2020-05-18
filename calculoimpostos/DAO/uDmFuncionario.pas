@@ -18,6 +18,7 @@ type
     function Atualizar(oFuncionario: TFuncionario; out sErro: String): Boolean;
     function Excluir(iID: Integer; out sErro: String): Boolean;
     function CPFJaCadastrado(sCPF: String): Boolean;
+    function GetIDNovoFuncionario: Integer;
   end;
 
 var
@@ -81,6 +82,22 @@ begin
         Result := False;
       end;
     end;
+  end;
+end;
+
+function TDmFuncionario.GetIDNovoFuncionario: Integer;
+var
+  sqlFunc: TSQLDataset;
+begin
+  sqlFunc := TSQLDataset.Create(nil);
+  try
+    sqlFunc.SQLConnection := DmConexao.SQLConexao;
+    sqlFunc.CommandText := 'SELECT GEN_ID(GEN_ID_FUNCIONARIO, 1) AS ID FROM RDB$DATABASE';
+    sqlFunc.Open;
+
+    Result := sqlFunc.FieldByName('ID').AsInteger;
+  finally
+    FreeAndNil(sqlFunc);
   end;
 end;
 

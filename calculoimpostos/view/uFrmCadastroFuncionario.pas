@@ -3,11 +3,15 @@ unit uFrmCadastroFuncionario;
 interface
 
 uses
-  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ExtCtrls, Vcl.StdCtrls, Vcl.Grids,
-  Vcl.ComCtrls, Vcl.Mask, uFuncoes, System.ImageList, Vcl.ImgList;
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants,
+  System.Classes, Vcl.Graphics, Vcl.Controls, Vcl.Forms,
+  Vcl.ExtCtrls, Vcl.StdCtrls, Vcl.Grids, Vcl.ComCtrls, Vcl.Mask, uFuncoes,
+  System.ImageList, Vcl.ImgList, uFuncionario, uFuncionarioController,
+  uDmFuncionario;
 
 type
+  TAcao = (actNovo, actAtualizar);
+
   TfrmCadastroFuncionario = class(TForm)
     pgCadastro: TPageControl;
     tbPesquisa: TTabSheet;
@@ -43,12 +47,20 @@ type
     procedure FormDestroy(Sender: TObject);
     procedure strgridDependentesDrawCell(Sender: TObject; ACol, ARow: Integer;
       Rect: TRect; State: TGridDrawState);
+    procedure btnCancelarClick(Sender: TObject);
+    procedure btnNovoClick(Sender: TObject);
   private
     bFormatando: Boolean;
     oFuncoes: TFuncoes;
+    oFuncionario: TFuncionario;
+    oAcao: TAcao;
     procedure FormatarGridPesquisa;
     procedure FormatarGriDependentes;
     procedure InicializarTela;
+    procedure CadastrarNovoFuncionario;
+    procedure CancelarCadastro;
+    procedure LimparPainelCadastro;
+    procedure LimparPainelCadastroDependente;
   public
     { Public declarations }
   end;
@@ -58,7 +70,29 @@ var
 
 implementation
 
+uses
+  Vcl.Dialogs;
+
 {$R *.dfm}
+
+procedure TfrmCadastroFuncionario.btnCancelarClick(Sender: TObject);
+begin
+  CancelarCadastro();
+end;
+
+procedure TfrmCadastroFuncionario.btnNovoClick(Sender: TObject);
+begin
+  CadastrarNovoFuncionario();
+end;
+
+procedure TfrmCadastroFuncionario.CancelarCadastro;
+begin
+  if MessageDlg('Deseja realmente cancelar o cadastro e perder os dados não'+
+    ' salvos?', mtWarning, [mbyes,mbno], 0) = mrYes then begin
+    pgCadastro.ActivePage := tbPesquisa;
+    FreeAndNil(oFuncionario);
+  end;
+end;
 
 procedure TfrmCadastroFuncionario.edtSalarioChange(Sender: TObject);
 begin
@@ -97,6 +131,7 @@ procedure TfrmCadastroFuncionario.FormCreate(Sender: TObject);
 begin
   oFuncoes := TFuncoes.Create;
   bFormatando := False;
+  DmFuncionario := TDmFuncionario.Create(nil);
   FormatarGridPesquisa();
   FormatarGriDependentes();
   InicializarTela();
@@ -105,6 +140,7 @@ end;
 procedure TfrmCadastroFuncionario.FormDestroy(Sender: TObject);
 begin
   FreeAndNil(oFuncoes);
+  FreeAndNil(DmFuncionario);
 end;
 
 procedure TfrmCadastroFuncionario.FormKeyPress(Sender: TObject; var Key: Char);
@@ -121,6 +157,46 @@ begin
   tbPesquisa.TabVisible := False;
   tbCadastro.TabVisible := False;
   pgCadastro.ActivePage := tbPesquisa;
+end;
+
+procedure TfrmCadastroFuncionario.LimparPainelCadastro;
+begin
+  edtNome.Text := '';
+  edtSalario.Text := '0,00';
+  edtCPF.Text := '';
+end;
+
+procedure TfrmCadastroFuncionario.LimparPainelCadastroDependente;
+begin
+  edtNomeDependente.Text := '';
+  chkINSS.Checked := False;
+  chkIR.Checked := False;
+  strgridDependentes.RowCount := 1;
+end;
+
+procedure TfrmCadastroFuncionario.CadastrarNovoFuncionario;
+var
+  oFuncionarioController: TFuncionarioController;
+begin
+  if Assigned(oFuncionario) then begin
+    FreeAndNil(oFuncionario);
+  end;
+  oFuncionario := TFuncionario.Create;
+
+  oFuncionarioController := TFuncionarioController.Create;
+  try
+    oFuncionario.ID := oFuncionarioController.GetIDNovoFuncionario;
+  finally
+    FreeAndNil(oFuncionarioController);
+  end;
+
+  LimparPainelCadastro;
+  LimparPainelCadastroDependente;
+
+  pgCadastro.ActivePage := tbCadastro;
+  edtNome.SetFocus;
+
+  oAcao := actNovo;
 end;
 
 procedure TfrmCadastroFuncionario.strgridDependentesDrawCell(Sender: TObject;

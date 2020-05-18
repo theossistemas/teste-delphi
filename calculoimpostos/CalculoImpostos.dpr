@@ -8,7 +8,8 @@ uses
   uFuncoes in 'view\uFuncoes.pas',
   uDmConexao in 'DAO\uDmConexao.pas' {DmConexao: TDataModule},
   uFuncionario in 'model\uFuncionario.pas',
-  uDmFuncionario in 'DAO\uDmFuncionario.pas' {DmFuncionario: TDataModule};
+  uDmFuncionario in 'DAO\uDmFuncionario.pas' {DmFuncionario: TDataModule},
+  uFuncionarioController in 'controller\uFuncionarioController.pas';
 
 {$R *.res}
 
@@ -17,6 +18,5 @@ begin
   Application.MainFormOnTaskbar := True;
   Application.CreateForm(TfrmPrincipal, frmPrincipal);
   Application.CreateForm(TDmConexao, DmConexao);
-  Application.CreateForm(TDmFuncionario, DmFuncionario);
   Application.Run;
 end.

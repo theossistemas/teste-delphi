@@ -24,7 +24,7 @@ object frmCadastroFuncionario: TfrmCadastroFuncionario
     Top = 0
     Width = 520
     Height = 397
-    ActivePage = tbCadastro
+    ActivePage = tbPesquisa
     Align = alClient
     TabOrder = 0
     object tbPesquisa: TTabSheet
@@ -45,6 +45,7 @@ object frmCadastroFuncionario: TfrmCadastroFuncionario
           Height = 25
           Caption = '&Novo'
           TabOrder = 0
+          OnClick = btnNovoClick
         end
         object btnAlterar: TButton
           Left = 89
@@ -109,6 +110,10 @@ object frmCadastroFuncionario: TfrmCadastroFuncionario
     object tbCadastro: TTabSheet
       Caption = 'tbCadastro'
       ImageIndex = 1
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       object pnlCadastro: TPanel
         Left = 0
         Top = 0
@@ -178,6 +183,7 @@ object frmCadastroFuncionario: TfrmCadastroFuncionario
           Height = 25
           Caption = '&Cancelar'
           TabOrder = 0
+          OnClick = btnCancelarClick
         end
         object btnGravar: TButton
           Left = 91

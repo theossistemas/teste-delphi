@@ -16,7 +16,6 @@ type
     function Atualizar(oFuncionario: TFuncionario; out sErro: String): Boolean;
     function Excluir(iID: Integer; out sErro: String): Boolean;
     function CPFJaCadastrado(sCPF: String): Boolean;
-    function GetIDNovoFuncionario: Integer;
   published
     { published declarations }
   end;
@@ -40,11 +39,6 @@ function TFuncionarioController.Excluir(iID: Integer;
   out sErro: String): Boolean;
 begin
   Result := DmFuncionario.Excluir(iID, sErro);
-end;
-
-function TFuncionarioController.GetIDNovoFuncionario: Integer;
-begin
-  Result := DmFuncionario.GetIDNovoFuncionario();
 end;
 
 function TFuncionarioController.Inserir(oFuncionario: TFuncionario;

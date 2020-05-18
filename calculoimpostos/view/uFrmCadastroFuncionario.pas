@@ -7,7 +7,8 @@ uses
   System.Classes, Vcl.Graphics, Vcl.Controls, Vcl.Forms,
   Vcl.ExtCtrls, Vcl.StdCtrls, Vcl.Grids, Vcl.ComCtrls, Vcl.Mask, uFuncoes,
   System.ImageList, Vcl.ImgList, uFuncionario, uFuncionarioController,
-  uDmFuncionario, System.StrUtils, System.Generics.Collections;
+  uDmFuncionario, System.StrUtils, System.Generics.Collections,
+  uDependente, uDependenteController;
 
 type
   TAcao = (actNovo, actAtualizar);
@@ -65,6 +66,7 @@ type
     procedure LimparPainelCadastroDependente;
     procedure InserirNovoFuncionario;
     procedure PesquisarFuncionarios(sNome: String);
+    procedure AdicionarDependente;
   public
     { Public declarations }
   end;
@@ -78,6 +80,25 @@ uses
   Vcl.Dialogs;
 
 {$R *.dfm}
+
+procedure TfrmCadastroFuncionario.AdicionarDependente;
+var
+  oDependente: TDependente;
+  oDependenteController: TDependenteController;
+begin
+  oDependente := TDependente.Create;
+  oDependenteController := TDependenteController.Create;
+  try
+    oDependente.ID := oDependenteController.GetIDNovoDependente();
+    oDependente.Nome := edtNomeDependente.Text;
+    oDependente.IsCalculaIR := chkIR.Checked;
+    oDependente.IsCalculaINSS := chkINSS.Checked;
+    oFuncionario.AdicionarDependente(oDependente);
+  finally
+    FreeAndNil(oDependente);
+    FreeAndNil(oDependenteController);
+  end;
+end;
 
 procedure TfrmCadastroFuncionario.btnCancelarClick(Sender: TObject);
 begin
@@ -151,11 +172,13 @@ end;
 
 procedure TfrmCadastroFuncionario.FormatarGriDependentes;
 begin
-  strgridDependentes.Cells[0, 0] := 'Nome dependente';
-  strgridDependentes.Cells[1, 0] := 'Calcula INSS';
-  strgridDependentes.Cells[2, 0] := 'Calcula IR';
-  strgridDependentes.ColWidths[0] := 300;
-  strgridDependentes.ColWidths[3] := 25;
+  strgridDependentes.Cells[0, 0] := 'Código';
+  strgridDependentes.ColWidths[0] := 50;
+  strgridDependentes.Cells[1, 0] := 'Nome dependente';
+  strgridDependentes.ColWidths[1] := 300;
+  strgridDependentes.Cells[2, 0] := 'Calcula INSS';
+  strgridDependentes.Cells[3, 0] := 'Calcula IR';
+  strgridDependentes.ColWidths[4] := 25;
 end;
 
 procedure TfrmCadastroFuncionario.FormatarGridPesquisa;
@@ -282,10 +305,10 @@ var
   iEixoX, iEixoY: Integer;
 begin
   //Incluindo imagens nas colunas que servirão como botões
-  if (ARow <> 0) And (ACol in [3]) then begin
+  if (ARow <> 0) And (ACol in [4]) then begin
     oBMP := TBitmap.Create;
     try
-      if ACol = 3 then begin
+      if ACol = 4 then begin
         imgList.GetBitmap(0, oBMP);
       end;
       iEixoX := Rect.Left + ((Rect.Right - Rect.Left) - oBMP.Width) div 2;

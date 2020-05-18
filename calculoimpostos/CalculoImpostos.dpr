@@ -9,7 +9,10 @@ uses
   uDmConexao in 'DAO\uDmConexao.pas' {DmConexao: TDataModule},
   uFuncionario in 'model\uFuncionario.pas',
   uDmFuncionario in 'DAO\uDmFuncionario.pas' {DmFuncionario: TDataModule},
-  uFuncionarioController in 'controller\uFuncionarioController.pas';
+  uFuncionarioController in 'controller\uFuncionarioController.pas',
+  uDependente in 'model\uDependente.pas',
+  uDmDependente in 'DAO\uDmDependente.pas' {DmDependente: TDataModule},
+  uDependenteController in 'controller\uDependenteController.pas';
 
 {$R *.res}
 

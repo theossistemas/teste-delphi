@@ -3,7 +3,7 @@ unit uFuncionarioController;
 interface
 
 uses
-  uFuncionario, uDmFuncionario, System.Generics.Collections;
+  uFuncionario, uDmFuncionario, System.Generics.Collections, uDependente;
 
 type
   TFuncionarioController = class

@@ -24,7 +24,7 @@ object frmCadastroFuncionario: TfrmCadastroFuncionario
     Top = 0
     Width = 520
     Height = 397
-    ActivePage = tbPesquisa
+    ActivePage = tbCadastro
     Align = alClient
     TabOrder = 0
     object tbPesquisa: TTabSheet
@@ -199,7 +199,6 @@ object frmCadastroFuncionario: TfrmCadastroFuncionario
         Width = 512
         Height = 226
         Align = alClient
-        ColCount = 4
         DefaultColWidth = 80
         DrawingStyle = gdsGradient
         FixedCols = 0

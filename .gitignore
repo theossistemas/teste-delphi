@@ -4,3 +4,14 @@ calculadora/__recovery
 calculadora/view/__history
 calculadora/view/__recovery
 calculadora/control/__history
+calculoimpostos/Win32/Debug
+calculoimpostos/__history
+calculoimpostos/__recovery
+calculoimpostos/view/__history
+calculoimpostos/view/__recovery
+calculoimpostos/control/__history
+calculoimpostos/control/__recovery
+calculoimpostos/model/__history
+calculoimpostos/model/__recovery
+calculoimpostos/DAO/__history
+calculoimpostos/DAO/__recovery

@@ -2,16 +2,16 @@
 <BorlandProject>
 	<Transactions>
     <Transaction>2020/05/05 16:57:51.000.151,=C:\Users\Free\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
-    <Transaction>2020/05/05 17:00:41.000.797,C:\Users\Free\Documents\Embarcadero\Studio\Projects\Unit1.dfm=C:\Daniel Moraes\teste-delphi\calculadora\view\uFrmPrincipal.dfm</Transaction>
-    <Transaction>2020/05/05 17:00:41.000.797,C:\Users\Free\Documents\Embarcadero\Studio\Projects\Unit1.pas=C:\Daniel Moraes\teste-delphi\calculadora\view\uFrmPrincipal.pas</Transaction>
-    <Transaction>2020/05/05 17:00:54.000.123,C:\Users\Free\Documents\Embarcadero\Studio\Projects\Project1.dproj=C:\Daniel Moraes\teste-delphi\calculadora\calculadora.dproj</Transaction>
+    <Transaction>2020/05/05 17:00:41.000.797,C:\Daniel Moraes\teste-delphi\calculadora\view\uFrmPrincipal.pas=C:\Users\Free\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2020/05/05 17:00:41.000.797,C:\Daniel Moraes\teste-delphi\calculadora\view\uFrmPrincipal.dfm=C:\Users\Free\Documents\Embarcadero\Studio\Projects\Unit1.dfm</Transaction>
+    <Transaction>2020/05/05 17:00:54.000.123,C:\Daniel Moraes\teste-delphi\calculadora\calculadora.dproj=C:\Users\Free\Documents\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
     <Transaction>2020/05/06 15:41:58.000.558,=C:\Daniel Moraes\teste-delphi\calculadora\Unit1.pas</Transaction>
-    <Transaction>2020/05/06 15:56:38.000.388,C:\Daniel Moraes\teste-delphi\calculadora\control\Calculadora.pas=C:\Daniel Moraes\teste-delphi\calculadora\Unit1.pas</Transaction>
+    <Transaction>2020/05/06 15:56:38.000.388,C:\Daniel Moraes\teste-delphi\calculadora\Unit1.pas=C:\Daniel Moraes\teste-delphi\calculadora\control\Calculadora.pas</Transaction>
     <Transaction>2020/05/06 16:21:17.000.494,=C:\Daniel Moraes\teste-delphi\calculadora\Unit1.pas</Transaction>
-    <Transaction>2020/05/06 16:21:37.000.047,C:\Daniel Moraes\teste-delphi\calculadora\Unit1.pas=C:\Daniel Moraes\teste-delphi\calculadora\control\uCalculadora.pas</Transaction>
+    <Transaction>2020/05/06 16:21:37.000.047,C:\Daniel Moraes\teste-delphi\calculadora\control\uCalculadora.pas=C:\Daniel Moraes\teste-delphi\calculadora\Unit1.pas</Transaction>
     <Transaction>2020/05/07 13:36:28.000.605,=C:\Daniel Moraes\teste-delphi\calculadora\Unit1.pas</Transaction>
-    <Transaction>2020/05/07 13:36:40.000.622,C:\Daniel Moraes\teste-delphi\calculadora\Unit1.pas=C:\Daniel Moraes\teste-delphi\calculadora\control\uFuncoes.pas</Transaction>
-    <Transaction>2020/05/08 08:29:12.930,=C:\Daniel Moraes\teste-delphi\calculadora\Unit1.pas</Transaction>
-    <Transaction>2020/05/08 08:29:22.721,C:\Daniel Moraes\teste-delphi\calculadora\control\uOperacoes.pas=C:\Daniel Moraes\teste-delphi\calculadora\Unit1.pas</Transaction>
+    <Transaction>2020/05/07 13:36:40.000.622,C:\Daniel Moraes\teste-delphi\calculadora\control\uFuncoes.pas=C:\Daniel Moraes\teste-delphi\calculadora\Unit1.pas</Transaction>
+    <Transaction>2020/05/08 08:29:12.000.930,=C:\Daniel Moraes\teste-delphi\calculadora\Unit1.pas</Transaction>
+    <Transaction>2020/05/08 08:29:22.000.721,C:\Daniel Moraes\teste-delphi\calculadora\Unit1.pas=C:\Daniel Moraes\teste-delphi\calculadora\control\uOperacoes.pas</Transaction>
   </Transactions>
 </BorlandProject>

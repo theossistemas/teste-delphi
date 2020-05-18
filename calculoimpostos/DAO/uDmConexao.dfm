@@ -4,7 +4,7 @@ object DmConexao: TDmConexao
   Height = 150
   Width = 215
   object SQLConexao: TSQLConnection
-    Left = 88
-    Top = 48
+    Left = 64
+    Top = 24
   end
 end

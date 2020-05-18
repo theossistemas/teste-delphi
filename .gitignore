@@ -9,8 +9,8 @@ calculoimpostos/__history
 calculoimpostos/__recovery
 calculoimpostos/view/__history
 calculoimpostos/view/__recovery
-calculoimpostos/control/__history
-calculoimpostos/control/__recovery
+calculoimpostos/controller/__history
+calculoimpostos/controller/__recovery
 calculoimpostos/model/__history
 calculoimpostos/model/__recovery
 calculoimpostos/DAO/__history

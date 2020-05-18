@@ -17,8 +17,7 @@ type
     function Excluir(iID: Integer; out sErro: String): Boolean;
     function CPFJaCadastrado(sCPF: String): Boolean;
     function GetIDNovoFuncionario: Integer;
-    function CarregarFuncionariosFiltroNome(sNome: String; out oListaFuncionarios: TObjectList<TFuncionario>): Integer;
-    function ValidarDados(oFuncionario: TFuncionario; out sMsg: String): Boolean;
+    function CarregarFuncionariosPeloNome(sNome: String; out oListaFuncionarios: TObjectList<TFuncionario>): Integer;
   published
     { published declarations }
   end;
@@ -33,10 +32,10 @@ begin
   Result := DmFuncionario.Atualizar(oFuncionario, sErro);
 end;
 
-function TFuncionarioController.CarregarFuncionariosFiltroNome(sNome: String;
+function TFuncionarioController.CarregarFuncionariosPeloNome(sNome: String;
   out oListaFuncionarios: TObjectList<TFuncionario>): Integer;
 begin
-  Result := DmFuncionario.CarregarFuncionariosFiltroNome(sNome, oListaFuncionarios);
+  Result := DmFuncionario.CarregarFuncionariosPeloNome(sNome, oListaFuncionarios);
 end;
 
 function TFuncionarioController.CPFJaCadastrado(sCPF: String): Boolean;
@@ -59,30 +58,6 @@ function TFuncionarioController.Inserir(oFuncionario: TFuncionario;
   out sErro: String): Boolean;
 begin
   Result := DmFuncionario.Inserir(oFuncionario, sErro);
-end;
-
-function TFuncionarioController.ValidarDados(oFuncionario: TFuncionario;
-  out sMsg: String): Boolean;
-begin
-  if (Length(oFuncionario.Nome) < 5) or (Length(oFuncionario.Nome) > 200) then begin
-    sMsg := 'O nome do funcionário deve ter no mínimo 5 e no máximo 200 caracteres!';
-    Result := False;
-    Exit;
-  end;
-
-  if Length(oFuncionario.CPF) <> 11 then begin
-    sMsg := 'O CPF do funcionário deve conter 11 caracteres!';
-    Result := False;
-    Exit;
-  end;
-
-  if oFuncionario.Salario <= 0 then begin
-    sMsg := 'O salário do funcionário deve ser maior que zero!';
-    Result := False;
-    Exit;
-  end;
-
-  Result := True;
 end;
 
 end.

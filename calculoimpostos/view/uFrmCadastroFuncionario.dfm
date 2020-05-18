@@ -64,7 +64,7 @@ object frmCadastroFuncionario: TfrmCadastroFuncionario
           TabOrder = 2
         end
       end
-      object strgridPessoas: TStringGrid
+      object strgridFuncionarios: TStringGrid
         Left = 0
         Top = 52
         Width = 512
@@ -78,6 +78,7 @@ object frmCadastroFuncionario: TfrmCadastroFuncionario
         FixedRows = 0
         Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goRangeSelect, goRowSelect]
         TabOrder = 1
+        ExplicitTop = 54
       end
       object pnlPesquisa: TPanel
         Left = 0
@@ -104,16 +105,13 @@ object frmCadastroFuncionario: TfrmCadastroFuncionario
           Height = 25
           Caption = '&Pesquisar'
           TabOrder = 1
+          OnClick = btnPesquisarClick
         end
       end
     end
     object tbCadastro: TTabSheet
       Caption = 'tbCadastro'
       ImageIndex = 1
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       object pnlCadastro: TPanel
         Left = 0
         Top = 0
@@ -192,6 +190,7 @@ object frmCadastroFuncionario: TfrmCadastroFuncionario
           Height = 25
           Caption = '&Gravar'
           TabOrder = 1
+          OnClick = btnGravarClick
         end
       end
       object strgridDependentes: TStringGrid

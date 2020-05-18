@@ -7,7 +7,7 @@ uses
   System.Classes, Vcl.Graphics, Vcl.Controls, Vcl.Forms,
   Vcl.ExtCtrls, Vcl.StdCtrls, Vcl.Grids, Vcl.ComCtrls, Vcl.Mask, uFuncoes,
   System.ImageList, Vcl.ImgList, uFuncionario, uFuncionarioController,
-  uDmFuncionario;
+  uDmFuncionario, System.StrUtils, System.Generics.Collections;
 
 type
   TAcao = (actNovo, actAtualizar);
@@ -18,7 +18,7 @@ type
     tbCadastro: TTabSheet;
     pnlRodape: TPanel;
     btnNovo: TButton;
-    strgridPessoas: TStringGrid;
+    strgridFuncionarios: TStringGrid;
     pnlPesquisa: TPanel;
     edtPesquisar: TLabeledEdit;
     btnAlterar: TButton;
@@ -49,6 +49,8 @@ type
       Rect: TRect; State: TGridDrawState);
     procedure btnCancelarClick(Sender: TObject);
     procedure btnNovoClick(Sender: TObject);
+    procedure btnGravarClick(Sender: TObject);
+    procedure btnPesquisarClick(Sender: TObject);
   private
     bFormatando: Boolean;
     oFuncoes: TFuncoes;
@@ -61,6 +63,8 @@ type
     procedure CancelarCadastro;
     procedure LimparPainelCadastro;
     procedure LimparPainelCadastroDependente;
+    procedure InserirNovoFuncionario;
+    procedure PesquisarFuncionarios(sNome: String);
   public
     { Public declarations }
   end;
@@ -80,9 +84,23 @@ begin
   CancelarCadastro();
 end;
 
+procedure TfrmCadastroFuncionario.btnGravarClick(Sender: TObject);
+begin
+  if oAcao = actNovo then begin
+    InserirNovoFuncionario();
+  end else begin
+    //
+  end;
+end;
+
 procedure TfrmCadastroFuncionario.btnNovoClick(Sender: TObject);
 begin
   CadastrarNovoFuncionario();
+end;
+
+procedure TfrmCadastroFuncionario.btnPesquisarClick(Sender: TObject);
+begin
+  PesquisarFuncionarios(edtPesquisar.Text);
 end;
 
 procedure TfrmCadastroFuncionario.CancelarCadastro;
@@ -91,6 +109,33 @@ begin
     ' salvos?', mtWarning, [mbyes,mbno], 0) = mrYes then begin
     pgCadastro.ActivePage := tbPesquisa;
     FreeAndNil(oFuncionario);
+  end;
+end;
+
+procedure TfrmCadastroFuncionario.PesquisarFuncionarios(sNome: String);
+var
+  listaFuncionarios: TObjectList<TFuncionario>;
+  oFuncionarioController: TFuncionarioController;
+  oFunc: TFuncionario;
+  iLinha: Integer;
+begin
+  oFuncionarioController := TFuncionarioController.Create;
+  listaFuncionarios := TObjectList<TFuncionario>.Create;
+  oFunc := TFuncionario.Create;
+  try
+    if oFuncionarioController.CarregarFuncionariosFiltroNome(sNome,
+      listaFuncionarios) > 0 then begin
+      strgridFuncionarios.RowCount := 1;
+      for oFunc in listaFuncionarios do begin
+        iLinha := strgridFuncionarios.RowCount;
+        strgridFuncionarios.RowCount := iLinha + 1;
+        strgridFuncionarios.Cells[0, iLinha] := IntToStr(oFunc.ID);
+        strgridFuncionarios.Cells[1, iLinha] := oFunc.Nome;
+      end;
+    end;
+  finally
+    FreeAndNil(oFuncionarioController);
+    FreeAndNil(oFunc);
   end;
 end;
 
@@ -115,9 +160,9 @@ end;
 
 procedure TfrmCadastroFuncionario.FormatarGridPesquisa;
 begin
-  strgridPessoas.Cells[0, 0] := 'Código';
-  strgridPessoas.Cells[1, 0] := 'Nome';
-  strgridPessoas.ColWidths[1] := 400;
+  strgridFuncionarios.Cells[0, 0] := 'Código';
+  strgridFuncionarios.Cells[1, 0] := 'Nome';
+  strgridFuncionarios.ColWidths[1] := 400;
 end;
 
 procedure TfrmCadastroFuncionario.FormClose(Sender: TObject;
@@ -157,6 +202,37 @@ begin
   tbPesquisa.TabVisible := False;
   tbCadastro.TabVisible := False;
   pgCadastro.ActivePage := tbPesquisa;
+  PesquisarFuncionarios('');
+end;
+
+procedure TfrmCadastroFuncionario.InserirNovoFuncionario;
+var
+  oFuncionarioController: TFuncionarioController;
+  sMsg: String;
+begin
+  oFuncionarioController := TFuncionarioController.Create;
+  try
+    oFuncionario.Nome := edtNome.Text;
+    oFuncionario.CPF := edtCPF.Text;
+    oFuncionario.Salario := StrToFloat(ReplaceStr(edtSalario.Text, '.', ''));
+
+    if not oFuncionarioController.ValidarDados(oFuncionario, sMsg) then begin
+      MessageDlg(sMsg, mtWarning, [mbok], 0);
+      Exit;
+    end;
+
+    if oFuncionarioController.Inserir(oFuncionario, sMsg) then begin
+      MessageDlg('Funcionário salvo com sucesso!', mtInformation, [mbok], 0);
+      pgCadastro.ActivePage := tbPesquisa;
+      edtPesquisar.Text := '';
+      PesquisarFuncionarios('');
+      FreeAndNil(oFuncionario);
+    end else begin
+      MessageDlg(sMsg, mtError, [mbok], 0);
+    end;
+  finally
+    FreeAndNil(oFuncionarioController);
+  end;
 end;
 
 procedure TfrmCadastroFuncionario.LimparPainelCadastro;

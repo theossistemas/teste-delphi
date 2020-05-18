@@ -24,7 +24,7 @@ object frmCadastroFuncionario: TfrmCadastroFuncionario
     Top = 0
     Width = 520
     Height = 397
-    ActivePage = TabSheet2
+    ActivePage = tbCadastro
     Align = alClient
     TabOrder = 0
     object tbPesquisa: TTabSheet
@@ -106,7 +106,7 @@ object frmCadastroFuncionario: TfrmCadastroFuncionario
         end
       end
     end
-    object TabSheet2: TTabSheet
+    object tbCadastro: TTabSheet
       Caption = 'tbCadastro'
       ImageIndex = 1
       object pnlCadastro: TPanel

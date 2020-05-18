@@ -11,7 +11,7 @@ type
   TfrmCadastroFuncionario = class(TForm)
     pgCadastro: TPageControl;
     tbPesquisa: TTabSheet;
-    TabSheet2: TTabSheet;
+    tbCadastro: TTabSheet;
     pnlRodape: TPanel;
     btnNovo: TButton;
     strgridPessoas: TStringGrid;
@@ -48,6 +48,7 @@ type
     oFuncoes: TFuncoes;
     procedure FormatarGridPesquisa;
     procedure FormatarGriDependentes;
+    procedure InicializarTela;
   public
     { Public declarations }
   end;
@@ -98,6 +99,7 @@ begin
   bFormatando := False;
   FormatarGridPesquisa();
   FormatarGriDependentes();
+  InicializarTela();
 end;
 
 procedure TfrmCadastroFuncionario.FormDestroy(Sender: TObject);
@@ -112,6 +114,13 @@ begin
     Perform(WM_NEXTDLGCTL, 0, 0);
   end;
 
+end;
+
+procedure TfrmCadastroFuncionario.InicializarTela;
+begin
+  tbPesquisa.TabVisible := False;
+  tbCadastro.TabVisible := False;
+  pgCadastro.ActivePage := tbPesquisa;
 end;
 
 procedure TfrmCadastroFuncionario.strgridDependentesDrawCell(Sender: TObject;

@@ -82,6 +82,12 @@ begin
     Exit;
   end;
 
+  if CPFJaCadastrado(oFuncionario.CPF) then begin
+  sMsg := 'O CPF '+oFuncionario.CPF+' já está cadastrado para outro funcionário!';
+    Result := False;
+    Exit;
+  end;
+
   Result := True;
 end;
 

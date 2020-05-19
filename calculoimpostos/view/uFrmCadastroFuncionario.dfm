@@ -78,7 +78,6 @@ object frmCadastroFuncionario: TfrmCadastroFuncionario
         FixedRows = 0
         Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goRangeSelect, goRowSelect]
         TabOrder = 1
-        ExplicitTop = 54
       end
       object pnlPesquisa: TPanel
         Left = 0
@@ -199,7 +198,7 @@ object frmCadastroFuncionario: TfrmCadastroFuncionario
         Width = 512
         Height = 226
         Align = alClient
-        DefaultColWidth = 80
+        DefaultColWidth = 70
         DrawingStyle = gdsGradient
         FixedCols = 0
         RowCount = 2

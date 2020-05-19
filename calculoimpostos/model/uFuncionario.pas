@@ -18,6 +18,8 @@ type
   protected
     { protected declarations }
   public
+    constructor Create;
+    destructor Destroy; override;
     procedure AdicionarDependente(oDependente: TDependente);
     function LocalizarDependente(iIDDependente: Integer): Integer;
     procedure ExcluirDependente(iIDDependente: Integer);
@@ -45,6 +47,17 @@ begin
   FListaDependentes[iIndice].IsCalculaIR := oDependente.IsCalculaIR;
   FListaDependentes[iIndice].IsCalculaINSS := oDependente.IsCalculaINSS;
   FListaDependentes[iIndice].Status := TStatus.stNovo;
+end;
+
+constructor TFuncionario.Create;
+begin
+  FListaDependentes := TObjectList<TDependente>.Create;
+end;
+
+destructor TFuncionario.Destroy;
+begin
+  FreeAndNil(FListaDependentes);
+  inherited;
 end;
 
 procedure TFuncionario.ExcluirDependente(iIDDependente: Integer);

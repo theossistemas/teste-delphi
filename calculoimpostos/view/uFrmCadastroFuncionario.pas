@@ -8,7 +8,8 @@ uses
   Vcl.ExtCtrls, Vcl.StdCtrls, Vcl.Grids, Vcl.ComCtrls, Vcl.Mask, uFuncoes,
   System.ImageList, Vcl.ImgList, uFuncionario, uFuncionarioController,
   uDmFuncionario, System.StrUtils, System.Generics.Collections,
-  uDependente, uDependenteController;
+  uDependente, uDependenteController, System.UITypes, uDmDependente,
+  uDmFuncionarioDependente;
 
 type
   TAcao = (actNovo, actAtualizar);
@@ -185,7 +186,7 @@ begin
   strgridDependentes.Cells[0, 0] := 'Código';
   strgridDependentes.ColWidths[0] := 50;
   strgridDependentes.Cells[1, 0] := 'Nome dependente';
-  strgridDependentes.ColWidths[1] := 300;
+  strgridDependentes.ColWidths[1] := 260;
   strgridDependentes.Cells[2, 0] := 'Calcula INSS';
   strgridDependentes.Cells[3, 0] := 'Calcula IR';
   strgridDependentes.ColWidths[4] := 25;
@@ -210,6 +211,8 @@ begin
   oFuncoes := TFuncoes.Create;
   bFormatando := False;
   DmFuncionario := TDmFuncionario.Create(nil);
+  DmDependente := TDmDependente.Create(nil);
+  DmFuncionarioDependente := TDmFuncionarioDependente.Create(nil);
   FormatarGridPesquisa();
   FormatarGriDependentes();
   InicializarTela();
@@ -219,6 +222,8 @@ procedure TfrmCadastroFuncionario.FormDestroy(Sender: TObject);
 begin
   FreeAndNil(oFuncoes);
   FreeAndNil(DmFuncionario);
+  FreeAndNil(DmDependente);
+  FreeAndNil(DmFuncionarioDependente);
 end;
 
 procedure TfrmCadastroFuncionario.FormKeyPress(Sender: TObject; var Key: Char);
@@ -285,26 +290,20 @@ end;
 
 procedure TfrmCadastroFuncionario.MostrarDependentesTela;
 var
-  iNovaLinha: Integer;
-  oDependente: TDependente;
+  iNovaLinha, iIndice: Integer;
 begin
-  oDependente := TDependente.Create;
-  try
-    strgridDependentes.RowCount := 1;
-    for oDependente in oFuncionario.ListaDependentes do begin
-      iNovaLinha := strgridDependentes.RowCount;
-      strgridDependentes.RowCount := iNovaLinha + 1;
-      strgridDependentes.Cells[0, iNovaLinha] := IntToStr(oDependente.ID);
-      strgridDependentes.Cells[1, iNovaLinha] := oDependente.Nome;
-      if oDependente.IsCalculaINSS then begin
-        strgridDependentes.Cells[2, iNovaLinha] := 'X';
-      end;
-      if oDependente.IsCalculaIR then begin
-        strgridDependentes.Cells[3, iNovaLinha] := 'X';
-      end;
+  strgridDependentes.RowCount := 1;
+  for iIndice := 0 To oFuncionario.ListaDependentes.Count - 1 do begin
+    iNovaLinha := strgridDependentes.RowCount;
+    strgridDependentes.RowCount := iNovaLinha + 1;
+    strgridDependentes.Cells[0, iNovaLinha] := IntToStr(oFuncionario.ListaDependentes[iIndice].ID);
+    strgridDependentes.Cells[1, iNovaLinha] := oFuncionario.ListaDependentes[iIndice].Nome;
+    if oFuncionario.ListaDependentes[iIndice].IsCalculaINSS then begin
+      strgridDependentes.Cells[2, iNovaLinha] := 'X';
     end;
-  finally
-    FreeAndNil(oDependente);
+    if oFuncionario.ListaDependentes[iIndice].IsCalculaIR then begin
+      strgridDependentes.Cells[3, iNovaLinha] := 'X';
+    end;
   end;
 end;
 

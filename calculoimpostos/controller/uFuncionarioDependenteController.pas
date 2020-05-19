@@ -6,7 +6,7 @@ uses
   uFuncionarioDependente, uDmFuncionarioDependente;
 
 type
-  TFuncionarioDependeteController = class
+  TFuncionarioDependenteController = class
     public
       function Inserir(oFuncionarioDependente: TFuncionarioDependente;
         out sErro: String): Boolean;
@@ -19,19 +19,19 @@ implementation
 
 { TFuncionarioDependeteController }
 
-function TFuncionarioDependeteController.Excluir(
+function TFuncionarioDependenteController.Excluir(
   oFuncionarioDependente: TFuncionarioDependente; out sErro: String): Boolean;
 begin
   Result := DmFuncionarioDependente.Excluir(oFuncionarioDependente, sErro);
 end;
 
-function TFuncionarioDependeteController.ExcluirTodos(iIDFuncionario: Integer;
+function TFuncionarioDependenteController.ExcluirTodos(iIDFuncionario: Integer;
   out sErro: String): Boolean;
 begin
   Result := DmFuncionarioDependente.ExcluirTodos(iIDFuncionario, sErro);
 end;
 
-function TFuncionarioDependeteController.Inserir(
+function TFuncionarioDependenteController.Inserir(
   oFuncionarioDependente: TFuncionarioDependente; out sErro: String): Boolean;
 begin
   Result := DmFuncionarioDependente.Inserir(oFuncionarioDependente, sErro);

@@ -24,6 +24,5 @@ begin
   Application.MainFormOnTaskbar := True;
   Application.CreateForm(TfrmPrincipal, frmPrincipal);
   Application.CreateForm(TDmConexao, DmConexao);
-  Application.CreateForm(TDmFuncionarioDependente, DmFuncionarioDependente);
   Application.Run;
 end.

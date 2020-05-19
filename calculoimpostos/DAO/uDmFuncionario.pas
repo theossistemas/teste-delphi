@@ -4,7 +4,8 @@ interface
 
 uses
   System.SysUtils, System.Classes, Data.FMTBcd, Data.DB, Data.SqlExpr,
-  uDmConexao, uFuncionario, System.Generics.Collections;
+  uDmConexao, uFuncionario, System.Generics.Collections, uFuncionarioDependente,
+  uFuncionarioDependenteController, uDependenteController;
 
 type
   TDmFuncionario = class(TDataModule)
@@ -26,6 +27,9 @@ var
   DmFuncionario: TDmFuncionario;
 
 implementation
+
+uses
+  Data.DBXCommon;
 
 {%CLASSGROUP 'Vcl.Controls.TControl'}
 
@@ -103,19 +107,65 @@ begin
 end;
 
 function TDmFuncionario.Inserir(oFuncionario: TFuncionario; out sErro: String): Boolean;
+var
+  oTransacao: TDBXTransaction;
+  iIndice: Integer;
+  oDependenteController: TDependenteController;
+  oFuncionarioDependente: TFuncionarioDependente;
+  oFuncionarioDependenteController: TFuncionarioDependenteController;
 begin
   with SQLInserir do begin
     ParamByName('ID').AsInteger := oFuncionario.ID;
     ParamByName('NOME').AsString := oFuncionario.Nome;
     ParamByName('CPF').AsString := oFuncionario.CPF;
     ParamByName('SALARIO').AsFloat := oFuncionario.Salario;
+
+    oTransacao := DmConexao.SQLConexao.BeginTransaction;
     try
-      ExecSQL;
-      Result := True;
-    except on E:Exception do
-      begin
-        sErro := 'Erro ao tentar inserir funcionário!' + sLineBreak + E.Message;
-        Result := False;
+      try
+        //Insere o funcionário
+        ExecSQL;
+
+        if oFuncionario.ListaDependentes.Count > 0 then begin
+          oFuncionarioDependente := TFuncionarioDependente.Create;
+          oFuncionarioDependenteController := TFuncionarioDependenteController.Create;
+          oDependenteController := TDependenteController.Create;
+          for iIndice := 0 to oFuncionario.ListaDependentes.Count - 1 do begin
+            //Insere o dependente
+            if oDependenteController.Inserir(oFuncionario.ListaDependentes[iIndice], sErro) then begin
+              oFuncionarioDependente.IDFuncionario := oFuncionario.ID;
+              oFuncionarioDependente.IDDependente :=
+                oFuncionario.ListaDependentes[iIndice].ID;
+              //Insere a relação entre funcionário e dependente
+              if not oFuncionarioDependenteController.Inserir(
+                oFuncionarioDependente, sErro) then begin
+                raise Exception.Create(sErro);
+              end;
+            end else begin
+              raise Exception.Create(sErro);
+            end;
+          end;
+        end;
+        DmConexao.SQLConexao.CommitFreeAndNil(oTransacao);
+        Result := True;
+      except on E:Exception do
+        begin
+          sErro := 'Erro ao tentar inserir funcionário!' + sLineBreak + E.Message;
+          DmConexao.SQLConexao.RollbackFreeAndNil(oTransacao);
+          Result := False;
+        end;
+      end;
+    finally
+      if Assigned(oFuncionarioDependente) then begin
+        FreeAndNil(oFuncionarioDependente);
+      end;
+
+      if Assigned(oFuncionarioDependenteController) then begin
+        FreeAndNil(oFuncionarioDependenteController);
+      end;
+
+      if Assigned(oDependenteController) then begin
+        FreeAndNil(oDependenteController);
       end;
     end;
   end;

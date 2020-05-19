@@ -5,7 +5,7 @@ interface
 uses
   System.SysUtils, System.Classes, Data.FMTBcd, Data.DB, Data.SqlExpr,
   uDmConexao, uFuncionario, System.Generics.Collections, uFuncionarioDependente,
-  uFuncionarioDependenteController, uDependenteController;
+  uFuncionarioDependenteController, uDependenteController, uDependente;
 
 type
   TDmFuncionario = class(TDataModule)
@@ -21,6 +21,9 @@ type
     function CPFJaCadastrado(sCPF: String): Boolean;
     function GetIDNovoFuncionario: Integer;
     function CarregarFuncionariosFiltroNome(sNome: String; out oListaFuncionarios: TObjectList<TFuncionario>): Integer;
+    function CarregarFuncionario(iIDFuncionario: Integer;
+      out oFuncionario: TFuncionario): Boolean;
+    function CarregarDependentes(oFuncionario: TFuncionario): Integer;
   end;
 
 var
@@ -39,21 +42,71 @@ uses
 
 function TDmFuncionario.Atualizar(oFuncionario: TFuncionario;
   out sErro: String): Boolean;
+var
+  oFuncionarioDependente: TFuncionarioDependente;
+  oFuncionarioDependenteController: TFuncionarioDependenteController;
+  oDependenteController: TDependenteController;
+  iIndice: Integer;
 begin
-  with SQLAlterar do begin
-    ParamByName('ID').AsInteger := oFuncionario.ID;
-    ParamByName('NOME').AsString := oFuncionario.Nome;
-    ParamByName('CPF').AsString := oFuncionario.CPF;
-    ParamByName('SALARIO').AsFloat := oFuncionario.Salario;
-    try
-      ExecSQL;
-      Result := True;
-    except on E:Exception do
-      begin
-        sErro := 'Erro ao tentar atualizar funcionário!' + sLineBreak + E.Message;
-        Result := False;
+  try
+    with SQLAlterar do begin
+      ParamByName('ID').AsInteger := oFuncionario.ID;
+      ParamByName('NOME').AsString := oFuncionario.Nome;
+      ParamByName('CPF').AsString := oFuncionario.CPF;
+      ParamByName('SALARIO').AsFloat := oFuncionario.Salario;
+      try
+        //Alterando funcionário
+        ExecSQL;
+
+        if oFuncionario.ListaDependentes.Count > 0 then begin
+          oFuncionarioDependente := TFuncionarioDependente.Create;
+          oFuncionarioDependenteController := TFuncionarioDependenteController.Create;
+          oDependenteController := TDependenteController.Create;
+          for iIndice := 0 to oFuncionario.ListaDependentes.Count - 1 do begin
+            //Se for um novo dependente
+            if oFuncionario.ListaDependentes[iIndice].Status = TStatus.stNovo then begin
+              //Insere o dependente
+              if oDependenteController.Inserir(oFuncionario.ListaDependentes[iIndice], sErro) then begin
+                oFuncionarioDependente.IDFuncionario := oFuncionario.ID;
+                oFuncionarioDependente.IDDependente :=
+                  oFuncionario.ListaDependentes[iIndice].ID;
+                //Insere a relação entre funcionário e dependente
+                if not oFuncionarioDependenteController.Inserir(
+                  oFuncionarioDependente, sErro) then begin
+                  raise Exception.Create(sErro);
+                end;
+              end else begin
+                raise Exception.Create(sErro);
+              end;
+            end else if oFuncionario.ListaDependentes[iIndice].Status = TStatus.stExcluir then begin
+              //Exclui a relação entre funcionário e dependente
+              oFuncionarioDependente.IDFuncionario := oFuncionario.ID;
+                oFuncionarioDependente.IDDependente :=
+                  oFuncionario.ListaDependentes[iIndice].ID;
+              if oFuncionarioDependenteController.Excluir(
+                oFuncionarioDependente, sErro) then begin
+                //Exclui o dependente
+                if not oDependenteController.Excluir(
+                  oFuncionario.ListaDependentes[iIndice].ID, sErro) then begin
+                  raise Exception.Create(sErro);
+                end;
+              end else begin
+                raise Exception.Create(sErro);
+              end;
+            end;
+          end;
+        end;
+
+        Result := True;
+      except on E:Exception do
+        begin
+          sErro := 'Erro ao tentar atualizar funcionário!' + sLineBreak + E.Message;
+          Result := False;
+        end;
       end;
     end;
+  finally
+
   end;
 end;
 
@@ -168,6 +221,40 @@ begin
         FreeAndNil(oDependenteController);
       end;
     end;
+  end;
+end;
+
+function TDmFuncionario.CarregarDependentes(
+  oFuncionario: TFuncionario): Integer;
+begin
+  //
+end;
+
+function TDmFuncionario.CarregarFuncionario(iIDFuncionario: Integer;
+  out oFuncionario: TFuncionario): Boolean;
+var
+  sqlFuncionario: TSQLDataset;
+begin
+  sqlFuncionario := TSQLDataset.Create(nil);
+  try
+    with sqlFuncionario do begin
+      SQLConnection := DmConexao.SQLConexao;
+      CommandText := 'SELECT ID, NOME, CPF, SALARIO FROM FUNCIONARIO '+
+        'WHERE ID = '+IntToStr(iIDFuncionario);
+      Open;
+
+      if RecordCount > 0 then begin
+        oFuncionario.ID := FieldByName('ID').AsInteger;
+        oFuncionario.Nome := FieldByName('NOME').AsString;
+        oFuncionario.CPF := FieldByName('CPF').AsString;
+        oFuncionario.Salario := FieldByName('SALARIO').AsFloat;
+
+        //CarregarDependentes(oFuncionario);
+      end;
+    end;
+    Result := True;
+  finally
+    FreeAndNil(sqlFuncionario);
   end;
 end;
 

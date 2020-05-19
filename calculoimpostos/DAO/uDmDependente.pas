@@ -4,7 +4,7 @@ interface
 
 uses
   System.SysUtils, System.Classes, uDmConexao, Data.FMTBcd, Data.DB,
-  Data.SqlExpr, uDependente;
+  Data.SqlExpr, uDependente, System.Generics.Collections;
 
 type
   TDmDependente = class(TDataModule)
@@ -17,6 +17,8 @@ type
     function GetIDNovoDependente: Integer;
     function Inserir(oDependente: TDependente; out sErro: String): Boolean;
     function Excluir(iID: Integer; sErro: String): Boolean;
+    function CarregarDependentesDoFuncionario(iIDFuncionario: Integer;
+      out oListaDependentes: TObjectList<TDependente>): Integer;
   end;
 
 var
@@ -29,6 +31,37 @@ implementation
 {$R *.dfm}
 
 { TDmDependente }
+
+function TDmDependente.CarregarDependentesDoFuncionario(iIDFuncionario: Integer;
+  out oListaDependentes: TObjectList<TDependente>): Integer;
+var
+  sqlDependentes: TSQLDataset;
+  iIndice: Integer;
+begin
+  sqlDependentes := TSQLDataset.Create(nil);
+  try
+    with sqlDependentes do begin
+      SQLConnection := DmConexao.SQLConexao;
+      CommandText := 'SELECT FD.IDDEPENDENTE, DEP.NOME, DEP.CALCULAINSS, '+
+        'DEP.CALCULAIR FROM FUNCIONARIO_DEPENDENTE FD '+
+        'LEFT JOIN DEPENDENTE DEP ON DEP.ID = FD.IDDEPENDENTE '+
+        'WHERE FD.IDFUNCIONARIO = '+IntToStr(iIDFuncionario);
+      Open;
+
+      while not eof do begin
+        oListaDependentes.Add(TDependente.Create);
+        iIndice := oListaDependentes.Count - 1;
+        oListaDependentes[iIndice].ID := FieldByName('IDDEPENDENTE').AsInteger;
+        oListaDependentes[iIndice].Nome := FieldByName('NOME').AsString;
+        oListaDependentes[iIndice].IsCalculaIR := FieldByName('CALCULARIR').AsString = 'T';
+        oListaDependentes[iIndice].IsCalculaINSS := FieldByName('CALCULARINSS').AsString = 'T';
+        next;
+      end;
+    end;
+  finally
+    FreeAndNil(sqlDependentes);
+  end;
+end;
 
 function TDmDependente.Excluir(iID: Integer; sErro: String): Boolean;
 begin

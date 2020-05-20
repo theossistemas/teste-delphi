@@ -14,6 +14,8 @@ object frmCalculoImpostos: TfrmCalculoImpostos
   Font.Style = []
   OldCreateOrder = False
   Position = poScreenCenter
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
   PixelsPerInch = 96
   TextHeight = 13
   object pnlPrincipal: TPanel
@@ -75,13 +77,14 @@ object frmCalculoImpostos: TfrmCalculoImpostos
       Height = 13
       Caption = 'Valor do INSS'
     end
-    object cbxFunacionario: TComboBox
+    object cbxFuncionario: TComboBox
       Left = 10
       Top = 27
       Width = 188
       Height = 21
       TabOrder = 0
-      Text = 'cbxFunacionario'
+      Text = 'cbxFuncionario'
+      OnChange = cbxFuncionarioChange
     end
     object edtSalario: TEdit
       Left = 204

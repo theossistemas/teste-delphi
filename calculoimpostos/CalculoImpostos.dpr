@@ -4,7 +4,7 @@ uses
   Vcl.Forms,
   uFrmPrincipal in 'view\uFrmPrincipal.pas' {frmPrincipal},
   uFrmCadastroFuncionario in 'view\uFrmCadastroFuncionario.pas' {frmCadastroFuncionario},
-  uFrmCalculoImpostos in 'view\uFrmCalculoImpostos.pas' {frmCaluloImpostos},
+  uFrmCalculoImpostos in 'view\uFrmCalculoImpostos.pas' {frmCalculoImpostos},
   uFuncoes in 'view\uFuncoes.pas',
   uDmConexao in 'DAO\uDmConexao.pas' {DmConexao: TDataModule},
   uFuncionario in 'model\uFuncionario.pas',

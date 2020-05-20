@@ -25,5 +25,12 @@ object frmPrincipal: TfrmPrincipal
         OnClick = FuncionarioClick
       end
     end
+    object Impostos1: TMenuItem
+      Caption = 'Impostos'
+      object ClculodeImpostos1: TMenuItem
+        Caption = 'C'#225'lculo de Impostos'
+        OnClick = ClculodeImpostos1Click
+      end
+    end
   end
 end

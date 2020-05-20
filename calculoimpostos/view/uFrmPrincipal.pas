@@ -12,7 +12,10 @@ type
     menu: TMainMenu;
     Cadastro1: TMenuItem;
     Funcionario: TMenuItem;
+    Impostos1: TMenuItem;
+    ClculodeImpostos1: TMenuItem;
     procedure FuncionarioClick(Sender: TObject);
+    procedure ClculodeImpostos1Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -25,6 +28,15 @@ var
 implementation
 
 {$R *.dfm}
+
+procedure TfrmPrincipal.ClculodeImpostos1Click(Sender: TObject);
+begin
+  if (frmCalculoImpostos = nil) then begin
+    frmCalculoImpostos := TfrmCalculoImpostos.Create(Application);
+    frmCalculoImpostos.WindowState := wsNormal;
+    frmCalculoImpostos.Show;
+  end;
+end;
 
 procedure TfrmPrincipal.FuncionarioClick(Sender: TObject);
 begin

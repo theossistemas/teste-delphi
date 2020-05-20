@@ -109,7 +109,7 @@
             <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="view\uFrmCalculoImpostos.pas">
-            <Form>frmCaluloImpostos</Form>
+            <Form>frmCalculoImpostos</Form>
             <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="view\uFuncoes.pas"/>

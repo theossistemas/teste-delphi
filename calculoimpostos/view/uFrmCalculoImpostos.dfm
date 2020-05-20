@@ -4,8 +4,8 @@ object frmCalculoImpostos: TfrmCalculoImpostos
   BorderIcons = [biSystemMenu]
   BorderStyle = bsDialog
   Caption = '.: C'#225'lculo Impostos :.'
-  ClientHeight = 188
-  ClientWidth = 314
+  ClientHeight = 191
+  ClientWidth = 306
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -14,6 +14,7 @@ object frmCalculoImpostos: TfrmCalculoImpostos
   Font.Style = []
   OldCreateOrder = False
   Position = poScreenCenter
+  OnClose = FormClose
   OnCreate = FormCreate
   OnDestroy = FormDestroy
   PixelsPerInch = 96
@@ -21,8 +22,8 @@ object frmCalculoImpostos: TfrmCalculoImpostos
   object pnlPrincipal: TPanel
     Left = 0
     Top = 0
-    Width = 314
-    Height = 147
+    Width = 306
+    Height = 150
     Align = alClient
     TabOrder = 0
     ExplicitTop = 2
@@ -43,36 +44,36 @@ object frmCalculoImpostos: TfrmCalculoImpostos
       Caption = 'Sal'#225'rio'
     end
     object lblPercIR: TLabel
-      Left = 8
+      Left = 106
       Top = 54
       Width = 25
       Height = 13
       Caption = '% IR'
     end
     object lblPercINSS: TLabel
-      Left = 106
+      Left = 8
       Top = 54
       Width = 37
       Height = 13
       Caption = '% INSS'
     end
-    object lblDescINSS: TLabel
+    object lblDescIR: TLabel
       Left = 204
       Top = 54
-      Width = 71
+      Width = 59
       Height = 13
-      Caption = 'Desconto INSS'
+      Caption = 'Desconto IR'
     end
     object lblVlrIR: TLabel
-      Left = 10
-      Top = 97
+      Left = 173
+      Top = 100
       Width = 53
       Height = 13
       Caption = 'Valor do IR'
     end
     object lblVlrINSS: TLabel
-      Left = 173
-      Top = 97
+      Left = 8
+      Top = 100
       Width = 65
       Height = 13
       Caption = 'Valor do INSS'
@@ -97,15 +98,6 @@ object frmCalculoImpostos: TfrmCalculoImpostos
       Text = '0,00'
     end
     object edtPercentualIR: TEdit
-      Left = 8
-      Top = 70
-      Width = 90
-      Height = 21
-      Alignment = taRightJustify
-      TabOrder = 2
-      Text = '8,00'
-    end
-    object edtPercentualINSS: TEdit
       Left = 106
       Top = 70
       Width = 90
@@ -113,8 +105,19 @@ object frmCalculoImpostos: TfrmCalculoImpostos
       Alignment = taRightJustify
       TabOrder = 3
       Text = '15,00'
+      OnChange = edtPercentualIRChange
     end
-    object edtDctINSS: TEdit
+    object edtPercentualINSS: TEdit
+      Left = 8
+      Top = 70
+      Width = 90
+      Height = 21
+      Alignment = taRightJustify
+      TabOrder = 2
+      Text = '8,00'
+      OnChange = edtPercentualIRChange
+    end
+    object edtDctIR: TEdit
       Left = 204
       Top = 70
       Width = 90
@@ -122,18 +125,9 @@ object frmCalculoImpostos: TfrmCalculoImpostos
       Alignment = taRightJustify
       TabOrder = 4
       Text = '100,00'
+      OnChange = edtPercentualIRChange
     end
     object edtValorIR: TEdit
-      Left = 8
-      Top = 116
-      Width = 121
-      Height = 21
-      Alignment = taRightJustify
-      Enabled = False
-      TabOrder = 5
-      Text = '0,00'
-    end
-    object edtValorINSS: TEdit
       Left = 173
       Top = 116
       Width = 121
@@ -143,11 +137,21 @@ object frmCalculoImpostos: TfrmCalculoImpostos
       TabOrder = 6
       Text = '0,00'
     end
+    object edtValorINSS: TEdit
+      Left = 8
+      Top = 116
+      Width = 121
+      Height = 21
+      Alignment = taRightJustify
+      Enabled = False
+      TabOrder = 5
+      Text = '0,00'
+    end
   end
   object pnlRodape: TPanel
     Left = 0
-    Top = 147
-    Width = 314
+    Top = 150
+    Width = 306
     Height = 41
     Align = alBottom
     TabOrder = 1
@@ -161,6 +165,7 @@ object frmCalculoImpostos: TfrmCalculoImpostos
       Height = 25
       Caption = '&Calcular'
       TabOrder = 1
+      OnClick = btnCalcularClick
     end
     object btnLimpar: TButton
       Left = 8
@@ -169,6 +174,7 @@ object frmCalculoImpostos: TfrmCalculoImpostos
       Height = 25
       Caption = '&Limpar'
       TabOrder = 0
+      OnClick = btnLimparClick
     end
   end
 end

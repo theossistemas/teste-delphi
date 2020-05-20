@@ -3,16 +3,56 @@ unit uFuncoes;
 interface
 
 uses
-  System.StrUtils, System.SysUtils;
+  System.StrUtils, System.SysUtils, uFuncionario, System.Math;
 
 type
   TFuncoes = class
     function FormatarMoeda(sValor: String): String;
+    function CalcularINSS(oFuncionario: TFuncionario; dPercINSS: Double): Double;
+    function CalcularIR(oFuncionario: TFuncionario; dPercIR:
+      Double; dValorDeducao: Double): Double;
   end;
 
 implementation
 
 { TFuncoes }
+
+function TFuncoes.CalcularINSS(oFuncionario: TFuncionario;
+  dPercINSS: Double): Double;
+var
+  iIndice: Integer;
+  bCalcular: Boolean;
+begin
+  bCalcular := false;
+  for iIndice := 0 to oFuncionario.ListaDependentes.Count - 1 do begin
+    if oFuncionario.ListaDependentes[iIndice].IsCalculaINSS then begin
+      bCalcular := true;
+      break;
+    end;
+  end;
+
+  if bCalcular then begin
+    Result := SimpleRoundTo(oFuncionario.Salario * dPercINSS / 100, -2);
+  end else begin
+    Result := 0;
+  end;
+end;
+
+function TFuncoes.CalcularIR(oFuncionario: TFuncionario; dPercIR,
+  dValorDeducao: Double): Double;
+var
+  iIndice, iQtdDependentes: Integer;
+begin
+  iQtdDependentes := 0;
+  for iIndice := 0 to oFuncionario.ListaDependentes.Count - 1 do begin
+    if oFuncionario.ListaDependentes[iIndice].IsCalculaIR then begin
+      Inc(iQtdDependentes);
+    end;
+  end;
+
+  Result := oFuncionario.Salario - (dValorDeducao * iQtdDependentes);
+  Result := SimpleRoundTo(Result * dPercIR / 100, -2);
+end;
 
 function TFuncoes.FormatarMoeda(sValor: String): String;
 var

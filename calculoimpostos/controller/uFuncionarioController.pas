@@ -15,10 +15,13 @@ type
     function Inserir(oFuncionario: TFuncionario; out sErro: String): Boolean;
     function Atualizar(oFuncionario: TFuncionario; out sErro: String): Boolean;
     function Excluir(iID: Integer; out sErro: String): Boolean;
-    function CPFJaCadastrado(sCPF: String): Boolean;
+    function CPFJaCadastrado(sCPF: String; iIDFuncionario: Integer): Boolean;
     function GetIDNovoFuncionario: Integer;
     function CarregarFuncionariosFiltroNome(sNome: String; out oListaFuncionarios: TObjectList<TFuncionario>): Integer;
     function ValidarDados(oFuncionario: TFuncionario; out sMsg: String): Boolean;
+    function CarregarFuncionario(iIDFuncionario: Integer;
+      out oFuncionario: TFuncionario): Boolean;
+    function CarregarDependentes(oFuncionario: TFuncionario): Integer;
   published
     { published declarations }
   end;
@@ -33,15 +36,27 @@ begin
   Result := DmFuncionario.Atualizar(oFuncionario, sErro);
 end;
 
+function TFuncionarioController.CarregarDependentes(
+  oFuncionario: TFuncionario): Integer;
+begin
+  Result := DmFuncionario.CarregarDependentes(oFuncionario);
+end;
+
+function TFuncionarioController.CarregarFuncionario(iIDFuncionario: Integer;
+  out oFuncionario: TFuncionario): Boolean;
+begin
+  Result := DmFuncionario.CarregarFuncionario(iIDFuncionario, oFuncionario);
+end;
+
 function TFuncionarioController.CarregarFuncionariosFiltroNome(sNome: String;
   out oListaFuncionarios: TObjectList<TFuncionario>): Integer;
 begin
   Result := DmFuncionario.CarregarFuncionariosFiltroNome(sNome, oListaFuncionarios);
 end;
 
-function TFuncionarioController.CPFJaCadastrado(sCPF: String): Boolean;
+function TFuncionarioController.CPFJaCadastrado(sCPF: String; iIDFuncionario: Integer): Boolean;
 begin
-  Result := DmFuncionario.CPFJaCadastrado(sCPF);
+  Result := DmFuncionario.CPFJaCadastrado(sCPF, iIDFuncionario);
 end;
 
 function TFuncionarioController.Excluir(iID: Integer;
@@ -82,7 +97,7 @@ begin
     Exit;
   end;
 
-  if CPFJaCadastrado(oFuncionario.CPF) then begin
+  if CPFJaCadastrado(oFuncionario.CPF, oFuncionario.ID) then begin
   sMsg := 'O CPF '+oFuncionario.CPF+' já está cadastrado para outro funcionário!';
     Result := False;
     Exit;

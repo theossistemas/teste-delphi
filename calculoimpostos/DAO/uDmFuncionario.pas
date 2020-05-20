@@ -18,7 +18,7 @@ type
     function Inserir(oFuncionario: TFuncionario; out sErro: String): Boolean;
     function Atualizar(oFuncionario: TFuncionario; out sErro: String): Boolean;
     function Excluir(iID: Integer; out sErro: String): Boolean;
-    function CPFJaCadastrado(sCPF: String): Boolean;
+    function CPFJaCadastrado(sCPF: String; iIDFuncionario: Integer): Boolean;
     function GetIDNovoFuncionario: Integer;
     function CarregarFuncionariosFiltroNome(sNome: String; out oListaFuncionarios: TObjectList<TFuncionario>): Integer;
     function CarregarFuncionario(iIDFuncionario: Integer;
@@ -47,6 +47,7 @@ var
   oFuncionarioDependenteController: TFuncionarioDependenteController;
   oDependenteController: TDependenteController;
   iIndice: Integer;
+  oTransacao: TDBXTransaction;
 begin
   try
     with SQLAlterar do begin
@@ -55,6 +56,8 @@ begin
       ParamByName('CPF').AsString := oFuncionario.CPF;
       ParamByName('SALARIO').AsFloat := oFuncionario.Salario;
       try
+        oTransacao := DmConexao.SQLConexao.BeginTransaction;
+
         //Alterando funcionário
         ExecSQL;
 
@@ -96,11 +99,12 @@ begin
             end;
           end;
         end;
-
+        DmConexao.SQLConexao.CommitFreeAndNil(oTransacao);
         Result := True;
       except on E:Exception do
         begin
           sErro := 'Erro ao tentar atualizar funcionário!' + sLineBreak + E.Message;
+          DmConexao.SQLConexao.RollbackFreeAndNil(oTransacao);
           Result := False;
         end;
       end;
@@ -110,7 +114,7 @@ begin
   end;
 end;
 
-function TDmFuncionario.CPFJaCadastrado(sCPF: String): Boolean;
+function TDmFuncionario.CPFJaCadastrado(sCPF: String; iIDFuncionario: Integer): Boolean;
 var
   sqlCPF: TSQLDataset;
 begin
@@ -118,7 +122,7 @@ begin
   try
     sqlCPF.SQLConnection := DmConexao.SQLConexao;
     sqlCPF.CommandText := 'SELECT COUNT(*) AS QTD FROM FUNCIONARIO '+
-      'WHERE CPF = '''+sCPF+'''';
+      'WHERE CPF = '''+sCPF+''' AND ID <> '+IntToStr(iIDFuncionario);
     sqlCPF.Open;
 
     Result := sqlCPF.FieldByName('QTD').AsInteger > 0;
@@ -226,8 +230,32 @@ end;
 
 function TDmFuncionario.CarregarDependentes(
   oFuncionario: TFuncionario): Integer;
+var
+  oListaDependentes: TObjectList<TDependente>;
+  oDependenteController: TDependenteController;
+  iIndice, iFor: Integer;
 begin
-  //
+  oListaDependentes := TObjectList<TDependente>.Create;
+  oDependenteController := TDependenteController.Create;
+  try
+    if oDependenteController.CarregarDependentesDoFuncionario(
+      oFuncionario.ID, oListaDependentes) > 0 then begin
+      oFuncionario.ListaDependentes.Clear;
+      for iFor := 0 to oListaDependentes.Count - 1 do begin
+        oFuncionario.ListaDependentes.Add(TDependente.Create);
+        iIndice := oFuncionario.ListaDependentes.Count - 1;
+        oFuncionario.ListaDependentes[iIndice].ID := oListaDependentes[iFor].ID;
+        oFuncionario.ListaDependentes[iIndice].Nome := oListaDependentes[iFor].Nome;
+        oFuncionario.ListaDependentes[iIndice].IsCalculaIR := oListaDependentes[iFor].IsCalculaIR;
+        oFuncionario.ListaDependentes[iIndice].IsCalculaINSS := oListaDependentes[iFor].IsCalculaINSS;
+        oFuncionario.ListaDependentes[iIndice].Status := TStatus.stNone;
+      end;
+    end;
+  finally
+    FreeAndNil(oListaDependentes);
+    FreeAndNil(oDependenteController);
+    Result := oFuncionario.ListaDependentes.Count;
+  end;
 end;
 
 function TDmFuncionario.CarregarFuncionario(iIDFuncionario: Integer;
@@ -249,10 +277,12 @@ begin
         oFuncionario.CPF := FieldByName('CPF').AsString;
         oFuncionario.Salario := FieldByName('SALARIO').AsFloat;
 
-        //CarregarDependentes(oFuncionario);
+        CarregarDependentes(oFuncionario);
+        Result := True;
+      end else begin
+        Result := False;
       end;
     end;
-    Result := True;
   finally
     FreeAndNil(sqlFuncionario);
   end;
@@ -265,6 +295,8 @@ var
   sqlFunc: TSQLDataset;
 begin
   sqlFunc := TSQLDataset.Create(nil);
+  iIndice := 0;
+
   try
     with sqlFunc do begin
       SQLConnection := DmConexao.SQLConexao;
@@ -272,7 +304,6 @@ begin
         'WHERE NOME LIKE (''%'+sNome+'%'') ORDER BY NOME';
       Open;
 
-      iIndice := 0;
       while not eof do begin
         oListaFuncionarios.Add(TFuncionario.Create);
         oListaFuncionarios[iIndice].ID := FieldByName('ID').AsInteger;

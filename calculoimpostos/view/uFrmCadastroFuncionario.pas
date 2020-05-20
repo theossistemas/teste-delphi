@@ -54,6 +54,9 @@ type
     procedure btnGravarClick(Sender: TObject);
     procedure btnPesquisarClick(Sender: TObject);
     procedure btnIncluirDependenteClick(Sender: TObject);
+    procedure strgridDependentesSelectCell(Sender: TObject; ACol, ARow: Integer;
+      var CanSelect: Boolean);
+    procedure btnAlterarClick(Sender: TObject);
   private
     bFormatando: Boolean;
     oFuncoes: TFuncoes;
@@ -70,6 +73,8 @@ type
     procedure PesquisarFuncionarios(sNome: String);
     procedure AdicionarDependente;
     procedure MostrarDependentesTela;
+    procedure AlterarFuncionario;
+    procedure AtualizarFuncionario;
   public
     { Public declarations }
   end;
@@ -88,6 +93,7 @@ procedure TfrmCadastroFuncionario.AdicionarDependente;
 var
   oDependente: TDependente;
   oDependenteController: TDependenteController;
+  sMsg: String;
 begin
   oDependente := TDependente.Create;
   oDependenteController := TDependenteController.Create;
@@ -96,11 +102,93 @@ begin
     oDependente.Nome := edtNomeDependente.Text;
     oDependente.IsCalculaIR := chkIR.Checked;
     oDependente.IsCalculaINSS := chkINSS.Checked;
+
+    if not oDependenteController.ValidarDados(oDependente, sMsg) then begin
+      MessageDlg(sMsg, mtWarning, [mbok], 0);
+      Exit;
+    end;
+
     oFuncionario.AdicionarDependente(oDependente);
   finally
     FreeAndNil(oDependente);
     FreeAndNil(oDependenteController);
   end;
+end;
+
+procedure TfrmCadastroFuncionario.AlterarFuncionario;
+var
+  oFuncionarioController: TFuncionarioController;
+  iIDFuncionario: Integer;
+begin
+  if strgridFuncionarios.Row < 1 then begin
+    MessageDlg('Por favor, selecione o funcionário a ser alterado!',
+      mtInformation, [mbok], 0);
+    Exit;
+  end;
+
+  iIDFuncionario := StrToInt(strgridFuncionarios.Cells[0, strgridFuncionarios.Row]);
+
+  if Assigned(oFuncionario) then begin
+    FreeAndNil(oFuncionario);
+  end;
+  oFuncionario := TFuncionario.Create;
+
+  oFuncionarioController := TFuncionarioController.Create;
+  try
+    if oFuncionarioController.CarregarFuncionario(iIDFuncionario, oFuncionario) then begin
+      edtNome.Text := oFuncionario.Nome;
+      edtCPF.Text := oFuncionario.CPF;
+      edtSalario.Text := FloatToStrF(oFuncionario.Salario, ffNumber, 11, 2);
+      LimparPainelCadastroDependente();
+      MostrarDependentesTela();
+
+      pgCadastro.ActivePage := tbCadastro;
+      edtNome.SetFocus;
+
+      oAcao := actAtualizar;
+    end else begin
+      MessageDlg('Problemas ao tentar carregar os dados do funcionário!',
+        mtInformation, [mbok], 0);
+      Exit;
+    end;
+  finally
+    FreeAndNil(oFuncionarioController);
+  end;
+end;
+
+procedure TfrmCadastroFuncionario.AtualizarFuncionario;
+var
+  oFuncionarioController: TFuncionarioController;
+  sMsg: String;
+begin
+  oFuncionarioController := TFuncionarioController.Create;
+  try
+    oFuncionario.Nome := edtNome.Text;
+    oFuncionario.CPF := edtCPF.Text;
+    oFuncionario.Salario := StrToFloat(ReplaceStr(edtSalario.Text, '.', ''));
+
+    if not oFuncionarioController.ValidarDados(oFuncionario, sMsg) then begin
+      MessageDlg(sMsg, mtWarning, [mbok], 0);
+      Exit;
+    end;
+
+    if oFuncionarioController.Atualizar(oFuncionario, sMsg) then begin
+      MessageDlg('Funcionário salvo com sucesso!', mtInformation, [mbok], 0);
+      pgCadastro.ActivePage := tbPesquisa;
+      edtPesquisar.Text := '';
+      PesquisarFuncionarios('');
+      FreeAndNil(oFuncionario);
+    end else begin
+      MessageDlg(sMsg, mtError, [mbok], 0);
+    end;
+  finally
+    FreeAndNil(oFuncionarioController);
+  end;
+end;
+
+procedure TfrmCadastroFuncionario.btnAlterarClick(Sender: TObject);
+begin
+  AlterarFuncionario();
 end;
 
 procedure TfrmCadastroFuncionario.btnCancelarClick(Sender: TObject);
@@ -113,7 +201,7 @@ begin
   if oAcao = actNovo then begin
     InserirNovoFuncionario();
   end else begin
-    //
+    AtualizarFuncionario();
   end;
 end;
 
@@ -294,6 +382,10 @@ var
 begin
   strgridDependentes.RowCount := 1;
   for iIndice := 0 To oFuncionario.ListaDependentes.Count - 1 do begin
+    if oFuncionario.ListaDependentes[iIndice].Status = TStatus.stExcluir then begin
+      Continue;
+    end;
+
     iNovaLinha := strgridDependentes.RowCount;
     strgridDependentes.RowCount := iNovaLinha + 1;
     strgridDependentes.Cells[0, iNovaLinha] := IntToStr(oFuncionario.ListaDependentes[iIndice].ID);
@@ -350,6 +442,18 @@ begin
       strgridDependentes.Canvas.Draw(iEixoX,iEixoY, oBMP);
     finally
       FreeAndNil(oBMP);
+    end;
+  end;
+end;
+
+procedure TfrmCadastroFuncionario.strgridDependentesSelectCell(Sender: TObject;
+  ACol, ARow: Integer; var CanSelect: Boolean);
+begin
+  if (ACol = 4) and (ARow <> 0) then begin
+    if MessageDlg('Deseja excluir o dependente '+
+      strgridDependentes.Cells[2, ARow], mtConfirmation, [mbyes,mbno], 0) = mrYes then begin
+      oFuncionario.ExcluirDependente(StrToInt(strgridDependentes.Cells[0, ARow]));
+      MostrarDependentesTela();
     end;
   end;
 end;

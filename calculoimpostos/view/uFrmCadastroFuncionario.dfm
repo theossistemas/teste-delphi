@@ -54,6 +54,7 @@ object frmCadastroFuncionario: TfrmCadastroFuncionario
           Height = 25
           Caption = '&Alterar'
           TabOrder = 1
+          OnClick = btnAlterarClick
         end
         object btnExcluir: TButton
           Left = 170
@@ -206,6 +207,7 @@ object frmCadastroFuncionario: TfrmCadastroFuncionario
         Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goRangeSelect, goRowSelect]
         TabOrder = 2
         OnDrawCell = strgridDependentesDrawCell
+        OnSelectCell = strgridDependentesSelectCell
       end
       object pnlCadastroDependente: TPanel
         Left = 0

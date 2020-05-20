@@ -53,8 +53,8 @@ begin
         iIndice := oListaDependentes.Count - 1;
         oListaDependentes[iIndice].ID := FieldByName('IDDEPENDENTE').AsInteger;
         oListaDependentes[iIndice].Nome := FieldByName('NOME').AsString;
-        oListaDependentes[iIndice].IsCalculaIR := FieldByName('CALCULARIR').AsString = 'T';
-        oListaDependentes[iIndice].IsCalculaINSS := FieldByName('CALCULARINSS').AsString = 'T';
+        oListaDependentes[iIndice].IsCalculaIR := FieldByName('CALCULAIR').AsString = 'T';
+        oListaDependentes[iIndice].IsCalculaINSS := FieldByName('CALCULAINSS').AsString = 'T';
         next;
       end;
     end;

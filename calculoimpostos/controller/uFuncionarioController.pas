@@ -14,7 +14,7 @@ type
   public
     function Inserir(oFuncionario: TFuncionario; out sErro: String): Boolean;
     function Atualizar(oFuncionario: TFuncionario; out sErro: String): Boolean;
-    function Excluir(iID: Integer; out sErro: String): Boolean;
+    function Excluir(oFuncionario: TFuncionario; out sErro: String): Boolean;
     function CPFJaCadastrado(sCPF: String; iIDFuncionario: Integer): Boolean;
     function GetIDNovoFuncionario: Integer;
     function CarregarFuncionariosFiltroNome(sNome: String; out oListaFuncionarios: TObjectList<TFuncionario>): Integer;
@@ -59,10 +59,10 @@ begin
   Result := DmFuncionario.CPFJaCadastrado(sCPF, iIDFuncionario);
 end;
 
-function TFuncionarioController.Excluir(iID: Integer;
+function TFuncionarioController.Excluir(oFuncionario: TFuncionario;
   out sErro: String): Boolean;
 begin
-  Result := DmFuncionario.Excluir(iID, sErro);
+  Result := DmFuncionario.Excluir(oFuncionario, sErro);
 end;
 
 function TFuncionarioController.GetIDNovoFuncionario: Integer;

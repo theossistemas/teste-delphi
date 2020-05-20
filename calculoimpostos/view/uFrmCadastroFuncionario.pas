@@ -57,6 +57,7 @@ type
     procedure strgridDependentesSelectCell(Sender: TObject; ACol, ARow: Integer;
       var CanSelect: Boolean);
     procedure btnAlterarClick(Sender: TObject);
+    procedure btnExcluirClick(Sender: TObject);
   private
     bFormatando: Boolean;
     oFuncoes: TFuncoes;
@@ -194,6 +195,12 @@ end;
 procedure TfrmCadastroFuncionario.btnCancelarClick(Sender: TObject);
 begin
   CancelarCadastro();
+end;
+
+procedure TfrmCadastroFuncionario.btnExcluirClick(Sender: TObject);
+begin
+  MessageDlg('Desculpe, esse recurso ainda está em desenvolvimento! '+
+    'Aguarde novas atualizações ;)', mtInformation, [mbok], 0);
 end;
 
 procedure TfrmCadastroFuncionario.btnGravarClick(Sender: TObject);

@@ -17,7 +17,7 @@ type
   public
     function Inserir(oFuncionario: TFuncionario; out sErro: String): Boolean;
     function Atualizar(oFuncionario: TFuncionario; out sErro: String): Boolean;
-    function Excluir(iID: Integer; out sErro: String): Boolean;
+    function Excluir(oFuncionario: TFuncionario; out sErro: String): Boolean;
     function CPFJaCadastrado(sCPF: String; iIDFuncionario: Integer): Boolean;
     function GetIDNovoFuncionario: Integer;
     function CarregarFuncionariosFiltroNome(sNome: String; out oListaFuncionarios: TObjectList<TFuncionario>): Integer;
@@ -131,10 +131,10 @@ begin
   end;
 end;
 
-function TDmFuncionario.Excluir(iID: Integer; out sErro: String): Boolean;
+function TDmFuncionario.Excluir(oFuncionario: TFuncionario; out sErro: String): Boolean;
 begin
   with SQLExcluir do begin
-    ParamByName('ID').AsInteger := iID;
+    ParamByName('ID').AsInteger := oFuncionario.ID;
     try
       ExecSQL;
       Result := True;

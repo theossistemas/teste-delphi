@@ -24,7 +24,7 @@ object frmCadastroFuncionario: TfrmCadastroFuncionario
     Top = 0
     Width = 520
     Height = 397
-    ActivePage = tbCadastro
+    ActivePage = tbPesquisa
     Align = alClient
     TabOrder = 0
     object tbPesquisa: TTabSheet
@@ -63,6 +63,7 @@ object frmCadastroFuncionario: TfrmCadastroFuncionario
           Height = 25
           Caption = '&Excluir'
           TabOrder = 2
+          OnClick = btnExcluirClick
         end
       end
       object strgridFuncionarios: TStringGrid

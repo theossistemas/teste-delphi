@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2020/05/21 11:32:20.000.620,=E:\Projetos\Delphi\teste-delphi\Exercicio2\uCalculo.pas</Transaction>
+    <Transaction>2020/05/21 11:32:20.000.142,=E:\Projetos\Delphi\teste-delphi\Exercicio2\Testes\TestCalculo.pas</Transaction>
+    <Transaction>2020/05/21 11:43:13.000.934,=E:\Projetos\Delphi\teste-delphi\Exercicio2\uFuncionario.pas</Transaction>
+    <Transaction>2020/05/21 11:43:13.000.895,=E:\Projetos\Delphi\teste-delphi\Exercicio2\uDependente.pas</Transaction>
+  </Transactions>
+</BorlandProject>

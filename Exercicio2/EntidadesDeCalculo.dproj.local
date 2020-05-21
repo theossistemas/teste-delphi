@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2020/05/20 23:30:24.000.837,=E:\Projetos\Delphi\Unit1.pas</Transaction>
+    <Transaction>2020/05/20 23:34:18.000.895,E:\Projetos\Delphi\Unit1.pas=E:\Projetos\Delphi\teste-delphi\Exercicio2\uFormEntidadesDeCalculo.pas</Transaction>
+    <Transaction>2020/05/20 23:34:18.000.895,E:\Projetos\Delphi\Unit1.dfm=E:\Projetos\Delphi\teste-delphi\Exercicio2\uFormEntidadesDeCalculo.dfm</Transaction>
+    <Transaction>2020/05/20 23:34:31.000.961,E:\Projetos\Delphi\Project1.dproj=E:\Projetos\Delphi\teste-delphi\Exercicio2\EntidadesDeCalculo.dproj</Transaction>
+    <Transaction>2020/05/20 23:36:03.000.674,=E:\Projetos\Delphi\teste-delphi\Exercicio2\Unit1.pas</Transaction>
+    <Transaction>2020/05/20 23:36:54.000.682,E:\Projetos\Delphi\teste-delphi\Exercicio2\Unit1.pas=E:\Projetos\Delphi\teste-delphi\Exercicio2\uDataModulo.pas</Transaction>
+    <Transaction>2020/05/20 23:36:54.000.682,E:\Projetos\Delphi\teste-delphi\Exercicio2\Unit1.dfm=E:\Projetos\Delphi\teste-delphi\Exercicio2\uDataModulo.dfm</Transaction>
+    <Transaction>2020/05/21 10:31:41.000.052,=E:\Projetos\Delphi\teste-delphi\Exercicio2\Unit1.pas</Transaction>
+    <Transaction>2020/05/21 10:31:58.000.331,E:\Projetos\Delphi\teste-delphi\Exercicio2\Unit1.pas=E:\Projetos\Delphi\teste-delphi\Exercicio2\uFuncionario.pas</Transaction>
+    <Transaction>2020/05/21 10:32:08.000.592,=E:\Projetos\Delphi\teste-delphi\Exercicio2\Unit1.pas</Transaction>
+    <Transaction>2020/05/21 10:32:16.000.871,E:\Projetos\Delphi\teste-delphi\Exercicio2\Unit1.pas=E:\Projetos\Delphi\teste-delphi\Exercicio2\uDependente.pas</Transaction>
+    <Transaction>2020/05/21 10:32:32.000.288,=E:\Projetos\Delphi\teste-delphi\Exercicio2\Unit1.pas</Transaction>
+    <Transaction>2020/05/21 10:32:49.000.750,E:\Projetos\Delphi\teste-delphi\Exercicio2\Unit1.pas=E:\Projetos\Delphi\teste-delphi\Exercicio2\DAO.pas</Transaction>
+    <Transaction>2020/05/21 10:33:29.000.990,E:\Projetos\Delphi\teste-delphi\Exercicio2\DAO.pas=E:\Projetos\Delphi\teste-delphi\Exercicio2\uDAO.pas</Transaction>
+    <Transaction>2020/05/21 10:33:53.000.120,=E:\Projetos\Delphi\teste-delphi\Exercicio2\Unit1.pas</Transaction>
+    <Transaction>2020/05/21 10:34:02.000.994,E:\Projetos\Delphi\teste-delphi\Exercicio2\Unit1.pas=E:\Projetos\Delphi\teste-delphi\Exercicio2\uControle.pas</Transaction>
+    <Transaction>2020/05/21 11:04:09.000.536,=E:\Projetos\Delphi\teste-delphi\Exercicio2\Unit1.pas</Transaction>
+    <Transaction>2020/05/21 11:05:19.000.721,E:\Projetos\Delphi\teste-delphi\Exercicio2\Unit1.pas=E:\Projetos\Delphi\teste-delphi\Exercicio2\uCalculo.pas</Transaction>
+  </Transactions>
+</BorlandProject>

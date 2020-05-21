@@ -1,0 +1,1560 @@
+Will track coverage for:uCalculadora
+Will track coverage for:uOperacao
+Trying to start CalculadoraTest.exe with the Parameters :
+Started successfully
+Create Process:12400 name:CalculadoraTest.exe
+Adding breakpoints for module:CalculadoraTest.exe
+Module name "System.Types" did not match module from address name "System.UITypes" at address:0001386F
+Module name "System.Generics.Collections" did not match module from address name "System.Hash" at address:00041A39
+Module name "System.Generics.Defaults" did not match module from address name "System.Classes" at address:0008CB04
+Module name "System.TimeSpan" did not match module from address name "System.DateUtils" at address:000FE370
+Module name "System.IOUtils" did not match module from address name "System.IniFiles" at address:000FEEB8
+Module name "System.Win.Registry" did not match module from address name "TestFramework" at address:0010EBD8
+Module name "TextTestRunner" did not match module from address name "System.Messaging" at address:0011E19A
+Module name "Winapi.Wincodec" did not match module from address name "System.UIConsts" at address:00130ABC
+Module name "Winapi.CommCtrl" did not match module from address name "System.ImageList" at address:00146AA4
+Module name "System.Diagnostics" did not match module from address name "System.SyncObjs" at address:00149E80
+Module name "Winapi.MultiMon" did not match module from address name "Winapi.Imm" at address:0014CE6D
+Module name "Winapi.Imm" did not match module from address name "Vcl.ActnList" at address:0014CF20
+Module name "Winapi.Dwmapi" did not match module from address name "Vcl.GraphUtil" at address:0014F402
+Module name "Vcl.StdCtrls" did not match module from address name "Winapi.ShlObj" at address:0017E97D
+Module name "Winapi.ShlObj" did not match module from address name "Winapi.WinSpool" at address:0017EB64
+Module name "Winapi.RichEdit" did not match module from address name "Vcl.ToolWin" at address:00180830
+Module name "Vcl.ToolWin" did not match module from address name "Vcl.ListActns" at address:00181665
+Module name "Vcl.ListActns" did not match module from address name "Vcl.ComStrs" at address:00184062
+Module name "Vcl.ImgList" did not match module from address name "Vcl.Menus" at address:002266C1
+Module name "Winapi.ShellScaling" did not match module from address name "Winapi.FlatSB" at address:00230E14
+Module name "System.Win.TaskbarCore" did not match module from address name "Vcl.Forms" at address:00231440
+Module name "Vcl.Buttons" did not match module from address name "GUITestRunner" at address:00255798
+Module name "GUITestRunner" did not match module from address name "DUnitTestRunner" at address:00260750
+Module name "DUnitTestRunner" did not match module from address name "uInterfaceOperacao" at address:0026078A
+Setting BreakPoint for module: uOperacao unit uOperacao.pas addr:100022
+Adding breakpoint for uOperacao.TSoma.Calcular in uOperacao.pas
+Creating class info for uOperacao class TSoma
+TBreakPoint.Activate:
+Activate uOperacao.pas line 53 BreakPoint at:00661FB4
+Setting BreakPoint for module: uOperacao unit uOperacao.pas addr:100023
+Adding breakpoint for uOperacao.TSoma.Calcular in uOperacao.pas
+TBreakPoint.Activate:
+Activate uOperacao.pas line 54 BreakPoint at:00661FD7
+Setting BreakPoint for module: uOperacao unit uOperacao.pas addr:100024
+Adding breakpoint for uOperacao.TSoma.Calcular in uOperacao.pas
+TBreakPoint.Activate:
+Activate uOperacao.pas line 55 BreakPoint at:00661FE9
+Setting BreakPoint for module: uOperacao unit uOperacao.pas addr:100025
+Adding breakpoint for uOperacao.TSoma.Calcular in uOperacao.pas
+TBreakPoint.Activate:
+Activate uOperacao.pas line 56 BreakPoint at:00661FFB
+Setting BreakPoint for module: uOperacao unit uOperacao.pas addr:100026
+Adding breakpoint for uOperacao.TSoma.Calcular in uOperacao.pas
+TBreakPoint.Activate:
+Activate uOperacao.pas line 57 BreakPoint at:00662005
+Setting BreakPoint for module: uOperacao unit uOperacao.pas addr:100027
+Adding breakpoint for uOperacao.TSoma.Calcular in uOperacao.pas
+TBreakPoint.Activate:
+Activate uOperacao.pas line 58 BreakPoint at:0066205D
+Setting BreakPoint for module: uOperacao unit uOperacao.pas addr:100028
+Adding breakpoint for uOperacao.TSoma.getResultado in uOperacao.pas
+TBreakPoint.Activate:
+Activate uOperacao.pas line 61 BreakPoint at:00662080
+Setting BreakPoint for module: uOperacao unit uOperacao.pas addr:100029
+Adding breakpoint for uOperacao.TSoma.getResultado in uOperacao.pas
+TBreakPoint.Activate:
+Activate uOperacao.pas line 62 BreakPoint at:0066208C
+Setting BreakPoint for module: uOperacao unit uOperacao.pas addr:100030
+Adding breakpoint for uOperacao.TSoma.getResultado in uOperacao.pas
+TBreakPoint.Activate:
+Activate uOperacao.pas line 63 BreakPoint at:0066209A
+Setting BreakPoint for module: uOperacao unit uOperacao.pas addr:100031
+Adding breakpoint for uOperacao.TSubtracao.Calcular in uOperacao.pas
+Creating class info for uOperacao class TSubtracao
+TBreakPoint.Activate:
+Activate uOperacao.pas line 72 BreakPoint at:006620A0
+Setting BreakPoint for module: uOperacao unit uOperacao.pas addr:100032
+Adding breakpoint for uOperacao.TSubtracao.Calcular in uOperacao.pas
+TBreakPoint.Activate:
+Activate uOperacao.pas line 73 BreakPoint at:006620C3
+Setting BreakPoint for module: uOperacao unit uOperacao.pas addr:100033
+Adding breakpoint for uOperacao.TSubtracao.Calcular in uOperacao.pas
+TBreakPoint.Activate:
+Activate uOperacao.pas line 74 BreakPoint at:006620D5
+Setting BreakPoint for module: uOperacao unit uOperacao.pas addr:100034
+Adding breakpoint for uOperacao.TSubtracao.Calcular in uOperacao.pas
+TBreakPoint.Activate:
+Activate uOperacao.pas line 75 BreakPoint at:006620E7
+Setting BreakPoint for module: uOperacao unit uOperacao.pas addr:100035
+Adding breakpoint for uOperacao.TSubtracao.Calcular in uOperacao.pas
+TBreakPoint.Activate:
+Activate uOperacao.pas line 76 BreakPoint at:006620F1
+Setting BreakPoint for module: uOperacao unit uOperacao.pas addr:100036
+Adding breakpoint for uOperacao.TSubtracao.Calcular in uOperacao.pas
+TBreakPoint.Activate:
+Activate uOperacao.pas line 77 BreakPoint at:00662149
+Setting BreakPoint for module: uOperacao unit uOperacao.pas addr:100037
+Adding breakpoint for uOperacao.TSubtracao.getResultado in uOperacao.pas
+TBreakPoint.Activate:
+Activate uOperacao.pas line 80 BreakPoint at:0066216C
+Setting BreakPoint for module: uOperacao unit uOperacao.pas addr:100038
+Adding breakpoint for uOperacao.TSubtracao.getResultado in uOperacao.pas
+TBreakPoint.Activate:
+Activate uOperacao.pas line 81 BreakPoint at:00662178
+Setting BreakPoint for module: uOperacao unit uOperacao.pas addr:100039
+Adding breakpoint for uOperacao.TSubtracao.getResultado in uOperacao.pas
+TBreakPoint.Activate:
+Activate uOperacao.pas line 82 BreakPoint at:00662186
+Setting BreakPoint for module: uOperacao unit uOperacao.pas addr:100040
+Adding breakpoint for uOperacao.TMultiplicacao.Calcular in uOperacao.pas
+Creating class info for uOperacao class TMultiplicacao
+TBreakPoint.Activate:
+Activate uOperacao.pas line 92 BreakPoint at:0066218C
+Setting BreakPoint for module: uOperacao unit uOperacao.pas addr:100041
+Adding breakpoint for uOperacao.TMultiplicacao.Calcular in uOperacao.pas
+TBreakPoint.Activate:
+Activate uOperacao.pas line 93 BreakPoint at:006621AF
+Setting BreakPoint for module: uOperacao unit uOperacao.pas addr:100042
+Adding breakpoint for uOperacao.TMultiplicacao.Calcular in uOperacao.pas
+TBreakPoint.Activate:
+Activate uOperacao.pas line 94 BreakPoint at:006621C1
+Setting BreakPoint for module: uOperacao unit uOperacao.pas addr:100043
+Adding breakpoint for uOperacao.TMultiplicacao.Calcular in uOperacao.pas
+TBreakPoint.Activate:
+Activate uOperacao.pas line 95 BreakPoint at:006621D3
+Setting BreakPoint for module: uOperacao unit uOperacao.pas addr:100044
+Adding breakpoint for uOperacao.TMultiplicacao.Calcular in uOperacao.pas
+TBreakPoint.Activate:
+Activate uOperacao.pas line 96 BreakPoint at:006621DD
+Setting BreakPoint for module: uOperacao unit uOperacao.pas addr:100045
+Adding breakpoint for uOperacao.TMultiplicacao.Calcular in uOperacao.pas
+TBreakPoint.Activate:
+Activate uOperacao.pas line 97 BreakPoint at:00662235
+Setting BreakPoint for module: uOperacao unit uOperacao.pas addr:100046
+Adding breakpoint for uOperacao.TMultiplicacao.getResultado in uOperacao.pas
+TBreakPoint.Activate:
+Activate uOperacao.pas line 100 BreakPoint at:00662258
+Setting BreakPoint for module: uOperacao unit uOperacao.pas addr:100047
+Adding breakpoint for uOperacao.TMultiplicacao.getResultado in uOperacao.pas
+TBreakPoint.Activate:
+Activate uOperacao.pas line 101 BreakPoint at:00662264
+Setting BreakPoint for module: uOperacao unit uOperacao.pas addr:100048
+Adding breakpoint for uOperacao.TMultiplicacao.getResultado in uOperacao.pas
+TBreakPoint.Activate:
+Activate uOperacao.pas line 102 BreakPoint at:00662272
+Setting BreakPoint for module: uOperacao unit uOperacao.pas addr:100049
+Adding breakpoint for uOperacao.TDivisao.Calcular in uOperacao.pas
+Creating class info for uOperacao class TDivisao
+TBreakPoint.Activate:
+Activate uOperacao.pas line 111 BreakPoint at:00662278
+Setting BreakPoint for module: uOperacao unit uOperacao.pas addr:100050
+Adding breakpoint for uOperacao.TDivisao.Calcular in uOperacao.pas
+TBreakPoint.Activate:
+Activate uOperacao.pas line 112 BreakPoint at:0066229B
+Setting BreakPoint for module: uOperacao unit uOperacao.pas addr:100051
+Adding breakpoint for uOperacao.TDivisao.Calcular in uOperacao.pas
+TBreakPoint.Activate:
+Activate uOperacao.pas line 113 BreakPoint at:006622AD
+Setting BreakPoint for module: uOperacao unit uOperacao.pas addr:100052
+Adding breakpoint for uOperacao.TDivisao.Calcular in uOperacao.pas
+TBreakPoint.Activate:
+Activate uOperacao.pas line 114 BreakPoint at:006622BF
+Setting BreakPoint for module: uOperacao unit uOperacao.pas addr:100053
+Adding breakpoint for uOperacao.TDivisao.Calcular in uOperacao.pas
+TBreakPoint.Activate:
+Activate uOperacao.pas line 116 BreakPoint at:006622CE
+Setting BreakPoint for module: uOperacao unit uOperacao.pas addr:100054
+Adding breakpoint for uOperacao.TDivisao.Calcular in uOperacao.pas
+TBreakPoint.Activate:
+Activate uOperacao.pas line 117 BreakPoint at:006622DD
+Setting BreakPoint for module: uOperacao unit uOperacao.pas addr:100055
+Adding breakpoint for uOperacao.TDivisao.Calcular in uOperacao.pas
+TBreakPoint.Activate:
+Activate uOperacao.pas line 119 BreakPoint at:006622EF
+Setting BreakPoint for module: uOperacao unit uOperacao.pas addr:100056
+Adding breakpoint for uOperacao.TDivisao.Calcular in uOperacao.pas
+TBreakPoint.Activate:
+Activate uOperacao.pas line 120 BreakPoint at:006622FF
+Setting BreakPoint for module: uOperacao unit uOperacao.pas addr:100057
+Adding breakpoint for uOperacao.TDivisao.Calcular in uOperacao.pas
+TBreakPoint.Activate:
+Activate uOperacao.pas line 122 BreakPoint at:00662301
+Setting BreakPoint for module: uOperacao unit uOperacao.pas addr:100058
+Adding breakpoint for uOperacao.TDivisao.Calcular in uOperacao.pas
+TBreakPoint.Activate:
+Activate uOperacao.pas line 123 BreakPoint at:0066230B
+Setting BreakPoint for module: uOperacao unit uOperacao.pas addr:100059
+Adding breakpoint for uOperacao.TDivisao.Calcular in uOperacao.pas
+TBreakPoint.Activate:
+Activate uOperacao.pas line 124 BreakPoint at:00662363
+Setting BreakPoint for module: uOperacao unit uOperacao.pas addr:100060
+Adding breakpoint for uOperacao.TDivisao.getResultado in uOperacao.pas
+TBreakPoint.Activate:
+Activate uOperacao.pas line 127 BreakPoint at:00662408
+Setting BreakPoint for module: uOperacao unit uOperacao.pas addr:100061
+Adding breakpoint for uOperacao.TDivisao.getResultado in uOperacao.pas
+TBreakPoint.Activate:
+Activate uOperacao.pas line 128 BreakPoint at:00662414
+Setting BreakPoint for module: uOperacao unit uOperacao.pas addr:100062
+Adding breakpoint for uOperacao.TDivisao.getResultado in uOperacao.pas
+TBreakPoint.Activate:
+Activate uOperacao.pas line 129 BreakPoint at:00662422
+Module name "uOperacao" did not match module from address name "uCalculadora" at address:0026142D
+Setting BreakPoint for module: uCalculadora unit uCalculadora.pas addr:100064
+Adding breakpoint for uCalculadora.TCalculadora.Create in uCalculadora.pas
+Creating class info for uCalculadora class TCalculadora
+TBreakPoint.Activate:
+Activate uCalculadora.pas line 61 BreakPoint at:00662950
+Setting BreakPoint for module: uCalculadora unit uCalculadora.pas addr:100065
+Adding breakpoint for uCalculadora.TCalculadora.Create in uCalculadora.pas
+TBreakPoint.Activate:
+Activate uCalculadora.pas line 62 BreakPoint at:00662968
+Setting BreakPoint for module: uCalculadora unit uCalculadora.pas addr:100066
+Adding breakpoint for uCalculadora.TCalculadora.Create in uCalculadora.pas
+TBreakPoint.Activate:
+Activate uCalculadora.pas line 63 BreakPoint at:00662970
+Setting BreakPoint for module: uCalculadora unit uCalculadora.pas addr:100067
+Adding breakpoint for uCalculadora.TCalculadora.CalcularResultado in uCalculadora.pas
+TBreakPoint.Activate:
+Activate uCalculadora.pas line 67 BreakPoint at:00662990
+Setting BreakPoint for module: uCalculadora unit uCalculadora.pas addr:100068
+Adding breakpoint for uCalculadora.TCalculadora.CalcularResultado in uCalculadora.pas
+TBreakPoint.Activate:
+Activate uCalculadora.pas line 68 BreakPoint at:0066299F
+Setting BreakPoint for module: uCalculadora unit uCalculadora.pas addr:100069
+Adding breakpoint for uCalculadora.TCalculadora.CalcularResultado in uCalculadora.pas
+TBreakPoint.Activate:
+Activate uCalculadora.pas line 70 BreakPoint at:006629AB
+Setting BreakPoint for module: uCalculadora unit uCalculadora.pas addr:100070
+Adding breakpoint for uCalculadora.TCalculadora.CalcularResultado in uCalculadora.pas
+TBreakPoint.Activate:
+Activate uCalculadora.pas line 71 BreakPoint at:006629B9
+Setting BreakPoint for module: uCalculadora unit uCalculadora.pas addr:100071
+Adding breakpoint for uCalculadora.TCalculadora.CalcularResultado in uCalculadora.pas
+TBreakPoint.Activate:
+Activate uCalculadora.pas line 72 BreakPoint at:006629C4
+Setting BreakPoint for module: uCalculadora unit uCalculadora.pas addr:100072
+Adding breakpoint for uCalculadora.TCalculadora.CalcularResultado in uCalculadora.pas
+TBreakPoint.Activate:
+Activate uCalculadora.pas line 73 BreakPoint at:006629CA
+Setting BreakPoint for module: uCalculadora unit uCalculadora.pas addr:100073
+Adding breakpoint for uCalculadora.TCalculadora.CalcularResultado in uCalculadora.pas
+TBreakPoint.Activate:
+Activate uCalculadora.pas line 75 BreakPoint at:006629D6
+Setting BreakPoint for module: uCalculadora unit uCalculadora.pas addr:100074
+Adding breakpoint for uCalculadora.TCalculadora.CalcularResultado in uCalculadora.pas
+TBreakPoint.Activate:
+Activate uCalculadora.pas line 76 BreakPoint at:006629E1
+Setting BreakPoint for module: uCalculadora unit uCalculadora.pas addr:100075
+Adding breakpoint for uCalculadora.TCalculadora.CalcularResultado in uCalculadora.pas
+TBreakPoint.Activate:
+Activate uCalculadora.pas line 79 BreakPoint at:006629E6
+Setting BreakPoint for module: uCalculadora unit uCalculadora.pas addr:100076
+Adding breakpoint for uCalculadora.TCalculadora.CalcularResultado in uCalculadora.pas
+TBreakPoint.Activate:
+Activate uCalculadora.pas line 81 BreakPoint at:006629EC
+Setting BreakPoint for module: uCalculadora unit uCalculadora.pas addr:100077
+Adding breakpoint for uCalculadora.TCalculadora.CalcularResultado in uCalculadora.pas
+TBreakPoint.Activate:
+Activate uCalculadora.pas line 82 BreakPoint at:006629F5
+Setting BreakPoint for module: uCalculadora unit uCalculadora.pas addr:100078
+Adding breakpoint for uCalculadora.TCalculadora.CalcularResultado in uCalculadora.pas
+TBreakPoint.Activate:
+Activate uCalculadora.pas line 83 BreakPoint at:00662A03
+Setting BreakPoint for module: uCalculadora unit uCalculadora.pas addr:100079
+Adding breakpoint for uCalculadora.TCalculadora.CalcularResultado in uCalculadora.pas
+TBreakPoint.Activate:
+Activate uCalculadora.pas line 84 BreakPoint at:00662A0E
+Setting BreakPoint for module: uCalculadora unit uCalculadora.pas addr:100080
+Adding breakpoint for uCalculadora.TCalculadora.CalcularResultado in uCalculadora.pas
+TBreakPoint.Activate:
+Activate uCalculadora.pas line 85 BreakPoint at:00662A15
+Setting BreakPoint for module: uCalculadora unit uCalculadora.pas addr:100081
+Adding breakpoint for uCalculadora.TCalculadora.CalcularResultado in uCalculadora.pas
+TBreakPoint.Activate:
+Activate uCalculadora.pas line 88 BreakPoint at:00662A17
+Setting BreakPoint for module: uCalculadora unit uCalculadora.pas addr:100082
+Adding breakpoint for uCalculadora.TCalculadora.CalcularResultado in uCalculadora.pas
+TBreakPoint.Activate:
+Activate uCalculadora.pas line 90 BreakPoint at:00662A23
+Setting BreakPoint for module: uCalculadora unit uCalculadora.pas addr:100083
+Adding breakpoint for uCalculadora.TCalculadora.CalcularResultado in uCalculadora.pas
+TBreakPoint.Activate:
+Activate uCalculadora.pas line 91 BreakPoint at:00662A31
+Setting BreakPoint for module: uCalculadora unit uCalculadora.pas addr:100084
+Adding breakpoint for uCalculadora.TCalculadora.CalcularResultado in uCalculadora.pas
+TBreakPoint.Activate:
+Activate uCalculadora.pas line 92 BreakPoint at:00662A3C
+Setting BreakPoint for module: uCalculadora unit uCalculadora.pas addr:100085
+Adding breakpoint for uCalculadora.TCalculadora.CalcularResultado in uCalculadora.pas
+TBreakPoint.Activate:
+Activate uCalculadora.pas line 93 BreakPoint at:00662A49
+Setting BreakPoint for module: uCalculadora unit uCalculadora.pas addr:100086
+Adding breakpoint for uCalculadora.TCalculadora.CalcularResultado in uCalculadora.pas
+TBreakPoint.Activate:
+Activate uCalculadora.pas line 94 BreakPoint at:00662A54
+Setting BreakPoint for module: uCalculadora unit uCalculadora.pas addr:100087
+Adding breakpoint for uCalculadora.TCalculadora.CalcularResultado in uCalculadora.pas
+TBreakPoint.Activate:
+Activate uCalculadora.pas line 97 BreakPoint at:00662A56
+Setting BreakPoint for module: uCalculadora unit uCalculadora.pas addr:100088
+Adding breakpoint for uCalculadora.TCalculadora.CalcularResultado in uCalculadora.pas
+TBreakPoint.Activate:
+Activate uCalculadora.pas line 99 BreakPoint at:00662A64
+Setting BreakPoint for module: uCalculadora unit uCalculadora.pas addr:100089
+Adding breakpoint for uCalculadora.TCalculadora.CalcularResultado in uCalculadora.pas
+TBreakPoint.Activate:
+Activate uCalculadora.pas line 100 BreakPoint at:00662A6F
+Setting BreakPoint for module: uCalculadora unit uCalculadora.pas addr:100090
+Adding breakpoint for uCalculadora.TCalculadora.CalcularResultado in uCalculadora.pas
+TBreakPoint.Activate:
+Activate uCalculadora.pas line 101 BreakPoint at:00662A7A
+Setting BreakPoint for module: uCalculadora unit uCalculadora.pas addr:100091
+Adding breakpoint for uCalculadora.TCalculadora.Calcular in uCalculadora.pas
+TBreakPoint.Activate:
+Activate uCalculadora.pas line 106 BreakPoint at:00662A80
+Setting BreakPoint for module: uCalculadora unit uCalculadora.pas addr:100092
+Adding breakpoint for uCalculadora.TCalculadora.Calcular in uCalculadora.pas
+TBreakPoint.Activate:
+Activate uCalculadora.pas line 107 BreakPoint at:00662A8D
+Setting BreakPoint for module: uCalculadora unit uCalculadora.pas addr:100093
+Adding breakpoint for uCalculadora.TCalculadora.Calcular in uCalculadora.pas
+TBreakPoint.Activate:
+Activate uCalculadora.pas line 108 BreakPoint at:00662AA4
+Setting BreakPoint for module: uCalculadora unit uCalculadora.pas addr:100094
+Adding breakpoint for uCalculadora.TCalculadora.Calcular in uCalculadora.pas
+TBreakPoint.Activate:
+Activate uCalculadora.pas line 109 BreakPoint at:00662AB2
+Setting BreakPoint for module: uCalculadora unit uCalculadora.pas addr:100095
+Adding breakpoint for uCalculadora.TCalculadora.Calcular in uCalculadora.pas
+TBreakPoint.Activate:
+Activate uCalculadora.pas line 110 BreakPoint at:00662ACE
+Setting BreakPoint for module: uCalculadora unit uCalculadora.pas addr:100096
+Adding breakpoint for uCalculadora.TCalculadora.Calcular in uCalculadora.pas
+TBreakPoint.Activate:
+Activate uCalculadora.pas line 111 BreakPoint at:00662ADE
+Setting BreakPoint for module: uCalculadora unit uCalculadora.pas addr:100097
+Adding breakpoint for uCalculadora.TCalculadora.getExecutouCalculo in uCalculadora.pas
+TBreakPoint.Activate:
+Activate uCalculadora.pas line 114 BreakPoint at:00662AE4
+Setting BreakPoint for module: uCalculadora unit uCalculadora.pas addr:100098
+Adding breakpoint for uCalculadora.TCalculadora.getExecutouCalculo in uCalculadora.pas
+TBreakPoint.Activate:
+Activate uCalculadora.pas line 115 BreakPoint at:00662AED
+Setting BreakPoint for module: uCalculadora unit uCalculadora.pas addr:100099
+Adding breakpoint for uCalculadora.TCalculadora.getExecutouCalculo in uCalculadora.pas
+TBreakPoint.Activate:
+Activate uCalculadora.pas line 116 BreakPoint at:00662AF6
+Setting BreakPoint for module: uCalculadora unit uCalculadora.pas addr:100100
+Adding breakpoint for uCalculadora.TCalculadora.getOperador in uCalculadora.pas
+TBreakPoint.Activate:
+Activate uCalculadora.pas line 119 BreakPoint at:00662B00
+Setting BreakPoint for module: uCalculadora unit uCalculadora.pas addr:100101
+Adding breakpoint for uCalculadora.TCalculadora.getOperador in uCalculadora.pas
+TBreakPoint.Activate:
+Activate uCalculadora.pas line 120 BreakPoint at:00662B09
+Setting BreakPoint for module: uCalculadora unit uCalculadora.pas addr:100102
+Adding breakpoint for uCalculadora.TCalculadora.getOperador in uCalculadora.pas
+TBreakPoint.Activate:
+Activate uCalculadora.pas line 121 BreakPoint at:00662B12
+Setting BreakPoint for module: uCalculadora unit uCalculadora.pas addr:100103
+Adding breakpoint for uCalculadora.TCalculadora.getPressionadoOperacao in uCalculadora.pas
+TBreakPoint.Activate:
+Activate uCalculadora.pas line 124 BreakPoint at:00662B1C
+Setting BreakPoint for module: uCalculadora unit uCalculadora.pas addr:100104
+Adding breakpoint for uCalculadora.TCalculadora.getPressionadoOperacao in uCalculadora.pas
+TBreakPoint.Activate:
+Activate uCalculadora.pas line 125 BreakPoint at:00662B25
+Setting BreakPoint for module: uCalculadora unit uCalculadora.pas addr:100105
+Adding breakpoint for uCalculadora.TCalculadora.getPressionadoOperacao in uCalculadora.pas
+TBreakPoint.Activate:
+Activate uCalculadora.pas line 126 BreakPoint at:00662B2E
+Setting BreakPoint for module: uCalculadora unit uCalculadora.pas addr:100106
+Adding breakpoint for uCalculadora.TCalculadora.getPrimeiroNumero in uCalculadora.pas
+TBreakPoint.Activate:
+Activate uCalculadora.pas line 129 BreakPoint at:00662B38
+Setting BreakPoint for module: uCalculadora unit uCalculadora.pas addr:100107
+Adding breakpoint for uCalculadora.TCalculadora.getPrimeiroNumero in uCalculadora.pas
+TBreakPoint.Activate:
+Activate uCalculadora.pas line 130 BreakPoint at:00662B44
+Setting BreakPoint for module: uCalculadora unit uCalculadora.pas addr:100108
+Adding breakpoint for uCalculadora.TCalculadora.getPrimeiroNumero in uCalculadora.pas
+TBreakPoint.Activate:
+Activate uCalculadora.pas line 131 BreakPoint at:00662B52
+Setting BreakPoint for module: uCalculadora unit uCalculadora.pas addr:100109
+Adding breakpoint for uCalculadora.TCalculadora.getSegundoNumero in uCalculadora.pas
+TBreakPoint.Activate:
+Activate uCalculadora.pas line 134 BreakPoint at:00662B58
+Setting BreakPoint for module: uCalculadora unit uCalculadora.pas addr:100110
+Adding breakpoint for uCalculadora.TCalculadora.getSegundoNumero in uCalculadora.pas
+TBreakPoint.Activate:
+Activate uCalculadora.pas line 135 BreakPoint at:00662B64
+Setting BreakPoint for module: uCalculadora unit uCalculadora.pas addr:100111
+Adding breakpoint for uCalculadora.TCalculadora.getSegundoNumero in uCalculadora.pas
+TBreakPoint.Activate:
+Activate uCalculadora.pas line 136 BreakPoint at:00662B72
+Setting BreakPoint for module: uCalculadora unit uCalculadora.pas addr:100112
+Adding breakpoint for uCalculadora.TCalculadora.ImpostoA in uCalculadora.pas
+TBreakPoint.Activate:
+Activate uCalculadora.pas line 142 BreakPoint at:00662B78
+Setting BreakPoint for module: uCalculadora unit uCalculadora.pas addr:100113
+Adding breakpoint for uCalculadora.TCalculadora.ImpostoA in uCalculadora.pas
+TBreakPoint.Activate:
+Activate uCalculadora.pas line 143 BreakPoint at:00662B9B
+Setting BreakPoint for module: uCalculadora unit uCalculadora.pas addr:100114
+Adding breakpoint for uCalculadora.TCalculadora.ImpostoA in uCalculadora.pas
+TBreakPoint.Activate:
+Activate uCalculadora.pas line 144 BreakPoint at:00662BA3
+Setting BreakPoint for module: uCalculadora unit uCalculadora.pas addr:100115
+Adding breakpoint for uCalculadora.TCalculadora.ImpostoA in uCalculadora.pas
+TBreakPoint.Activate:
+Activate uCalculadora.pas line 145 BreakPoint at:00662BAB
+Setting BreakPoint for module: uCalculadora unit uCalculadora.pas addr:100116
+Adding breakpoint for uCalculadora.TCalculadora.ImpostoA in uCalculadora.pas
+TBreakPoint.Activate:
+Activate uCalculadora.pas line 146 BreakPoint at:00662BBC
+Setting BreakPoint for module: uCalculadora unit uCalculadora.pas addr:100117
+Adding breakpoint for uCalculadora.TCalculadora.ImpostoA in uCalculadora.pas
+TBreakPoint.Activate:
+Activate uCalculadora.pas line 147 BreakPoint at:00662BCF
+Setting BreakPoint for module: uCalculadora unit uCalculadora.pas addr:100118
+Adding breakpoint for uCalculadora.TCalculadora.ImpostoA in uCalculadora.pas
+TBreakPoint.Activate:
+Activate uCalculadora.pas line 149 BreakPoint at:00662BE2
+Setting BreakPoint for module: uCalculadora unit uCalculadora.pas addr:100119
+Adding breakpoint for uCalculadora.TCalculadora.ImpostoA in uCalculadora.pas
+TBreakPoint.Activate:
+Activate uCalculadora.pas line 151 BreakPoint at:00662BF6
+Setting BreakPoint for module: uCalculadora unit uCalculadora.pas addr:100120
+Adding breakpoint for uCalculadora.TCalculadora.ImpostoA in uCalculadora.pas
+TBreakPoint.Activate:
+Activate uCalculadora.pas line 152 BreakPoint at:00662C03
+Setting BreakPoint for module: uCalculadora unit uCalculadora.pas addr:100121
+Adding breakpoint for uCalculadora.TCalculadora.ImpostoA in uCalculadora.pas
+TBreakPoint.Activate:
+Activate uCalculadora.pas line 154 BreakPoint at:00662C10
+Setting BreakPoint for module: uCalculadora unit uCalculadora.pas addr:100122
+Adding breakpoint for uCalculadora.TCalculadora.ImpostoA in uCalculadora.pas
+TBreakPoint.Activate:
+Activate uCalculadora.pas line 155 BreakPoint at:00662C1B
+Setting BreakPoint for module: uCalculadora unit uCalculadora.pas addr:100123
+Adding breakpoint for uCalculadora.TCalculadora.ImpostoB in uCalculadora.pas
+TBreakPoint.Activate:
+Activate uCalculadora.pas line 161 BreakPoint at:00662C78
+Setting BreakPoint for module: uCalculadora unit uCalculadora.pas addr:100124
+Adding breakpoint for uCalculadora.TCalculadora.ImpostoB in uCalculadora.pas
+TBreakPoint.Activate:
+Activate uCalculadora.pas line 162 BreakPoint at:00662C9E
+Setting BreakPoint for module: uCalculadora unit uCalculadora.pas addr:100125
+Adding breakpoint for uCalculadora.TCalculadora.ImpostoB in uCalculadora.pas
+TBreakPoint.Activate:
+Activate uCalculadora.pas line 163 BreakPoint at:00662CAC
+Setting BreakPoint for module: uCalculadora unit uCalculadora.pas addr:100126
+Adding breakpoint for uCalculadora.TCalculadora.ImpostoB in uCalculadora.pas
+TBreakPoint.Activate:
+Activate uCalculadora.pas line 164 BreakPoint at:00662CB4
+Setting BreakPoint for module: uCalculadora unit uCalculadora.pas addr:100127
+Adding breakpoint for uCalculadora.TCalculadora.ImpostoB in uCalculadora.pas
+TBreakPoint.Activate:
+Activate uCalculadora.pas line 165 BreakPoint at:00662CD0
+Setting BreakPoint for module: uCalculadora unit uCalculadora.pas addr:100128
+Adding breakpoint for uCalculadora.TCalculadora.ImpostoB in uCalculadora.pas
+TBreakPoint.Activate:
+Activate uCalculadora.pas line 167 BreakPoint at:00662CE3
+Setting BreakPoint for module: uCalculadora unit uCalculadora.pas addr:100129
+Adding breakpoint for uCalculadora.TCalculadora.ImpostoB in uCalculadora.pas
+TBreakPoint.Activate:
+Activate uCalculadora.pas line 169 BreakPoint at:00662CF7
+Setting BreakPoint for module: uCalculadora unit uCalculadora.pas addr:100130
+Adding breakpoint for uCalculadora.TCalculadora.ImpostoB in uCalculadora.pas
+TBreakPoint.Activate:
+Activate uCalculadora.pas line 170 BreakPoint at:00662D04
+Setting BreakPoint for module: uCalculadora unit uCalculadora.pas addr:100131
+Adding breakpoint for uCalculadora.TCalculadora.ImpostoB in uCalculadora.pas
+TBreakPoint.Activate:
+Activate uCalculadora.pas line 172 BreakPoint at:00662D11
+Setting BreakPoint for module: uCalculadora unit uCalculadora.pas addr:100132
+Adding breakpoint for uCalculadora.TCalculadora.ImpostoB in uCalculadora.pas
+TBreakPoint.Activate:
+Activate uCalculadora.pas line 173 BreakPoint at:00662D1C
+Setting BreakPoint for module: uCalculadora unit uCalculadora.pas addr:100133
+Adding breakpoint for uCalculadora.TCalculadora.ImpostoC in uCalculadora.pas
+TBreakPoint.Activate:
+Activate uCalculadora.pas line 182 BreakPoint at:00662D6C
+Setting BreakPoint for module: uCalculadora unit uCalculadora.pas addr:100134
+Adding breakpoint for uCalculadora.TCalculadora.ImpostoC in uCalculadora.pas
+TBreakPoint.Activate:
+Activate uCalculadora.pas line 183 BreakPoint at:00662D95
+Setting BreakPoint for module: uCalculadora unit uCalculadora.pas addr:100135
+Adding breakpoint for uCalculadora.TCalculadora.ImpostoC in uCalculadora.pas
+TBreakPoint.Activate:
+Activate uCalculadora.pas line 184 BreakPoint at:00662DA3
+Setting BreakPoint for module: uCalculadora unit uCalculadora.pas addr:100136
+Adding breakpoint for uCalculadora.TCalculadora.ImpostoC in uCalculadora.pas
+TBreakPoint.Activate:
+Activate uCalculadora.pas line 185 BreakPoint at:00662DB1
+Setting BreakPoint for module: uCalculadora unit uCalculadora.pas addr:100137
+Adding breakpoint for uCalculadora.TCalculadora.ImpostoC in uCalculadora.pas
+TBreakPoint.Activate:
+Activate uCalculadora.pas line 186 BreakPoint at:00662DC5
+Setting BreakPoint for module: uCalculadora unit uCalculadora.pas addr:100138
+Adding breakpoint for uCalculadora.TCalculadora.ImpostoC in uCalculadora.pas
+TBreakPoint.Activate:
+Activate uCalculadora.pas line 187 BreakPoint at:00662DD9
+Setting BreakPoint for module: uCalculadora unit uCalculadora.pas addr:100139
+Adding breakpoint for uCalculadora.TCalculadora.ImpostoC in uCalculadora.pas
+TBreakPoint.Activate:
+Activate uCalculadora.pas line 188 BreakPoint at:00662DE3
+Setting BreakPoint for module: uCalculadora unit uCalculadora.pas addr:100140
+Adding breakpoint for uCalculadora.TCalculadora.ImpostoC in uCalculadora.pas
+TBreakPoint.Activate:
+Activate uCalculadora.pas line 189 BreakPoint at:00662E38
+Setting BreakPoint for module: uCalculadora unit uCalculadora.pas addr:100141
+Adding breakpoint for uCalculadora.TCalculadora.Inicializar in uCalculadora.pas
+TBreakPoint.Activate:
+Activate uCalculadora.pas line 192 BreakPoint at:00662E68
+Setting BreakPoint for module: uCalculadora unit uCalculadora.pas addr:100142
+Adding breakpoint for uCalculadora.TCalculadora.Inicializar in uCalculadora.pas
+TBreakPoint.Activate:
+Activate uCalculadora.pas line 193 BreakPoint at:00662E6F
+Setting BreakPoint for module: uCalculadora unit uCalculadora.pas addr:100143
+Adding breakpoint for uCalculadora.TCalculadora.Inicializar in uCalculadora.pas
+TBreakPoint.Activate:
+Activate uCalculadora.pas line 194 BreakPoint at:00662E79
+Setting BreakPoint for module: uCalculadora unit uCalculadora.pas addr:100144
+Adding breakpoint for uCalculadora.TCalculadora.Inicializar in uCalculadora.pas
+TBreakPoint.Activate:
+Activate uCalculadora.pas line 195 BreakPoint at:00662E83
+Setting BreakPoint for module: uCalculadora unit uCalculadora.pas addr:100145
+Adding breakpoint for uCalculadora.TCalculadora.Inicializar in uCalculadora.pas
+TBreakPoint.Activate:
+Activate uCalculadora.pas line 196 BreakPoint at:00662E8D
+Setting BreakPoint for module: uCalculadora unit uCalculadora.pas addr:100146
+Adding breakpoint for uCalculadora.TCalculadora.Inicializar in uCalculadora.pas
+TBreakPoint.Activate:
+Activate uCalculadora.pas line 197 BreakPoint at:00662E97
+Setting BreakPoint for module: uCalculadora unit uCalculadora.pas addr:100147
+Adding breakpoint for uCalculadora.TCalculadora.Inicializar in uCalculadora.pas
+TBreakPoint.Activate:
+Activate uCalculadora.pas line 198 BreakPoint at:00662EA1
+Setting BreakPoint for module: uCalculadora unit uCalculadora.pas addr:100148
+Adding breakpoint for uCalculadora.TCalculadora.Inicializar in uCalculadora.pas
+TBreakPoint.Activate:
+Activate uCalculadora.pas line 199 BreakPoint at:00662EAC
+Setting BreakPoint for module: uCalculadora unit uCalculadora.pas addr:100149
+Adding breakpoint for uCalculadora.TCalculadora.setExecutouCalculo in uCalculadora.pas
+TBreakPoint.Activate:
+Activate uCalculadora.pas line 202 BreakPoint at:00662EB0
+Setting BreakPoint for module: uCalculadora unit uCalculadora.pas addr:100150
+Adding breakpoint for uCalculadora.TCalculadora.setExecutouCalculo in uCalculadora.pas
+TBreakPoint.Activate:
+Activate uCalculadora.pas line 203 BreakPoint at:00662EBC
+Setting BreakPoint for module: uCalculadora unit uCalculadora.pas addr:100151
+Adding breakpoint for uCalculadora.TCalculadora.setExecutouCalculo in uCalculadora.pas
+TBreakPoint.Activate:
+Activate uCalculadora.pas line 204 BreakPoint at:00662EC5
+Setting BreakPoint for module: uCalculadora unit uCalculadora.pas addr:100152
+Adding breakpoint for uCalculadora.TCalculadora.setOperador in uCalculadora.pas
+TBreakPoint.Activate:
+Activate uCalculadora.pas line 207 BreakPoint at:00662ECC
+Setting BreakPoint for module: uCalculadora unit uCalculadora.pas addr:100153
+Adding breakpoint for uCalculadora.TCalculadora.setOperador in uCalculadora.pas
+TBreakPoint.Activate:
+Activate uCalculadora.pas line 208 BreakPoint at:00662ED8
+Setting BreakPoint for module: uCalculadora unit uCalculadora.pas addr:100154
+Adding breakpoint for uCalculadora.TCalculadora.setOperador in uCalculadora.pas
+TBreakPoint.Activate:
+Activate uCalculadora.pas line 210 BreakPoint at:00662EE1
+Setting BreakPoint for module: uCalculadora unit uCalculadora.pas addr:100155
+Adding breakpoint for uCalculadora.TCalculadora.setOperador in uCalculadora.pas
+TBreakPoint.Activate:
+Activate uCalculadora.pas line 211 BreakPoint at:00662EEA
+Setting BreakPoint for module: uCalculadora unit uCalculadora.pas addr:100156
+Adding breakpoint for uCalculadora.TCalculadora.setOperador in uCalculadora.pas
+TBreakPoint.Activate:
+Activate uCalculadora.pas line 213 BreakPoint at:00662EF5
+Setting BreakPoint for module: uCalculadora unit uCalculadora.pas addr:100157
+Adding breakpoint for uCalculadora.TCalculadora.setOperador in uCalculadora.pas
+TBreakPoint.Activate:
+Activate uCalculadora.pas line 214 BreakPoint at:00662F0B
+Setting BreakPoint for module: uCalculadora unit uCalculadora.pas addr:100158
+Adding breakpoint for uCalculadora.TCalculadora.setOperador in uCalculadora.pas
+TBreakPoint.Activate:
+Activate uCalculadora.pas line 215 BreakPoint at:00662F2D
+Setting BreakPoint for module: uCalculadora unit uCalculadora.pas addr:100159
+Adding breakpoint for uCalculadora.TCalculadora.setOperador in uCalculadora.pas
+TBreakPoint.Activate:
+Activate uCalculadora.pas line 216 BreakPoint at:00662F4F
+Setting BreakPoint for module: uCalculadora unit uCalculadora.pas addr:100160
+Adding breakpoint for uCalculadora.TCalculadora.setOperador in uCalculadora.pas
+TBreakPoint.Activate:
+Activate uCalculadora.pas line 217 BreakPoint at:00662F71
+Setting BreakPoint for module: uCalculadora unit uCalculadora.pas addr:100161
+Adding breakpoint for uCalculadora.TCalculadora.setOperador in uCalculadora.pas
+TBreakPoint.Activate:
+Activate uCalculadora.pas line 219 BreakPoint at:00662F91
+Setting BreakPoint for module: uCalculadora unit uCalculadora.pas addr:100162
+Adding breakpoint for uCalculadora.TCalculadora.setPressionadoOperacao in uCalculadora.pas
+TBreakPoint.Activate:
+Activate uCalculadora.pas line 223 BreakPoint at:00662F98
+Setting BreakPoint for module: uCalculadora unit uCalculadora.pas addr:100163
+Adding breakpoint for uCalculadora.TCalculadora.setPressionadoOperacao in uCalculadora.pas
+TBreakPoint.Activate:
+Activate uCalculadora.pas line 224 BreakPoint at:00662FA4
+Setting BreakPoint for module: uCalculadora unit uCalculadora.pas addr:100164
+Adding breakpoint for uCalculadora.TCalculadora.setPressionadoOperacao in uCalculadora.pas
+TBreakPoint.Activate:
+Activate uCalculadora.pas line 225 BreakPoint at:00662FAD
+Setting BreakPoint for module: uCalculadora unit uCalculadora.pas addr:100165
+Adding breakpoint for uCalculadora.TCalculadora.setPrimeiroNumero in uCalculadora.pas
+TBreakPoint.Activate:
+Activate uCalculadora.pas line 228 BreakPoint at:00662FB4
+Setting BreakPoint for module: uCalculadora unit uCalculadora.pas addr:100166
+Adding breakpoint for uCalculadora.TCalculadora.setPrimeiroNumero in uCalculadora.pas
+TBreakPoint.Activate:
+Activate uCalculadora.pas line 229 BreakPoint at:00662FC0
+Setting BreakPoint for module: uCalculadora unit uCalculadora.pas addr:100167
+Adding breakpoint for uCalculadora.TCalculadora.setPrimeiroNumero in uCalculadora.pas
+TBreakPoint.Activate:
+Activate uCalculadora.pas line 230 BreakPoint at:00662FCE
+Setting BreakPoint for module: uCalculadora unit uCalculadora.pas addr:100168
+Adding breakpoint for uCalculadora.TCalculadora.setSegundoNumero in uCalculadora.pas
+TBreakPoint.Activate:
+Activate uCalculadora.pas line 233 BreakPoint at:00662FD4
+Setting BreakPoint for module: uCalculadora unit uCalculadora.pas addr:100169
+Adding breakpoint for uCalculadora.TCalculadora.setSegundoNumero in uCalculadora.pas
+TBreakPoint.Activate:
+Activate uCalculadora.pas line 234 BreakPoint at:00662FE0
+Setting BreakPoint for module: uCalculadora unit uCalculadora.pas addr:100170
+Adding breakpoint for uCalculadora.TCalculadora.setSegundoNumero in uCalculadora.pas
+TBreakPoint.Activate:
+Activate uCalculadora.pas line 235 BreakPoint at:00662FEE
+Setting BreakPoint for module: uCalculadora unit uCalculadora.pas addr:100171
+Adding breakpoint for uCalculadora.TCalculadora.SimboloParaOperador in uCalculadora.pas
+TBreakPoint.Activate:
+Activate uCalculadora.pas line 238 BreakPoint at:00662FF4
+Setting BreakPoint for module: uCalculadora unit uCalculadora.pas addr:100172
+Adding breakpoint for uCalculadora.TCalculadora.SimboloParaOperador in uCalculadora.pas
+TBreakPoint.Activate:
+Activate uCalculadora.pas line 239 BreakPoint at:00663000
+Setting BreakPoint for module: uCalculadora unit uCalculadora.pas addr:100173
+Adding breakpoint for uCalculadora.TCalculadora.SimboloParaOperador in uCalculadora.pas
+TBreakPoint.Activate:
+Activate uCalculadora.pas line 240 BreakPoint at:0066300F
+Setting BreakPoint for module: uCalculadora unit uCalculadora.pas addr:100174
+Adding breakpoint for uCalculadora.TCalculadora.SimboloParaOperador in uCalculadora.pas
+TBreakPoint.Activate:
+Activate uCalculadora.pas line 241 BreakPoint at:00663015
+Setting BreakPoint for module: uCalculadora unit uCalculadora.pas addr:100175
+Adding breakpoint for uCalculadora.TCalculadora.SimboloParaOperador in uCalculadora.pas
+TBreakPoint.Activate:
+Activate uCalculadora.pas line 242 BreakPoint at:00663024
+Setting BreakPoint for module: uCalculadora unit uCalculadora.pas addr:100176
+Adding breakpoint for uCalculadora.TCalculadora.SimboloParaOperador in uCalculadora.pas
+TBreakPoint.Activate:
+Activate uCalculadora.pas line 243 BreakPoint at:0066302A
+Setting BreakPoint for module: uCalculadora unit uCalculadora.pas addr:100177
+Adding breakpoint for uCalculadora.TCalculadora.SimboloParaOperador in uCalculadora.pas
+TBreakPoint.Activate:
+Activate uCalculadora.pas line 244 BreakPoint at:00663039
+Setting BreakPoint for module: uCalculadora unit uCalculadora.pas addr:100178
+Adding breakpoint for uCalculadora.TCalculadora.SimboloParaOperador in uCalculadora.pas
+TBreakPoint.Activate:
+Activate uCalculadora.pas line 245 BreakPoint at:0066303F
+Setting BreakPoint for module: uCalculadora unit uCalculadora.pas addr:100179
+Adding breakpoint for uCalculadora.TCalculadora.SimboloParaOperador in uCalculadora.pas
+TBreakPoint.Activate:
+Activate uCalculadora.pas line 246 BreakPoint at:0066304E
+Setting BreakPoint for module: uCalculadora unit uCalculadora.pas addr:100180
+Adding breakpoint for uCalculadora.TCalculadora.SimboloParaOperador in uCalculadora.pas
+TBreakPoint.Activate:
+Activate uCalculadora.pas line 248 BreakPoint at:00663054
+Setting BreakPoint for module: uCalculadora unit uCalculadora.pas addr:100181
+Adding breakpoint for uCalculadora.TCalculadora.SimboloParaOperador in uCalculadora.pas
+TBreakPoint.Activate:
+Activate uCalculadora.pas line 249 BreakPoint at:00663058
+Setting BreakPoint for module: uCalculadora unit uCalculadora.pas addr:100182
+Adding breakpoint for uCalculadora.TCalculadora.OperadorParaSimbolo in uCalculadora.pas
+TBreakPoint.Activate:
+Activate uCalculadora.pas line 252 BreakPoint at:006630A0
+Setting BreakPoint for module: uCalculadora unit uCalculadora.pas addr:100183
+Adding breakpoint for uCalculadora.TCalculadora.OperadorParaSimbolo in uCalculadora.pas
+TBreakPoint.Activate:
+Activate uCalculadora.pas line 253 BreakPoint at:006630AF
+Setting BreakPoint for module: uCalculadora unit uCalculadora.pas addr:100184
+Adding breakpoint for uCalculadora.TCalculadora.OperadorParaSimbolo in uCalculadora.pas
+TBreakPoint.Activate:
+Activate uCalculadora.pas line 254 BreakPoint at:006630C2
+Setting BreakPoint for module: uCalculadora unit uCalculadora.pas addr:100185
+Adding breakpoint for uCalculadora.TCalculadora.OperadorParaSimbolo in uCalculadora.pas
+TBreakPoint.Activate:
+Activate uCalculadora.pas line 255 BreakPoint at:006630D1
+Setting BreakPoint for module: uCalculadora unit uCalculadora.pas addr:100186
+Adding breakpoint for uCalculadora.TCalculadora.OperadorParaSimbolo in uCalculadora.pas
+TBreakPoint.Activate:
+Activate uCalculadora.pas line 256 BreakPoint at:006630E0
+Setting BreakPoint for module: uCalculadora unit uCalculadora.pas addr:100187
+Adding breakpoint for uCalculadora.TCalculadora.OperadorParaSimbolo in uCalculadora.pas
+TBreakPoint.Activate:
+Activate uCalculadora.pas line 257 BreakPoint at:006630EF
+Setting BreakPoint for module: uCalculadora unit uCalculadora.pas addr:100188
+Adding breakpoint for uCalculadora.TCalculadora.OperadorParaSimbolo in uCalculadora.pas
+TBreakPoint.Activate:
+Activate uCalculadora.pas line 259 BreakPoint at:006630FE
+Setting BreakPoint for module: uCalculadora unit uCalculadora.pas addr:100189
+Adding breakpoint for uCalculadora.TCalculadora.OperadorParaSimbolo in uCalculadora.pas
+TBreakPoint.Activate:
+Activate uCalculadora.pas line 261 BreakPoint at:00663106
+Setting BreakPoint for module: uCalculadora unit uCalculadora.pas addr:100190
+Adding breakpoint for uCalculadora.TCalculadora.Destroy in uCalculadora.pas
+TBreakPoint.Activate:
+Activate uCalculadora.pas line 264 BreakPoint at:0066314C
+Setting BreakPoint for module: uCalculadora unit uCalculadora.pas addr:100191
+Adding breakpoint for uCalculadora.TCalculadora.Destroy in uCalculadora.pas
+TBreakPoint.Activate:
+Activate uCalculadora.pas line 265 BreakPoint at:0066315D
+Setting BreakPoint for module: uCalculadora unit uCalculadora.pas addr:100192
+Adding breakpoint for uCalculadora.TCalculadora.Destroy in uCalculadora.pas
+TBreakPoint.Activate:
+Activate uCalculadora.pas line 266 BreakPoint at:00663166
+Setting BreakPoint for module: uCalculadora unit uCalculadora.pas addr:100193
+Adding breakpoint for uCalculadora.TCalculadora.Destroy in uCalculadora.pas
+TBreakPoint.Activate:
+Activate uCalculadora.pas line 268 BreakPoint at:00663171
+Setting BreakPoint for module: uCalculadora unit uCalculadora.pas addr:100194
+Adding breakpoint for uCalculadora.TCalculadora.Destroy in uCalculadora.pas
+TBreakPoint.Activate:
+Activate uCalculadora.pas line 269 BreakPoint at:0066317F
+Module name "uCalculadora" did not match module from address name "TestCalculadora" at address:00262198
+Module name "System.DateUtils" did not match module from address name "System.IOUtils" at address:0026B89C
+Module name "Vcl.Controls" did not match module from address name "Vcl.StdCtrls" at address:0026C0E4
+Module name "Vcl.ComCtrls" did not match module from address name "Vcl.Dialogs" at address:0026C375
+Module name "Vcl.Dialogs" did not match module from address name "Vcl.ExtCtrls" at address:0026C448
+Module name "Vcl.ExtCtrls" did not match module from address name "Vcl.Themes" at address:0026C4B8
+Module CalculadoraTest skipped
+Module delayhlp skipped
+Module DUnitTestRunner skipped
+Module GETMEM skipped
+Module GuiTestRunner skipped
+Module SysInit skipped
+Module System skipped
+Module System.Actions skipped
+Module System.AnsiStrings skipped
+Module System.Character skipped
+Module System.Character.12.1.0 skipped
+Module System.Classes skipped
+Module System.Contnrs skipped
+Module System.DateUtils skipped
+Module System.Diagnostics skipped
+Module System.Generics.Collections skipped
+Module System.Generics.Defaults skipped
+Module System.Hash skipped
+Module System.HelpIntfs skipped
+Module System.ImageList skipped
+Module System.IniFiles skipped
+Module System.Internal.ExcUtils skipped
+Module System.IOUtils skipped
+Module System.Math skipped
+Module System.Messaging skipped
+Module System.Rtti skipped
+Module System.SyncObjs skipped
+Module System.SysUtils skipped
+Module System.TimeSpan skipped
+Module System.Types skipped
+Module System.TypInfo skipped
+Module System.UIConsts skipped
+Module System.UITypes skipped
+Module System.Variants skipped
+Module System.VarUtils skipped
+Module System.WideStrUtils skipped
+Module System.Win.ComObj skipped
+Module System.Win.Registry skipped
+Module System.Win.TaskbarCore skipped
+Module TestCalculadora skipped
+Module TestFramework skipped
+Module TextTestRunner skipped
+Module Vcl.ActnList skipped
+Module Vcl.Buttons skipped
+Module Vcl.Clipbrd skipped
+Module Vcl.ComCtrls skipped
+Module Vcl.Controls skipped
+Module Vcl.Dialogs skipped
+Module Vcl.ExtCtrls skipped
+Module Vcl.Forms skipped
+Module Vcl.Graphics skipped
+Module Vcl.GraphUtil skipped
+Module Vcl.ImgList skipped
+Module Vcl.ListActns skipped
+Module Vcl.Menus skipped
+Module Vcl.Printers skipped
+Module Vcl.StdActns skipped
+Module Vcl.StdCtrls skipped
+Module Vcl.Themes skipped
+Module Vcl.ToolWin skipped
+Module Winapi.ActiveX skipped
+Module Winapi.CommCtrl skipped
+Module Winapi.DwmApi skipped
+Module Winapi.FlatSB skipped
+Module Winapi.Imm skipped
+Module Winapi.Messages skipped
+Module Winapi.MsCTF skipped
+Module Winapi.MultiMon skipped
+Module Winapi.PsAPI skipped
+Module Winapi.RichEdit skipped
+Module Winapi.ShellAPI skipped
+Module Winapi.ShellScaling skipped
+Module Winapi.ShlObj skipped
+Module Winapi.UxTheme skipped
+Module Winapi.Wincodec skipped
+Module Winapi.Windows skipped
+Module Winapi.WinSpool skipped
+Module WindowsAPIs skipped
+Done adding  BreakPoints
+ReadProcessMemory error: Somente uma parte de um pedido ReadProcessMemory ou WriteProcessMemory foi concluída
+GetModuleFileNameEx error: Identificador inválido
+Loading DLL at addr:74BF0000 (C:\WINDOWS\SysWOW64\KERNEL32.DLL) size :409600
+Done adding  BreakPoints
+Loading DLL at addr:76BA0000 (C:\WINDOWS\SysWOW64\KERNELBASE.dll) size :1849344
+Done adding  BreakPoints
+Create thread:5012
+Create thread:8568
+Loading DLL at addr:75F50000 (C:\WINDOWS\SysWOW64\shell32.dll) size :5279744
+Done adding  BreakPoints
+Loading DLL at addr:74210000 (C:\WINDOWS\SysWOW64\winspool.drv) size :297472
+Done adding  BreakPoints
+Loading DLL at addr:64C40000 (C:\WINDOWS\WinSxS\x86_microsoft.windows.common-controls_6595b64144ccf1df_5.82.18362.836_none_71d337c15ae77c22\comctl32.dll) size :466432
+Done adding  BreakPoints
+Loading DLL at addr:75710000 (C:\WINDOWS\SysWOW64\ucrtbase.dll) size :1104384
+Done adding  BreakPoints
+Loading DLL at addr:764D0000 (C:\WINDOWS\SysWOW64\msvcrt.dll) size :723456
+Done adding  BreakPoints
+Loading DLL at addr:75DE0000 (C:\WINDOWS\SysWOW64\ADVAPI32.dll) size :421376
+Done adding  BreakPoints
+Loading DLL at addr:74EC0000 (C:\WINDOWS\SysWOW64\combase.dll) size :2295808
+Done adding  BreakPoints
+Loading DLL at addr:75A00000 (C:\WINDOWS\SysWOW64\cfgmgr32.dll) size :206336
+Done adding  BreakPoints
+Loading DLL at addr:75E70000 (C:\WINDOWS\SysWOW64\RPCRT4.dll) size :695296
+Done adding  BreakPoints
+Loading DLL at addr:77150000 (C:\WINDOWS\SysWOW64\shcore.dll) size :479232
+Done adding  BreakPoints
+Loading DLL at addr:74B60000 (C:\WINDOWS\SysWOW64\sechost.dll) size :420352
+Done adding  BreakPoints
+Loading DLL at addr:74B30000 (C:\WINDOWS\SysWOW64\SspiCli.dll) size :98816
+Done adding  BreakPoints
+Create thread:172
+Loading DLL at addr:75140000 (C:\WINDOWS\SysWOW64\windows.storage.dll) size :5562880
+Done adding  BreakPoints
+Loading DLL at addr:74B20000 (C:\WINDOWS\SysWOW64\CRYPTBASE.dll) size :16384
+Done adding  BreakPoints
+Loading DLL at addr:75C50000 (C:\WINDOWS\SysWOW64\bcryptPrimitives.dll) size :359424
+Done adding  BreakPoints
+Loading DLL at addr:76DB0000 (C:\WINDOWS\SysWOW64\msvcp_win.dll) size :454144
+Done adding  BreakPoints
+Loading DLL at addr:75CB0000 (C:\WINDOWS\SysWOW64\profapi.dll) size :79872
+Done adding  BreakPoints
+Loading DLL at addr:76DA0000 (C:\WINDOWS\SysWOW64\kernel.appcore.dll) size :26112
+Done adding  BreakPoints
+Loading DLL at addr:75980000 (C:\WINDOWS\SysWOW64\GDI32.dll) size :104448
+Done adding  BreakPoints
+Loading DLL at addr:77260000 (C:\WINDOWS\SysWOW64\powrprof.dll) size :77824
+Done adding  BreakPoints
+Loading DLL at addr:771E0000 (C:\WINDOWS\SysWOW64\bcrypt.dll) size :74752
+Done adding  BreakPoints
+Loading DLL at addr:75F30000 (C:\WINDOWS\SysWOW64\win32u.dll) size :73728
+Done adding  BreakPoints
+Loading DLL at addr:74B50000 (C:\WINDOWS\SysWOW64\UMPDC.dll) size :30720
+Done adding  BreakPoints
+Loading DLL at addr:75A60000 (C:\WINDOWS\SysWOW64\gdi32full.dll) size :1268224
+Done adding  BreakPoints
+Loading DLL at addr:74E10000 (C:\WINDOWS\SysWOW64\shlwapi.dll) size :231936
+Done adding  BreakPoints
+Loading DLL at addr:765B0000 (C:\WINDOWS\SysWOW64\USER32.dll) size :657408
+Done adding  BreakPoints
+WARNING: The module C:\WINDOWS\SysWOW64\USER32.dll was already loaded. Skipping breakpoint generation and coverage for subsequent load.
+UnLoading DLL:016F0000
+Loading DLL at addr:75A40000 (C:\WINDOWS\SysWOW64\cryptsp.dll) size :49664
+Done adding  BreakPoints
+Loading DLL at addr:74A50000 (C:\WINDOWS\SysWOW64\PROPSYS.dll) size :721408
+Done adding  BreakPoints
+Loading DLL at addr:74910000 (C:\WINDOWS\SysWOW64\IPHLPAPI.DLL) size :172032
+Done adding  BreakPoints
+Loading DLL at addr:77050000 (C:\WINDOWS\SysWOW64\ole32.dll) size :826880
+Done adding  BreakPoints
+Loading DLL at addr:772B0000 (C:\WINDOWS\SysWOW64\oleaut32.dll) size :539648
+Done adding  BreakPoints
+Loading DLL at addr:745D0000 (C:\WINDOWS\SysWOW64\version.dll) size :10752
+Done adding  BreakPoints
+Loading DLL at addr:74020000 (C:\WINDOWS\SysWOW64\netapi32.dll) size :51712
+Done adding  BreakPoints
+Loading DLL at addr:73C40000 (C:\WINDOWS\SysWOW64\NETUTILS.DLL) size :20992
+Done adding  BreakPoints
+Couldn't find BreakPoint for exception address:7740EAA2
+Loading DLL at addr:74DE0000 (C:\WINDOWS\SysWOW64\IMM32.DLL) size :101376
+Done adding  BreakPoints
+Loading DLL at addr:74CD0000 (C:\WINDOWS\SysWOW64\Msctf.dll) size :965120
+Done adding  BreakPoints
+Loading DLL at addr:73CC0000 (C:\WINDOWS\SysWOW64\uxtheme.dll) size :436736
+Done adding  BreakPoints
+Loading DLL at addr:740B0000 (C:\WINDOWS\SysWOW64\wtsapi32.dll) size :35328
+Done adding  BreakPoints
+Loading DLL at addr:74060000 (C:\WINDOWS\SysWOW64\WINSTA.dll) size :230912
+Done adding  BreakPoints
+Loading DLL at addr:72AB0000 (C:\WINDOWS\WinSxS\x86_microsoft.windows.common-controls_6595b64144ccf1df_6.0.18362.836_none_2e71f01a278b41f3\comctl32.DLL) size :1725440
+Done adding  BreakPoints
+Loading DLL at addr:725F0000 (C:\WINDOWS\SysWOW64\RICHED20.DLL) size :421376
+Done adding  BreakPoints
+Loading DLL at addr:73D90000 (C:\WINDOWS\SysWOW64\USP10.dll) size :3072
+Done adding  BreakPoints
+Loading DLL at addr:73D50000 (C:\WINDOWS\SysWOW64\msls31.dll) size :176640
+Done adding  BreakPoints
+Create thread:4236
+Create thread:12364
+Create thread:10544
+Loading DLL at addr:75BD0000 (C:\WINDOWS\SysWOW64\clbcatq.dll) size :456704
+Done adding  BreakPoints
+Loading DLL at addr:6F880000 (C:\WINDOWS\SysWOW64\dataexchange.dll) size :162304
+Done adding  BreakPoints
+Loading DLL at addr:72740000 (C:\WINDOWS\SysWOW64\d3d11.dll) size :1775616
+Done adding  BreakPoints
+Loading DLL at addr:6F710000 (C:\WINDOWS\SysWOW64\dcomp.dll) size :1320960
+Done adding  BreakPoints
+Loading DLL at addr:72670000 (C:\WINDOWS\SysWOW64\dxgi.dll) size :619520
+Done adding  BreakPoints
+Loading DLL at addr:742A0000 (C:\WINDOWS\SysWOW64\dxcore.dll) size :63488
+Done adding  BreakPoints
+Loading DLL at addr:6F520000 (C:\WINDOWS\SysWOW64\twinapi.appcore.dll) size :1807360
+Done adding  BreakPoints
+Loading DLL at addr:6F500000 (C:\WINDOWS\SysWOW64\RMCLIENT.dll) size :92160
+Done adding  BreakPoints
+Loading DLL at addr:740D0000 (C:\WINDOWS\SysWOW64\DWMAPI.DLL) size :91136
+Done adding  BreakPoints
+Loading DLL at addr:744A0000 (C:\WINDOWS\SysWOW64\TextInputFramework.dll) size :484352
+Done adding  BreakPoints
+Loading DLL at addr:73210000 (C:\WINDOWS\SysWOW64\CoreUIComponents.dll) size :1406464
+Done adding  BreakPoints
+Loading DLL at addr:74410000 (C:\WINDOWS\SysWOW64\CoreMessaging.dll) size :350208
+Done adding  BreakPoints
+Loading DLL at addr:74870000 (C:\WINDOWS\SysWOW64\ntmarta.dll) size :125440
+Done adding  BreakPoints
+Loading DLL at addr:6B5C0000 (C:\WINDOWS\SysWOW64\wintypes.dll) size :770048
+Done adding  BreakPoints
+WARNING: The module C:\WINDOWS\SysWOW64\wintypes.dll was already loaded. Skipping breakpoint generation and coverage for subsequent load.
+UnLoading DLL:050A0000
+Loading DLL at addr:70540000 (C:\WINDOWS\SysWOW64\iertutil.dll) size :2088448
+Done adding  BreakPoints
+Wait For Debug Event timed-out
+Adding coverage:uCalculadora.pas (uCalculadora) 61
+Clearing BreakPoint at 00662950
+De-Activate uCalculadora.pas line 61 BreakPoint at:00662950
+Adding coverage:uCalculadora.pas (uCalculadora) 62
+Clearing BreakPoint at 00662968
+De-Activate uCalculadora.pas line 62 BreakPoint at:00662968
+Adding coverage:uCalculadora.pas (uCalculadora) 192
+Clearing BreakPoint at 00662E68
+De-Activate uCalculadora.pas line 192 BreakPoint at:00662E68
+Adding coverage:uCalculadora.pas (uCalculadora) 193
+Clearing BreakPoint at 00662E6F
+De-Activate uCalculadora.pas line 193 BreakPoint at:00662E6F
+Adding coverage:uCalculadora.pas (uCalculadora) 207
+Clearing BreakPoint at 00662ECC
+De-Activate uCalculadora.pas line 207 BreakPoint at:00662ECC
+Adding coverage:uCalculadora.pas (uCalculadora) 208
+Clearing BreakPoint at 00662ED8
+De-Activate uCalculadora.pas line 208 BreakPoint at:00662ED8
+Adding coverage:uCalculadora.pas (uCalculadora) 210
+Clearing BreakPoint at 00662EE1
+De-Activate uCalculadora.pas line 210 BreakPoint at:00662EE1
+Adding coverage:uCalculadora.pas (uCalculadora) 213
+Clearing BreakPoint at 00662EF5
+De-Activate uCalculadora.pas line 213 BreakPoint at:00662EF5
+Adding coverage:uCalculadora.pas (uCalculadora) 219
+Clearing BreakPoint at 00662F91
+De-Activate uCalculadora.pas line 219 BreakPoint at:00662F91
+Adding coverage:uCalculadora.pas (uCalculadora) 194
+Clearing BreakPoint at 00662E79
+De-Activate uCalculadora.pas line 194 BreakPoint at:00662E79
+Adding coverage:uCalculadora.pas (uCalculadora) 223
+Clearing BreakPoint at 00662F98
+De-Activate uCalculadora.pas line 223 BreakPoint at:00662F98
+Adding coverage:uCalculadora.pas (uCalculadora) 224
+Clearing BreakPoint at 00662FA4
+De-Activate uCalculadora.pas line 224 BreakPoint at:00662FA4
+Adding coverage:uCalculadora.pas (uCalculadora) 225
+Clearing BreakPoint at 00662FAD
+De-Activate uCalculadora.pas line 225 BreakPoint at:00662FAD
+Adding coverage:uCalculadora.pas (uCalculadora) 195
+Clearing BreakPoint at 00662E83
+De-Activate uCalculadora.pas line 195 BreakPoint at:00662E83
+Adding coverage:uCalculadora.pas (uCalculadora) 202
+Clearing BreakPoint at 00662EB0
+De-Activate uCalculadora.pas line 202 BreakPoint at:00662EB0
+Adding coverage:uCalculadora.pas (uCalculadora) 203
+Clearing BreakPoint at 00662EBC
+De-Activate uCalculadora.pas line 203 BreakPoint at:00662EBC
+Adding coverage:uCalculadora.pas (uCalculadora) 204
+Clearing BreakPoint at 00662EC5
+De-Activate uCalculadora.pas line 204 BreakPoint at:00662EC5
+Adding coverage:uCalculadora.pas (uCalculadora) 196
+Clearing BreakPoint at 00662E8D
+De-Activate uCalculadora.pas line 196 BreakPoint at:00662E8D
+Adding coverage:uCalculadora.pas (uCalculadora) 228
+Clearing BreakPoint at 00662FB4
+De-Activate uCalculadora.pas line 228 BreakPoint at:00662FB4
+Adding coverage:uCalculadora.pas (uCalculadora) 229
+Clearing BreakPoint at 00662FC0
+De-Activate uCalculadora.pas line 229 BreakPoint at:00662FC0
+Adding coverage:uCalculadora.pas (uCalculadora) 230
+Clearing BreakPoint at 00662FCE
+De-Activate uCalculadora.pas line 230 BreakPoint at:00662FCE
+Adding coverage:uCalculadora.pas (uCalculadora) 197
+Clearing BreakPoint at 00662E97
+De-Activate uCalculadora.pas line 197 BreakPoint at:00662E97
+Adding coverage:uCalculadora.pas (uCalculadora) 233
+Clearing BreakPoint at 00662FD4
+De-Activate uCalculadora.pas line 233 BreakPoint at:00662FD4
+Adding coverage:uCalculadora.pas (uCalculadora) 234
+Clearing BreakPoint at 00662FE0
+De-Activate uCalculadora.pas line 234 BreakPoint at:00662FE0
+Adding coverage:uCalculadora.pas (uCalculadora) 235
+Clearing BreakPoint at 00662FEE
+De-Activate uCalculadora.pas line 235 BreakPoint at:00662FEE
+Adding coverage:uCalculadora.pas (uCalculadora) 198
+Clearing BreakPoint at 00662EA1
+De-Activate uCalculadora.pas line 198 BreakPoint at:00662EA1
+Adding coverage:uCalculadora.pas (uCalculadora) 199
+Clearing BreakPoint at 00662EAC
+De-Activate uCalculadora.pas line 199 BreakPoint at:00662EAC
+Adding coverage:uCalculadora.pas (uCalculadora) 63
+Clearing BreakPoint at 00662970
+De-Activate uCalculadora.pas line 63 BreakPoint at:00662970
+Adding coverage:uCalculadora.pas (uCalculadora) 238
+Clearing BreakPoint at 00662FF4
+De-Activate uCalculadora.pas line 238 BreakPoint at:00662FF4
+Adding coverage:uCalculadora.pas (uCalculadora) 239
+Clearing BreakPoint at 00663000
+De-Activate uCalculadora.pas line 239 BreakPoint at:00663000
+Adding coverage:uCalculadora.pas (uCalculadora) 240
+Clearing BreakPoint at 0066300F
+De-Activate uCalculadora.pas line 240 BreakPoint at:0066300F
+Adding coverage:uCalculadora.pas (uCalculadora) 249
+Clearing BreakPoint at 00663058
+De-Activate uCalculadora.pas line 249 BreakPoint at:00663058
+Adding coverage:uCalculadora.pas (uCalculadora) 264
+Clearing BreakPoint at 0066314C
+De-Activate uCalculadora.pas line 264 BreakPoint at:0066314C
+Adding coverage:uCalculadora.pas (uCalculadora) 265
+Clearing BreakPoint at 0066315D
+De-Activate uCalculadora.pas line 265 BreakPoint at:0066315D
+Adding coverage:uCalculadora.pas (uCalculadora) 268
+Clearing BreakPoint at 00663171
+De-Activate uCalculadora.pas line 268 BreakPoint at:00663171
+Adding coverage:uCalculadora.pas (uCalculadora) 269
+Clearing BreakPoint at 0066317F
+De-Activate uCalculadora.pas line 269 BreakPoint at:0066317F
+Adding coverage:uCalculadora.pas (uCalculadora) 241
+Clearing BreakPoint at 00663015
+De-Activate uCalculadora.pas line 241 BreakPoint at:00663015
+Adding coverage:uCalculadora.pas (uCalculadora) 242
+Clearing BreakPoint at 00663024
+De-Activate uCalculadora.pas line 242 BreakPoint at:00663024
+Adding coverage:uCalculadora.pas (uCalculadora) 243
+Clearing BreakPoint at 0066302A
+De-Activate uCalculadora.pas line 243 BreakPoint at:0066302A
+Adding coverage:uCalculadora.pas (uCalculadora) 244
+Clearing BreakPoint at 00663039
+De-Activate uCalculadora.pas line 244 BreakPoint at:00663039
+Adding coverage:uCalculadora.pas (uCalculadora) 245
+Clearing BreakPoint at 0066303F
+De-Activate uCalculadora.pas line 245 BreakPoint at:0066303F
+Adding coverage:uCalculadora.pas (uCalculadora) 246
+Clearing BreakPoint at 0066304E
+De-Activate uCalculadora.pas line 246 BreakPoint at:0066304E
+Adding coverage:uCalculadora.pas (uCalculadora) 248
+Clearing BreakPoint at 00663054
+De-Activate uCalculadora.pas line 248 BreakPoint at:00663054
+Adding coverage:uCalculadora.pas (uCalculadora) 252
+Clearing BreakPoint at 006630A0
+De-Activate uCalculadora.pas line 252 BreakPoint at:006630A0
+Adding coverage:uCalculadora.pas (uCalculadora) 253
+Clearing BreakPoint at 006630AF
+De-Activate uCalculadora.pas line 253 BreakPoint at:006630AF
+Adding coverage:uCalculadora.pas (uCalculadora) 254
+Clearing BreakPoint at 006630C2
+De-Activate uCalculadora.pas line 254 BreakPoint at:006630C2
+Adding coverage:uCalculadora.pas (uCalculadora) 261
+Clearing BreakPoint at 00663106
+De-Activate uCalculadora.pas line 261 BreakPoint at:00663106
+Adding coverage:uCalculadora.pas (uCalculadora) 255
+Clearing BreakPoint at 006630D1
+De-Activate uCalculadora.pas line 255 BreakPoint at:006630D1
+Adding coverage:uCalculadora.pas (uCalculadora) 257
+Clearing BreakPoint at 006630EF
+De-Activate uCalculadora.pas line 257 BreakPoint at:006630EF
+Adding coverage:uCalculadora.pas (uCalculadora) 256
+Clearing BreakPoint at 006630E0
+De-Activate uCalculadora.pas line 256 BreakPoint at:006630E0
+Adding coverage:uCalculadora.pas (uCalculadora) 259
+Clearing BreakPoint at 006630FE
+De-Activate uCalculadora.pas line 259 BreakPoint at:006630FE
+Adding coverage:uCalculadora.pas (uCalculadora) 67
+Clearing BreakPoint at 00662990
+De-Activate uCalculadora.pas line 67 BreakPoint at:00662990
+Adding coverage:uCalculadora.pas (uCalculadora) 68
+Clearing BreakPoint at 0066299F
+De-Activate uCalculadora.pas line 68 BreakPoint at:0066299F
+Adding coverage:uCalculadora.pas (uCalculadora) 119
+Clearing BreakPoint at 00662B00
+De-Activate uCalculadora.pas line 119 BreakPoint at:00662B00
+Adding coverage:uCalculadora.pas (uCalculadora) 120
+Clearing BreakPoint at 00662B09
+De-Activate uCalculadora.pas line 120 BreakPoint at:00662B09
+Adding coverage:uCalculadora.pas (uCalculadora) 121
+Clearing BreakPoint at 00662B12
+De-Activate uCalculadora.pas line 121 BreakPoint at:00662B12
+Adding coverage:uCalculadora.pas (uCalculadora) 70
+Clearing BreakPoint at 006629AB
+De-Activate uCalculadora.pas line 70 BreakPoint at:006629AB
+Adding coverage:uCalculadora.pas (uCalculadora) 71
+Clearing BreakPoint at 006629B9
+De-Activate uCalculadora.pas line 71 BreakPoint at:006629B9
+Adding coverage:uCalculadora.pas (uCalculadora) 72
+Clearing BreakPoint at 006629C4
+De-Activate uCalculadora.pas line 72 BreakPoint at:006629C4
+Adding coverage:uCalculadora.pas (uCalculadora) 73
+Clearing BreakPoint at 006629CA
+De-Activate uCalculadora.pas line 73 BreakPoint at:006629CA
+Adding coverage:uCalculadora.pas (uCalculadora) 101
+Clearing BreakPoint at 00662A7A
+De-Activate uCalculadora.pas line 101 BreakPoint at:00662A7A
+Adding coverage:uCalculadora.pas (uCalculadora) 75
+Clearing BreakPoint at 006629D6
+De-Activate uCalculadora.pas line 75 BreakPoint at:006629D6
+Adding coverage:uCalculadora.pas (uCalculadora) 214
+Clearing BreakPoint at 00662F0B
+De-Activate uCalculadora.pas line 214 BreakPoint at:00662F0B
+Adding coverage:uCalculadora.pas (uCalculadora) 76
+Clearing BreakPoint at 006629E1
+De-Activate uCalculadora.pas line 76 BreakPoint at:006629E1
+Adding coverage:uCalculadora.pas (uCalculadora) 79
+Clearing BreakPoint at 006629E6
+De-Activate uCalculadora.pas line 79 BreakPoint at:006629E6
+Adding coverage:uCalculadora.pas (uCalculadora) 88
+Clearing BreakPoint at 00662A17
+De-Activate uCalculadora.pas line 88 BreakPoint at:00662A17
+Adding coverage:uCalculadora.pas (uCalculadora) 124
+Clearing BreakPoint at 00662B1C
+De-Activate uCalculadora.pas line 124 BreakPoint at:00662B1C
+Adding coverage:uCalculadora.pas (uCalculadora) 125
+Clearing BreakPoint at 00662B25
+De-Activate uCalculadora.pas line 125 BreakPoint at:00662B25
+Adding coverage:uCalculadora.pas (uCalculadora) 126
+Clearing BreakPoint at 00662B2E
+De-Activate uCalculadora.pas line 126 BreakPoint at:00662B2E
+Adding coverage:uCalculadora.pas (uCalculadora) 97
+Clearing BreakPoint at 00662A56
+De-Activate uCalculadora.pas line 97 BreakPoint at:00662A56
+Adding coverage:uCalculadora.pas (uCalculadora) 99
+Clearing BreakPoint at 00662A64
+De-Activate uCalculadora.pas line 99 BreakPoint at:00662A64
+Adding coverage:uCalculadora.pas (uCalculadora) 106
+Clearing BreakPoint at 00662A80
+De-Activate uCalculadora.pas line 106 BreakPoint at:00662A80
+Adding coverage:uCalculadora.pas (uCalculadora) 107
+Clearing BreakPoint at 00662A8D
+De-Activate uCalculadora.pas line 107 BreakPoint at:00662A8D
+Adding coverage:uOperacao.pas (uOperacao) 53
+Clearing BreakPoint at 00661FB4
+De-Activate uOperacao.pas line 53 BreakPoint at:00661FB4
+Adding coverage:uOperacao.pas (uOperacao) 54
+Clearing BreakPoint at 00661FD7
+De-Activate uOperacao.pas line 54 BreakPoint at:00661FD7
+Adding coverage:uOperacao.pas (uOperacao) 55
+Clearing BreakPoint at 00661FE9
+De-Activate uOperacao.pas line 55 BreakPoint at:00661FE9
+Adding coverage:uOperacao.pas (uOperacao) 56
+Clearing BreakPoint at 00661FFB
+De-Activate uOperacao.pas line 56 BreakPoint at:00661FFB
+Adding coverage:uOperacao.pas (uOperacao) 57
+Clearing BreakPoint at 00662005
+De-Activate uOperacao.pas line 57 BreakPoint at:00662005
+Adding coverage:uOperacao.pas (uOperacao) 58
+Clearing BreakPoint at 0066205D
+De-Activate uOperacao.pas line 58 BreakPoint at:0066205D
+Adding coverage:uCalculadora.pas (uCalculadora) 108
+Clearing BreakPoint at 00662AA4
+De-Activate uCalculadora.pas line 108 BreakPoint at:00662AA4
+Adding coverage:uOperacao.pas (uOperacao) 61
+Clearing BreakPoint at 00662080
+De-Activate uOperacao.pas line 61 BreakPoint at:00662080
+Adding coverage:uOperacao.pas (uOperacao) 62
+Clearing BreakPoint at 0066208C
+De-Activate uOperacao.pas line 62 BreakPoint at:0066208C
+Adding coverage:uOperacao.pas (uOperacao) 63
+Clearing BreakPoint at 0066209A
+De-Activate uOperacao.pas line 63 BreakPoint at:0066209A
+Adding coverage:uCalculadora.pas (uCalculadora) 109
+Clearing BreakPoint at 00662AB2
+De-Activate uCalculadora.pas line 109 BreakPoint at:00662AB2
+Adding coverage:uCalculadora.pas (uCalculadora) 110
+Clearing BreakPoint at 00662ACE
+De-Activate uCalculadora.pas line 110 BreakPoint at:00662ACE
+Adding coverage:uCalculadora.pas (uCalculadora) 111
+Clearing BreakPoint at 00662ADE
+De-Activate uCalculadora.pas line 111 BreakPoint at:00662ADE
+Adding coverage:uCalculadora.pas (uCalculadora) 100
+Clearing BreakPoint at 00662A6F
+De-Activate uCalculadora.pas line 100 BreakPoint at:00662A6F
+Adding coverage:uCalculadora.pas (uCalculadora) 211
+Clearing BreakPoint at 00662EEA
+De-Activate uCalculadora.pas line 211 BreakPoint at:00662EEA
+Adding coverage:uCalculadora.pas (uCalculadora) 215
+Clearing BreakPoint at 00662F2D
+De-Activate uCalculadora.pas line 215 BreakPoint at:00662F2D
+Adding coverage:uOperacao.pas (uOperacao) 72
+Clearing BreakPoint at 006620A0
+De-Activate uOperacao.pas line 72 BreakPoint at:006620A0
+Adding coverage:uOperacao.pas (uOperacao) 73
+Clearing BreakPoint at 006620C3
+De-Activate uOperacao.pas line 73 BreakPoint at:006620C3
+Adding coverage:uOperacao.pas (uOperacao) 74
+Clearing BreakPoint at 006620D5
+De-Activate uOperacao.pas line 74 BreakPoint at:006620D5
+Adding coverage:uOperacao.pas (uOperacao) 75
+Clearing BreakPoint at 006620E7
+De-Activate uOperacao.pas line 75 BreakPoint at:006620E7
+Adding coverage:uOperacao.pas (uOperacao) 76
+Clearing BreakPoint at 006620F1
+De-Activate uOperacao.pas line 76 BreakPoint at:006620F1
+Adding coverage:uOperacao.pas (uOperacao) 77
+Clearing BreakPoint at 00662149
+De-Activate uOperacao.pas line 77 BreakPoint at:00662149
+Adding coverage:uOperacao.pas (uOperacao) 80
+Clearing BreakPoint at 0066216C
+De-Activate uOperacao.pas line 80 BreakPoint at:0066216C
+Adding coverage:uOperacao.pas (uOperacao) 81
+Clearing BreakPoint at 00662178
+De-Activate uOperacao.pas line 81 BreakPoint at:00662178
+Adding coverage:uOperacao.pas (uOperacao) 82
+Clearing BreakPoint at 00662186
+De-Activate uOperacao.pas line 82 BreakPoint at:00662186
+Adding coverage:uCalculadora.pas (uCalculadora) 217
+Clearing BreakPoint at 00662F71
+De-Activate uCalculadora.pas line 217 BreakPoint at:00662F71
+Adding coverage:uOperacao.pas (uOperacao) 111
+Clearing BreakPoint at 00662278
+De-Activate uOperacao.pas line 111 BreakPoint at:00662278
+Adding coverage:uOperacao.pas (uOperacao) 112
+Clearing BreakPoint at 0066229B
+De-Activate uOperacao.pas line 112 BreakPoint at:0066229B
+Adding coverage:uOperacao.pas (uOperacao) 113
+Clearing BreakPoint at 006622AD
+De-Activate uOperacao.pas line 113 BreakPoint at:006622AD
+Adding coverage:uOperacao.pas (uOperacao) 114
+Clearing BreakPoint at 006622BF
+De-Activate uOperacao.pas line 114 BreakPoint at:006622BF
+Adding coverage:uOperacao.pas (uOperacao) 122
+Clearing BreakPoint at 00662301
+De-Activate uOperacao.pas line 122 BreakPoint at:00662301
+Adding coverage:uOperacao.pas (uOperacao) 123
+Clearing BreakPoint at 0066230B
+De-Activate uOperacao.pas line 123 BreakPoint at:0066230B
+Adding coverage:uOperacao.pas (uOperacao) 124
+Clearing BreakPoint at 00662363
+De-Activate uOperacao.pas line 124 BreakPoint at:00662363
+Adding coverage:uOperacao.pas (uOperacao) 127
+Clearing BreakPoint at 00662408
+De-Activate uOperacao.pas line 127 BreakPoint at:00662408
+Adding coverage:uOperacao.pas (uOperacao) 128
+Clearing BreakPoint at 00662414
+De-Activate uOperacao.pas line 128 BreakPoint at:00662414
+Adding coverage:uOperacao.pas (uOperacao) 129
+Clearing BreakPoint at 00662422
+De-Activate uOperacao.pas line 129 BreakPoint at:00662422
+Adding coverage:uCalculadora.pas (uCalculadora) 266
+Clearing BreakPoint at 00663166
+De-Activate uCalculadora.pas line 266 BreakPoint at:00663166
+Adding coverage:uCalculadora.pas (uCalculadora) 90
+Clearing BreakPoint at 00662A23
+De-Activate uCalculadora.pas line 90 BreakPoint at:00662A23
+Adding coverage:uCalculadora.pas (uCalculadora) 91
+Clearing BreakPoint at 00662A31
+De-Activate uCalculadora.pas line 91 BreakPoint at:00662A31
+Adding coverage:uCalculadora.pas (uCalculadora) 92
+Clearing BreakPoint at 00662A3C
+De-Activate uCalculadora.pas line 92 BreakPoint at:00662A3C
+Adding coverage:uCalculadora.pas (uCalculadora) 93
+Clearing BreakPoint at 00662A49
+De-Activate uCalculadora.pas line 93 BreakPoint at:00662A49
+Adding coverage:uCalculadora.pas (uCalculadora) 94
+Clearing BreakPoint at 00662A54
+De-Activate uCalculadora.pas line 94 BreakPoint at:00662A54
+Adding coverage:uCalculadora.pas (uCalculadora) 81
+Clearing BreakPoint at 006629EC
+De-Activate uCalculadora.pas line 81 BreakPoint at:006629EC
+Adding coverage:uCalculadora.pas (uCalculadora) 82
+Clearing BreakPoint at 006629F5
+De-Activate uCalculadora.pas line 82 BreakPoint at:006629F5
+Adding coverage:uCalculadora.pas (uCalculadora) 83
+Clearing BreakPoint at 00662A03
+De-Activate uCalculadora.pas line 83 BreakPoint at:00662A03
+Adding coverage:uOperacao.pas (uOperacao) 116
+Clearing BreakPoint at 006622CE
+De-Activate uOperacao.pas line 116 BreakPoint at:006622CE
+Adding coverage:uOperacao.pas (uOperacao) 119
+Clearing BreakPoint at 006622EF
+De-Activate uOperacao.pas line 119 BreakPoint at:006622EF
+Adding coverage:uOperacao.pas (uOperacao) 120
+Clearing BreakPoint at 006622FF
+De-Activate uOperacao.pas line 120 BreakPoint at:006622FF
+Adding coverage:uCalculadora.pas (uCalculadora) 84
+Clearing BreakPoint at 00662A0E
+De-Activate uCalculadora.pas line 84 BreakPoint at:00662A0E
+Adding coverage:uCalculadora.pas (uCalculadora) 85
+Clearing BreakPoint at 00662A15
+De-Activate uCalculadora.pas line 85 BreakPoint at:00662A15
+Adding coverage:uOperacao.pas (uOperacao) 117
+Clearing BreakPoint at 006622DD
+De-Activate uOperacao.pas line 117 BreakPoint at:006622DD
+Adding coverage:uCalculadora.pas (uCalculadora) 142
+Clearing BreakPoint at 00662B78
+De-Activate uCalculadora.pas line 142 BreakPoint at:00662B78
+Adding coverage:uCalculadora.pas (uCalculadora) 143
+Clearing BreakPoint at 00662B9B
+De-Activate uCalculadora.pas line 143 BreakPoint at:00662B9B
+Adding coverage:uCalculadora.pas (uCalculadora) 144
+Clearing BreakPoint at 00662BA3
+De-Activate uCalculadora.pas line 144 BreakPoint at:00662BA3
+Adding coverage:uCalculadora.pas (uCalculadora) 145
+Clearing BreakPoint at 00662BAB
+De-Activate uCalculadora.pas line 145 BreakPoint at:00662BAB
+Adding coverage:uCalculadora.pas (uCalculadora) 216
+Clearing BreakPoint at 00662F4F
+De-Activate uCalculadora.pas line 216 BreakPoint at:00662F4F
+Adding coverage:uCalculadora.pas (uCalculadora) 146
+Clearing BreakPoint at 00662BBC
+De-Activate uCalculadora.pas line 146 BreakPoint at:00662BBC
+Adding coverage:uOperacao.pas (uOperacao) 92
+Clearing BreakPoint at 0066218C
+De-Activate uOperacao.pas line 92 BreakPoint at:0066218C
+Adding coverage:uOperacao.pas (uOperacao) 93
+Clearing BreakPoint at 006621AF
+De-Activate uOperacao.pas line 93 BreakPoint at:006621AF
+Adding coverage:uOperacao.pas (uOperacao) 94
+Clearing BreakPoint at 006621C1
+De-Activate uOperacao.pas line 94 BreakPoint at:006621C1
+Adding coverage:uOperacao.pas (uOperacao) 95
+Clearing BreakPoint at 006621D3
+De-Activate uOperacao.pas line 95 BreakPoint at:006621D3
+Adding coverage:uOperacao.pas (uOperacao) 96
+Clearing BreakPoint at 006621DD
+De-Activate uOperacao.pas line 96 BreakPoint at:006621DD
+Adding coverage:uOperacao.pas (uOperacao) 97
+Clearing BreakPoint at 00662235
+De-Activate uOperacao.pas line 97 BreakPoint at:00662235
+Adding coverage:uOperacao.pas (uOperacao) 100
+Clearing BreakPoint at 00662258
+De-Activate uOperacao.pas line 100 BreakPoint at:00662258
+Adding coverage:uOperacao.pas (uOperacao) 101
+Clearing BreakPoint at 00662264
+De-Activate uOperacao.pas line 101 BreakPoint at:00662264
+Adding coverage:uOperacao.pas (uOperacao) 102
+Clearing BreakPoint at 00662272
+De-Activate uOperacao.pas line 102 BreakPoint at:00662272
+Adding coverage:uCalculadora.pas (uCalculadora) 147
+Clearing BreakPoint at 00662BCF
+De-Activate uCalculadora.pas line 147 BreakPoint at:00662BCF
+Adding coverage:uCalculadora.pas (uCalculadora) 149
+Clearing BreakPoint at 00662BE2
+De-Activate uCalculadora.pas line 149 BreakPoint at:00662BE2
+Adding coverage:uCalculadora.pas (uCalculadora) 151
+Clearing BreakPoint at 00662BF6
+De-Activate uCalculadora.pas line 151 BreakPoint at:00662BF6
+Adding coverage:uCalculadora.pas (uCalculadora) 154
+Clearing BreakPoint at 00662C10
+De-Activate uCalculadora.pas line 154 BreakPoint at:00662C10
+Adding coverage:uCalculadora.pas (uCalculadora) 155
+Clearing BreakPoint at 00662C1B
+De-Activate uCalculadora.pas line 155 BreakPoint at:00662C1B
+Adding coverage:uCalculadora.pas (uCalculadora) 161
+Clearing BreakPoint at 00662C78
+De-Activate uCalculadora.pas line 161 BreakPoint at:00662C78
+Adding coverage:uCalculadora.pas (uCalculadora) 162
+Clearing BreakPoint at 00662C9E
+De-Activate uCalculadora.pas line 162 BreakPoint at:00662C9E
+Adding coverage:uCalculadora.pas (uCalculadora) 163
+Clearing BreakPoint at 00662CAC
+De-Activate uCalculadora.pas line 163 BreakPoint at:00662CAC
+Adding coverage:uCalculadora.pas (uCalculadora) 164
+Clearing BreakPoint at 00662CB4
+De-Activate uCalculadora.pas line 164 BreakPoint at:00662CB4
+Adding coverage:uCalculadora.pas (uCalculadora) 165
+Clearing BreakPoint at 00662CD0
+De-Activate uCalculadora.pas line 165 BreakPoint at:00662CD0
+Adding coverage:uCalculadora.pas (uCalculadora) 167
+Clearing BreakPoint at 00662CE3
+De-Activate uCalculadora.pas line 167 BreakPoint at:00662CE3
+Adding coverage:uCalculadora.pas (uCalculadora) 169
+Clearing BreakPoint at 00662CF7
+De-Activate uCalculadora.pas line 169 BreakPoint at:00662CF7
+Adding coverage:uCalculadora.pas (uCalculadora) 172
+Clearing BreakPoint at 00662D11
+De-Activate uCalculadora.pas line 172 BreakPoint at:00662D11
+Adding coverage:uCalculadora.pas (uCalculadora) 173
+Clearing BreakPoint at 00662D1C
+De-Activate uCalculadora.pas line 173 BreakPoint at:00662D1C
+Adding coverage:uCalculadora.pas (uCalculadora) 152
+Clearing BreakPoint at 00662C03
+De-Activate uCalculadora.pas line 152 BreakPoint at:00662C03
+Adding coverage:uCalculadora.pas (uCalculadora) 170
+Clearing BreakPoint at 00662D04
+De-Activate uCalculadora.pas line 170 BreakPoint at:00662D04
+Adding coverage:uCalculadora.pas (uCalculadora) 182
+Clearing BreakPoint at 00662D6C
+De-Activate uCalculadora.pas line 182 BreakPoint at:00662D6C
+Adding coverage:uCalculadora.pas (uCalculadora) 183
+Clearing BreakPoint at 00662D95
+De-Activate uCalculadora.pas line 183 BreakPoint at:00662D95
+Adding coverage:uCalculadora.pas (uCalculadora) 184
+Clearing BreakPoint at 00662DA3
+De-Activate uCalculadora.pas line 184 BreakPoint at:00662DA3
+Adding coverage:uCalculadora.pas (uCalculadora) 185
+Clearing BreakPoint at 00662DB1
+De-Activate uCalculadora.pas line 185 BreakPoint at:00662DB1
+Adding coverage:uCalculadora.pas (uCalculadora) 186
+Clearing BreakPoint at 00662DC5
+De-Activate uCalculadora.pas line 186 BreakPoint at:00662DC5
+Adding coverage:uCalculadora.pas (uCalculadora) 187
+Clearing BreakPoint at 00662DD9
+De-Activate uCalculadora.pas line 187 BreakPoint at:00662DD9
+Adding coverage:uCalculadora.pas (uCalculadora) 188
+Clearing BreakPoint at 00662DE3
+De-Activate uCalculadora.pas line 188 BreakPoint at:00662DE3
+Adding coverage:uCalculadora.pas (uCalculadora) 189
+Clearing BreakPoint at 00662E38
+De-Activate uCalculadora.pas line 189 BreakPoint at:00662E38
+Wait For Debug Event timed-out
+UnLoading DLL:00000000
+UnLoading DLL:00000000
+UnLoading DLL:00000000
+EXCEPTION CODE:0000071A
+Address:76CB4402
+EXCEPTION flags:00000001
+---------------Stack trace --------------
+Module : C:\WINDOWS\SysWOW64\RPCRT4.dll Stack frame:75E82EBE
+Module : C:\WINDOWS\SysWOW64\RPCRT4.dll - no MAP information exists
+Module : C:\WINDOWS\SysWOW64\RPCRT4.dll Stack frame:75E82E6C
+Module : C:\WINDOWS\SysWOW64\RPCRT4.dll - no MAP information exists
+Module : C:\WINDOWS\SysWOW64\RPCRT4.dll Stack frame:75E77B03
+Module : C:\WINDOWS\SysWOW64\RPCRT4.dll - no MAP information exists
+Module : C:\WINDOWS\SysWOW64\RPCRT4.dll Stack frame:75E7782F
+Module : C:\WINDOWS\SysWOW64\RPCRT4.dll - no MAP information exists
+Module : C:\WINDOWS\SysWOW64\RPCRT4.dll Stack frame:75E7778C
+Module : C:\WINDOWS\SysWOW64\RPCRT4.dll - no MAP information exists
+Module : C:\WINDOWS\SysWOW64\WINSTA.dll Stack frame:74076222
+Module : C:\WINDOWS\SysWOW64\WINSTA.dll - no MAP information exists
+Module : C:\WINDOWS\SysWOW64\WINSTA.dll Stack frame:7407618A
+Module : C:\WINDOWS\SysWOW64\WINSTA.dll - no MAP information exists
+Module : C:\WINDOWS\SysWOW64\RPCRT4.dll Stack frame:75EA40F5
+Module : C:\WINDOWS\SysWOW64\RPCRT4.dll - no MAP information exists
+Module : C:\WINDOWS\SysWOW64\RPCRT4.dll Stack frame:75EA408D
+Module : C:\WINDOWS\SysWOW64\RPCRT4.dll - no MAP information exists
+Module : C:\WINDOWS\SysWOW64\RPCRT4.dll Stack frame:75E81CD9
+Module : C:\WINDOWS\SysWOW64\RPCRT4.dll - no MAP information exists
+Module : C:\WINDOWS\SysWOW64\RPCRT4.dll Stack frame:75E81C5D
+Module : C:\WINDOWS\SysWOW64\RPCRT4.dll - no MAP information exists
+Module : C:\WINDOWS\SysWOW64\RPCRT4.dll Stack frame:75E81BCA
+Module : C:\WINDOWS\SysWOW64\RPCRT4.dll - no MAP information exists
+Module : C:\WINDOWS\SysWOW64\RPCRT4.dll Stack frame:75E81AD8
+Module : C:\WINDOWS\SysWOW64\RPCRT4.dll - no MAP information exists
+Module : C:\WINDOWS\SysWOW64\RPCRT4.dll Stack frame:75E81A11
+Module : C:\WINDOWS\SysWOW64\RPCRT4.dll - no MAP information exists
+Module : C:\WINDOWS\SysWOW64\RPCRT4.dll Stack frame:75E8194B
+Module : C:\WINDOWS\SysWOW64\RPCRT4.dll - no MAP information exists
+Module : C:\WINDOWS\SysWOW64\WINSTA.dll Stack frame:74076082
+Module : C:\WINDOWS\SysWOW64\WINSTA.dll - no MAP information exists
+Module : C:\WINDOWS\SysWOW64\WINSTA.dll Stack frame:74075FC9
+Module : C:\WINDOWS\SysWOW64\WINSTA.dll - no MAP information exists
+Module : C:\WINDOWS\SysWOW64\WINSTA.dll Stack frame:74075DA5
+Module : C:\WINDOWS\SysWOW64\WINSTA.dll - no MAP information exists
+Module : C:\WINDOWS\SysWOW64\wtsapi32.dll Stack frame:740B2A3A
+Module : C:\WINDOWS\SysWOW64\wtsapi32.dll - no MAP information exists
+Module : CalculadoraTest.exe Stack frame:006467FE
+Exact line:Vcl.Forms line 9719
+Module : CalculadoraTest.exe Stack frame:0040A6B0
+Exact line:System line 23323
+Module : CalculadoraTest.exe Stack frame:0040AAC1
+Exact line:System line 24820
+Module : C:\WINDOWS\SysWOW64\KERNEL32.DLL Stack frame:74C06359
+Module : C:\WINDOWS\SysWOW64\KERNEL32.DLL - no MAP information exists
+No module found for exception address:773C7C24
+No module found for exception address:773C7BF4
+---------------End of Stack trace --------------
+Create thread:14028
+Create thread:8
+UnLoading DLL:00295000
+UnLoading DLL:00295000
+UnLoading DLL:00295000
+UnLoading DLL:00295000
+UnLoading DLL:00295000
+UnLoading DLL:00295000
+UnLoading DLL:00295000
+Thread exit:14028
+Thread exit:10544
+Thread exit:8
+Thread exit:4236
+Thread exit:172
+Thread exit:12364
+Thread exit:8568
+Thread exit:5012
+Process 12400 exiting. Exit code :0
+Finished processing debug events
+ProcedureReport
+Generating reports
+Generating coverage report
+Source dir: E:\Projetos\Delphi\teste-delphi\Exercicio1
+Output dir: .\
+Generating xml coverage report
+Generating EMMA file
+Generating EMMA data for module: ModuleInfo[ modulename=uOperacao, filename=uOperacao.pas ]
+Generating EMMA data for class: TDivisao
+Generating EMMA data for method: Calcular l:11 c:11
+Generating EMMA data for method: getResultado l:3 c:3
+Generating EMMA data for class: TSubtracao
+Generating EMMA data for method: Calcular l:6 c:6
+Generating EMMA data for method: getResultado l:3 c:3
+Generating EMMA data for class: TMultiplicacao
+Generating EMMA data for method: Calcular l:6 c:6
+Generating EMMA data for method: getResultado l:3 c:3
+Generating EMMA data for class: TSoma
+Generating EMMA data for method: Calcular l:6 c:6
+Generating EMMA data for method: getResultado l:3 c:3
+Generating EMMA data for module: ModuleInfo[ modulename=uCalculadora, filename=uCalculadora.pas ]
+Generating EMMA data for class: TCalculadora
+Generating EMMA data for method: Calcular l:6 c:6
+Generating EMMA data for method: setSegundoNumero l:3 c:3
+Generating EMMA data for method: getSegundoNumero l:3 c:0
+Generating EMMA data for method: getExecutouCalculo l:3 c:0
+Generating EMMA data for method: ImpostoC l:8 c:8
+Generating EMMA data for method: setPressionadoOperacao l:3 c:3
+Generating EMMA data for method: Inicializar l:8 c:8
+Generating EMMA data for method: ImpostoA l:11 c:11
+Generating EMMA data for method: setPrimeiroNumero l:3 c:3
+Generating EMMA data for method: getOperador l:3 c:3
+Generating EMMA data for method: setOperador l:10 c:10
+Generating EMMA data for method: getPressionadoOperacao l:3 c:3
+Generating EMMA data for method: CalcularResultado l:24 c:24
+Generating EMMA data for method: ImpostoB l:10 c:10
+Generating EMMA data for method: Create l:3 c:3
+Generating EMMA data for method: OperadorParaSimbolo l:8 c:8
+Generating EMMA data for method: getPrimeiroNumero l:3 c:0
+Generating EMMA data for method: SimboloParaOperador l:11 c:11
+Generating EMMA data for method: setExecutouCalculo l:3 c:3
+Generating EMMA data for method: Destroy l:5 c:5
+Emma file generated
+Finished generating reports
+
+Summary:
+
++-----------+-----------+-----------+
+|   Lines   |  Covered  | Covered % |
++-----------+-----------+-----------+
+|       172 |       163 |      94 % |
++-----------+-----------+-----------+

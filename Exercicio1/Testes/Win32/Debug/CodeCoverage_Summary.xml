@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="Windows-1252" standalone="no"?>
+<report>
+  <stats>
+    <packages value="2"/>
+    <classes value="5"/>
+    <methods value="28"/>
+    <srcfiles value="2"/>
+    <srclines value="172"/>
+    <totallines value="172"/>
+    <coveredlines value="163"/>
+    <coveredpercent value="94"/>
+  </stats>
+  <data>
+    <all name="all classes">
+      <coverage type="class, %" value="100%   (5/5)"/>
+      <coverage type="method, %" value="89%   (25/28)"/>
+      <coverage type="block, %" value="95%   (163/172)"/>
+      <coverage type="line, %" value="95%   (163/172)"/>
+      <package name="uOperacao">
+        <coverage type="class, %" value="100%   (4/4)"/>
+        <coverage type="method, %" value="100%   (8/8)"/>
+        <coverage type="block, %" value="100%   (41/41)"/>
+        <coverage type="line, %" value="100%   (41/41)"/>
+        <srcfile name="uOperacao.pas">
+          <coverage type="class, %" value="100%   (4/4)"/>
+          <coverage type="method, %" value="100%   (8/8)"/>
+          <coverage type="block, %" value="100%   (41/41)"/>
+          <coverage type="line, %" value="100%   (41/41)"/>
+          <class name="TDivisao">
+            <coverage type="class, %" value="100%   (1/1)"/>
+            <coverage type="method, %" value="100%   (2/2)"/>
+            <coverage type="block, %" value="100%   (14/14)"/>
+            <coverage type="line, %" value="100%   (14/14)"/>
+            <method name="Calcular">
+              <coverage type="method, %" value="100%   (1/1)"/>
+              <coverage type="block, %" value="100%   (11/11)"/>
+              <coverage type="line, %" value="100%   (11/11)"/>
+            </method>
+            <method name="getResultado">
+              <coverage type="method, %" value="100%   (1/1)"/>
+              <coverage type="block, %" value="100%   (3/3)"/>
+              <coverage type="line, %" value="100%   (3/3)"/>
+            </method>
+          </class>
+          <class name="TSubtracao">
+            <coverage type="class, %" value="100%   (1/1)"/>
+            <coverage type="method, %" value="100%   (2/2)"/>
+            <coverage type="block, %" value="100%   (9/9)"/>
+            <coverage type="line, %" value="100%   (9/9)"/>
+            <method name="Calcular">
+              <coverage type="method, %" value="100%   (1/1)"/>
+              <coverage type="block, %" value="100%   (6/6)"/>
+              <coverage type="line, %" value="100%   (6/6)"/>
+            </method>
+            <method name="getResultado">
+              <coverage type="method, %" value="100%   (1/1)"/>
+              <coverage type="block, %" value="100%   (3/3)"/>
+              <coverage type="line, %" value="100%   (3/3)"/>
+            </method>
+          </class>
+          <class name="TMultiplicacao">
+            <coverage type="class, %" value="100%   (1/1)"/>
+            <coverage type="method, %" value="100%   (2/2)"/>
+            <coverage type="block, %" value="100%   (9/9)"/>
+            <coverage type="line, %" value="100%   (9/9)"/>
+            <method name="Calcular">
+              <coverage type="method, %" value="100%   (1/1)"/>
+              <coverage type="block, %" value="100%   (6/6)"/>
+              <coverage type="line, %" value="100%   (6/6)"/>
+            </method>
+            <method name="getResultado">
+              <coverage type="method, %" value="100%   (1/1)"/>
+              <coverage type="block, %" value="100%   (3/3)"/>
+              <coverage type="line, %" value="100%   (3/3)"/>
+            </method>
+          </class>
+          <class name="TSoma">
+            <coverage type="class, %" value="100%   (1/1)"/>
+            <coverage type="method, %" value="100%   (2/2)"/>
+            <coverage type="block, %" value="100%   (9/9)"/>
+            <coverage type="line, %" value="100%   (9/9)"/>
+            <method name="Calcular">
+              <coverage type="method, %" value="100%   (1/1)"/>
+              <coverage type="block, %" value="100%   (6/6)"/>
+              <coverage type="line, %" value="100%   (6/6)"/>
+            </method>
+            <method name="getResultado">
+              <coverage type="method, %" value="100%   (1/1)"/>
+              <coverage type="block, %" value="100%   (3/3)"/>
+              <coverage type="line, %" value="100%   (3/3)"/>
+            </method>
+          </class>
+        </srcfile>
+      </package>
+      <package name="uCalculadora">
+        <coverage type="class, %" value="100%   (1/1)"/>
+        <coverage type="method, %" value="85%   (17/20)"/>
+        <coverage type="block, %" value="93%   (122/131)"/>
+        <coverage type="line, %" value="93%   (122/131)"/>
+        <srcfile name="uCalculadora.pas">
+          <coverage type="class, %" value="100%   (1/1)"/>
+          <coverage type="method, %" value="85%   (17/20)"/>
+          <coverage type="block, %" value="93%   (122/131)"/>
+          <coverage type="line, %" value="93%   (122/131)"/>
+          <class name="TCalculadora">
+            <coverage type="class, %" value="100%   (1/1)"/>
+            <coverage type="method, %" value="85%   (17/20)"/>
+            <coverage type="block, %" value="93%   (122/131)"/>
+            <coverage type="line, %" value="93%   (122/131)"/>
+            <method name="Calcular">
+              <coverage type="method, %" value="100%   (1/1)"/>
+              <coverage type="block, %" value="100%   (6/6)"/>
+              <coverage type="line, %" value="100%   (6/6)"/>
+            </method>
+            <method name="setSegundoNumero">
+              <coverage type="method, %" value="100%   (1/1)"/>
+              <coverage type="block, %" value="100%   (3/3)"/>
+              <coverage type="line, %" value="100%   (3/3)"/>
+            </method>
+            <method name="getSegundoNumero">
+              <coverage type="method, %" value="0%   (0/1)"/>
+              <coverage type="block, %" value="0%   (0/3)"/>
+              <coverage type="line, %" value="0%   (0/3)"/>
+            </method>
+            <method name="getExecutouCalculo">
+              <coverage type="method, %" value="0%   (0/1)"/>
+              <coverage type="block, %" value="0%   (0/3)"/>
+              <coverage type="line, %" value="0%   (0/3)"/>
+            </method>
+            <method name="ImpostoC">
+              <coverage type="method, %" value="100%   (1/1)"/>
+              <coverage type="block, %" value="100%   (8/8)"/>
+              <coverage type="line, %" value="100%   (8/8)"/>
+            </method>
+            <method name="setPressionadoOperacao">
+              <coverage type="method, %" value="100%   (1/1)"/>
+              <coverage type="block, %" value="100%   (3/3)"/>
+              <coverage type="line, %" value="100%   (3/3)"/>
+            </method>
+            <method name="Inicializar">
+              <coverage type="method, %" value="100%   (1/1)"/>
+              <coverage type="block, %" value="100%   (8/8)"/>
+              <coverage type="line, %" value="100%   (8/8)"/>
+            </method>
+            <method name="ImpostoA">
+              <coverage type="method, %" value="100%   (1/1)"/>
+              <coverage type="block, %" value="100%   (11/11)"/>
+              <coverage type="line, %" value="100%   (11/11)"/>
+            </method>
+            <method name="setPrimeiroNumero">
+              <coverage type="method, %" value="100%   (1/1)"/>
+              <coverage type="block, %" value="100%   (3/3)"/>
+              <coverage type="line, %" value="100%   (3/3)"/>
+            </method>
+            <method name="getOperador">
+              <coverage type="method, %" value="100%   (1/1)"/>
+              <coverage type="block, %" value="100%   (3/3)"/>
+              <coverage type="line, %" value="100%   (3/3)"/>
+            </method>
+            <method name="setOperador">
+              <coverage type="method, %" value="100%   (1/1)"/>
+              <coverage type="block, %" value="100%   (10/10)"/>
+              <coverage type="line, %" value="100%   (10/10)"/>
+            </method>
+            <method name="getPressionadoOperacao">
+              <coverage type="method, %" value="100%   (1/1)"/>
+              <coverage type="block, %" value="100%   (3/3)"/>
+              <coverage type="line, %" value="100%   (3/3)"/>
+            </method>
+            <method name="CalcularResultado">
+              <coverage type="method, %" value="100%   (1/1)"/>
+              <coverage type="block, %" value="100%   (24/24)"/>
+              <coverage type="line, %" value="100%   (24/24)"/>
+            </method>
+            <method name="ImpostoB">
+              <coverage type="method, %" value="100%   (1/1)"/>
+              <coverage type="block, %" value="100%   (10/10)"/>
+              <coverage type="line, %" value="100%   (10/10)"/>
+            </method>
+            <method name="Create">
+              <coverage type="method, %" value="100%   (1/1)"/>
+              <coverage type="block, %" value="100%   (3/3)"/>
+              <coverage type="line, %" value="100%   (3/3)"/>
+            </method>
+            <method name="OperadorParaSimbolo">
+              <coverage type="method, %" value="100%   (1/1)"/>
+              <coverage type="block, %" value="100%   (8/8)"/>
+              <coverage type="line, %" value="100%   (8/8)"/>
+            </method>
+            <method name="getPrimeiroNumero">
+              <coverage type="method, %" value="0%   (0/1)"/>
+              <coverage type="block, %" value="0%   (0/3)"/>
+              <coverage type="line, %" value="0%   (0/3)"/>
+            </method>
+            <method name="SimboloParaOperador">
+              <coverage type="method, %" value="100%   (1/1)"/>
+              <coverage type="block, %" value="100%   (11/11)"/>
+              <coverage type="line, %" value="100%   (11/11)"/>
+            </method>
+            <method name="setExecutouCalculo">
+              <coverage type="method, %" value="100%   (1/1)"/>
+              <coverage type="block, %" value="100%   (3/3)"/>
+              <coverage type="line, %" value="100%   (3/3)"/>
+            </method>
+            <method name="Destroy">
+              <coverage type="method, %" value="100%   (1/1)"/>
+              <coverage type="block, %" value="100%   (5/5)"/>
+              <coverage type="line, %" value="100%   (5/5)"/>
+            </method>
+          </class>
+        </srcfile>
+      </package>
+    </all>
+  </data>
+</report>

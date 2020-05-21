@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="Windows-1252" standalone="no"?>
+<report>
+  <stats>
+    <packages value="1"/>
+    <classes value="1"/>
+    <methods value="2"/>
+    <srcfiles value="1"/>
+    <srclines value="23"/>
+    <totallines value="23"/>
+    <coveredlines value="22"/>
+    <coveredpercent value="95"/>
+  </stats>
+  <data>
+    <all name="all classes">
+      <coverage type="class, %" value="100%   (1/1)"/>
+      <coverage type="method, %" value="100%   (2/2)"/>
+      <coverage type="block, %" value="96%   (22/23)"/>
+      <coverage type="line, %" value="96%   (22/23)"/>
+      <package name="uCalculo">
+        <coverage type="class, %" value="100%   (1/1)"/>
+        <coverage type="method, %" value="100%   (2/2)"/>
+        <coverage type="block, %" value="96%   (22/23)"/>
+        <coverage type="line, %" value="96%   (22/23)"/>
+        <srcfile name="uCalculo.pas">
+          <coverage type="class, %" value="100%   (1/1)"/>
+          <coverage type="method, %" value="100%   (2/2)"/>
+          <coverage type="block, %" value="96%   (22/23)"/>
+          <coverage type="line, %" value="96%   (22/23)"/>
+          <class name="TCalculo">
+            <coverage type="class, %" value="100%   (1/1)"/>
+            <coverage type="method, %" value="100%   (2/2)"/>
+            <coverage type="block, %" value="96%   (22/23)"/>
+            <coverage type="line, %" value="96%   (22/23)"/>
+            <method name="CalcularINSS">
+              <coverage type="method, %" value="100%   (1/1)"/>
+              <coverage type="block, %" value="91%   (10/11)"/>
+              <coverage type="line, %" value="91%   (10/11)"/>
+            </method>
+            <method name="CalcularIR">
+              <coverage type="method, %" value="100%   (1/1)"/>
+              <coverage type="block, %" value="100%   (12/12)"/>
+              <coverage type="line, %" value="100%   (12/12)"/>
+            </method>
+          </class>
+        </srcfile>
+      </package>
+    </all>
+  </data>
+</report>

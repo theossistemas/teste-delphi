@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2020/05/19 19:41:07.000.977,=E:\Projetos\Delphi\Unit1.pas</Transaction>
+    <Transaction>2020/05/19 21:17:30.000.980,E:\Projetos\Delphi\Unit1.pas=E:\Projetos\Delphi\teste-delphi\Exercicio1\uCalculadora.pas</Transaction>
+    <Transaction>2020/05/19 21:17:30.000.980,E:\Projetos\Delphi\Unit1.dfm=E:\Projetos\Delphi\teste-delphi\Exercicio1\uCalculadora.dfm</Transaction>
+    <Transaction>2020/05/19 21:17:42.000.542,E:\Projetos\Delphi\Project1.dproj=E:\Projetos\Delphi\teste-delphi\Exercicio1\Calculadora.dproj</Transaction>
+    <Transaction>2020/05/20 11:31:00.000.893,=E:\Projetos\Delphi\teste-delphi\Exercicio1\Unit1.pas</Transaction>
+    <Transaction>2020/05/20 11:57:39.000.220,=E:\Projetos\Delphi\teste-delphi\Exercicio1\Unit2.pas</Transaction>
+    <Transaction>2020/05/20 11:57:44.000.740,=E:\Projetos\Delphi\teste-delphi\Exercicio1\Unit3.pas</Transaction>
+    <Transaction>2020/05/20 12:02:22.000.859,E:\Projetos\Delphi\teste-delphi\Exercicio1\Unit1.pas=E:\Projetos\Delphi\teste-delphi\Exercicio1\uInterfaceOperacao.pas</Transaction>
+    <Transaction>2020/05/20 12:02:36.000.023,E:\Projetos\Delphi\teste-delphi\Exercicio1\Unit2.pas=E:\Projetos\Delphi\teste-delphi\Exercicio1\uOperacao.pas</Transaction>
+    <Transaction>2020/05/20 12:03:58.000.621,E:\Projetos\Delphi\teste-delphi\Exercicio1\Unit3.pas=E:\Projetos\Delphi\teste-delphi\Exercicio1\uCalc.pas</Transaction>
+  </Transactions>
+</BorlandProject>

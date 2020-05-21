@@ -1,0 +1,514 @@
+Will track coverage for:uCalculo
+Trying to start ImpostosTest.exe with the Parameters :
+Started successfully
+Create Process:11816 name:ImpostosTest.exe
+Adding breakpoints for module:ImpostosTest.exe
+Module name "System.Types" did not match module from address name "System.UITypes" at address:0001386F
+Module name "System.Generics.Collections" did not match module from address name "System.Hash" at address:00041A39
+Module name "System.Generics.Defaults" did not match module from address name "System.Classes" at address:0008CB04
+Module name "System.TimeSpan" did not match module from address name "System.DateUtils" at address:000FE370
+Module name "System.IOUtils" did not match module from address name "System.IniFiles" at address:000FEEB8
+Module name "System.Win.Registry" did not match module from address name "TestFramework" at address:0010EBD8
+Module name "TextTestRunner" did not match module from address name "System.Messaging" at address:0011E19A
+Module name "Winapi.Wincodec" did not match module from address name "System.UIConsts" at address:00130ABC
+Module name "Winapi.CommCtrl" did not match module from address name "System.ImageList" at address:00146AA4
+Module name "System.Diagnostics" did not match module from address name "System.SyncObjs" at address:00149E80
+Module name "Winapi.MultiMon" did not match module from address name "Winapi.Imm" at address:0014CE6D
+Module name "Winapi.Imm" did not match module from address name "Vcl.ActnList" at address:0014CF20
+Module name "Winapi.Dwmapi" did not match module from address name "Vcl.GraphUtil" at address:0014F402
+Module name "Vcl.StdCtrls" did not match module from address name "Winapi.ShlObj" at address:0017E97D
+Module name "Winapi.ShlObj" did not match module from address name "Winapi.WinSpool" at address:0017EB64
+Module name "Winapi.RichEdit" did not match module from address name "Vcl.ToolWin" at address:00180830
+Module name "Vcl.ToolWin" did not match module from address name "Vcl.ListActns" at address:00181665
+Module name "Vcl.ListActns" did not match module from address name "Vcl.ComStrs" at address:00184062
+Module name "Vcl.ImgList" did not match module from address name "Vcl.Menus" at address:002266C1
+Module name "Winapi.ShellScaling" did not match module from address name "Winapi.FlatSB" at address:00230E14
+Module name "System.Win.TaskbarCore" did not match module from address name "Vcl.Forms" at address:00231440
+Module name "Vcl.Buttons" did not match module from address name "GUITestRunner" at address:00255798
+Module name "GUITestRunner" did not match module from address name "DUnitTestRunner" at address:00260750
+Module name "DUnitTestRunner" did not match module from address name "uDependente" at address:0026078A
+Module name "uDependente" did not match module from address name "uFuncionario" at address:00260AE0
+Setting BreakPoint for module: uCalculo unit uCalculo.pas addr:100423
+Adding breakpoint for uCalculo.TCalculo.CalcularINSS in uCalculo.pas
+Creating class info for uCalculo class TCalculo
+TBreakPoint.Activate:
+Activate uCalculo.pas line 22 BreakPoint at:00665524
+Setting BreakPoint for module: uCalculo unit uCalculo.pas addr:100424
+Adding breakpoint for uCalculo.TCalculo.CalcularINSS in uCalculo.pas
+TBreakPoint.Activate:
+Activate uCalculo.pas line 23 BreakPoint at:00665543
+Setting BreakPoint for module: uCalculo unit uCalculo.pas addr:100425
+Adding breakpoint for uCalculo.TCalculo.CalcularINSS in uCalculo.pas
+TBreakPoint.Activate:
+Activate uCalculo.pas line 25 BreakPoint at:0066554B
+Setting BreakPoint for module: uCalculo unit uCalculo.pas addr:100426
+Adding breakpoint for uCalculo.TCalculo.CalcularINSS in uCalculo.pas
+TBreakPoint.Activate:
+Activate uCalculo.pas line 28 BreakPoint at:0066555F
+Setting BreakPoint for module: uCalculo unit uCalculo.pas addr:100427
+Adding breakpoint for uCalculo.TCalculo.CalcularINSS in uCalculo.pas
+TBreakPoint.Activate:
+Activate uCalculo.pas line 30 BreakPoint at:0066556A
+Setting BreakPoint for module: uCalculo unit uCalculo.pas addr:100428
+Adding breakpoint for uCalculo.TCalculo.CalcularINSS in uCalculo.pas
+TBreakPoint.Activate:
+Activate uCalculo.pas line 33 BreakPoint at:00665573
+Setting BreakPoint for module: uCalculo unit uCalculo.pas addr:100429
+Adding breakpoint for uCalculo.TCalculo.CalcularINSS in uCalculo.pas
+TBreakPoint.Activate:
+Activate uCalculo.pas line 35 BreakPoint at:00665589
+Setting BreakPoint for module: uCalculo unit uCalculo.pas addr:100430
+Adding breakpoint for uCalculo.TCalculo.CalcularINSS in uCalculo.pas
+TBreakPoint.Activate:
+Activate uCalculo.pas line 37 BreakPoint at:006655BC
+Setting BreakPoint for module: uCalculo unit uCalculo.pas addr:100431
+Adding breakpoint for uCalculo.TCalculo.CalcularINSS in uCalculo.pas
+TBreakPoint.Activate:
+Activate uCalculo.pas line 38 BreakPoint at:006655D0
+Setting BreakPoint for module: uCalculo unit uCalculo.pas addr:100432
+Adding breakpoint for uCalculo.TCalculo.CalcularINSS in uCalculo.pas
+TBreakPoint.Activate:
+Activate uCalculo.pas line 40 BreakPoint at:006655D2
+Setting BreakPoint for module: uCalculo unit uCalculo.pas addr:100433
+Adding breakpoint for uCalculo.TCalculo.CalcularINSS in uCalculo.pas
+TBreakPoint.Activate:
+Activate uCalculo.pas line 33 BreakPoint at:006655D5
+Setting BreakPoint for module: uCalculo unit uCalculo.pas addr:100434
+Adding breakpoint for uCalculo.TCalculo.CalcularINSS in uCalculo.pas
+TBreakPoint.Activate:
+Activate uCalculo.pas line 41 BreakPoint at:006655DA
+Setting BreakPoint for module: uCalculo unit uCalculo.pas addr:100435
+Adding breakpoint for uCalculo.TCalculo.CalcularIR in uCalculo.pas
+TBreakPoint.Activate:
+Activate uCalculo.pas line 47 BreakPoint at:0066561C
+Setting BreakPoint for module: uCalculo unit uCalculo.pas addr:100436
+Adding breakpoint for uCalculo.TCalculo.CalcularIR in uCalculo.pas
+TBreakPoint.Activate:
+Activate uCalculo.pas line 48 BreakPoint at:0066563B
+Setting BreakPoint for module: uCalculo unit uCalculo.pas addr:100437
+Adding breakpoint for uCalculo.TCalculo.CalcularIR in uCalculo.pas
+TBreakPoint.Activate:
+Activate uCalculo.pas line 50 BreakPoint at:00665643
+Setting BreakPoint for module: uCalculo unit uCalculo.pas addr:100438
+Adding breakpoint for uCalculo.TCalculo.CalcularIR in uCalculo.pas
+TBreakPoint.Activate:
+Activate uCalculo.pas line 53 BreakPoint at:0066565F
+Setting BreakPoint for module: uCalculo unit uCalculo.pas addr:100439
+Adding breakpoint for uCalculo.TCalculo.CalcularIR in uCalculo.pas
+TBreakPoint.Activate:
+Activate uCalculo.pas line 55 BreakPoint at:0066566B
+Setting BreakPoint for module: uCalculo unit uCalculo.pas addr:100440
+Adding breakpoint for uCalculo.TCalculo.CalcularIR in uCalculo.pas
+TBreakPoint.Activate:
+Activate uCalculo.pas line 57 BreakPoint at:00665676
+Setting BreakPoint for module: uCalculo unit uCalculo.pas addr:100441
+Adding breakpoint for uCalculo.TCalculo.CalcularIR in uCalculo.pas
+TBreakPoint.Activate:
+Activate uCalculo.pas line 59 BreakPoint at:0066567F
+Setting BreakPoint for module: uCalculo unit uCalculo.pas addr:100442
+Adding breakpoint for uCalculo.TCalculo.CalcularIR in uCalculo.pas
+TBreakPoint.Activate:
+Activate uCalculo.pas line 61 BreakPoint at:00665695
+Setting BreakPoint for module: uCalculo unit uCalculo.pas addr:100443
+Adding breakpoint for uCalculo.TCalculo.CalcularIR in uCalculo.pas
+TBreakPoint.Activate:
+Activate uCalculo.pas line 62 BreakPoint at:006656C8
+Setting BreakPoint for module: uCalculo unit uCalculo.pas addr:100444
+Adding breakpoint for uCalculo.TCalculo.CalcularIR in uCalculo.pas
+TBreakPoint.Activate:
+Activate uCalculo.pas line 63 BreakPoint at:006656D5
+Setting BreakPoint for module: uCalculo unit uCalculo.pas addr:100445
+Adding breakpoint for uCalculo.TCalculo.CalcularIR in uCalculo.pas
+TBreakPoint.Activate:
+Activate uCalculo.pas line 59 BreakPoint at:006656D8
+Setting BreakPoint for module: uCalculo unit uCalculo.pas addr:100446
+Adding breakpoint for uCalculo.TCalculo.CalcularIR in uCalculo.pas
+TBreakPoint.Activate:
+Activate uCalculo.pas line 66 BreakPoint at:006656DD
+Setting BreakPoint for module: uCalculo unit uCalculo.pas addr:100447
+Adding breakpoint for uCalculo.TCalculo.CalcularIR in uCalculo.pas
+TBreakPoint.Activate:
+Activate uCalculo.pas line 67 BreakPoint at:006656EA
+Module name "uCalculo" did not match module from address name "TestCalculo" at address:00264737
+Module name "System.DateUtils" did not match module from address name "System.IOUtils" at address:0026D89C
+Module name "Vcl.Controls" did not match module from address name "Vcl.StdCtrls" at address:0026E0E4
+Module name "Vcl.ComCtrls" did not match module from address name "Vcl.Dialogs" at address:0026E375
+Module name "Vcl.Dialogs" did not match module from address name "Vcl.ExtCtrls" at address:0026E448
+Module name "Vcl.ExtCtrls" did not match module from address name "Vcl.Themes" at address:0026E4B8
+Module delayhlp skipped
+Module DUnitTestRunner skipped
+Module GETMEM skipped
+Module GuiTestRunner skipped
+Module ImpostosTest skipped
+Module SysInit skipped
+Module System skipped
+Module System.Actions skipped
+Module System.AnsiStrings skipped
+Module System.Character skipped
+Module System.Character.12.1.0 skipped
+Module System.Classes skipped
+Module System.Contnrs skipped
+Module System.DateUtils skipped
+Module System.Diagnostics skipped
+Module System.Generics.Collections skipped
+Module System.Generics.Defaults skipped
+Module System.Hash skipped
+Module System.HelpIntfs skipped
+Module System.ImageList skipped
+Module System.IniFiles skipped
+Module System.Internal.ExcUtils skipped
+Module System.IOUtils skipped
+Module System.Math skipped
+Module System.Messaging skipped
+Module System.Rtti skipped
+Module System.SyncObjs skipped
+Module System.SysUtils skipped
+Module System.TimeSpan skipped
+Module System.Types skipped
+Module System.TypInfo skipped
+Module System.UIConsts skipped
+Module System.UITypes skipped
+Module System.Variants skipped
+Module System.VarUtils skipped
+Module System.WideStrUtils skipped
+Module System.Win.ComObj skipped
+Module System.Win.Registry skipped
+Module System.Win.TaskbarCore skipped
+Module TestCalculo skipped
+Module TestFramework skipped
+Module TextTestRunner skipped
+Module uDependente skipped
+Module uFuncionario skipped
+Module Vcl.ActnList skipped
+Module Vcl.Buttons skipped
+Module Vcl.Clipbrd skipped
+Module Vcl.ComCtrls skipped
+Module Vcl.Controls skipped
+Module Vcl.Dialogs skipped
+Module Vcl.ExtCtrls skipped
+Module Vcl.Forms skipped
+Module Vcl.Graphics skipped
+Module Vcl.GraphUtil skipped
+Module Vcl.ImgList skipped
+Module Vcl.ListActns skipped
+Module Vcl.Menus skipped
+Module Vcl.Printers skipped
+Module Vcl.StdActns skipped
+Module Vcl.StdCtrls skipped
+Module Vcl.Themes skipped
+Module Vcl.ToolWin skipped
+Module Winapi.ActiveX skipped
+Module Winapi.CommCtrl skipped
+Module Winapi.DwmApi skipped
+Module Winapi.FlatSB skipped
+Module Winapi.Imm skipped
+Module Winapi.Messages skipped
+Module Winapi.MsCTF skipped
+Module Winapi.MultiMon skipped
+Module Winapi.PsAPI skipped
+Module Winapi.RichEdit skipped
+Module Winapi.ShellAPI skipped
+Module Winapi.ShellScaling skipped
+Module Winapi.ShlObj skipped
+Module Winapi.UxTheme skipped
+Module Winapi.Wincodec skipped
+Module Winapi.Windows skipped
+Module Winapi.WinSpool skipped
+Module WindowsAPIs skipped
+Done adding  BreakPoints
+ReadProcessMemory error: Somente uma parte de um pedido ReadProcessMemory ou WriteProcessMemory foi concluída
+GetModuleFileNameEx error: Identificador inválido
+Loading DLL at addr:74BF0000 (C:\WINDOWS\SysWOW64\KERNEL32.DLL) size :409600
+Done adding  BreakPoints
+Loading DLL at addr:76BA0000 (C:\WINDOWS\SysWOW64\KERNELBASE.dll) size :1849344
+Done adding  BreakPoints
+Create thread:9164
+Loading DLL at addr:74210000 (C:\WINDOWS\SysWOW64\winspool.drv) size :297472
+Done adding  BreakPoints
+Loading DLL at addr:764D0000 (C:\WINDOWS\SysWOW64\msvcrt.dll) size :723456
+Done adding  BreakPoints
+Create thread:2420
+Loading DLL at addr:74EC0000 (C:\WINDOWS\SysWOW64\combase.dll) size :2295808
+Done adding  BreakPoints
+Loading DLL at addr:75710000 (C:\WINDOWS\SysWOW64\ucrtbase.dll) size :1104384
+Done adding  BreakPoints
+Loading DLL at addr:75E70000 (C:\WINDOWS\SysWOW64\RPCRT4.dll) size :695296
+Done adding  BreakPoints
+Loading DLL at addr:74B30000 (C:\WINDOWS\SysWOW64\SspiCli.dll) size :98816
+Done adding  BreakPoints
+Loading DLL at addr:74B20000 (C:\WINDOWS\SysWOW64\CRYPTBASE.dll) size :16384
+Done adding  BreakPoints
+Loading DLL at addr:75C50000 (C:\WINDOWS\SysWOW64\bcryptPrimitives.dll) size :359424
+Done adding  BreakPoints
+Create thread:12792
+Loading DLL at addr:74B60000 (C:\WINDOWS\SysWOW64\sechost.dll) size :420352
+Done adding  BreakPoints
+Loading DLL at addr:76DA0000 (C:\WINDOWS\SysWOW64\kernel.appcore.dll) size :26112
+Done adding  BreakPoints
+Loading DLL at addr:771E0000 (C:\WINDOWS\SysWOW64\bcrypt.dll) size :74752
+Done adding  BreakPoints
+Loading DLL at addr:74910000 (C:\WINDOWS\SysWOW64\IPHLPAPI.DLL) size :172032
+Done adding  BreakPoints
+Loading DLL at addr:74A50000 (C:\WINDOWS\SysWOW64\PROPSYS.dll) size :721408
+Done adding  BreakPoints
+Loading DLL at addr:772B0000 (C:\WINDOWS\SysWOW64\OLEAUT32.dll) size :539648
+Done adding  BreakPoints
+Loading DLL at addr:76DB0000 (C:\WINDOWS\SysWOW64\msvcp_win.dll) size :454144
+Done adding  BreakPoints
+Loading DLL at addr:77150000 (C:\WINDOWS\SysWOW64\shcore.dll) size :479232
+Done adding  BreakPoints
+Loading DLL at addr:75F50000 (C:\WINDOWS\SysWOW64\shell32.dll) size :5279744
+Done adding  BreakPoints
+Loading DLL at addr:63DB0000 (C:\WINDOWS\WinSxS\x86_microsoft.windows.common-controls_6595b64144ccf1df_5.82.18362.836_none_71d337c15ae77c22\comctl32.dll) size :466432
+Done adding  BreakPoints
+Loading DLL at addr:75A00000 (C:\WINDOWS\SysWOW64\cfgmgr32.dll) size :206336
+Done adding  BreakPoints
+Loading DLL at addr:75DE0000 (C:\WINDOWS\SysWOW64\ADVAPI32.dll) size :421376
+Done adding  BreakPoints
+Loading DLL at addr:75140000 (C:\WINDOWS\SysWOW64\windows.storage.dll) size :5562880
+Done adding  BreakPoints
+Loading DLL at addr:75980000 (C:\WINDOWS\SysWOW64\GDI32.dll) size :104448
+Done adding  BreakPoints
+Loading DLL at addr:75F30000 (C:\WINDOWS\SysWOW64\win32u.dll) size :73728
+Done adding  BreakPoints
+Loading DLL at addr:75CB0000 (C:\WINDOWS\SysWOW64\profapi.dll) size :79872
+Done adding  BreakPoints
+Loading DLL at addr:77260000 (C:\WINDOWS\SysWOW64\powrprof.dll) size :77824
+Done adding  BreakPoints
+Loading DLL at addr:75A60000 (C:\WINDOWS\SysWOW64\gdi32full.dll) size :1268224
+Done adding  BreakPoints
+Loading DLL at addr:74B50000 (C:\WINDOWS\SysWOW64\UMPDC.dll) size :30720
+Done adding  BreakPoints
+Loading DLL at addr:765B0000 (C:\WINDOWS\SysWOW64\USER32.dll) size :657408
+Done adding  BreakPoints
+Loading DLL at addr:74E10000 (C:\WINDOWS\SysWOW64\shlwapi.dll) size :231936
+Done adding  BreakPoints
+Loading DLL at addr:75A40000 (C:\WINDOWS\SysWOW64\cryptsp.dll) size :49664
+Done adding  BreakPoints
+Loading DLL at addr:77050000 (C:\WINDOWS\SysWOW64\ole32.dll) size :826880
+Done adding  BreakPoints
+Loading DLL at addr:74020000 (C:\WINDOWS\SysWOW64\netapi32.dll) size :51712
+Done adding  BreakPoints
+Loading DLL at addr:745D0000 (C:\WINDOWS\SysWOW64\version.dll) size :10752
+Done adding  BreakPoints
+Loading DLL at addr:73C40000 (C:\WINDOWS\SysWOW64\NETUTILS.DLL) size :20992
+Done adding  BreakPoints
+Couldn't find BreakPoint for exception address:7740EAA2
+Loading DLL at addr:74DE0000 (C:\WINDOWS\SysWOW64\IMM32.DLL) size :101376
+Done adding  BreakPoints
+Loading DLL at addr:74CD0000 (C:\WINDOWS\SysWOW64\Msctf.dll) size :965120
+Done adding  BreakPoints
+Loading DLL at addr:73CC0000 (C:\WINDOWS\SysWOW64\uxtheme.dll) size :436736
+Done adding  BreakPoints
+Loading DLL at addr:740B0000 (C:\WINDOWS\SysWOW64\wtsapi32.dll) size :35328
+Done adding  BreakPoints
+Loading DLL at addr:74060000 (C:\WINDOWS\SysWOW64\WINSTA.dll) size :230912
+Done adding  BreakPoints
+Loading DLL at addr:72AB0000 (C:\WINDOWS\WinSxS\x86_microsoft.windows.common-controls_6595b64144ccf1df_6.0.18362.836_none_2e71f01a278b41f3\comctl32.DLL) size :1725440
+Done adding  BreakPoints
+Loading DLL at addr:725F0000 (C:\WINDOWS\SysWOW64\RICHED20.DLL) size :421376
+Done adding  BreakPoints
+Loading DLL at addr:73D50000 (C:\WINDOWS\SysWOW64\msls31.dll) size :176640
+Done adding  BreakPoints
+Loading DLL at addr:73D90000 (C:\WINDOWS\SysWOW64\USP10.dll) size :3072
+Done adding  BreakPoints
+Create thread:14440
+Create thread:6556
+Create thread:10988
+Loading DLL at addr:75BD0000 (C:\WINDOWS\SysWOW64\clbcatq.dll) size :456704
+Done adding  BreakPoints
+Loading DLL at addr:6F880000 (C:\WINDOWS\SysWOW64\dataexchange.dll) size :162304
+Done adding  BreakPoints
+Loading DLL at addr:72740000 (C:\WINDOWS\SysWOW64\d3d11.dll) size :1775616
+Done adding  BreakPoints
+Loading DLL at addr:6F710000 (C:\WINDOWS\SysWOW64\dcomp.dll) size :1320960
+Done adding  BreakPoints
+Loading DLL at addr:72670000 (C:\WINDOWS\SysWOW64\dxgi.dll) size :619520
+Done adding  BreakPoints
+Loading DLL at addr:742A0000 (C:\WINDOWS\SysWOW64\dxcore.dll) size :63488
+Done adding  BreakPoints
+Loading DLL at addr:6F520000 (C:\WINDOWS\SysWOW64\twinapi.appcore.dll) size :1807360
+Done adding  BreakPoints
+Loading DLL at addr:6F500000 (C:\WINDOWS\SysWOW64\RMCLIENT.dll) size :92160
+Done adding  BreakPoints
+Loading DLL at addr:740D0000 (C:\WINDOWS\SysWOW64\DWMAPI.DLL) size :91136
+Done adding  BreakPoints
+Loading DLL at addr:744A0000 (C:\WINDOWS\SysWOW64\TextInputFramework.dll) size :484352
+Done adding  BreakPoints
+Loading DLL at addr:73210000 (C:\WINDOWS\SysWOW64\CoreUIComponents.dll) size :1406464
+Done adding  BreakPoints
+Loading DLL at addr:74410000 (C:\WINDOWS\SysWOW64\CoreMessaging.dll) size :350208
+Done adding  BreakPoints
+Loading DLL at addr:74870000 (C:\WINDOWS\SysWOW64\ntmarta.dll) size :125440
+Done adding  BreakPoints
+Loading DLL at addr:6B5C0000 (C:\WINDOWS\SysWOW64\wintypes.dll) size :770048
+Done adding  BreakPoints
+Loading DLL at addr:70540000 (C:\WINDOWS\SysWOW64\iertutil.dll) size :2088448
+Done adding  BreakPoints
+Wait For Debug Event timed-out
+Adding coverage:uCalculo.pas (uCalculo) 22
+Clearing BreakPoint at 00665524
+De-Activate uCalculo.pas line 22 BreakPoint at:00665524
+Adding coverage:uCalculo.pas (uCalculo) 23
+Clearing BreakPoint at 00665543
+De-Activate uCalculo.pas line 23 BreakPoint at:00665543
+Adding coverage:uCalculo.pas (uCalculo) 25
+Clearing BreakPoint at 0066554B
+De-Activate uCalculo.pas line 25 BreakPoint at:0066554B
+Adding coverage:uCalculo.pas (uCalculo) 28
+Clearing BreakPoint at 0066555F
+De-Activate uCalculo.pas line 28 BreakPoint at:0066555F
+Adding coverage:uCalculo.pas (uCalculo) 30
+Clearing BreakPoint at 0066556A
+De-Activate uCalculo.pas line 30 BreakPoint at:0066556A
+Adding coverage:uCalculo.pas (uCalculo) 33
+Clearing BreakPoint at 00665573
+De-Activate uCalculo.pas line 33 BreakPoint at:00665573
+Adding coverage:uCalculo.pas (uCalculo) 35
+Clearing BreakPoint at 00665589
+De-Activate uCalculo.pas line 35 BreakPoint at:00665589
+Adding coverage:uCalculo.pas (uCalculo) 37
+Clearing BreakPoint at 006655BC
+De-Activate uCalculo.pas line 37 BreakPoint at:006655BC
+Adding coverage:uCalculo.pas (uCalculo) 38
+Clearing BreakPoint at 006655D0
+De-Activate uCalculo.pas line 38 BreakPoint at:006655D0
+Adding coverage:uCalculo.pas (uCalculo) 41
+Clearing BreakPoint at 006655DA
+De-Activate uCalculo.pas line 41 BreakPoint at:006655DA
+Adding coverage:uCalculo.pas (uCalculo) 47
+Clearing BreakPoint at 0066561C
+De-Activate uCalculo.pas line 47 BreakPoint at:0066561C
+Adding coverage:uCalculo.pas (uCalculo) 48
+Clearing BreakPoint at 0066563B
+De-Activate uCalculo.pas line 48 BreakPoint at:0066563B
+Adding coverage:uCalculo.pas (uCalculo) 50
+Clearing BreakPoint at 00665643
+De-Activate uCalculo.pas line 50 BreakPoint at:00665643
+Adding coverage:uCalculo.pas (uCalculo) 53
+Clearing BreakPoint at 0066565F
+De-Activate uCalculo.pas line 53 BreakPoint at:0066565F
+Adding coverage:uCalculo.pas (uCalculo) 55
+Clearing BreakPoint at 0066566B
+De-Activate uCalculo.pas line 55 BreakPoint at:0066566B
+Adding coverage:uCalculo.pas (uCalculo) 57
+Clearing BreakPoint at 00665676
+De-Activate uCalculo.pas line 57 BreakPoint at:00665676
+Adding coverage:uCalculo.pas (uCalculo) 59
+Clearing BreakPoint at 0066567F
+De-Activate uCalculo.pas line 59 BreakPoint at:0066567F
+Adding coverage:uCalculo.pas (uCalculo) 61
+Clearing BreakPoint at 00665695
+De-Activate uCalculo.pas line 61 BreakPoint at:00665695
+Adding coverage:uCalculo.pas (uCalculo) 62
+Clearing BreakPoint at 006656C8
+De-Activate uCalculo.pas line 62 BreakPoint at:006656C8
+Adding coverage:uCalculo.pas (uCalculo) 63
+Clearing BreakPoint at 006656D5
+De-Activate uCalculo.pas line 63 BreakPoint at:006656D5
+Adding coverage:uCalculo.pas (uCalculo) 59
+Clearing BreakPoint at 006656D8
+De-Activate uCalculo.pas line 59 BreakPoint at:006656D8
+Adding coverage:uCalculo.pas (uCalculo) 66
+Clearing BreakPoint at 006656DD
+De-Activate uCalculo.pas line 66 BreakPoint at:006656DD
+Adding coverage:uCalculo.pas (uCalculo) 67
+Clearing BreakPoint at 006656EA
+De-Activate uCalculo.pas line 67 BreakPoint at:006656EA
+Wait For Debug Event timed-out
+UnLoading DLL:00000000
+UnLoading DLL:00000000
+UnLoading DLL:00000000
+EXCEPTION CODE:0000071A
+Address:76CB4402
+EXCEPTION flags:00000001
+---------------Stack trace --------------
+Module : C:\WINDOWS\SysWOW64\RPCRT4.dll Stack frame:75E82EBE
+Module : C:\WINDOWS\SysWOW64\RPCRT4.dll - no MAP information exists
+Module : C:\WINDOWS\SysWOW64\RPCRT4.dll Stack frame:75E82E6C
+Module : C:\WINDOWS\SysWOW64\RPCRT4.dll - no MAP information exists
+Module : C:\WINDOWS\SysWOW64\RPCRT4.dll Stack frame:75E77B03
+Module : C:\WINDOWS\SysWOW64\RPCRT4.dll - no MAP information exists
+Module : C:\WINDOWS\SysWOW64\RPCRT4.dll Stack frame:75E7782F
+Module : C:\WINDOWS\SysWOW64\RPCRT4.dll - no MAP information exists
+Module : C:\WINDOWS\SysWOW64\RPCRT4.dll Stack frame:75E7778C
+Module : C:\WINDOWS\SysWOW64\RPCRT4.dll - no MAP information exists
+Module : C:\WINDOWS\SysWOW64\WINSTA.dll Stack frame:74076222
+Module : C:\WINDOWS\SysWOW64\WINSTA.dll - no MAP information exists
+Module : C:\WINDOWS\SysWOW64\WINSTA.dll Stack frame:7407618A
+Module : C:\WINDOWS\SysWOW64\WINSTA.dll - no MAP information exists
+Module : C:\WINDOWS\SysWOW64\RPCRT4.dll Stack frame:75EA40F5
+Module : C:\WINDOWS\SysWOW64\RPCRT4.dll - no MAP information exists
+Module : C:\WINDOWS\SysWOW64\RPCRT4.dll Stack frame:75EA408D
+Module : C:\WINDOWS\SysWOW64\RPCRT4.dll - no MAP information exists
+Module : C:\WINDOWS\SysWOW64\RPCRT4.dll Stack frame:75E81CD9
+Module : C:\WINDOWS\SysWOW64\RPCRT4.dll - no MAP information exists
+Module : C:\WINDOWS\SysWOW64\RPCRT4.dll Stack frame:75E81C5D
+Module : C:\WINDOWS\SysWOW64\RPCRT4.dll - no MAP information exists
+Module : C:\WINDOWS\SysWOW64\RPCRT4.dll Stack frame:75E81BCA
+Module : C:\WINDOWS\SysWOW64\RPCRT4.dll - no MAP information exists
+Module : C:\WINDOWS\SysWOW64\RPCRT4.dll Stack frame:75E81AD8
+Module : C:\WINDOWS\SysWOW64\RPCRT4.dll - no MAP information exists
+Module : C:\WINDOWS\SysWOW64\RPCRT4.dll Stack frame:75E81A11
+Module : C:\WINDOWS\SysWOW64\RPCRT4.dll - no MAP information exists
+Module : C:\WINDOWS\SysWOW64\RPCRT4.dll Stack frame:75E8194B
+Module : C:\WINDOWS\SysWOW64\RPCRT4.dll - no MAP information exists
+Module : C:\WINDOWS\SysWOW64\WINSTA.dll Stack frame:74076082
+Module : C:\WINDOWS\SysWOW64\WINSTA.dll - no MAP information exists
+Module : C:\WINDOWS\SysWOW64\WINSTA.dll Stack frame:74075FC9
+Module : C:\WINDOWS\SysWOW64\WINSTA.dll - no MAP information exists
+Module : C:\WINDOWS\SysWOW64\WINSTA.dll Stack frame:74075DA5
+Module : C:\WINDOWS\SysWOW64\WINSTA.dll - no MAP information exists
+Module : C:\WINDOWS\SysWOW64\wtsapi32.dll Stack frame:740B2A3A
+Module : C:\WINDOWS\SysWOW64\wtsapi32.dll - no MAP information exists
+Module : ImpostosTest.exe Stack frame:006467FE
+Exact line:Vcl.Forms line 9719
+Module : ImpostosTest.exe Stack frame:0040A6B0
+Exact line:System line 23323
+Module : ImpostosTest.exe Stack frame:0040AAC1
+Exact line:System line 24820
+Module : C:\WINDOWS\SysWOW64\KERNEL32.DLL Stack frame:74C06359
+Module : C:\WINDOWS\SysWOW64\KERNEL32.DLL - no MAP information exists
+No module found for exception address:773C7C24
+No module found for exception address:773C7BF4
+---------------End of Stack trace --------------
+Create thread:10156
+Create thread:10028
+UnLoading DLL:0034D000
+UnLoading DLL:0034D000
+UnLoading DLL:0034D000
+UnLoading DLL:0034D000
+UnLoading DLL:0034D000
+UnLoading DLL:0034D000
+UnLoading DLL:0034D000
+Thread exit:10988
+Thread exit:10028
+Thread exit:10156
+Thread exit:2420
+Thread exit:6556
+Thread exit:12792
+Thread exit:9164
+Thread exit:14440
+Process 11816 exiting. Exit code :0
+Finished processing debug events
+ProcedureReport
+Generating reports
+Generating coverage report
+Source dir: E:\Projetos\Delphi\teste-delphi\Exercicio2
+Output dir: .\
+Generating xml coverage report
+Generating EMMA file
+Generating EMMA data for module: ModuleInfo[ modulename=uCalculo, filename=uCalculo.pas ]
+Generating EMMA data for class: TCalculo
+Generating EMMA data for method: CalcularINSS l:11 c:10
+Generating EMMA data for method: CalcularIR l:12 c:12
+Emma file generated
+Finished generating reports
+
+Summary:
+
++-----------+-----------+-----------+
+|   Lines   |  Covered  | Covered % |
++-----------+-----------+-----------+
+|        23 |        22 |      95 % |
++-----------+-----------+-----------+

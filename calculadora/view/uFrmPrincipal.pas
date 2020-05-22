@@ -34,6 +34,7 @@ type
     procedure FormCreate(Sender: TObject);
     procedure FormDestroy(Sender: TObject);
     procedure EnviarComando(Sender: TObject);
+    procedure FormKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
   private
     Calculadora: TCalculadora;
     { Private declarations }
@@ -63,6 +64,41 @@ end;
 procedure TfrmPrincipal.FormDestroy(Sender: TObject);
 begin
   FreeAndNil(Calculadora);
+end;
+
+procedure TfrmPrincipal.FormKeyDown(Sender: TObject; var Key: Word;
+  Shift: TShiftState);
+begin
+  if (Key = VK_NUMPAD0) then
+    btnZero.Click
+  else if (Key = VK_NUMPAD1) then
+    btnUm.Click
+  else if (Key = VK_NUMPAD2) then
+    btnDois.Click
+  else if (Key = VK_NUMPAD3) then
+    btnTres.Click
+  else if (Key = VK_NUMPAD4) then
+    btnQuatro.Click
+  else if (Key = VK_NUMPAD5) then
+    btnCinco.Click
+  else if (Key = VK_NUMPAD6) then
+    btnSeis.Click
+  else if (Key = VK_NUMPAD7) then
+    btnSete.Click
+  else if (Key = VK_NUMPAD8) then
+    btnOito.Click
+  else if (Key = VK_NUMPAD9) then
+    btnNove.Click
+  else if (Key = VK_ADD) then
+    btnSomar.Click
+  else if (Key = VK_SUBTRACT) then
+    btnSubtrair.Click
+  else if (Key = VK_MULTIPLY) then
+    btnMultiplicar.Click
+  else if (Key = VK_DIVIDE) then
+    btnDividir.Click
+  else if (Key = VK_ESCAPE) then
+    btnC.Click;
 end;
 
 end.

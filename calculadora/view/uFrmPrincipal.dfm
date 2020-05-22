@@ -11,9 +11,11 @@ object frmPrincipal: TfrmPrincipal
   Font.Height = -11
   Font.Name = 'Tahoma'
   Font.Style = []
+  KeyPreview = True
   OldCreateOrder = False
   OnCreate = FormCreate
   OnDestroy = FormDestroy
+  OnKeyDown = FormKeyDown
   PixelsPerInch = 96
   TextHeight = 13
   object lblHistoricoCalculo: TLabel
@@ -117,6 +119,7 @@ object frmPrincipal: TfrmPrincipal
     Font.Style = [fsBold]
     ParentFont = False
     TabOrder = 0
+    TabStop = False
     OnClick = EnviarComando
   end
   object btnOito: TButton

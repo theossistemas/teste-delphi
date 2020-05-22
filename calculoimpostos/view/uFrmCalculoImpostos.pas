@@ -83,10 +83,17 @@ begin
   try
     if oFuncionarioController.CarregarFuncionario(
       oListaFuncionarios[iIndice].ID, oFuncionario) then begin
-      edtValorIR.Text := FloatToStrF(oFuncoes.CalcularIR(oFuncionario,
+
+      edtValorIR.Text := FloatToStrF(oFuncoes.CalcularIR(
+        oFuncionario.QtdDependentesIR, oFuncionario.Salario,
         dPercIR, dDctIR), ffNumber, 11, 2);
-      edtValorINSS.Text := FloatToStrF(oFuncoes.CalcularINSS(oFuncionario,
-        dPercINSS), ffNumber, 11, 2);
+
+      if oFuncionario.IsCalculaINSS then begin
+        edtValorINSS.Text := FloatToStrF(oFuncoes.CalcularINSS(
+          oFuncionario.Salario, dPercINSS), ffNumber, 11, 2);
+      end else begin
+        edtValorINSS.Text := '0,00';
+      end;
     end else begin
     end;
   finally

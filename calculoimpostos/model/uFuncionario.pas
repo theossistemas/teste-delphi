@@ -13,8 +13,12 @@ type
     FCPF: String;
     FSalario: Double;
     FListaDependentes: TObjectList<TDependente>;
+    FIsCalculaINSS: Boolean;
+    FQtdDependentesIR: Integer;
     procedure SetCPF(const Value: String);
     procedure SetNome(const Value: String);
+    function GetIsCalculaINSS: Boolean;
+    function GetQtdDependentesIR: Integer;
   protected
     { protected declarations }
   public
@@ -30,6 +34,8 @@ type
     property Salario: Double read FSalario write FSalario;
     property ListaDependentes: TObjectList<TDependente> read FListaDependentes
       write FListaDependentes;
+    property IsCalculaINSS: Boolean read GetIsCalculaINSS;
+    property QtdDependentesIR: Integer read GetQtdDependentesIR;
   end;
 
 implementation
@@ -70,6 +76,31 @@ begin
       FListaDependentes[iIndice].Status := TStatus.stExcluir;
     end else begin
       FListaDependentes.Delete(iIndice);
+    end;
+  end;
+end;
+
+function TFuncionario.GetIsCalculaINSS: Boolean;
+var
+  iIndice: Integer;
+begin
+  Result := false;
+  for iIndice := 0 to FListaDependentes.Count - 1 do begin
+    if FListaDependentes[iIndice].IsCalculaINSS then begin
+      Result := true;
+      break;
+    end;
+  end;
+end;
+
+function TFuncionario.GetQtdDependentesIR: Integer;
+var
+  iIndice: Integer;
+begin
+  Result := 0;
+  for iIndice := 0 to FListaDependentes.Count - 1 do begin
+    if FListaDependentes[iIndice].IsCalculaIR then begin
+      Inc(Result);
     end;
   end;
 end;

@@ -26,9 +26,6 @@ object frmCalculoImpostos: TfrmCalculoImpostos
     Height = 150
     Align = alClient
     TabOrder = 0
-    ExplicitTop = 2
-    ExplicitWidth = 447
-    ExplicitHeight = 160
     object lblFuncionario: TLabel
       Left = 8
       Top = 8
@@ -155,9 +152,6 @@ object frmCalculoImpostos: TfrmCalculoImpostos
     Height = 41
     Align = alBottom
     TabOrder = 1
-    ExplicitLeft = 288
-    ExplicitTop = 128
-    ExplicitWidth = 185
     object btnCalcular: TButton
       Left = 89
       Top = 8

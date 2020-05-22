@@ -1,0 +1,48 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{090DDD90-72FD-4B58-8074-055E6012940B}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="calculadora.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\calculadoratest\calculadoratests.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="calculadora">
+        <MSBuild Projects="calculadora.dproj"/>
+    </Target>
+    <Target Name="calculadora:Clean">
+        <MSBuild Projects="calculadora.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="calculadora:Make">
+        <MSBuild Projects="calculadora.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="calculadoratests">
+        <MSBuild Projects="..\calculadoratest\calculadoratests.dproj"/>
+    </Target>
+    <Target Name="calculadoratests:Clean">
+        <MSBuild Projects="..\calculadoratest\calculadoratests.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="calculadoratests:Make">
+        <MSBuild Projects="..\calculadoratest\calculadoratests.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="calculadora;calculadoratests"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="calculadora:Clean;calculadoratests:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="calculadora:Make;calculadoratests:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

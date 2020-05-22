@@ -201,18 +201,18 @@ begin
   for posicao := 0 to Length(listaComandos) - 1 do begin
     if Funcoes.IsNumber(listaComandos[posicao]) then begin
       if operacao = '+' then begin
-        resultado := resultado + StrToFloat(listaComandos[posicao]);
+        resultado := Operacoes.somar(resultado, StrToFloat(listaComandos[posicao]));
       end else if operacao = '-' then begin
-        resultado := resultado - StrToFloat(listaComandos[posicao]);
+        resultado := Operacoes.subtrair(resultado, StrToFloat(listaComandos[posicao]));
       end else if operacao = '*' then begin
-        resultado := resultado * StrToFloat(listaComandos[posicao]);
+        resultado := Operacoes.multiplicar(resultado, StrToFloat(listaComandos[posicao]));
       end else begin
         if StrToFloat(listaComandos[posicao]) = 0 then begin
           ZerarCalculadora('Impossível dividir por zero');
           result := -1;
           exit;
         end;
-        resultado := resultado / StrToFloat(listaComandos[posicao]);
+        resultado := Operacoes.dividir(Resultado, StrToFloat(listaComandos[posicao]));
       end;
     end else begin
       operacao := listaComandos[posicao];

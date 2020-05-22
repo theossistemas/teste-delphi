@@ -1,0 +1,48 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{2057B2B2-B5A4-42F1-8814-F3B7E8B9F62C}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="CalculoImpostos.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\calculoimpostostest\CalculoImpostosTests.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="CalculoImpostos">
+        <MSBuild Projects="CalculoImpostos.dproj"/>
+    </Target>
+    <Target Name="CalculoImpostos:Clean">
+        <MSBuild Projects="CalculoImpostos.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="CalculoImpostos:Make">
+        <MSBuild Projects="CalculoImpostos.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="CalculoImpostosTests">
+        <MSBuild Projects="..\calculoimpostostest\CalculoImpostosTests.dproj"/>
+    </Target>
+    <Target Name="CalculoImpostosTests:Clean">
+        <MSBuild Projects="..\calculoimpostostest\CalculoImpostosTests.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="CalculoImpostosTests:Make">
+        <MSBuild Projects="..\calculoimpostostest\CalculoImpostosTests.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="CalculoImpostos;CalculoImpostosTests"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="CalculoImpostos:Clean;CalculoImpostosTests:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="CalculoImpostos:Make;CalculoImpostosTests:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

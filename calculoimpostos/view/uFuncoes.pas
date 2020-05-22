@@ -3,7 +3,7 @@ unit uFuncoes;
 interface
 
 uses
-  System.StrUtils, System.SysUtils, uFuncionario, System.Math;
+  System.StrUtils, System.SysUtils, System.Math;
 
 type
   TFuncoes = class

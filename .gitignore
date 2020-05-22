@@ -15,3 +15,5 @@ calculoimpostos/model/__history
 calculoimpostos/model/__recovery
 calculoimpostos/DAO/__history
 calculoimpostos/DAO/__recovery
+calculoimpostostest/Win32/Debug
+calculoimpostostest/__history

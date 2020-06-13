@@ -1,0 +1,48 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{CBCDBCCB-692C-4A1A-B744-CD3A4F0925DA}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="PrjEntidadeCalculo.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Test\PrjEntidadeCalculoTests.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="PrjEntidadeCalculo">
+        <MSBuild Projects="PrjEntidadeCalculo.dproj"/>
+    </Target>
+    <Target Name="PrjEntidadeCalculo:Clean">
+        <MSBuild Projects="PrjEntidadeCalculo.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="PrjEntidadeCalculo:Make">
+        <MSBuild Projects="PrjEntidadeCalculo.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="PrjEntidadeCalculoTests">
+        <MSBuild Projects="Test\PrjEntidadeCalculoTests.dproj"/>
+    </Target>
+    <Target Name="PrjEntidadeCalculoTests:Clean">
+        <MSBuild Projects="Test\PrjEntidadeCalculoTests.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="PrjEntidadeCalculoTests:Make">
+        <MSBuild Projects="Test\PrjEntidadeCalculoTests.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="PrjEntidadeCalculo;PrjEntidadeCalculoTests"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="PrjEntidadeCalculo:Clean;PrjEntidadeCalculoTests:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="PrjEntidadeCalculo:Make;PrjEntidadeCalculoTests:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

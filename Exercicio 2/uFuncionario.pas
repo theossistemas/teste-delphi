@@ -1,0 +1,245 @@
+unit uFuncionario;
+
+interface
+
+uses Classes, Dialogs, SysUtils, FireDAC.Comp.Client;
+
+Type
+  TDependente = class
+
+  private
+    FIsCalculaINSS: Boolean;
+    FNome: String;
+    FIsCalculaIR: Boolean;
+    FCodigoFuncionario: Integer;
+    FCodigo: Integer;
+    procedure SetIsCalculaINSS(const Value: Boolean);
+    procedure SetIsCalculaIR(const Value: Boolean);
+    procedure SetNome(const Value: String);
+    procedure SetCodigoFuncionario(const Value: Integer);
+    procedure SetCodigo(const Value: Integer);
+  public
+
+    function Carregar(CodigoFuncionario: Integer): TFDQuery;
+    function Salvar: Boolean;
+    property Codigo: Integer read FCodigo write SetCodigo;
+    property Nome: String read FNome write SetNome;
+    property IsCalculaIR: Boolean read FIsCalculaIR write SetIsCalculaIR;
+    property IsCalculaINSS: Boolean read FIsCalculaINSS write SetIsCalculaINSS;
+    property CodigoFuncionario: Integer read FCodigoFuncionario
+      write SetCodigoFuncionario;
+  end;
+
+  TListaDependentes = class
+  private
+    { private declarations }
+    FListaDependentes: TList;
+  protected
+    { protected declarations }
+  public
+    { public declarations }
+    constructor Create;
+    procedure Adicionar(pDependente: TDependente);
+    procedure Remover(Index: Integer);
+    function Count: Integer;
+    end;
+
+  TFuncionario = Class
+  private
+    FCodigo: Integer;
+    FNome: String;
+    FCPF: String;
+    FSalario: Double;
+
+    procedure SetCodigo(const Value: Integer);
+    procedure SetNome(const Value: String);
+    procedure SetCPF(const Value: String);
+    procedure SetSalario(const Value: Double);
+
+
+  public
+    FListaDependentes: TListaDependentes;
+
+    procedure CalculoIR(Contador : Integer);
+    Procedure CalculoINSS;
+    Function Carregar: TFDQuery;
+    function Salvar: Boolean;
+
+    property Codigo: Integer read FCodigo write SetCodigo;
+    property CPF: String read FCPF write SetCPF;
+    property Salario: Double read FSalario write SetSalario;
+    property Nome: String read FNome write SetNome;
+
+  End;
+
+implementation
+
+uses uDaoFuncionario;
+{ TFuncionario }
+
+procedure TFuncionario.CalculoINSS;
+var
+ Contador : integer;
+PorcentagemDescontada : Double;
+Calculo : Double;
+Dependente : TDependente;
+begin
+
+Contador:= 0;
+
+PorcentagemDescontada:= 0;
+   for Dependente in Self.FListaDependentes.FListaDependentes do
+   begin
+    if Dependente.IsCalculaINSS then
+     Inc(contador);
+   end;
+if Contador > 0 then
+ PorcentagemDescontada := ((Self.Salario * 8)/100);
+
+Calculo := Self.Salario - PorcentagemDescontada;
+
+ShowMessage(' O Salario do Funcionario ' + Self.Nome + ' é de : R$'+  FloatToStr(Self.Salario) + #13 +' Por conta do INSS Foi descontado o valor : R$' + FloatToStr(PorcentagemDescontada) + #13 + 'Sobrando assim o valor de : R$' + FloatToStr(Calculo));
+end;
+
+procedure TFuncionario.CalculoIR(Contador : Integer);
+var
+ ParteDescontada : Double;
+  SegundaParteDescontada : Double ;
+ Calculo : Double;
+begin
+ParteDescontada := 0;
+if Contador > 0 then
+begin
+  ParteDescontada := (Contador * 100);
+
+end;
+   SegundaParteDescontada :=     ((Self.Salario * 15) /100 );
+ Calculo := Self.Salario - ParteDescontada - SegundaParteDescontada;
+
+ ShowMessage(' O Salario do Funcionario ' + Self.Nome + ' é de : R$'+  FloatToStr(Self.Salario) + #13 +' Por conta do IR Foi descontado o valor : R$' + FloatToStr(ParteDescontada) + ' Por Conta dos seus dependentes ' + #13 + ' E Tambem foi Descontado 15% do seu salario , sendo assim : R$ ' + FloatToStr(SegundaParteDescontada) + #13 + 'Sobrando assim o valor de : R$' + FloatToStr(Calculo));
+
+end;
+
+Function TFuncionario.Carregar: TFDQuery;
+Var
+  VFuncionarioDao: TFuncionarioDao;
+begin
+  VFuncionarioDao := TFuncionarioDao.Create;
+  Try
+    Result := VFuncionarioDao.Carregar;
+  Finally
+    FreeAndNil(VFuncionarioDao);
+  End;
+end;
+
+function TFuncionario.Salvar: Boolean;
+Var
+  VFuncionarioDao: TFuncionarioDao;
+begin
+  VFuncionarioDao := TFuncionarioDao.Create;
+  try
+    Result := VFuncionarioDao.IncluirFuncionario(Self);
+  finally
+    VFuncionarioDao.Free;
+  end;
+end;
+
+procedure TFuncionario.SetCodigo(const Value: Integer);
+begin
+  FCodigo := Value;
+end;
+
+procedure TFuncionario.SetCPF(const Value: String);
+begin
+  FCPF := Value;
+end;
+
+procedure TFuncionario.SetNome(const Value: String);
+begin
+  FNome := Value;
+end;
+
+procedure TFuncionario.SetSalario(const Value: Double);
+begin
+  FSalario := Value;
+end;
+
+{ TDependente }
+
+function TDependente.Carregar(CodigoFuncionario: Integer): TFDQuery;
+Var
+  VFuncionarioDao: TFuncionarioDao;
+begin
+  VFuncionarioDao := TFuncionarioDao.Create;
+  Try
+    Result := VFuncionarioDao.CarregarDependentes(CodigoFuncionario);
+  Finally
+    FreeAndNil(VFuncionarioDao);
+  End;
+end;
+
+function TDependente.Salvar: Boolean;
+Var
+  VDependenteDao: TFuncionarioDao;
+begin
+  VDependenteDao := TFuncionarioDao.Create;
+  try
+    Result := VDependenteDao.IncluirDependentes(Self);
+  finally
+    VDependenteDao.Free;
+  end;
+end;
+
+procedure TDependente.SetCodigo(const Value: Integer);
+begin
+  FCodigo := Value;
+end;
+
+procedure TDependente.SetCodigoFuncionario(const Value: Integer);
+begin
+  FCodigoFuncionario := Value;
+end;
+
+procedure TDependente.SetIsCalculaINSS(const Value: Boolean);
+begin
+  FIsCalculaINSS := Value;
+end;
+
+procedure TDependente.SetIsCalculaIR(const Value: Boolean);
+begin
+  FIsCalculaIR := Value;
+end;
+
+procedure TDependente.SetNome(const Value: String);
+begin
+  FNome := Value;
+end;
+
+{ TListaDependentes }
+
+procedure TListaDependentes.Adicionar(pDependente: TDependente);
+begin
+  FListaDependentes.Add(pDependente);
+end;
+
+function TListaDependentes.Count: Integer;
+begin
+  Result := FListaDependentes.Count;
+end;
+
+constructor TListaDependentes.Create;
+begin
+  inherited Create;
+  FListaDependentes := TList.Create;
+
+end;
+
+procedure TListaDependentes.Remover(Index: Integer);
+begin
+  if Index < Count then
+    FListaDependentes.Delete(Index)
+  else
+    ShowMessage('Item não encontrado!');
+end;
+
+end.

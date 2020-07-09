@@ -1,0 +1,68 @@
+unit uSistema;
+
+interface
+
+uses UConexao, uFuncionario, Vcl.Dialogs;
+
+type
+  TSistemaControl = class
+  private
+    FConexao: TConexao;
+    FFuncionario: TFuncionario;
+
+  class var
+    FInstance: TSistemaControl;
+    ODialog: TOpenDialog;
+  public
+    Constructor Create;
+    Destructor Destroy; override;
+
+    procedure SetFuncionario(Codigo: Integer);
+    class function GetInstance: TSistemaControl;
+    Procedure CarregarFuncionario();
+    property Funcionario: TFuncionario read FFuncionario write FFuncionario;
+    property Conexao: TConexao read FConexao write FConexao;
+  end;
+
+implementation
+
+uses System.SysUtils, Vcl.Forms;
+{ TSistemaControl }
+
+procedure TSistemaControl.CarregarFuncionario(CodigoFuncionario : Integer);
+begin
+  FFuncionario.Carregar(CodigoFuncionario);
+end;
+
+constructor TSistemaControl.Create;
+begin
+ODialog := TOpenDialog.Create(nil);
+  ShowMessage('Escolha o Caminho do banco de dados por favor !');
+  if ODialog.Execute then
+  begin
+    FConexao := TConexao.Create(ODialog.FileName);
+  end
+  else
+  begin
+    ShowMessage('Falha ao conectar com o banco de dados!!' + #13 +
+      'Encerrando aplicação !');
+    Application.Terminate;
+  end;
+  FFuncionario := TFuncionario.Create();
+end;
+
+destructor TSistemaControl.Destroy;
+begin
+  FreeAndNil(FFuncionario);
+  FreeAndNil(FConexao);
+end;
+
+class function TSistemaControl.GetInstance: TSistemaControl;
+begin
+  if not Assigned(Self.FInstance) then
+    Self.FInstance := TSistemaControl.Create();
+
+  Result := Self.FInstance;
+end;
+
+end.

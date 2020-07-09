@@ -1,0 +1,13 @@
+unit IEntidadeCalculo;
+
+interface
+
+type
+
+  IEntidadeDeCalculo = interface(IInterface)
+
+  end;
+
+implementation
+
+end.

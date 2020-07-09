@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+  <Transactions>
+    <Transaction>2020/07/07 18:32:03.272,=D:\Projetos Delphi\Unit1.pas</Transaction>
+    <Transaction>2020/07/07 18:42:48.307,D:\Projetos Delphi\Teste\teste-delphi\Exercicio 2\FrmEntidadeCalculo.dfm=D:\Projetos Delphi\Unit1.dfm</Transaction>
+    <Transaction>2020/07/07 18:42:48.307,D:\Projetos Delphi\Teste\teste-delphi\Exercicio 2\FrmEntidadeCalculo.pas=D:\Projetos Delphi\Unit1.pas</Transaction>
+    <Transaction>2020/07/07 18:43:01.293,D:\Projetos Delphi\Teste\teste-delphi\Exercicio 2\PrjEntidadeDeCalculo.dproj=D:\Projetos Delphi\Project1.dproj</Transaction>
+    <Transaction>2020/07/07 18:43:35.983,=D:\Projetos Delphi\Teste\teste-delphi\Exercicio 2\Unit1.pas</Transaction>
+    <Transaction>2020/07/07 18:44:45.355,D:\Projetos Delphi\Teste\teste-delphi\Exercicio 2\uFuncionario.pas=D:\Projetos Delphi\Teste\teste-delphi\Exercicio 2\Unit1.pas</Transaction>
+    <Transaction>2020/07/07 20:00:19.417,=D:\Projetos Delphi\Teste\teste-delphi\Exercicio 2\Unit1.pas</Transaction>
+    <Transaction>2020/07/07 20:00:25.001,=D:\Projetos Delphi\Teste\teste-delphi\Exercicio 2\Unit2.pas</Transaction>
+    <Transaction>2020/07/07 20:01:09.004,D:\Projetos Delphi\Teste\teste-delphi\Exercicio 2\uEntidadeCalculo.pas=D:\Projetos Delphi\Teste\teste-delphi\Exercicio 2\Unit1.pas</Transaction>
+    <Transaction>2020/07/07 20:01:13.611,D:\Projetos Delphi\Teste\teste-delphi\Exercicio 2\IEntidadeCalculo.pas=D:\Projetos Delphi\Teste\teste-delphi\Exercicio 2\Unit2.pas</Transaction>
+    <Transaction>2020/07/07 20:21:06.005,=D:\Projetos Delphi\Teste\teste-delphi\Exercicio 2\Unit1.pas</Transaction>
+    <Transaction>2020/07/07 20:21:15.902,D:\Projetos Delphi\Teste\teste-delphi\Exercicio 2\uConexao.pas=D:\Projetos Delphi\Teste\teste-delphi\Exercicio 2\Unit1.pas</Transaction>
+    <Transaction>2020/07/07 20:21:15.902,D:\Projetos Delphi\Teste\teste-delphi\Exercicio 2\uConexao.dfm=D:\Projetos Delphi\Teste\teste-delphi\Exercicio 2\Unit1.dfm</Transaction>
+    <Transaction>2020/07/07 20:46:21.064,D:\Projetos Delphi\Teste\teste-delphi\Exercicio 2\uConexao.pas=</Transaction>
+    <Transaction>2020/07/07 20:46:28.369,=D:\Projetos Delphi\Teste\teste-delphi\Exercicio 2\Unit1.pas</Transaction>
+    <Transaction>2020/07/07 20:48:33.337,D:\Projetos Delphi\Teste\teste-delphi\Exercicio 2\uConexao.pas=D:\Projetos Delphi\Teste\teste-delphi\Exercicio 2\Unit1.pas</Transaction>
+  </Transactions>
+</BorlandProject>

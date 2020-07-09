@@ -1,0 +1,72 @@
+unit uConexao;
+
+interface
+
+uses
+  System.SysUtils, System.Classes, FireDAC.Stan.Intf, FireDAC.Stan.Option,
+  FireDAC.Stan.Error, FireDAC.UI.Intf, FireDAC.Phys.Intf, FireDAC.Stan.Def,
+  FireDAC.Stan.Pool, FireDAC.Stan.Async, FireDAC.Phys, FireDAC.VCLUI.Wait,
+  Data.DB, FireDAC.Comp.Client;
+
+type
+  TConexao = class
+  private
+
+    FConn: TFDConnection;
+
+    procedure ConfigurarConexao;
+
+    function CriarQuery: TFDQuery;
+
+  public
+    constructor Create;
+    destructor Destroy; override;
+
+    function GetConn: TFDConnection;
+
+  Const
+    PATH_BANCO: string = 'C:\BancosDados\Firebird\BANCOEXERCICIO2.FDB';
+  end;
+
+implementation
+
+{ TConexao }
+
+procedure TConexao.ConfigurarConexao;
+begin
+  FConn.Params.DriverID := 'FB';
+  FConn.Params.Database := PATH_BANCO;
+  FConn.Params.UserName := 'SYSDBA';
+  FConn.Params.Password := '250388';
+  FConn.LoginPrompt := False;
+end;
+
+constructor TConexao.Create;
+begin
+  FConn := TFDConnection.Create(nil);
+
+  Self.ConfigurarConexao;
+end;
+
+function TConexao.CriarQuery: TFDQuery;
+var
+ VQuery : TFDQuery;
+begin
+ VQuery := TFDQuery.Create(nil);
+ VQuery.Connection := FConn;
+
+ Result := VQuery;
+end;
+
+destructor TConexao.Destroy;
+begin
+  FreeAndNil(FConn);
+  inherited;
+end;
+
+function TConexao.GetConn: TFDConnection;
+begin
+  Result := FConn;
+end;
+
+end.

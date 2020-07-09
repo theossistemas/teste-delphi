@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+  <Transactions>
+    <Transaction>2020/07/07 13:20:52.236,=D:\Projetos Delphi\Unit1.pas</Transaction>
+    <Transaction>2020/07/07 13:23:27.053,D:\Projetos Delphi\Calculadora\uFrmCalculadora.dfm=D:\Projetos Delphi\Unit1.dfm</Transaction>
+    <Transaction>2020/07/07 13:23:27.053,D:\Projetos Delphi\Calculadora\uFrmCalculadora.pas=D:\Projetos Delphi\Unit1.pas</Transaction>
+    <Transaction>2020/07/07 13:23:32.931,=D:\Projetos Delphi\Unit1.pas</Transaction>
+    <Transaction>2020/07/07 13:23:45.635,D:\Projetos Delphi\Calculadora\uCalculadora.pas=D:\Projetos Delphi\Unit1.pas</Transaction>
+    <Transaction>2020/07/07 13:23:49.150,=D:\Projetos Delphi\Unit1.pas</Transaction>
+    <Transaction>2020/07/07 13:23:53.958,D:\Projetos Delphi\Calculadora\ICalculadora.pas=D:\Projetos Delphi\Unit1.pas</Transaction>
+    <Transaction>2020/07/07 13:24:32.846,D:\Projetos Delphi\Calculadora\uICalculadora.pas=D:\Projetos Delphi\Calculadora\ICalculadora.pas</Transaction>
+    <Transaction>2020/07/07 14:22:40.096,=D:\Projetos Delphi\Unit1.pas</Transaction>
+    <Transaction>2020/07/07 14:22:45.484,D:\Projetos Delphi\Calculadora\Types.pas=D:\Projetos Delphi\Unit1.pas</Transaction>
+    <Transaction>2020/07/07 16:29:49.098,D:\Projetos Delphi\Calculadora.dproj=D:\Projetos Delphi\Project1.dproj</Transaction>
+    <Transaction>2020/07/07 17:56:13.817,D:\Projetos Delphi\Calculadora\Calculadora.dproj=D:\Projetos Delphi\Calculadora.dproj</Transaction>
+  </Transactions>
+</BorlandProject>

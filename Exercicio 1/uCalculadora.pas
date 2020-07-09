@@ -1,0 +1,95 @@
+unit uCalculadora;
+
+interface
+
+uses uICalculadora, Types, Vcl.StdCtrls;
+
+type
+
+  TCalculadora = class(TInterfacedObject, ICalculadora)
+  private
+    Function Soma(a, b: Double): Double;
+    Function Subtracao(a, b: Double): Double;
+    Function Divisao(a, b: Double): Double;
+    Function Multiplicacao(a, b: Double): Double;
+    Function ImpostoA(a: Double): Double;
+    Function ImpostoB(vImpostoA : Double): Double;
+    Function ImpostoC(vImpostoA : Double;vImpostoB: Double): Double;
+  Public
+    procedure GerenciamentoOperacao(Operacao: EnumOperacao; out Visor: TEdit;ValorVisor:Double =0; ValorMemoria: Double = 0);
+
+  end;
+
+implementation
+
+uses System.SysUtils;
+
+{ TCalculadora }
+
+procedure TCalculadora.GerenciamentoOperacao(Operacao: EnumOperacao; out Visor: TEdit;ValorVisor, ValorMemoria: Double);
+begin
+
+  Case Operacao of
+    Somar:
+      Visor.Text := FloatToStr(Self.Soma(ValorMemoria, ValorVisor));
+    Subtrair:
+      Visor.Text := FloatToStr(Self.Subtracao(ValorMemoria, ValorVisor));
+    Dividir:
+      begin
+        if ValorVisor = 0 then
+          raise Exception.Create('Não é possivel realizar uma divisão por 0')
+        else
+          Visor.Text := FloatToStr(Self.Divisao(ValorMemoria, ValorVisor));
+      end;
+    Multiplicar:
+      Visor.Text := FloatToStr(Self.Multiplicacao(ValorMemoria, ValorVisor));
+    EImpostoA:
+      Visor.Text := FloatToStr(Self.ImpostoA(ValorVisor));
+    EImpostoB:
+      Visor.Text := FloatToStr(Self.ImpostoB(Self.ImpostoA(ValorVisor)));
+    EImpostoC:
+      Visor.Text := FloatToStr(Self.ImpostoC(Self.ImpostoA(valorVisor),Self.ImpostoB(Self.ImpostoA(ValorVisor))));
+
+  else
+    raise Exception.Create('Erro ao tentar fazer a operação!');
+
+  End;
+
+end;
+
+function TCalculadora.ImpostoA(a: Double): Double;
+begin
+Result := ((a * 20) /100) - 500;
+end;
+
+function TCalculadora.ImpostoB(vImpostoA : Double): Double;
+begin
+  Result := vImpostoA - 15;
+end;
+
+function TCalculadora.ImpostoC(vImpostoA,vImpostoB: Double) : Double;
+begin
+       Result := vImpostoA + vImpostoB;
+end;
+
+function TCalculadora.Divisao(a, b: Double): Double;
+begin
+  Result := a / b;
+end;
+
+function TCalculadora.Multiplicacao(a, b: Double): Double;
+begin
+  Result := a * b;
+end;
+
+function TCalculadora.Soma(a, b: Double): Double;
+begin
+  Result := a + b;
+end;
+
+function TCalculadora.Subtracao(a, b: Double): Double;
+begin
+  Result := a - b;
+end;
+
+end.

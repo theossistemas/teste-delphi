@@ -1,0 +1,14 @@
+unit uICalculadora;
+
+interface
+uses Types, Vcl.STdCtrls;
+type
+  ICalculadora = interface(IInterface)
+
+    procedure GerenciamentoOperacao(ValorVisor,ValorMemoria: Double;  Operacao : EnumOperacao;out Visor : TEdit);
+
+  end;
+
+implementation
+
+end.

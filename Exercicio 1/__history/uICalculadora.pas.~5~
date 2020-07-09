@@ -1,0 +1,18 @@
+unit uICalculadora;
+
+interface
+
+type
+  ICalculadora = interface(IInterface)
+
+    procedure GerenciamentoOperacao(Visor,Memoria: Double;  Operacao : Integer);
+    Function Soma(a, b: Double): Double;
+    Function Subtracao(a, b: Double): Double;
+    Function Divisao(a, b: Double): Double;
+    Function Multiplicacao(a, b: Double): Double;
+
+  end;
+
+implementation
+
+end.

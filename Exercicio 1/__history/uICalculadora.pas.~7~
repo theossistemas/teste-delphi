@@ -1,0 +1,14 @@
+unit uICalculadora;
+
+interface
+                     uses Types;
+type
+  ICalculadora = interface(IInterface)
+
+    procedure GerenciamentoOperacao(Visor,Memoria: Double;  Operacao : Integer);
+
+  end;
+
+implementation
+
+end.

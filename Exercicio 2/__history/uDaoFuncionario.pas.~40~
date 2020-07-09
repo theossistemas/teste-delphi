@@ -1,0 +1,60 @@
+unit uDaoFuncionario;
+
+interface
+
+uses UFuncionario, FireDAC.Comp.Client, uFuncionarioController, System.SysUtils,
+  uConexao;
+
+type
+  TFuncionarioDao = class
+  private
+    FConexao: TConexao;
+  public
+    Constructor Create;
+    function Incluir: Boolean;
+    Function Carregar: TFDQuery;
+    Function CarregarDependentes(Codigo: Integer): TFDQuery;
+  end;
+
+  { TFuncionarioDao }
+implementation
+
+Function TFuncionarioDao.Carregar: TFDQuery;
+var
+  VQuery: TFDQuery;
+begin
+  VQuery := FConexao.CriarQuery();
+  VQuery.Open('Select Codigo,Nome,CPF,Salario from Funcionarios  ');
+  Result := VQuery;
+end;
+
+function TFuncionarioDao.CarregarDependentes(Codigo: Integer): TFDQuery;
+var
+  VQuery: TFDQuery;
+begin
+  VQuery := FConexao.CriarQuery();
+  VQuery.Open
+    ('Select Codigo,Nome,IsCalculaIR,IsCalculaINSS from Dependente Where CodigoFuncionario = :codigo  ',
+    [Codigo]);
+  Result := VQuery;
+end;
+
+constructor TFuncionarioDao.Create;
+begin
+  FConexao := TFuncionarioControl.GetInstance().Conexao;
+end;
+
+function TFuncionarioDao.Incluir(TFuncionario: TFuncionario): Boolean;
+var
+  VQuery: TFDQuery;
+begin
+  VQuery := FConexao.CriarQuery();
+  try
+    VQuery.ExecSQL('Insert into Funcionarios(Nome,CPF,Salario) Values (:nome,:cpf,:salario)');
+  finally
+    VQuery.Free;
+  end;
+
+end;
+
+end.

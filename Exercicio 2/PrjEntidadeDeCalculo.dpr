@@ -1,0 +1,18 @@
+program PrjEntidadeDeCalculo;
+
+uses
+  Vcl.Forms,
+  FrmEntidadeCalculo in 'FrmEntidadeCalculo.pas' {Form1},
+  uFuncionario in 'uFuncionario.pas',
+  uEntidadeCalculo in 'uEntidadeCalculo.pas',
+  IEntidadeCalculo in 'IEntidadeCalculo.pas',
+  uConexao in 'uConexao.pas';
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(TForm1, Form1);
+  Application.Run;
+end.

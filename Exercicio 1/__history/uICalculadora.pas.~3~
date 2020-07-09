@@ -1,0 +1,14 @@
+unit uICalculadora;
+
+interface
+
+type
+  ICalculadora = interface(IInterface)
+
+
+
+ end;
+
+implementation
+
+end.

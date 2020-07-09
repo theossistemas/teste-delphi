@@ -1,0 +1,7 @@
+unit Types;
+
+interface
+    EnumOperacao = (Soma = 0,Subtracao = 1,Divisao = 2,Multiplicacao = 3);
+implementation
+
+end.

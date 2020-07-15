@@ -33,6 +33,11 @@ type
     edtVisor: TEdit;
     btnCE: TSpeedButton;
     btnBackspace: TSpeedButton;
+    pnlImpostos: TPanel;
+    btnImpostoA: TSpeedButton;
+    SpeedButton1: TSpeedButton;
+    SpeedButton2: TSpeedButton;
+    lblImpostos: TLabel;
     procedure FormCreate(Sender: TObject);
     procedure btnClick(Sender: TObject);
     procedure FormKeyPress(Sender: TObject; var Key: Char);
@@ -78,11 +83,11 @@ begin
   vCaracter := fcRetornarCaracterBotao(Sender);
 
   case AnsiIndexStr(vCaracter, cTEXTOBOTOES) of
-    0..10: prAtualizarValorTexto(vCaracter);
-    11..14: prExecutarOperacao(vCaracter);
-    15: prExecutarIgual;
-    16: prLimpar;
-    17: FValorTextoVisor := fcRemoverUltimoCaracter(FValorTextoVisor);
+    0..9: prAtualizarValorTexto(vCaracter);
+    10..13: prExecutarOperacao(vCaracter);
+    14: prExecutarIgual;
+    15: prLimpar;
+    16: FValorTextoVisor := fcRemoverUltimoCaracter(FValorTextoVisor);
   end;
 
   FUltimoCaracterInformado := vCaracter;

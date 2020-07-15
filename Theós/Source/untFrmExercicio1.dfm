@@ -1,24 +1,25 @@
 ﻿inherited FrmExercicio1: TFrmExercicio1
   Caption = 'Exerc'#237'cio 1 - Calculadora'
-  ClientHeight = 366
-  ClientWidth = 307
+  ClientHeight = 437
+  ClientWidth = 301
   OnCreate = FormCreate
   OnKeyPress = FormKeyPress
-  ExplicitWidth = 313
-  ExplicitHeight = 395
+  ExplicitWidth = 307
+  ExplicitHeight = 466
   PixelsPerInch = 96
   TextHeight = 13
   object pnlVisor: TPanel
     Left = 0
     Top = 0
-    Width = 307
+    Width = 301
     Height = 72
     Align = alTop
     TabOrder = 0
+    ExplicitWidth = 307
     object lblOperacaoAtual: TLabel
       Left = 1
       Top = 1
-      Width = 305
+      Width = 299
       Height = 16
       Margins.Left = 5
       Margins.Right = 5
@@ -37,7 +38,7 @@
     object edtVisor: TEdit
       Left = 1
       Top = 17
-      Width = 305
+      Width = 299
       Height = 54
       Align = alClient
       Alignment = taRightJustify
@@ -50,16 +51,19 @@
       ReadOnly = True
       TabOrder = 0
       Text = 'edtVisor'
+      ExplicitWidth = 305
       ExplicitHeight = 50
     end
   end
   object pnlOperacoes: TPanel
-    Left = 232
+    Left = 226
     Top = 72
     Width = 75
-    Height = 294
+    Height = 365
     Align = alRight
     TabOrder = 1
+    ExplicitLeft = 232
+    ExplicitHeight = 294
     object btnOpDivisao: TSpeedButton
       Left = 6
       Top = 10
@@ -120,7 +124,7 @@
       Left = 6
       Top = 236
       Width = 57
-      Height = 51
+      Height = 121
       Caption = '='
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
@@ -134,10 +138,12 @@
   object pnlNumeros: TPanel
     Left = 0
     Top = 72
-    Width = 232
-    Height = 294
+    Width = 226
+    Height = 365
     Align = alClient
     TabOrder = 2
+    ExplicitWidth = 232
+    ExplicitHeight = 294
     object btn1: TSpeedButton
       Left = 16
       Top = 181
@@ -305,6 +311,72 @@
       Font.Style = [fsBold]
       ParentFont = False
       OnClick = btnClick
+    end
+    object pnlImpostos: TPanel
+      Left = 1
+      Top = 289
+      Width = 224
+      Height = 75
+      Align = alBottom
+      TabOrder = 0
+      ExplicitTop = 290
+      object btnImpostoA: TSpeedButton
+        Left = 15
+        Top = 17
+        Width = 57
+        Height = 51
+        Caption = 'A'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -21
+        Font.Name = 'Tahoma'
+        Font.Style = [fsBold]
+        ParentFont = False
+      end
+      object SpeedButton1: TSpeedButton
+        Left = 87
+        Top = 17
+        Width = 57
+        Height = 51
+        Caption = 'B'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -21
+        Font.Name = 'Tahoma'
+        Font.Style = [fsBold]
+        ParentFont = False
+      end
+      object SpeedButton2: TSpeedButton
+        Left = 160
+        Top = 17
+        Width = 57
+        Height = 51
+        Caption = 'C'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -21
+        Font.Name = 'Tahoma'
+        Font.Style = [fsBold]
+        ParentFont = False
+      end
+      object lblImpostos: TLabel
+        Left = 1
+        Top = 1
+        Width = 222
+        Height = 16
+        Margins.Left = 5
+        Margins.Right = 5
+        Align = alTop
+        Alignment = taCenter
+        Caption = 'Impostos'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -13
+        Font.Name = 'Tahoma'
+        Font.Style = [fsBold]
+        ParentFont = False
+        ExplicitWidth = 60
+      end
     end
   end
 end

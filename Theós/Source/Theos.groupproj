@@ -1,0 +1,48 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{FD824C3C-5A47-40A2-9755-4526B3D96F8D}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="TesteTheos.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Test\TesteUnitarioTheos.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="TesteTheos">
+        <MSBuild Projects="TesteTheos.dproj"/>
+    </Target>
+    <Target Name="TesteTheos:Clean">
+        <MSBuild Projects="TesteTheos.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TesteTheos:Make">
+        <MSBuild Projects="TesteTheos.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TesteUnitarioTheos">
+        <MSBuild Projects="Test\TesteUnitarioTheos.dproj"/>
+    </Target>
+    <Target Name="TesteUnitarioTheos:Clean">
+        <MSBuild Projects="Test\TesteUnitarioTheos.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TesteUnitarioTheos:Make">
+        <MSBuild Projects="Test\TesteUnitarioTheos.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="TesteTheos;TesteUnitarioTheos"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="TesteTheos:Clean;TesteUnitarioTheos:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="TesteTheos:Make;TesteUnitarioTheos:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

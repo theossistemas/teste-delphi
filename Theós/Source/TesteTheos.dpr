@@ -1,0 +1,17 @@
+program TesteTheos;
+
+uses
+  Vcl.Forms,
+  untFrmPrincipal in 'untFrmPrincipal.pas' {frmPrincipal},
+  untFrmBase in 'untFrmBase.pas' {FrmBase},
+  untFrmExercicio1 in 'untFrmExercicio1.pas' {FrmExercicio1},
+  untFrmExercicio2 in 'untFrmExercicio2.pas' {FrmExercicio2};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(TfrmPrincipal, frmPrincipal);
+  Application.Run;
+end.

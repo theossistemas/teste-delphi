@@ -54,7 +54,7 @@ implementation
 procedure TestTImpostoA.SetUp;
 begin
   FImpostoA := TImpostoA.Create;
-  FImpostoA.BaseCalculo := 1000;
+  FImpostoA.BaseCalculo := 3000;
 end;
 
 procedure TestTImpostoA.TearDown;
@@ -70,14 +70,14 @@ begin
   ReturnValue := FImpostoA.fcCalcular;
   // TODO: Validate method results
 
-  CheckEquals(-300, ReturnValue);
+  CheckEquals(100, ReturnValue);
 end;
 
 procedure TestTImpostoB.SetUp;
 begin
   FImpostoB := TImpostoB.Create;
   FImpostoB.ImpostoA := TImpostoA.Create;
-  FImpostoB.ImpostoA.BaseCalculo := 1000;
+  FImpostoB.ImpostoA.BaseCalculo := 3000;
 end;
 
 procedure TestTImpostoB.TearDown;
@@ -93,7 +93,7 @@ begin
   ReturnValue := FImpostoB.fcCalcular;
   // TODO: Validate method results
 
-  CheckEquals(-315, ReturnValue);
+  CheckEquals(85, ReturnValue);
 end;
 
 procedure TestTImpostoC.SetUp;
@@ -101,7 +101,7 @@ begin
   FImpostoC := TImpostoC.Create;
   FImpostoC.ImpostoB := TImpostoB.Create;
   FImpostoC.ImpostoB.ImpostoA := TImpostoA.Create;
-  FImpostoC.ImpostoB.ImpostoA.BaseCalculo := 1000;
+  FImpostoC.ImpostoB.ImpostoA.BaseCalculo := 3000;
 end;
 
 procedure TestTImpostoC.TearDown;
@@ -117,7 +117,7 @@ begin
   ReturnValue := FImpostoC.fcCalcular;
   // TODO: Validate method results
 
-  CheckEquals(-615, ReturnValue);
+  CheckEquals(185, ReturnValue);
 end;
 
 initialization

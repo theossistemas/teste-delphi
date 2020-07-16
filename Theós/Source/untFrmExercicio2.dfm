@@ -124,7 +124,6 @@ inherited FrmExercicio2: TFrmExercicio2
       Top = 41
       Width = 78
       Height = 21
-      Color = clSilver
       DataField = 'ID_FUNCIONARIO'
       DataSource = dtmExercicio2.dtsCADFUNCIONARIO
       Enabled = False
@@ -200,13 +199,14 @@ inherited FrmExercicio2: TFrmExercicio2
       Height = 25
       Caption = 'Calcular Impostos'
       TabOrder = 8
+      OnClick = btnCalcularImpostosClick
     end
     object edtINSS: TEdit
       Left = 487
       Top = 83
       Width = 114
       Height = 21
-      Color = clSilver
+      Alignment = taRightJustify
       Enabled = False
       TabOrder = 9
       Text = 'edtINSS'
@@ -216,7 +216,7 @@ inherited FrmExercicio2: TFrmExercicio2
       Top = 83
       Width = 114
       Height = 21
-      Color = clSilver
+      Alignment = taRightJustify
       Enabled = False
       TabOrder = 10
       Text = 'edtIR'
@@ -326,6 +326,7 @@ inherited FrmExercicio2: TFrmExercicio2
       Height = 21
       DataField = 'ID_DEPENDENTE'
       DataSource = dtmExercicio2.dtsCADDEPENDENTE
+      Enabled = False
       TabOrder = 2
     end
     object edtNOME_Dependente: TDBEdit

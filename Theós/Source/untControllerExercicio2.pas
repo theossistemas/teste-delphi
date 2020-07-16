@@ -111,6 +111,11 @@ begin
     Exit;
   end;
 
+  if pFuncionario.Salario <= 0 then
+  begin
+    ShowMessage('O sálário do funcionário não pode ser negativo ou zero.');
+  end;
+
   Result := True;
 end;
 

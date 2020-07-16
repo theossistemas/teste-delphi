@@ -9,7 +9,9 @@ uses
   untDtmExercicio2 in 'untDtmExercicio2.pas' {dtmExercicio2: TDataModule},
   untFrmExercicio2 in 'untFrmExercicio2.pas' {FrmExercicio2},
   untFuncionario in 'untFuncionario.pas',
-  untDependente in 'untDependente.pas';
+  untDependente in 'untDependente.pas',
+  untDAOExercicio2 in 'untDAOExercicio2.pas',
+  untControllerExercicio2 in 'untControllerExercicio2.pas';
 
 {$R *.res}
 

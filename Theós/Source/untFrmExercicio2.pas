@@ -58,6 +58,7 @@ type
     procedure btnCancelarDependenteClick(Sender: TObject);
     procedure btnSalvarDependenteClick(Sender: TObject);
     procedure FormDestroy(Sender: TObject);
+    procedure btnCalcularImpostosClick(Sender: TObject);
   private
     { Private declarations }
     FqryCADFUNCIONARIO: TFDQuery;
@@ -66,9 +67,16 @@ type
     FControllerExercicio2: TControllerExercicio2;
 
     function fcTestarExisteRegistroDataSet(pDataSet: TFDQuery): Boolean;
+    function fcTestarExisteDependenteCalculaINSS(const pListaDependentes: TObjectList<TDependente>): Boolean;
+    function fcTestarExisteDependenteCalculaIR(const pListaDependentes: TObjectList<TDependente>): Boolean;
+    function fcTestarExisteFuncionarioCadastrado(const pDataSetFuncionario: TFDQuery): Boolean;
 
-    procedure prPrepararEntidadeFuncionario(pQryFuncionario, pQryDependentes: TFDQuery; const pFuncionario: TFuncionario);
-    procedure prPrepararEntidadeDependente(pQryDependentes: TFDQuery; const pFuncionario: TFuncionario);
+    function fcRetornarValorINSS(const pFuncionario: TFuncionario): Double;
+    function fcRetornarValorIR(const pFuncionario: TFuncionario): Double;
+    function fcRetornarNumeroDependentesCalculaIR(const pListaDependentes: TObjectList<TDependente>): Integer;
+
+    procedure prPrepararFuncionario(pQryFuncionario, pQryDependentes: TFDQuery; const pFuncionario: TFuncionario);
+    procedure prPrepararDependente(pQryDependentes: TFDQuery; const pFuncionario: TFuncionario);
     procedure prAtualizarDataSet(var pDataSet: TFDQuery);
   public
     { Public declarations }
@@ -80,6 +88,36 @@ var
 implementation
 
 {$R *.dfm}
+
+const
+  cFORMATOVALOR = '%.2f';
+
+procedure TFrmExercicio2.btnCalcularImpostosClick(Sender: TObject);
+var
+  vValorImposto: Double;
+  vFuncionario: TFuncionario;
+begin
+  inherited;
+
+  if not fcTestarExisteFuncionarioCadastrado(FqryCADFUNCIONARIO) then
+  begin
+    ShowMessage('Não há funcionário cadastrado para efetuar o cálculo.');
+    Exit;
+  end;
+
+  vFuncionario := TFuncionario.Create;
+
+  try
+    prPrepararFuncionario(FqryCADFUNCIONARIO, FqryCADDEPENDENTE, vFuncionario);
+    vValorImposto := fcRetornarValorINSS(vFuncionario);
+    edtINSS.Text  := Format(cFORMATOVALOR, [vValorImposto]);
+
+    vValorImposto := fcRetornarValorIR(vFuncionario);
+    edtIR.Text    := Format(cFORMATOVALOR, [vValorImposto]);
+  finally
+    vFuncionario.Destroy;
+  end;
+end;
 
 procedure TFrmExercicio2.btnCancelarDependenteClick(Sender: TObject);
 begin
@@ -161,6 +199,124 @@ begin
   prAtualizarDataSet(FqryCADFUNCIONARIO);
 end;
 
+function TFrmExercicio2.fcRetornarNumeroDependentesCalculaIR(const pListaDependentes: TObjectList<TDependente>): Integer;
+var
+  vContador: Integer;
+begin
+  Result := 0;
+
+  if not Assigned(pListaDependentes) then
+    Exit;
+
+  if pListaDependentes.Count = 0 then
+    Exit;
+
+  for vContador := 0 to pListaDependentes.Count - 1 do
+  begin
+    if pListaDependentes[vContador].IsCalcularIR > 0 then
+      Inc(Result);
+  end;
+end;
+
+function TFrmExercicio2.fcRetornarValorINSS(const pFuncionario: TFuncionario): Double;
+const
+  cFATORINSS = 0.08;
+var
+  vListaDependentes: TObjectList<TDependente>;
+begin
+  Result := 0;
+
+  if not Assigned(pFuncionario) then
+    Exit;
+
+  if pFuncionario.Salario <= 0 then
+    Exit;
+
+  vListaDependentes := pFuncionario.ListaDependentes;
+
+  if fcTestarExisteDependenteCalculaINSS(vListaDependentes) then
+    Result := pFuncionario.Salario * cFatorINSS;
+end;
+
+function TFrmExercicio2.fcRetornarValorIR(const pFuncionario: TFuncionario): Double;
+const
+  cFATORIR = 0.15;
+  cVALORDEDUCAOPORDEPENDENTE = 100;
+var
+  vListaDependentes: TObjectList<TDependente>;
+  vValorDeducao: Double;
+begin
+  Result := 0;
+
+  if not Assigned(pFuncionario) then
+    Exit;
+
+  if pFuncionario.Salario <= 0 then
+    Exit;
+
+  vValorDeducao     := 0;
+  vListaDependentes := pFuncionario.ListaDependentes;
+
+  if fcTestarExisteDependenteCalculaIR(vListaDependentes) then
+    vValorDeducao := fcRetornarNumeroDependentesCalculaIR(vListaDependentes) * cVALORDEDUCAOPORDEPENDENTE;
+
+  Result := (pFuncionario.Salario - vValorDeducao) * cFATORIR;
+end;
+
+function TFrmExercicio2.fcTestarExisteDependenteCalculaINSS(const pListaDependentes: TObjectList<TDependente>): Boolean;
+var
+  vContador: Integer;
+begin
+  Result := False;
+
+  if not Assigned(pListaDependentes) then
+    Exit;
+
+  if pListaDependentes.Count = 0 then
+    Exit;
+
+  for vContador := 0 to pListaDependentes.Count - 1 do
+  begin
+    if pListaDependentes[vContador].IsCalcularINSS > 0 then
+    begin
+      Result := True;
+      Break;
+    end;
+  end;
+end;
+
+function TFrmExercicio2.fcTestarExisteDependenteCalculaIR(const pListaDependentes: TObjectList<TDependente>): Boolean;
+var
+  vContador: Integer;
+begin
+  Result := False;
+
+  if not Assigned(pListaDependentes) then
+    Exit;
+
+  if pListaDependentes.Count = 0 then
+    Exit;
+
+  for vContador := 0 to pListaDependentes.Count - 1 do
+  begin
+    if pListaDependentes[vContador].IsCalcularIR > 0 then
+    begin
+      Result := True;
+      Break;
+    end;
+  end;
+end;
+
+function TFrmExercicio2.fcTestarExisteFuncionarioCadastrado(const pDataSetFuncionario: TFDQuery): Boolean;
+begin
+  Result := False;
+
+  if not Assigned(pDataSetFuncionario) then
+    Exit;
+
+  Result := pDataSetFuncionario.RecordCount > 0;
+end;
+
 function TFrmExercicio2.fcTestarExisteRegistroDataSet(pDataSet: TFDQuery): Boolean;
 begin
   Result := False;
@@ -180,6 +336,9 @@ begin
   FqryCADDEPENDENTE  := dtmExercicio2.qryCADDEPENDENTE;
 
   FControllerExercicio2 := TControllerExercicio2.Create;
+
+  edtINSS.Text := Format(cFORMATOVALOR, [0.0]);
+  edtIR.Text   := Format(cFORMATOVALOR, [0.0]);
 end;
 
 procedure TFrmExercicio2.FormDestroy(Sender: TObject);
@@ -196,7 +355,7 @@ begin
   pDataSet.Refresh;
 end;
 
-procedure TFrmExercicio2.prPrepararEntidadeDependente(pQryDependentes: TFDQuery; const pFuncionario: TFuncionario);
+procedure TFrmExercicio2.prPrepararDependente(pQryDependentes: TFDQuery; const pFuncionario: TFuncionario);
 var
   vListaDependentes: TObjectList<TDependente>;
   vDependente: TDependente;
@@ -220,14 +379,14 @@ begin
   pFuncionario.ListaDependentes := vListaDependentes;
 end;
 
-procedure TFrmExercicio2.prPrepararEntidadeFuncionario(pQryFuncionario, pQryDependentes: TFDQuery; const pFuncionario: TFuncionario);
+procedure TFrmExercicio2.prPrepararFuncionario(pQryFuncionario, pQryDependentes: TFDQuery; const pFuncionario: TFuncionario);
 begin
   pFuncionario.Id_Funcionario := pQryFuncionario.FieldByName('ID_FUNCIONARIO').AsInteger;
   pFuncionario.Nome           := pQryFuncionario.FieldByName('NOME').AsString;
   pFuncionario.CPF            := pQryFuncionario.FieldByName('CPF').AsString;
   pFuncionario.Salario        := pQryFuncionario.FieldByName('SALARIO').AsFloat;
 
-  prPrepararEntidadeDependente(pQryDependentes, pFuncionario);
+  prPrepararDependente(pQryDependentes, pFuncionario);
 end;
 
 end.

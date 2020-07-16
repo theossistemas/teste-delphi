@@ -55,7 +55,7 @@ begin
 
     FConexao.Commit;
     Result := True;
-  finally
+  except
     FConexao.Rollback;
     Result := False;
   end;

@@ -76,6 +76,7 @@ begin
 
   fdCnx.Close;
   fdCnx.Params.Add('Database=' + vCaminhoBanco);
+  fdCnx.Params.Add('Protocol=Local');
 
   fdCnx.Connected := True;
 end;

@@ -111,10 +111,18 @@
         <DCCReference Include="untFrmExercicio1.pas">
             <Form>FrmExercicio1</Form>
         </DCCReference>
+        <DCCReference Include="untCalculoImposto.pas"/>
+        <DCCReference Include="untDtmExercicio2.pas">
+            <Form>dtmExercicio2</Form>
+            <FormType>dfm</FormType>
+            <DesignClass>TDataModule</DesignClass>
+        </DCCReference>
         <DCCReference Include="untFrmExercicio2.pas">
             <Form>FrmExercicio2</Form>
+            <FormType>dfm</FormType>
         </DCCReference>
-        <DCCReference Include="untCalculoImposto.pas"/>
+        <DCCReference Include="untFuncionario.pas"/>
+        <DCCReference Include="untDependente.pas"/>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>

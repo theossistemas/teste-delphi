@@ -17,7 +17,11 @@ program TesteUnitarioTheos;
 uses
   DUnitTestRunner,
   untCalculoImpostoTest in 'untCalculoImpostoTest.pas',
-  untCalculoImposto in '..\untCalculoImposto.pas';
+  untCalculoImposto in '..\untCalculoImposto.pas',
+  untCalcularImpostoExercicio2Test in 'untCalcularImpostoExercicio2Test.pas',
+  untCalcularImpostoExercicio2 in '..\untCalcularImpostoExercicio2.pas',
+  untFuncionario in '..\untFuncionario.pas',
+  untDependente in '..\untDependente.pas';
 
 {$R *.RES}
 

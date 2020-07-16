@@ -93,6 +93,10 @@
         </DelphiCompile>
         <DCCReference Include="untCalculoImpostoTest.pas"/>
         <DCCReference Include="..\untCalculoImposto.pas"/>
+        <DCCReference Include="untCalcularImpostoExercicio2Test.pas"/>
+        <DCCReference Include="..\untCalcularImpostoExercicio2.pas"/>
+        <DCCReference Include="..\untFuncionario.pas"/>
+        <DCCReference Include="..\untDependente.pas"/>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>

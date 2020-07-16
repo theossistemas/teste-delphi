@@ -105,9 +105,6 @@ inherited FrmExercicio2: TFrmExercicio2
       Color = clGradientActiveCaption
       ParentBackground = False
       TabOrder = 11
-      ExplicitLeft = 248
-      ExplicitTop = 32
-      ExplicitWidth = 185
       object lblFuncionario: TLabel
         Left = 1
         Top = 1
@@ -229,8 +226,6 @@ inherited FrmExercicio2: TFrmExercicio2
     Height = 248
     Align = alClient
     TabOrder = 1
-    ExplicitLeft = -1
-    ExplicitTop = 212
     object lblID_DEPENDENTE: TLabel
       Left = 13
       Top = 23
@@ -305,9 +300,6 @@ inherited FrmExercicio2: TFrmExercicio2
       Color = clGradientActiveCaption
       ParentBackground = False
       TabOrder = 1
-      ExplicitLeft = 2
-      ExplicitTop = 22
-      ExplicitWidth = 801
       object lblDependentes: TLabel
         Left = 1
         Top = 1

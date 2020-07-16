@@ -11,7 +11,8 @@ uses
   untFuncionario in 'untFuncionario.pas',
   untDependente in 'untDependente.pas',
   untDAOExercicio2 in 'untDAOExercicio2.pas',
-  untControllerExercicio2 in 'untControllerExercicio2.pas';
+  untControllerExercicio2 in 'untControllerExercicio2.pas',
+  untCalcularImpostoExercicio2 in 'untCalcularImpostoExercicio2.pas';
 
 {$R *.res}
 

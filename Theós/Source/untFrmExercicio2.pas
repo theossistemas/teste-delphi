@@ -7,7 +7,7 @@ uses
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, untFrmBase, Data.DB, Vcl.Grids,
   Vcl.DBGrids, Vcl.ComCtrls, Vcl.StdCtrls, Vcl.ExtCtrls, untDtmExercicio2,
   Vcl.Mask, Vcl.DBCtrls, FireDAC.Comp.Client, untControllerExercicio2, untFuncionario, untDependente,
-  Generics.Collections;
+  Generics.Collections, untCalcularImpostoExercicio2;
 
 type
   TFrmExercicio2 = class(TFrmBase)
@@ -67,13 +67,7 @@ type
     FControllerExercicio2: TControllerExercicio2;
 
     function fcTestarExisteRegistroDataSet(pDataSet: TFDQuery): Boolean;
-    function fcTestarExisteDependenteCalculaINSS(const pListaDependentes: TObjectList<TDependente>): Boolean;
-    function fcTestarExisteDependenteCalculaIR(const pListaDependentes: TObjectList<TDependente>): Boolean;
     function fcTestarExisteFuncionarioCadastrado(const pDataSetFuncionario: TFDQuery): Boolean;
-
-    function fcRetornarValorINSS(const pFuncionario: TFuncionario): Double;
-    function fcRetornarValorIR(const pFuncionario: TFuncionario): Double;
-    function fcRetornarNumeroDependentesCalculaIR(const pListaDependentes: TObjectList<TDependente>): Integer;
 
     procedure prPrepararFuncionario(pQryFuncionario, pQryDependentes: TFDQuery; const pFuncionario: TFuncionario);
     procedure prPrepararDependente(pQryDependentes: TFDQuery; const pFuncionario: TFuncionario);
@@ -96,6 +90,7 @@ procedure TFrmExercicio2.btnCalcularImpostosClick(Sender: TObject);
 var
   vValorImposto: Double;
   vFuncionario: TFuncionario;
+  vCalcularImpostoExercicio2: TCalcularImpostoExercicio2;
 begin
   inherited;
 
@@ -105,17 +100,19 @@ begin
     Exit;
   end;
 
-  vFuncionario := TFuncionario.Create;
+  vFuncionario               := TFuncionario.Create;
+  vCalcularImpostoExercicio2 := TCalcularImpostoExercicio2.Create;
 
   try
     prPrepararFuncionario(FqryCADFUNCIONARIO, FqryCADDEPENDENTE, vFuncionario);
-    vValorImposto := fcRetornarValorINSS(vFuncionario);
+    vValorImposto := vCalcularImpostoExercicio2.fcRetornarValorINSS(vFuncionario);
     edtINSS.Text  := Format(cFORMATOVALOR, [vValorImposto]);
 
-    vValorImposto := fcRetornarValorIR(vFuncionario);
+    vValorImposto := vCalcularImpostoExercicio2.fcRetornarValorIR(vFuncionario);
     edtIR.Text    := Format(cFORMATOVALOR, [vValorImposto]);
   finally
     vFuncionario.Destroy;
+    FreeAndNil(vCalcularImpostoExercicio2);
   end;
 end;
 
@@ -197,114 +194,6 @@ begin
   FqryCADFUNCIONARIO.Cancel;
   FControllerExercicio2.prSalvarFuncionario(vFuncionario);
   prAtualizarDataSet(FqryCADFUNCIONARIO);
-end;
-
-function TFrmExercicio2.fcRetornarNumeroDependentesCalculaIR(const pListaDependentes: TObjectList<TDependente>): Integer;
-var
-  vContador: Integer;
-begin
-  Result := 0;
-
-  if not Assigned(pListaDependentes) then
-    Exit;
-
-  if pListaDependentes.Count = 0 then
-    Exit;
-
-  for vContador := 0 to pListaDependentes.Count - 1 do
-  begin
-    if pListaDependentes[vContador].IsCalcularIR > 0 then
-      Inc(Result);
-  end;
-end;
-
-function TFrmExercicio2.fcRetornarValorINSS(const pFuncionario: TFuncionario): Double;
-const
-  cFATORINSS = 0.08;
-var
-  vListaDependentes: TObjectList<TDependente>;
-begin
-  Result := 0;
-
-  if not Assigned(pFuncionario) then
-    Exit;
-
-  if pFuncionario.Salario <= 0 then
-    Exit;
-
-  vListaDependentes := pFuncionario.ListaDependentes;
-
-  if fcTestarExisteDependenteCalculaINSS(vListaDependentes) then
-    Result := pFuncionario.Salario * cFatorINSS;
-end;
-
-function TFrmExercicio2.fcRetornarValorIR(const pFuncionario: TFuncionario): Double;
-const
-  cFATORIR = 0.15;
-  cVALORDEDUCAOPORDEPENDENTE = 100;
-var
-  vListaDependentes: TObjectList<TDependente>;
-  vValorDeducao: Double;
-begin
-  Result := 0;
-
-  if not Assigned(pFuncionario) then
-    Exit;
-
-  if pFuncionario.Salario <= 0 then
-    Exit;
-
-  vValorDeducao     := 0;
-  vListaDependentes := pFuncionario.ListaDependentes;
-
-  if fcTestarExisteDependenteCalculaIR(vListaDependentes) then
-    vValorDeducao := fcRetornarNumeroDependentesCalculaIR(vListaDependentes) * cVALORDEDUCAOPORDEPENDENTE;
-
-  Result := (pFuncionario.Salario - vValorDeducao) * cFATORIR;
-end;
-
-function TFrmExercicio2.fcTestarExisteDependenteCalculaINSS(const pListaDependentes: TObjectList<TDependente>): Boolean;
-var
-  vContador: Integer;
-begin
-  Result := False;
-
-  if not Assigned(pListaDependentes) then
-    Exit;
-
-  if pListaDependentes.Count = 0 then
-    Exit;
-
-  for vContador := 0 to pListaDependentes.Count - 1 do
-  begin
-    if pListaDependentes[vContador].IsCalcularINSS > 0 then
-    begin
-      Result := True;
-      Break;
-    end;
-  end;
-end;
-
-function TFrmExercicio2.fcTestarExisteDependenteCalculaIR(const pListaDependentes: TObjectList<TDependente>): Boolean;
-var
-  vContador: Integer;
-begin
-  Result := False;
-
-  if not Assigned(pListaDependentes) then
-    Exit;
-
-  if pListaDependentes.Count = 0 then
-    Exit;
-
-  for vContador := 0 to pListaDependentes.Count - 1 do
-  begin
-    if pListaDependentes[vContador].IsCalcularIR > 0 then
-    begin
-      Result := True;
-      Break;
-    end;
-  end;
 end;
 
 function TFrmExercicio2.fcTestarExisteFuncionarioCadastrado(const pDataSetFuncionario: TFDQuery): Boolean;

@@ -14,7 +14,6 @@ object dtmExercicio2: TdtmExercicio2
         'Database=D:\NILSON\Projetos\teste-delphi\The'#243's\Database\EXERCICI' +
         'O2_ENTIDADES_CALCULO.FDB'
       'DriverID=FB')
-    Connected = True
     LoginPrompt = False
     Left = 96
     Top = 8

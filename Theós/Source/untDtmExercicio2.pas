@@ -34,8 +34,6 @@ type
     procedure SetFlag(Sender: TField; const Text: String);
   private
     { Private declarations }
-    function fcGerarId(const pGeneratorName: String): Integer;
-
     procedure prPrepararConexao(const pDiretorioSistema: String);
   public
     { Public declarations }
@@ -68,22 +66,6 @@ begin
   fdCnx.Close;
 end;
 
-function TdtmExercicio2.fcGerarId(const pGeneratorName: String): Integer;
-const
-  cSQL = 'SELECT GEN_ID(%s , 1) AS ID FROM RDB$DATABASE';
-begin
-  try
-    qryAuxiliar.Active := False;
-    qryAuxiliar.SQL.Clear;
-    qryAuxiliar.SQL.Text := Format(cSQL, [pGeneratorName]);
-    qryAuxiliar.Active := True;
-
-    Result := qryAuxiliar.FieldByName('ID').AsInteger;
-  finally
-    qryAuxiliar.Active := False;
-  end;
-end;
-
 procedure TdtmExercicio2.prPrepararConexao(const pDiretorioSistema: String);
 const
   cNOMEBANCODADOS = 'EXERCICIO2_ENTIDADES_CALCULO.FDB';
@@ -98,8 +80,7 @@ begin
   fdCnx.Connected := True;
 end;
 
-procedure TdtmExercicio2.GetFlag(Sender: TField; var Text: String;
-  DisplayText: Boolean);
+procedure TdtmExercicio2.GetFlag(Sender: TField; var Text: String; DisplayText: Boolean);
 begin
   Text := 'NÃO';
 

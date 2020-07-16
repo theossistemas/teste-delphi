@@ -104,19 +104,15 @@
         </DelphiCompile>
         <DCCReference Include="untFrmPrincipal.pas">
             <Form>frmPrincipal</Form>
-            <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="untFrmBase.pas">
             <Form>FrmBase</Form>
-            <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="untFrmExercicio1.pas">
             <Form>FrmExercicio1</Form>
-            <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="untFrmExercicio2.pas">
             <Form>FrmExercicio2</Form>
-            <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="untCalculoImposto.pas"/>
         <BuildConfiguration Include="Release">

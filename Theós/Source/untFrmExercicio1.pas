@@ -24,9 +24,9 @@ type
     btn8: TSpeedButton;
     btn9: TSpeedButton;
     btn0: TSpeedButton;
-    btnOpDivisao: TSpeedButton;
-    btnOpMultiplicacao: TSpeedButton;
-    btnSubtração: TSpeedButton;
+    btnDivisao: TSpeedButton;
+    btnMultiplicacao: TSpeedButton;
+    btnSubtracao: TSpeedButton;
     btnSoma: TSpeedButton;
     btnIgual: TSpeedButton;
     lblOperacaoAtual: TLabel;
@@ -40,7 +40,11 @@ type
     lblImpostos: TLabel;
     procedure FormCreate(Sender: TObject);
     procedure btnClick(Sender: TObject);
-    procedure FormKeyPress(Sender: TObject; var Key: Char);
+    procedure btnImpostoAClick(Sender: TObject);
+    procedure SpeedButton1Click(Sender: TObject);
+    procedure SpeedButton2Click(Sender: TObject);
+    procedure FormKeyDown(Sender: TObject; var Key: Word;
+      Shift: TShiftState);
   private
     { Private declarations }
     FValorAuxiliar: Real;
@@ -69,6 +73,9 @@ var
 implementation
 
 {$R *.dfm}
+
+uses
+  untCalculoImposto;
 
 const
   cTEXTOBOTOES: TArray<String> = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '/', '*', '-', '+', '=', 'CE', '<-'];
@@ -107,6 +114,24 @@ begin
   Result := TSpeedButton(pBotao).Caption;
 end;
 
+procedure TFrmExercicio1.btnImpostoAClick(Sender: TObject);
+var
+  vImpostoA: TImpostoA;
+begin
+  inherited;
+
+  vImpostoA := TImpostoA.Create;
+  try
+    vImpostoA.BaseCalculo := StrToFloat(edtVisor.Text);
+
+    FResultado := vImpostoA.fcCalcular;
+    FValorTextoVisor := FloatToStr(FResultado);
+    prAtualizarTextoVisor;
+  finally
+    FreeAndNil(vImpostoA);
+  end;
+end;
+
 function TFrmExercicio1.fcRemoverUltimoCaracter(const pTexto: String): String;
 var
   vQtdCaracteres: Integer;
@@ -126,11 +151,47 @@ begin
   prLimpar;
 end;
 
-procedure TFrmExercicio1.FormKeyPress(Sender: TObject; var Key: Char);
+procedure TFrmExercicio1.FormKeyDown(Sender: TObject; var Key: Word;
+  Shift: TShiftState);
 begin
   inherited;
-  if Key = #8 then
+  if Key = VK_BACK then
     btnBackspace.Click;
+
+  if Key = VK_NUMPAD1 then
+    btn1.Click;
+  if Key = VK_NUMPAD2 then
+    btn2.click;
+  if Key = VK_NUMPAD3 then
+    btn3.click;
+  if Key = VK_NUMPAD4 then
+    btn4.click;
+  if Key = VK_NUMPAD5 then
+    btn5.click;
+  if Key = VK_NUMPAD6 then
+    btn6.click;
+  if Key = VK_NUMPAD7 then
+    btn7.click;
+  if Key = VK_NUMPAD8 then
+    btn8.click;
+  if Key = VK_NUMPAD9 then
+    btn9.click;
+  if Key = VK_NUMPAD0 then
+    btn0.click;
+  if Key = VK_ADD then
+    btnSoma.click;
+  if Key = VK_SUBTRACT then
+    btnSubtracao.click;
+  if Key = VK_MULTIPLY then
+    btnMultiplicacao.click;
+  if Key = VK_DIVIDE then
+    btnDivisao.click;
+  if Key = VK_RETURN then
+    btnIgual.click;
+//  if Key = VK_DECIMAL then
+//    virgula.Click;
+  if Key = VK_DELETE then
+    btnCE.click;
 end;
 
 procedure TFrmExercicio1.prAtualizarOperacaoAtual(const pCaracter: String);
@@ -240,6 +301,55 @@ begin
   FOperacaoAuxiliar        := eOperacaoInvalida;
 
   prAtualizarTextoVisor;
+end;
+
+procedure TFrmExercicio1.SpeedButton1Click(Sender: TObject);
+var
+  vImpostoA: TImpostoA;
+  vImpostoB: TImpostoB;
+begin
+  inherited;
+  vImpostoA := TImpostoA.Create;
+  vImpostoB := TImpostoB.Create;
+
+  try
+    vImpostoA.BaseCalculo := StrToFloat(edtVisor.Text);
+    vImpostoB.ImpostoA := vImpostoA;
+
+    FResultado := vImpostoB.fcCalcular;
+    FValorTextoVisor := FloatToStr(FResultado);
+    prAtualizarTextoVisor;
+  finally
+    FreeAndNil(vImpostoA);
+    FreeAndNil(vImpostoB);
+  end;
+end;
+
+procedure TFrmExercicio1.SpeedButton2Click(Sender: TObject);
+var
+  vImpostoA: TImpostoA;
+  vImpostoB: TImpostoB;
+  vImpostoC: TImpostoC;
+begin
+  inherited;
+
+  vImpostoA := TImpostoA.Create;
+  vImpostoB := TImpostoB.Create;
+  vImpostoC := TImpostoC.Create;
+
+  try
+    vImpostoA.BaseCalculo := StrToFloat(edtVisor.Text);
+    vImpostoB.ImpostoA := vImpostoA;
+    vImpostoC.ImpostoB := vImpostoB;
+
+    FResultado := vImpostoC.fcCalcular;
+    FValorTextoVisor := FloatToStr(FResultado);
+    prAtualizarTextoVisor;
+  finally
+    FreeAndNil(vImpostoA);
+    FreeAndNil(vImpostoB);
+    FreeAndNil(vImpostoC);
+  end;
 end;
 
 end.

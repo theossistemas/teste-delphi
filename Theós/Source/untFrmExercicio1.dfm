@@ -1,9 +1,9 @@
-﻿inherited FrmExercicio1: TFrmExercicio1
+inherited FrmExercicio1: TFrmExercicio1
   Caption = 'Exerc'#237'cio 1 - Calculadora'
   ClientHeight = 437
   ClientWidth = 301
   OnCreate = FormCreate
-  OnKeyPress = FormKeyPress
+  OnKeyDown = FormKeyDown
   ExplicitWidth = 307
   ExplicitHeight = 466
   PixelsPerInch = 96
@@ -15,7 +15,6 @@
     Height = 72
     Align = alTop
     TabOrder = 0
-    ExplicitWidth = 307
     object lblOperacaoAtual: TLabel
       Left = 1
       Top = 1
@@ -32,7 +31,7 @@
       Font.Name = 'Tahoma'
       Font.Style = []
       ParentFont = False
-      ExplicitLeft = 209
+      ExplicitLeft = 203
       ExplicitWidth = 97
     end
     object edtVisor: TEdit
@@ -51,7 +50,6 @@
       ReadOnly = True
       TabOrder = 0
       Text = 'edtVisor'
-      ExplicitWidth = 305
       ExplicitHeight = 50
     end
   end
@@ -62,9 +60,7 @@
     Height = 365
     Align = alRight
     TabOrder = 1
-    ExplicitLeft = 232
-    ExplicitHeight = 294
-    object btnOpDivisao: TSpeedButton
+    object btnDivisao: TSpeedButton
       Left = 6
       Top = 10
       Width = 57
@@ -78,7 +74,7 @@
       ParentFont = False
       OnClick = btnClick
     end
-    object btnOpMultiplicacao: TSpeedButton
+    object btnMultiplicacao: TSpeedButton
       Left = 6
       Top = 67
       Width = 57
@@ -92,7 +88,7 @@
       ParentFont = False
       OnClick = btnClick
     end
-    object btnSubtração: TSpeedButton
+    object btnSubtracao: TSpeedButton
       Left = 6
       Top = 124
       Width = 57
@@ -142,8 +138,6 @@
     Height = 365
     Align = alClient
     TabOrder = 2
-    ExplicitWidth = 232
-    ExplicitHeight = 294
     object btn1: TSpeedButton
       Left = 16
       Top = 181
@@ -319,7 +313,6 @@
       Height = 75
       Align = alBottom
       TabOrder = 0
-      ExplicitTop = 290
       object btnImpostoA: TSpeedButton
         Left = 15
         Top = 17
@@ -332,6 +325,7 @@
         Font.Name = 'Tahoma'
         Font.Style = [fsBold]
         ParentFont = False
+        OnClick = btnImpostoAClick
       end
       object SpeedButton1: TSpeedButton
         Left = 87
@@ -345,6 +339,7 @@
         Font.Name = 'Tahoma'
         Font.Style = [fsBold]
         ParentFont = False
+        OnClick = SpeedButton1Click
       end
       object SpeedButton2: TSpeedButton
         Left = 160
@@ -358,6 +353,7 @@
         Font.Name = 'Tahoma'
         Font.Style = [fsBold]
         ParentFont = False
+        OnClick = SpeedButton2Click
       end
       object lblImpostos: TLabel
         Left = 1

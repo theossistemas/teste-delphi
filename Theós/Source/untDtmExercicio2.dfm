@@ -8,11 +8,6 @@ object dtmExercicio2: TdtmExercicio2
       'User_Name=SYSDBA'
       'Password=masterkey'
       'CharacterSet=ISO8859_1'
-      'Protocol=TCPIP'
-      'Port=3052'
-      
-        'Database=D:\NILSON\Projetos\teste-delphi\The'#243's\Database\EXERCICI' +
-        'O2_ENTIDADES_CALCULO.FDB'
       'DriverID=FB')
     LoginPrompt = False
     Left = 96

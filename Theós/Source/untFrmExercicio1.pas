@@ -29,7 +29,6 @@ type
     btnSubtracao: TSpeedButton;
     btnSoma: TSpeedButton;
     btnIgual: TSpeedButton;
-    lblOperacaoAtual: TLabel;
     edtVisor: TEdit;
     btnCE: TSpeedButton;
     btnBackspace: TSpeedButton;
@@ -49,7 +48,6 @@ type
     { Private declarations }
     FValorAuxiliar: Real;
     FResultado: Real;
-    FOperacaoAtual: String;
     FValorTextoVisor: String;
     FUltimoCaracterInformado: String;
     FOperacaoAuxiliar: TOperacao;
@@ -57,7 +55,6 @@ type
     procedure prLimpar;
     procedure prAtualizarValorTexto(const pCaracter: String);
     procedure prAtualizarTextoVisor;
-    procedure prAtualizarOperacaoAtual(const pCaracter: String);
     procedure prExecutarOperacao(const pCaracter: String);
     procedure prExecutarIgual;
 
@@ -188,25 +185,8 @@ begin
     btnDivisao.click;
   if Key = VK_RETURN then
     btnIgual.click;
-//  if Key = VK_DECIMAL then
-//    virgula.Click;
   if Key = VK_DELETE then
     btnCE.click;
-end;
-
-procedure TFrmExercicio1.prAtualizarOperacaoAtual(const pCaracter: String);
-const
-  cOPERACOES: TArray<String> = ['/', '*', '-', '+'];
-begin
-  if AnsiIndexStr(pCaracter, cOPERACOES) < 0 then
-    Exit;
-
-  if AnsiIndexStr(FUltimoCaracterInformado, cOPERACOES) <> -1 then
-    FOperacaoAtual := Trim(fcRemoverUltimoCaracter(FOperacaoAtual));
-
-  FOperacaoAtual := FValorTextoVisor + ' ' + pCaracter;
-
-  lblOperacaoAtual.Caption := FOperacaoAtual;
 end;
 
 procedure TFrmExercicio1.prAtualizarTextoVisor;
@@ -243,7 +223,11 @@ begin
         if vValorAux <> 0 then
           FResultado := FValorAuxiliar / vValorAux
         else
-          raise Exception.Create('Não é possível efetuar divisão por zero.');
+        begin
+          ShowMessage('Não é possível efetuar divisão por zero.');
+          btnCE.Click;
+          Exit;
+        end;
       end;
     else
       FResultado := vValorAux;
@@ -259,7 +243,7 @@ var
 begin
   vValorAux := StrToFloat(FValorTextoVisor);
 
-  if FOperacaoAuxiliar <> eOperacaoInvalida then
+  if (FOperacaoAuxiliar <> eOperacaoInvalida) and (AnsiIndexStr(FUltimoCaracterInformado, cOPERACOES) < 0) then
   begin
     case FOperacaoAuxiliar of
       eSoma:          FResultado := FValorAuxiliar + vValorAux;
@@ -270,7 +254,11 @@ begin
           if vValorAux <> 0 then
             FResultado := FValorAuxiliar / vValorAux
           else
-            raise Exception.Create('Não é possível efetuar divisão por zero.');
+          begin
+            ShowMessage('Não é possível efetuar divisão por zero.');
+            btnCE.Click;
+            Exit;
+          end;
         end;
     end;
 
@@ -293,8 +281,6 @@ end;
 procedure TFrmExercicio1.prLimpar;
 begin
   FValorTextoVisor         := '0';
-  FOperacaoAtual           := '';
-  lblOperacaoAtual.Caption := '';
   FUltimoCaracterInformado := '';
   FResultado               := 0;
   FValorAuxiliar           := 0;

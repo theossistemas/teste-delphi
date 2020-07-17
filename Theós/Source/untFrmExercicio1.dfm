@@ -1,42 +1,23 @@
 inherited FrmExercicio1: TFrmExercicio1
   Caption = 'Exerc'#237'cio 1 - Calculadora'
-  ClientHeight = 437
+  ClientHeight = 421
   ClientWidth = 301
   OnCreate = FormCreate
   OnKeyDown = FormKeyDown
   ExplicitWidth = 307
-  ExplicitHeight = 466
+  ExplicitHeight = 450
   PixelsPerInch = 96
   TextHeight = 13
   object pnlVisor: TPanel
     Left = 0
     Top = 0
     Width = 301
-    Height = 72
+    Height = 56
     Align = alTop
     TabOrder = 0
-    object lblOperacaoAtual: TLabel
-      Left = 1
-      Top = 1
-      Width = 299
-      Height = 16
-      Margins.Left = 5
-      Margins.Right = 5
-      Align = alTop
-      Alignment = taRightJustify
-      Caption = 'lblOperacaoAtual'
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clWindowText
-      Font.Height = -13
-      Font.Name = 'Tahoma'
-      Font.Style = []
-      ParentFont = False
-      ExplicitLeft = 203
-      ExplicitWidth = 97
-    end
     object edtVisor: TEdit
       Left = 1
-      Top = 17
+      Top = 1
       Width = 299
       Height = 54
       Align = alClient
@@ -50,16 +31,18 @@ inherited FrmExercicio1: TFrmExercicio1
       ReadOnly = True
       TabOrder = 0
       Text = 'edtVisor'
+      ExplicitTop = 17
       ExplicitHeight = 50
     end
   end
   object pnlOperacoes: TPanel
     Left = 226
-    Top = 72
+    Top = 56
     Width = 75
     Height = 365
     Align = alRight
     TabOrder = 1
+    ExplicitTop = 72
     object btnDivisao: TSpeedButton
       Left = 6
       Top = 10
@@ -133,11 +116,12 @@ inherited FrmExercicio1: TFrmExercicio1
   end
   object pnlNumeros: TPanel
     Left = 0
-    Top = 72
+    Top = 56
     Width = 226
     Height = 365
     Align = alClient
     TabOrder = 2
+    ExplicitTop = 72
     object btn1: TSpeedButton
       Left = 16
       Top = 181

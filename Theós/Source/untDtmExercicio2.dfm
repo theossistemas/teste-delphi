@@ -56,6 +56,7 @@ object dtmExercicio2: TdtmExercicio2
       FieldName = 'CPF'
       Origin = 'CPF'
       Required = True
+      EditMask = '000.000.000-00;0;_'
       Size = 11
     end
     object qryCADFUNCIONARIOSALARIO: TFMTBCDField
@@ -63,6 +64,7 @@ object dtmExercicio2: TdtmExercicio2
       FieldName = 'SALARIO'
       Origin = 'SALARIO'
       Required = True
+      currency = True
       Precision = 18
       Size = 2
     end
@@ -132,11 +134,6 @@ object dtmExercicio2: TdtmExercicio2
       Required = True
       Visible = False
     end
-  end
-  object dtsCADDEPENDENTE: TDataSource
-    DataSet = qryCADDEPENDENTE
-    Left = 80
-    Top = 112
   end
   object qryAuxiliar: TFDQuery
     Connection = fdCnx

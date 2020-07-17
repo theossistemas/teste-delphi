@@ -27,7 +27,6 @@ type
     qryCADDEPENDENTEISCALCULAIR: TSmallintField;
     qryCADDEPENDENTEISCALCULAINSS: TSmallintField;
     qryCADDEPENDENTEID_FUNCIONARIO: TIntegerField;
-    dtsCADDEPENDENTE: TDataSource;
     qryAuxiliar: TFDQuery;
     procedure DataModuleDestroy(Sender: TObject);
     procedure GetFlag(Sender: TField; var Text: String; DisplayText: Boolean);

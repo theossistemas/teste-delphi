@@ -10,6 +10,8 @@ uses
   Generics.Collections, untCalcularImpostoExercicio2;
 
 type
+  //TTipoOperacaoDataSet = (tpNavegar, tpAdicionar, tpExcluir, tpCancelar, tpSalvar);
+
   TFrmExercicio2 = class(TFrmBase)
     pnlMestre: TPanel;
     pnlDetalhe: TPanel;
@@ -48,6 +50,8 @@ type
     btnExcluirDependente: TButton;
     btnCancelarDependente: TButton;
     btnSalvarDependente: TButton;
+    dtsCADFUNCIONARIO: TDataSource;
+    dtsCADDEPENDENTE: TDataSource;
     procedure FormCreate(Sender: TObject);
     procedure btnNovoFuncionarioClick(Sender: TObject);
     procedure btnExcluirFuncionarioClick(Sender: TObject);
@@ -59,6 +63,8 @@ type
     procedure btnSalvarDependenteClick(Sender: TObject);
     procedure FormDestroy(Sender: TObject);
     procedure btnCalcularImpostosClick(Sender: TObject);
+    procedure dtsCADFUNCIONARIOStateChange(Sender: TObject);
+    procedure dtsCADDEPENDENTEStateChange(Sender: TObject);
   private
     { Private declarations }
     FqryCADFUNCIONARIO: TFDQuery;
@@ -72,6 +78,8 @@ type
     procedure prPrepararFuncionario(pQryFuncionario, pQryDependentes: TFDQuery; const pFuncionario: TFuncionario);
     procedure prPrepararDependente(pQryDependentes: TFDQuery; const pFuncionario: TFuncionario);
     procedure prAtualizarDataSet(var pDataSet: TFDQuery);
+    procedure prAtualizarControlesFuncionario;
+    procedure prAtualizarControlesDependente;
   public
     { Public declarations }
   end;
@@ -136,6 +144,7 @@ begin
 
   FControllerExercicio2.prExcluirDependente(FqryCADDEPENDENTE.FieldByName('ID_DEPENDENTE').AsInteger);
   prAtualizarDataSet(FqryCADDEPENDENTE);
+  prAtualizarControlesDependente;
 end;
 
 procedure TFrmExercicio2.btnExcluirFuncionarioClick(Sender: TObject);
@@ -146,6 +155,7 @@ begin
 
   FControllerExercicio2.prExcluirFuncionario(FqryCADFUNCIONARIO.FieldByName('ID_FUNCIONARIO').AsInteger);
   prAtualizarDataSet(FqryCADFUNCIONARIO);
+  prAtualizarControlesFuncionario;
 end;
 
 procedure TFrmExercicio2.btnNovoDependenteClick(Sender: TObject);
@@ -177,6 +187,7 @@ begin
   FqryCADDEPENDENTE.Cancel;
   FControllerExercicio2.prSalvarDependente(FqryCADFUNCIONARIO.FieldByName('ID_FUNCIONARIO').AsInteger, vDependente);
   prAtualizarDataSet(FqryCADDEPENDENTE);
+  prAtualizarControlesDependente;
 end;
 
 procedure TFrmExercicio2.btnSalvarFuncionarioClick(Sender: TObject);
@@ -194,6 +205,19 @@ begin
   FqryCADFUNCIONARIO.Cancel;
   FControllerExercicio2.prSalvarFuncionario(vFuncionario);
   prAtualizarDataSet(FqryCADFUNCIONARIO);
+  prAtualizarControlesFuncionario;
+end;
+
+procedure TFrmExercicio2.dtsCADDEPENDENTEStateChange(Sender: TObject);
+begin
+  inherited;
+  prAtualizarControlesDependente;
+end;
+
+procedure TFrmExercicio2.dtsCADFUNCIONARIOStateChange(Sender: TObject);
+begin
+  inherited;
+  prAtualizarControlesFuncionario;
 end;
 
 function TFrmExercicio2.fcTestarExisteFuncionarioCadastrado(const pDataSetFuncionario: TFDQuery): Boolean;
@@ -242,6 +266,51 @@ begin
     Exit;
 
   pDataSet.Refresh;
+end;
+
+procedure TFrmExercicio2.prAtualizarControlesFuncionario;
+begin
+  btnNovoFuncionario.Enabled := False;
+  btnExcluirFuncionario.Enabled := False;
+  btnCancelarFuncionario.Enabled := False;
+  btnSalvarFuncionario.Enabled := False;
+  dbgFuncionario.Enabled := True;
+
+  case dtsCADFUNCIONARIO.State of
+    dsBrowse:
+      begin
+        btnNovoFuncionario.Enabled := True;
+        btnExcluirFuncionario.Enabled := dtsCADFUNCIONARIO.DataSet.RecordCount > 0;
+      end;
+    dsInsert, dsEdit:
+      begin
+        btnCancelarFuncionario.Enabled := True;
+        btnSalvarFuncionario.Enabled := True;
+        dbgFuncionario.Enabled := False;
+      end;
+  end;
+end;
+
+procedure TFrmExercicio2.prAtualizarControlesDependente;
+begin
+  btnNovoDependente.Enabled := False;
+  btnExcluirDependente.Enabled := False;
+  btnCancelarDependente.Enabled := False;
+  btnSalvarDependente.Enabled := False;
+  dbgDependentes.Enabled := True;
+  case dtsCADDEPENDENTE.State of
+    dsBrowse:
+      begin
+        btnNovoDependente.Enabled := True;
+        btnExcluirDependente.Enabled := dtsCADDEPENDENTE.DataSet.RecordCount > 0;
+      end;
+    dsInsert, dsEdit:
+      begin
+        btnCancelarDependente.Enabled := True;
+        btnSalvarDependente.Enabled := True;
+        dbgDependentes.Enabled := False;
+      end;
+  end;
 end;
 
 procedure TFrmExercicio2.prPrepararDependente(pQryDependentes: TFDQuery; const pFuncionario: TFuncionario);

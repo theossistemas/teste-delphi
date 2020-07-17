@@ -63,7 +63,8 @@ inherited FrmExercicio2: TFrmExercicio2
       Width = 729
       Height = 95
       Align = alBottom
-      DataSource = dtmExercicio2.dtsCADFUNCIONARIO
+      DataSource = dtsCADFUNCIONARIO
+      Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgConfirmDelete, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
       ReadOnly = True
       TabOrder = 12
       TitleFont.Charset = DEFAULT_CHARSET
@@ -122,7 +123,7 @@ inherited FrmExercicio2: TFrmExercicio2
       Width = 78
       Height = 21
       DataField = 'ID_FUNCIONARIO'
-      DataSource = dtmExercicio2.dtsCADFUNCIONARIO
+      DataSource = dtsCADFUNCIONARIO
       Enabled = False
       TabOrder = 0
     end
@@ -132,7 +133,7 @@ inherited FrmExercicio2: TFrmExercicio2
       Width = 381
       Height = 21
       DataField = 'NOME'
-      DataSource = dtmExercicio2.dtsCADFUNCIONARIO
+      DataSource = dtsCADFUNCIONARIO
       TabOrder = 1
     end
     object edtCPF: TDBEdit
@@ -141,7 +142,7 @@ inherited FrmExercicio2: TFrmExercicio2
       Width = 114
       Height = 21
       DataField = 'CPF'
-      DataSource = dtmExercicio2.dtsCADFUNCIONARIO
+      DataSource = dtsCADFUNCIONARIO
       TabOrder = 2
     end
     object edtSALARIO: TDBEdit
@@ -150,7 +151,7 @@ inherited FrmExercicio2: TFrmExercicio2
       Width = 114
       Height = 21
       DataField = 'SALARIO'
-      DataSource = dtmExercicio2.dtsCADFUNCIONARIO
+      DataSource = dtsCADFUNCIONARIO
       TabOrder = 3
     end
     object btnNovoFuncionario: TButton
@@ -260,7 +261,8 @@ inherited FrmExercicio2: TFrmExercicio2
       Width = 729
       Height = 153
       Align = alBottom
-      DataSource = dtmExercicio2.dtsCADDEPENDENTE
+      DataSource = dtsCADDEPENDENTE
+      Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgConfirmDelete, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
       ReadOnly = True
       TabOrder = 0
       TitleFont.Charset = DEFAULT_CHARSET
@@ -317,7 +319,6 @@ inherited FrmExercicio2: TFrmExercicio2
       Width = 78
       Height = 21
       DataField = 'ID_DEPENDENTE'
-      DataSource = dtmExercicio2.dtsCADDEPENDENTE
       Enabled = False
       TabOrder = 2
     end
@@ -327,7 +328,7 @@ inherited FrmExercicio2: TFrmExercicio2
       Width = 384
       Height = 21
       DataField = 'NOME'
-      DataSource = dtmExercicio2.dtsCADDEPENDENTE
+      DataSource = dtsCADDEPENDENTE
       TabOrder = 3
     end
     object cmbISCALCULAINSS: TDBComboBox
@@ -336,7 +337,7 @@ inherited FrmExercicio2: TFrmExercicio2
       Width = 114
       Height = 21
       DataField = 'ISCALCULAINSS'
-      DataSource = dtmExercicio2.dtsCADDEPENDENTE
+      DataSource = dtsCADDEPENDENTE
       Items.Strings = (
         'SIM'
         'N'#195'O')
@@ -348,7 +349,7 @@ inherited FrmExercicio2: TFrmExercicio2
       Width = 114
       Height = 21
       DataField = 'ISCALCULAIR'
-      DataSource = dtmExercicio2.dtsCADDEPENDENTE
+      DataSource = dtsCADDEPENDENTE
       Items.Strings = (
         'SIM'
         'N'#195'O')
@@ -390,5 +391,17 @@ inherited FrmExercicio2: TFrmExercicio2
       TabOrder = 9
       OnClick = btnSalvarDependenteClick
     end
+  end
+  object dtsCADFUNCIONARIO: TDataSource
+    DataSet = dtmExercicio2.qryCADFUNCIONARIO
+    OnStateChange = dtsCADFUNCIONARIOStateChange
+    Left = 624
+    Top = 144
+  end
+  object dtsCADDEPENDENTE: TDataSource
+    DataSet = dtmExercicio2.qryCADDEPENDENTE
+    OnStateChange = dtsCADDEPENDENTEStateChange
+    Left = 616
+    Top = 344
   end
 end

@@ -110,7 +110,7 @@ begin
   auxsql := ' insert into tblfuncionario ';
   auxsql := auxsql + ' ( cpf, nome, salario, valorinss, valorir ) ';
   auxsql := auxsql + ' values ';
-  auxsql := auxsql + ' ( :cpf, :nome, :salario, :baseinss, :valorir ) ';
+  auxsql := auxsql + ' ( :cpf, :nome, :salario, :valorinss, :valorir ) ';
 
   FControle.SqqGeral.Close;
   FControle.SqqGeral.CommandText := auxsql;

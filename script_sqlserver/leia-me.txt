@@ -1,0 +1,14 @@
+Olá,
+Entrego meu teste proposto pela Theòs
+Fiquei apenas com dúvida na regra para os cálculos de Inss e Ir
+INSS - O cálculo de INSS será descontado 8% do valor do funcionário
+caso o dependente calcula INSS
+Ex: INSS = 1000,00 – 8% = 80,00
+*neste caso, se eu seguir a regra do exemplo eu vou estar cálculando
+a base do inss e não o valor do inss pois para chegar a 80,00 eu
+preciso multiplicar e não subtrair
+1000,00 - 8% = 920,00
+o mesmo acontece com o cálculo do Ir
+IR = 1000,00 - (2 * 100) = 800,00 – 15% = 120,00.	
+800,00 - 15% = 680,00
+

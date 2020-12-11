@@ -173,21 +173,4 @@ begin
   Result := FloatToStr(resultado);
 end;
 
-{
-function TImpostoCalc.GetImpostoA(const aBaseCalculo: double): double;
-begin
-  Result := (aBaseCalculo * 0.02) - 500;
-end;
-
-function TImpostoCalc.GetImpostoB(const aBaseCalculo: double): double;
-begin
-  Result := Self.GetImpostoA(aBaseCalculo) - 15;
-end;
-
-function TImpostoCalc.GetImpostoC(const aBaseCalculo: double): double;
-begin
-  Result := Self.GetImpostoA(aBaseCalculo) + Self.GetImpostoB(aBaseCalculo);
-end;
-}
-
 end.

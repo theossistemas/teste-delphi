@@ -99,12 +99,19 @@
             <MainSource>MainSource</MainSource>
         </DelphiCompile>
         <DCCReference Include="UPrincipal.pas">
-            <Form>Form1</Form>
+            <Form>FrmPrincipal</Form>
             <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="UCalculadora.pas"/>
         <DCCReference Include="UModCalculadora.pas">
             <Form>FrmCalculadora</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="UFuncionarioControle.pas"/>
+        <DCCReference Include="UControle.pas"/>
+        <DCCReference Include="UConexaoBanco.pas"/>
+        <DCCReference Include="UCadFuncionario.pas">
+            <Form>FrmFuncionario</Form>
             <FormType>dfm</FormType>
         </DCCReference>
         <BuildConfiguration Include="Release">

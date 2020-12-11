@@ -14,7 +14,16 @@
     <Transaction>2020/12/09 18:57:53.000.657,=C:\Projetos\theos\Unit1.pas</Transaction>
     <Transaction>2020/12/09 19:52:03.000.370,C:\Projetos\theos\UCalculadora.pas=C:\Projetos\theos\Unit1.pas</Transaction>
     <Transaction>2020/12/10 00:34:51.000.300,=C:\Projetos\theos\Unit2.pas</Transaction>
-    <Transaction>2020/12/10 01:09:24.000.415,C:\Projetos\theos\UModCalculadora.pas=C:\Projetos\theos\Unit2.pas</Transaction>
     <Transaction>2020/12/10 01:09:24.000.415,C:\Projetos\theos\UModCalculadora.dfm=C:\Projetos\theos\Unit2.dfm</Transaction>
+    <Transaction>2020/12/10 01:09:24.000.415,C:\Projetos\theos\UModCalculadora.pas=C:\Projetos\theos\Unit2.pas</Transaction>
+    <Transaction>2020/12/11 10:38:51.000.672,=C:\Projetos\theos\Unit1.pas</Transaction>
+    <Transaction>2020/12/11 10:39:13.000.553,C:\Projetos\theos\UFuncionarioControle.pas=C:\Projetos\theos\Unit1.pas</Transaction>
+    <Transaction>2020/12/11 10:39:32.000.209,=C:\Projetos\theos\Unit1.pas</Transaction>
+    <Transaction>2020/12/11 10:39:42.000.803,C:\Projetos\theos\UControle.pas=C:\Projetos\theos\Unit1.pas</Transaction>
+    <Transaction>2020/12/11 10:40:14.000.698,=C:\Projetos\theos\Unit1.pas</Transaction>
+    <Transaction>2020/12/11 10:40:25.000.801,C:\Projetos\theos\UConexaoBanco.pas=C:\Projetos\theos\Unit1.pas</Transaction>
+    <Transaction>2020/12/11 12:11:08.000.662,=C:\Projetos\theos\Unit1.pas</Transaction>
+    <Transaction>2020/12/11 12:11:28.000.624,C:\Projetos\theos\UCadFuncionario.pas=C:\Projetos\theos\Unit1.pas</Transaction>
+    <Transaction>2020/12/11 12:11:28.000.624,C:\Projetos\theos\UCadFuncionario.dfm=C:\Projetos\theos\Unit1.dfm</Transaction>
   </Transactions>
 </BorlandProject>

@@ -1,9 +1,9 @@
-object Form1: TForm1
+object FrmPrincipal: TFrmPrincipal
   Left = 0
   Top = 0
   Caption = 'Formul'#225'rio Principal'
-  ClientHeight = 201
-  ClientWidth = 445
+  ClientHeight = 721
+  ClientWidth = 511
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -12,12 +12,13 @@ object Form1: TForm1
   Font.Style = []
   OldCreateOrder = False
   Position = poDesktopCenter
+  OnCreate = FormCreate
   PixelsPerInch = 96
   TextHeight = 13
-  object BitBtn1: TBitBtn
-    Left = 128
-    Top = 24
-    Width = 161
+  object bitbtncalculadora: TBitBtn
+    Left = 8
+    Top = 8
+    Width = 492
     Height = 49
     Caption = 'Calculadora'
     Glyph.Data = {
@@ -70,6 +71,524 @@ object Form1: TForm1
       0606060606060606060606060606060606060606060606060606060606060606
       06060606060606060606060606060606060606060606}
     TabOrder = 0
-    OnClick = BitBtn1Click
+    OnClick = bitbtncalculadoraClick
+  end
+  object Panel1: TPanel
+    Left = 8
+    Top = 63
+    Width = 492
+    Height = 354
+    TabOrder = 1
+    object Label1: TLabel
+      Left = 8
+      Top = 5
+      Width = 319
+      Height = 19
+      Caption = 'Valida'#231#227'o L'#243'gica com Assertion  : Imposto A'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -16
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentFont = False
+    end
+    object Label2: TLabel
+      Left = 135
+      Top = 48
+      Width = 91
+      Height = 19
+      Caption = '* 20% - 500'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -16
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentFont = False
+    end
+    object Label4: TLabel
+      Left = 135
+      Top = 152
+      Width = 137
+      Height = 19
+      Caption = '(* 20% - 500) - 15'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -16
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentFont = False
+    end
+    object Label3: TLabel
+      Left = 8
+      Top = 110
+      Width = 312
+      Height = 19
+      Caption = 'Valida'#231#227'o L'#243'gica com Assertion : Imposto B'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -16
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentFont = False
+    end
+    object Label5: TLabel
+      Left = 8
+      Top = 214
+      Width = 313
+      Height = 19
+      Caption = 'Valida'#231#227'o L'#243'gica com Assertion : Imposto C'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -16
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentFont = False
+    end
+    object Label6: TLabel
+      Left = 8
+      Top = 237
+      Width = 385
+      Height = 19
+      Caption = 'Regra : C'#225'lculo do Imposto A + C'#225'lculo do Imposto B'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -16
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentFont = False
+    end
+    object lbledtvalorbase: TLabeledEdit
+      Left = 8
+      Top = 48
+      Width = 121
+      Height = 27
+      EditLabel.Width = 74
+      EditLabel.Height = 19
+      EditLabel.Caption = 'Valor Base'
+      EditLabel.Font.Charset = DEFAULT_CHARSET
+      EditLabel.Font.Color = clWindowText
+      EditLabel.Font.Height = -16
+      EditLabel.Font.Name = 'Tahoma'
+      EditLabel.Font.Style = []
+      EditLabel.ParentFont = False
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -16
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 0
+      Text = '2500'
+    end
+    object lbledtvaloresperado: TLabeledEdit
+      Left = 280
+      Top = 48
+      Width = 121
+      Height = 27
+      EditLabel.Width = 190
+      EditLabel.Height = 19
+      EditLabel.Caption = 'Valor Esperado de Retorno'
+      EditLabel.Font.Charset = DEFAULT_CHARSET
+      EditLabel.Font.Color = clWindowText
+      EditLabel.Font.Height = -16
+      EditLabel.Font.Name = 'Tahoma'
+      EditLabel.Font.Style = []
+      EditLabel.ParentFont = False
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -16
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 1
+      Text = '0'
+    end
+    object BtnTestarImpostoA: TButton
+      Left = 8
+      Top = 81
+      Width = 465
+      Height = 25
+      Caption = 'Testar'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -16
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 2
+      OnClick = BtnTestarImpostoAClick
+    end
+    object lbledtvalorbaseB: TLabeledEdit
+      Left = 8
+      Top = 152
+      Width = 121
+      Height = 27
+      EditLabel.Width = 74
+      EditLabel.Height = 19
+      EditLabel.Caption = 'Valor Base'
+      EditLabel.Font.Charset = DEFAULT_CHARSET
+      EditLabel.Font.Color = clWindowText
+      EditLabel.Font.Height = -16
+      EditLabel.Font.Name = 'Tahoma'
+      EditLabel.Font.Style = []
+      EditLabel.ParentFont = False
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -16
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 3
+      Text = '2500'
+    end
+    object lbledtvaloresperadoB: TLabeledEdit
+      Left = 288
+      Top = 152
+      Width = 121
+      Height = 27
+      EditLabel.Width = 190
+      EditLabel.Height = 19
+      EditLabel.Caption = 'Valor Esperado de Retorno'
+      EditLabel.Font.Charset = DEFAULT_CHARSET
+      EditLabel.Font.Color = clWindowText
+      EditLabel.Font.Height = -16
+      EditLabel.Font.Name = 'Tahoma'
+      EditLabel.Font.Style = []
+      EditLabel.ParentFont = False
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -16
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 4
+      Text = '0'
+    end
+    object BtnTestarImpostoB: TButton
+      Left = 8
+      Top = 185
+      Width = 465
+      Height = 25
+      Caption = 'Testar'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -16
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 5
+      OnClick = BtnTestarImpostoBClick
+    end
+    object LabeledEdit1: TLabeledEdit
+      Left = 8
+      Top = 280
+      Width = 121
+      Height = 27
+      EditLabel.Width = 74
+      EditLabel.Height = 19
+      EditLabel.Caption = 'Valor Base'
+      EditLabel.Font.Charset = DEFAULT_CHARSET
+      EditLabel.Font.Color = clWindowText
+      EditLabel.Font.Height = -16
+      EditLabel.Font.Name = 'Tahoma'
+      EditLabel.Font.Style = []
+      EditLabel.ParentFont = False
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -16
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 6
+      Text = '2500'
+    end
+    object LabeledEdit2: TLabeledEdit
+      Left = 288
+      Top = 280
+      Width = 121
+      Height = 27
+      EditLabel.Width = 190
+      EditLabel.Height = 19
+      EditLabel.Caption = 'Valor Esperado de Retorno'
+      EditLabel.Font.Charset = DEFAULT_CHARSET
+      EditLabel.Font.Color = clWindowText
+      EditLabel.Font.Height = -16
+      EditLabel.Font.Name = 'Tahoma'
+      EditLabel.Font.Style = []
+      EditLabel.ParentFont = False
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -16
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 7
+      Text = '0'
+    end
+    object BtnTestarImpostoC: TButton
+      Left = 8
+      Top = 313
+      Width = 465
+      Height = 25
+      Caption = 'Testar'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -16
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 8
+      OnClick = BtnTestarImpostoCClick
+    end
+  end
+  object bitbtnfucionario: TBitBtn
+    Left = 8
+    Top = 422
+    Width = 492
+    Height = 49
+    Caption = 'Funcion'#225'rio'
+    Glyph.Data = {
+      72060000424D7206000000000000320400002800000018000000180000000100
+      08000000000040020000120B0000120B0000FF000000FF0000004F45C8004A36
+      99000F0E11001B1A1D003736390012111300131214001A191B0038373900FF00
+      FF0003000300231F230013121300504F5000110A1000A16D9300050000001310
+      1000D4999100EC846A00F67D5B00C64C2700C54B2700FD866000FD896600F989
+      6800C8593400D96F4900C85B2A00884524008745240009050300120904000B08
+      06000D08040036353300FFFFFE00101B0E00DCFFD800A9F3A500D2FED1000098
+      00000096000000910000008400000081000000740000006F000085D785009DE6
+      9C00B1F1B100039C060049BD4D0073D57700098612001CAA24000DA31A0012A4
+      24001B241C000FAA260017AF2E0019B1330020C53C001EB8430024BB4A002FD1
+      610028984A0059B3740032CA650033CB690034CB690035CD6A0035CE6D0039D6
+      740037776500121C1C00167EA2001888AF001886AC001780A500167CA0007BA4
+      B5002583AF002D89B40027739600328DB7006EAECB00034F7500056597000755
+      7B00075177001373A2001B79A700166389002583B0002985B1000A5881003BA0
+      DE00185C8A003799DE003AA1E60044ACF20048B1F7004CB4FD004AB2F9004FB7
+      FF002A91E1003DA4F30044ABFB0047AEFD0046ADFC0048AFFD0047AEFB0049B0
+      FF004AB1FD0049B0FC004BB3FD004DB4FF0036A3FF003EA5FB0041A8FC0041A7
+      FB0043AAFE0042A9FB0043AAFB0045ACFD0035A0FF00379DFA0039A0FC00399F
+      F9003AA0FB003CA2FB002A88E3003193F8003192F6003396F8003395F700359C
+      FF003498F9003497F8003392F3003490E90028588900234D78005F86AC00A8AE
+      B4000A68C9002E8AF0002E8BEF003295FD00308FF30028609C0026466800207E
+      EA00207AE6002B83EB002B85EB00297FE2002C86EE002B83E9002B6CB900196F
+      DE002377E3002474D9002573DC001625380019478A001C5CC5002067D4002062
+      CF002065CF001F5AB5001950B5001C57C2001C5AC20090959E00184DB6001950
+      B7001B4DAC001C2C4B005E7DB7001544A9001645A9001745AA001441AC000240
+      ED00072B9A000E45F100153BB0000537E0000A36CF001346FF002052FF003F6C
+      FF00486FFF004C75FF005579FF005A7DFF005D81FF006285FF006F8EFF007493
+      FF007A99FF0086A1FF008EA6FF009FB5FF00B8C8FF00CBD6FF000334FF001643
+      FF002A56FF00385FFF00456BFF005275FF007893FF007F99FF00849CFD008AA2
+      FF008CA2FF0092A7FF000C38FF000D3AFF000F39FF000F3BFF00143DFF001C42
+      FF002248FF0013277F00294EFD002D54FF002E53FF004262FF004C6DFF006C86
+      FF00AAB9FF00E8ECFF00012AFF000A32FF002535E1002433D900111112002424
+      25003A3A3B00FFFFFF0082828200797979006E6E6E006A6A6A00626262005252
+      5200434343001C1C1C000D0D0D00030303000000000009090909090909090909
+      0909090909ECE0E1E0EC0909090909092E2E2E2E2E2E2E2E2E2E0909DEC8C9C4
+      C5C2DD090909092F2C2B292A33383C292A292EDCDAE8E5D8E5E5C5DC0909092F
+      2C2B2A3B404640342B29BEE9E9E7CFEBCFE2E6D5EC09092F2C2B3D4448453831
+      352BBDEABFC4CCCE24D5D0CAD009092F2D394447483B3428322BBBEABFC4CFEB
+      D9DFEDCBE00909092E4048463F373226322BB9DBC2CAF3EBCCD1D1CABE1D0909
+      092E494137302626272B92E4CDC3CBCED8D2C9C0011D0909090942424AB49051
+      433E36EED3DBC8C6C7CBC1EF1A1D0909093A254BE3BABABAA662141900E4C2D4
+      C2E400141A1D09090E0A0AB3B7B6B6B5B8BC161817CED7D6D80F1C181B1E09FC
+      FEFEA5B2B1ACACACACACB016131291AF91121C15150907FEFE1FA6A7AEAEAEAE
+      AEAEAEAD4E4F4C50504C09090909F0FEFE22ABA8AAAAAAAAAAAAAAA99999999A
+      A1A24D09090902FEFE22A0A4A4A4A4A4A4A4A4A3888B8B88969CA24D090906FE
+      FD21979E9F9F9F9F9F9F9B84828383827F87939D4D0903FD0CFB988C95858686
+      8685956A787B7B7977828A944D09090523F9F28E8D897676767EA07D716F706E
+      6C7780874D0909F1FAF5F623B3988E8E978F0B635A6572736D7C777F4D090909
+      04F8F4F6FAF1111F1020595757646774736E78814D09090909080DF7F6F8FAFB
+      0C525B5859666975726D7A4D09090909090909F205FC050B095556525D616568
+      75716B4D090909090909090909090909095E565653545D6060604D0909090909
+      09090909090909090909095E535F5C58580909090909}
+    TabOrder = 2
+    OnClick = bitbtnfucionarioClick
+  end
+  object Panel2: TPanel
+    Left = 8
+    Top = 478
+    Width = 492
+    Height = 235
+    TabOrder = 3
+    object Label7: TLabel
+      Left = 8
+      Top = 4
+      Width = 381
+      Height = 19
+      Caption = 'Valida'#231#227'o L'#243'gica com Assertion : C'#225'lculo do Inss e IR'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -16
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentFont = False
+    end
+    object lbledtsalariobase: TLabeledEdit
+      Left = 8
+      Top = 52
+      Width = 121
+      Height = 27
+      EditLabel.Width = 85
+      EditLabel.Height = 19
+      EditLabel.Caption = 'Sal'#225'rio Base'
+      EditLabel.Font.Charset = DEFAULT_CHARSET
+      EditLabel.Font.Color = clWindowText
+      EditLabel.Font.Height = -16
+      EditLabel.Font.Name = 'Tahoma'
+      EditLabel.Font.Style = []
+      EditLabel.ParentFont = False
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -16
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 0
+      Text = '2500'
+    end
+    object lbledtpercinss: TLabeledEdit
+      Left = 135
+      Top = 52
+      Width = 121
+      Height = 27
+      EditLabel.Width = 107
+      EditLabel.Height = 19
+      EditLabel.Caption = 'Percentual Inss'
+      EditLabel.Font.Charset = DEFAULT_CHARSET
+      EditLabel.Font.Color = clWindowText
+      EditLabel.Font.Height = -16
+      EditLabel.Font.Name = 'Tahoma'
+      EditLabel.Font.Style = []
+      EditLabel.ParentFont = False
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -16
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 1
+      Text = '8'
+    end
+    object lbledtqtddependente: TLabeledEdit
+      Left = 272
+      Top = 52
+      Width = 121
+      Height = 27
+      EditLabel.Width = 192
+      EditLabel.Height = 19
+      EditLabel.Caption = 'Quantidade de Dependente'
+      EditLabel.Font.Charset = DEFAULT_CHARSET
+      EditLabel.Font.Color = clWindowText
+      EditLabel.Font.Height = -16
+      EditLabel.Font.Name = 'Tahoma'
+      EditLabel.Font.Style = []
+      EditLabel.ParentFont = False
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -16
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 2
+      Text = '0'
+    end
+    object lbledtvalorpordependenteir: TLabeledEdit
+      Left = 8
+      Top = 108
+      Width = 121
+      Height = 27
+      EditLabel.Width = 265
+      EditLabel.Height = 19
+      EditLabel.Caption = 'Valor Desconto no Ir por Dependente'
+      EditLabel.Font.Charset = DEFAULT_CHARSET
+      EditLabel.Font.Color = clWindowText
+      EditLabel.Font.Height = -16
+      EditLabel.Font.Name = 'Tahoma'
+      EditLabel.Font.Style = []
+      EditLabel.ParentFont = False
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -16
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 3
+      Text = '100'
+    end
+    object lbledtpercdescir: TLabeledEdit
+      Left = 288
+      Top = 108
+      Width = 121
+      Height = 27
+      EditLabel.Width = 187
+      EditLabel.Height = 19
+      EditLabel.Caption = 'Percentual Desconto no IR'
+      EditLabel.Font.Charset = DEFAULT_CHARSET
+      EditLabel.Font.Color = clWindowText
+      EditLabel.Font.Height = -16
+      EditLabel.Font.Name = 'Tahoma'
+      EditLabel.Font.Style = []
+      EditLabel.ParentFont = False
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -16
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 4
+      Text = '15'
+    end
+    object BtnCalcularInss: TButton
+      Left = 8
+      Top = 197
+      Width = 185
+      Height = 25
+      Caption = 'Testar C'#225'lculo do INSS'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -16
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 5
+      OnClick = BtnCalcularInssClick
+    end
+    object lbledtvaloresperadofuncionario: TLabeledEdit
+      Left = 8
+      Top = 162
+      Width = 121
+      Height = 27
+      EditLabel.Width = 190
+      EditLabel.Height = 19
+      EditLabel.Caption = 'Valor Esperado de Retorno'
+      EditLabel.Font.Charset = DEFAULT_CHARSET
+      EditLabel.Font.Color = clWindowText
+      EditLabel.Font.Height = -16
+      EditLabel.Font.Name = 'Tahoma'
+      EditLabel.Font.Style = []
+      EditLabel.ParentFont = False
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -16
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 6
+      Text = '0'
+    end
+    object BtnCalcularIr: TButton
+      Left = 199
+      Top = 196
+      Width = 185
+      Height = 25
+      Caption = 'Testar C'#225'lculo do INSS'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -16
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 7
+      OnClick = BtnCalcularIrClick
+    end
   end
 end

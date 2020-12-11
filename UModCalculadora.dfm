@@ -1305,7 +1305,7 @@ object FrmCalculadora: TFrmCalculadora
     Top = 435
     Width = 97
     Height = 57
-    Caption = 'Fun'#231#227'o A'
+    Caption = 'Imposto A'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clRed
     Font.Height = -16
@@ -1321,7 +1321,7 @@ object FrmCalculadora: TFrmCalculadora
     Top = 435
     Width = 97
     Height = 57
-    Caption = 'Fun'#231#227'o B'
+    Caption = 'Imposto B'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clRed
     Font.Height = -16
@@ -1337,7 +1337,7 @@ object FrmCalculadora: TFrmCalculadora
     Top = 435
     Width = 97
     Height = 57
-    Caption = 'Fun'#231#227'o C'
+    Caption = 'Imposto C'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clRed
     Font.Height = -16

@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2019/11/08 17:56:17.000.567,=C:\Users\Mauricio\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2020/01/18 01:46:59.000.586,=C:\Users\Mauricio\Documents\Embarcadero\Studio\Projects\FormUnit1.pas</Transaction>
+    <Transaction>2020/01/18 01:47:00.000.618,=C:\Users\Mauricio\Documents\Embarcadero\Studio\Projects\WebModuleUnit1.pas</Transaction>
+    <Transaction>2020/01/30 23:02:41.000.557,=C:\Users\Mauricio\Documents\Embarcadero\Studio\Projects\FormUnit1.pas</Transaction>
+    <Transaction>2020/01/30 23:02:43.000.447,=C:\Users\Mauricio\Documents\Embarcadero\Studio\Projects\WebModuleUnit1.pas</Transaction>
+    <Transaction>2020/09/11 13:02:03.000.220,=C:\Users\Mauricio\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2020/12/09 18:57:03.000.478,=C:\Users\Mauricio\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2020/12/09 18:57:37.000.981,C:\Projetos\theos\UPrincipal.pas=C:\Users\Mauricio\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2020/12/09 18:57:37.000.981,C:\Projetos\theos\UPrincipal.dfm=C:\Users\Mauricio\Documents\Embarcadero\Studio\Projects\Unit1.dfm</Transaction>
+    <Transaction>2020/12/09 18:57:44.000.304,C:\Projetos\theos\Theos.dproj=C:\Users\Mauricio\Documents\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
+    <Transaction>2020/12/09 18:57:53.000.657,=C:\Projetos\theos\Unit1.pas</Transaction>
+    <Transaction>2020/12/09 19:52:03.000.370,C:\Projetos\theos\UCalculadora.pas=C:\Projetos\theos\Unit1.pas</Transaction>
+    <Transaction>2020/12/10 00:34:51.000.300,=C:\Projetos\theos\Unit2.pas</Transaction>
+    <Transaction>2020/12/10 01:09:24.000.415,C:\Projetos\theos\UModCalculadora.pas=C:\Projetos\theos\Unit2.pas</Transaction>
+    <Transaction>2020/12/10 01:09:24.000.415,C:\Projetos\theos\UModCalculadora.dfm=C:\Projetos\theos\Unit2.dfm</Transaction>
+  </Transactions>
+</BorlandProject>

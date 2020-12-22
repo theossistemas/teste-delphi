@@ -2,7 +2,7 @@ unit uFuncionario;
 
 interface
 
-uses System.Classes, System.Sysutils, uDependente;
+uses System.Classes, System.Sysutils, uDependente, uDataBase;
 
 type
 
@@ -20,6 +20,9 @@ type
 
     constructor Create;
     destructor Destroy; override;
+
+    procedure UpdateRecord(aDelete: boolean = FALSE);
+    procedure GetRecord;
 
     property Nome       : string       read FNome        write FNome;
     property CPF        : string       read FCPF         write FCPF;
@@ -40,7 +43,7 @@ const
 function TFuncionario.GetIR: extended;
 var
 
-  I        : cardinal;
+  I        : integer;
   lDesconto: extended;
 begin
 
@@ -48,7 +51,7 @@ begin
 
   // busca nos dependentes o percentual de redução de IR, e aplica sobre o salario, acumulando
   for I := 0 to FDependentes.Count - 1 do
-    lDesconto := lDesconto + (Salario * FDependentes.Items[I].ReducaoIR);
+    lDesconto := lDesconto + FDependentes.Items[I].ReducaoIR;
 
   result := (Salario - lDesconto) * C_IR;
 end;
@@ -88,6 +91,48 @@ begin
 
   inherited Destroy;
 end;
+
+procedure TFuncionario.UpdateRecord(aDelete: boolean = FALSE);
+var
+
+  lDBCFuncionario: TDBCFuncionario;
+  lRow           : TParameter;
+  I              : integer;
+begin
+
+  lRow := TParameter.Create;
+
+  lRow.Add('nome', Nome);
+  lRow.Add('cpf', CPF);
+  lRow.Add('salario', Salario);
+
+  for I := 0 to FDependentes.Count - 1 do
+    FDependentes.Items[I].UpdateRecord(aDelete);
+
+  lDBCFuncionario        := TDBCFuncionario.Create;
+  lDBCFuncionario.Delete := aDelete;
+  lDBCFuncionario.Row    := lRow;
+end;
+
+procedure TFuncionario.GetRecord;
+var
+
+  lDBCFuncionario: TDBCFuncionario;
+begin
+
+  lDBCFuncionario     := TDBCFuncionario.Create;
+  lDBCFuncionario.CPF := CPF;
+
+  if lDBCFuncionario.Loaded then
+  begin
+
+    Nome    := lDBCFuncionario.Row.Items['nome'];
+    Salario := lDBCFuncionario.Row.Items['salario'];
+  end;
+
+  TDependente.GetDependentes(CPF, FDependentes);
+end;
+
 
 
 

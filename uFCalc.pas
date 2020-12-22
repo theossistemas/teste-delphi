@@ -3,8 +3,8 @@ unit uFCalc;
 interface
 
 uses
-  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ExtCtrls, System.Actions,
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes,
+  Vcl.Graphics, Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ExtCtrls, System.Actions,
   Vcl.ActnList, Vcl.Buttons, Vcl.StdCtrls;
 
 type
@@ -156,7 +156,7 @@ begin
     '=', #13: alEqual.Execute;
   end;
 
-  if Key IN ['1','2','3','4','5','6','7','8','9','0',',','.','+','-','*','/','='] then
+  if CharInSet(Key, ['1','2','3','4','5','6','7','8','9','0',',','.','+','-','*','/','=']) then
     Key := #0;
 end;
 

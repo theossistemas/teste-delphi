@@ -93,6 +93,8 @@ var
   lOK: boolean;
 begin
 
+  lOK := FALSE;
+
   for I := Low(C_OPERATION) to High(C_OPERATION) do
     if trim(aValue) = trim(C_OPERATION[I]) then
     begin

@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2020/12/20 09:41:21.000.492,=E:\projetos\Unit1.pas</Transaction>
+    <Transaction>2020/12/20 09:41:55.000.547,E:\projetos\Unit1.pas=E:\GitHub\teste-delphi\uCalc.pas</Transaction>
+    <Transaction>2020/12/20 09:41:55.000.547,E:\projetos\Unit1.dfm=E:\GitHub\teste-delphi\uCalc.dfm</Transaction>
+    <Transaction>2020/12/20 09:42:26.000.201,E:\projetos\Project1.dproj=E:\GitHub\teste-delphi\pTheosTest.dproj</Transaction>
+    <Transaction>2020/12/20 09:43:57.000.785,E:\GitHub\teste-delphi\uCalc.dfm=E:\GitHub\teste-delphi\uFCalc.dfm</Transaction>
+    <Transaction>2020/12/20 09:43:57.000.785,E:\GitHub\teste-delphi\uCalc.pas=E:\GitHub\teste-delphi\uFCalc.pas</Transaction>
+    <Transaction>2020/12/20 09:44:23.000.527,=E:\GitHub\teste-delphi\Unit1.pas</Transaction>
+    <Transaction>2020/12/20 09:44:32.000.059,E:\GitHub\teste-delphi\Unit1.pas=E:\GitHub\teste-delphi\uCalc.pas</Transaction>
+    <Transaction>2020/12/20 09:44:51.000.039,=E:\GitHub\teste-delphi\Unit1.pas</Transaction>
+    <Transaction>2020/12/20 09:45:24.000.961,E:\GitHub\teste-delphi\Unit1.pas=E:\GitHub\teste-delphi\uEmployee.pas</Transaction>
+    <Transaction>2020/12/20 09:47:27.000.778,E:\GitHub\teste-delphi\uEmployee.pas=E:\GitHub\teste-delphi\uFuncionario.pas</Transaction>
+    <Transaction>2020/12/20 09:50:57.000.528,=E:\GitHub\teste-delphi\Unit1.pas</Transaction>
+    <Transaction>2020/12/20 09:51:11.000.395,E:\GitHub\teste-delphi\Unit1.pas=E:\GitHub\teste-delphi\uDependente.pas</Transaction>
+    <Transaction>2020/12/20 20:27:41.016,=E:\GitHub\teste-delphi\Unit1.pas</Transaction>
+    <Transaction>2020/12/20 20:27:53.310,E:\GitHub\teste-delphi\uDataBase.pas=E:\GitHub\teste-delphi\Unit1.pas</Transaction>
+    <Transaction>2020/12/21 19:25:55.887,=E:\GitHub\teste-delphi\Unit1.pas</Transaction>
+    <Transaction>2020/12/21 19:27:46.604,E:\GitHub\teste-delphi\u.pas=E:\GitHub\teste-delphi\Unit1.pas</Transaction>
+    <Transaction>2020/12/21 19:27:46.604,E:\GitHub\teste-delphi\u.dfm=E:\GitHub\teste-delphi\Unit1.dfm</Transaction>
+    <Transaction>2020/12/21 19:27:57.270,E:\GitHub\teste-delphi\uTest.dfm=E:\GitHub\teste-delphi\u.dfm</Transaction>
+    <Transaction>2020/12/21 19:27:57.270,E:\GitHub\teste-delphi\uTest.pas=E:\GitHub\teste-delphi\u.pas</Transaction>
+    <Transaction>2020/12/21 19:36:36.878,=E:\GitHub\teste-delphi\Unit1.pas</Transaction>
+    <Transaction>2020/12/21 19:37:33.303,E:\GitHub\teste-delphi\uFTestFuncionarioDependente.dfm=E:\GitHub\teste-delphi\Unit1.dfm</Transaction>
+    <Transaction>2020/12/21 19:37:33.303,E:\GitHub\teste-delphi\uFTestFuncionarioDependente.pas=E:\GitHub\teste-delphi\Unit1.pas</Transaction>
+  </Transactions>
+</BorlandProject>

@@ -5,7 +5,7 @@ interface
 uses
   Data.DB, Vcl.Forms, System.SysUtils, System.Generics.Collections,
 
-  Theos.Api.Calculadora,
+  Theos.Api.Pessoa,
   Theos.Dao.DB,
   Theos.Lib.Nullable,
 
@@ -232,11 +232,10 @@ begin
     FiltroDependente.CODIGO_FUNCIONARIO := FCODIGO.GetValueOrDefault;
     FiltroDependente.IS_CALCULA_INSS := True;
 
-    if not FiltroDependente.Carregar then
-      Exit(0);
+    var PossuiDependentesQueCalculamINSS := FiltroDependente.Carregar;
 
-     const PERCENTUAL = 8;
-     Result := FSALARIO.GetValueOrDefault * TCalculadora.GerarValorPercentual(PERCENTUAL);
+    Result := TPessoa.Imposto.CalcularINSS(FSALARIO.GetValueOrDefault, PossuiDependentesQueCalculamINSS);
+
   finally
     FiltroDependente.Free;
   end;
@@ -250,11 +249,7 @@ begin
     FiltroDependente.IS_CALCULA_IR := True;
     var ListaDependentes := FiltroDependente.CarregarListaModel;
     try
-      if ListaDependentes.Count = 0 then
-        Exit(0);
-
-      var VALOR_POR_DEPENDENTE: Double := 100;
-      result := FSALARIO.GetValueOrDefault - (ListaDependentes.Count * VALOR_POR_DEPENDENTE);
+      result := TPessoa.Imposto.CalcularBaseIR(FSALARIO.GetValueOrDefault, ListaDependentes.Count);
     finally
       ListaDependentes.Free;
     end;
@@ -265,8 +260,7 @@ end;
 
 function TModelFuncionario.GetIR: Double;
 begin
-  const PERCENTUAL = 15;
-  Result := BaseIR * TCalculadora.GerarValorPercentual(PERCENTUAL);
+  result := TPessoa.Imposto.CalcularIR(BaseIR);
 end;
 
 end.

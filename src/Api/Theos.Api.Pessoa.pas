@@ -2,11 +2,24 @@ unit Theos.Api.Pessoa;
 
 interface
 
-uses System.SysUtils, System.Math;
+uses
+  System.SysUtils, System.Math,
+
+  Theos.Api.Calculadora;
 
 type
   TPessoa = class abstract
+  strict private
+    type
+      TImposto = record
+      public
+        function CalcularINSS(const Salario: Double; const PossuiDependente: Boolean): Double;
+        function CalcularBaseIR(const Salario: Double; const QuantosDependentes: Integer): Double;
+        function CalcularIR(const Base: Double): Double;
+      end;
+    class var FImposto: TImposto;
   public
+    class property Imposto: TImposto read FImposto;
     class function ValidarCPF(const Valor: string): Boolean;
   end;
 
@@ -67,5 +80,22 @@ begin
   end;
 end;
 
+function TPessoa.TImposto.CalcularINSS(const Salario: Double; const PossuiDependente: Boolean): Double;
+begin
+  const PERCENTUAL = 8;
+  Result := TCalculadora.CalculaPercentual(Salario, PERCENTUAL);
+end;
+
+function TPessoa.TImposto.CalcularBaseIR(const Salario: Double; const QuantosDependentes: Integer): Double;
+begin
+  var VALOR_POR_DEPENDENTE: Double := 100;
+  result := Salario - (QuantosDependentes * VALOR_POR_DEPENDENTE);
+end;
+
+function TPessoa.TImposto.CalcularIR(const Base: Double): Double;
+begin
+  const PERCENTUAL = 15;
+  Result := TCalculadora.CalculaPercentual(Base, PERCENTUAL);
+end;
 
 end.

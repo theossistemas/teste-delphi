@@ -63,7 +63,8 @@ type
     procedure RealizaOperacao;
 
     function VintePorcentoDaBase: Double;
-    class function GerarValorPercentual(const Percentual: Double): Double;
+    class function MultiplicativoPercentual(const Percentual: integer): Double;
+    class function CalculaPercentual(const ValorInicial: Double; const Percentual: Integer): Double;
   end;
 
 implementation
@@ -140,7 +141,7 @@ begin
 
   if RealizarUltimaOperacaoExecutada then
     Exit;
-  
+
   try
     if FPrimeiraVez then
     begin
@@ -164,16 +165,16 @@ begin
   end;
 end;
 
-class function TCalculadora.GerarValorPercentual(const Percentual: Double): Double;
+class function TCalculadora.MultiplicativoPercentual(const Percentual: Integer): Double;
 begin
-  const DIVISOR = 100;
-  result := Percentual / DIVISOR;
+  const DENOMINADOR = 100;
+  result := Percentual / DENOMINADOR;
 end;
 
 function TCalculadora.VintePorcentoDaBase: Double;
 begin
   const PERCENTUAL = 20;
-  result := GerarValorPercentual(PERCENTUAL);
+  result := MultiplicativoPercentual(PERCENTUAL);
 end;
 
 function TCalculadora.GetImpostoA: Double;
@@ -191,6 +192,11 @@ end;
 function TCalculadora.GetImpostoC: Double;
 begin
   result := ImpostoA + ImpostoB;
+end;
+
+class function TCalculadora.CalculaPercentual(const ValorInicial: Double; const Percentual: Integer): Double;
+begin
+  result := ValorInicial * MultiplicativoPercentual(Percentual);
 end;
 
 end.

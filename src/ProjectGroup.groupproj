@@ -1,0 +1,48 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{30615E11-5E24-4CCF-842F-F3965D732959}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="Theos.Avaliacao.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Theos.Test.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="Theos_Avaliacao">
+        <MSBuild Projects="Theos.Avaliacao.dproj"/>
+    </Target>
+    <Target Name="Theos_Avaliacao:Clean">
+        <MSBuild Projects="Theos.Avaliacao.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Theos_Avaliacao:Make">
+        <MSBuild Projects="Theos.Avaliacao.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Theos_Test">
+        <MSBuild Projects="Theos.Test.dproj"/>
+    </Target>
+    <Target Name="Theos_Test:Clean">
+        <MSBuild Projects="Theos.Test.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Theos_Test:Make">
+        <MSBuild Projects="Theos.Test.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="Theos_Avaliacao;Theos_Test"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="Theos_Avaliacao:Clean;Theos_Test:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="Theos_Avaliacao:Make;Theos_Test:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

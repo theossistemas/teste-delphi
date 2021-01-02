@@ -60,7 +60,6 @@ begin
   FControllerFuncionarioLista.OnAfterScroll := DataSetAfterScroll;
   FControllerFuncionarioLista.Show;
 
-  BindEvents;
 end;
 
 function TControllerFuncionarioBase.ShowModal: Integer;

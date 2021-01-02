@@ -102,7 +102,7 @@ end;
 
 function Nullable<T>.GetValue: T;
 const
-  MENSAGEM_ERRO = 'Invalid operation, Nullable type has no value';
+  MENSAGEM_ERRO = 'Operação inválida operation, Nullable não possuí valor';
 begin
   if not HasValue then
     raise ENullableTypeHasNoValue.Create(MENSAGEM_ERRO);

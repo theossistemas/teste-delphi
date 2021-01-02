@@ -70,3 +70,4 @@ modules/
 /src/Theos.Avaliacao.res
 /bin
 /dcu
+/Src/*.res

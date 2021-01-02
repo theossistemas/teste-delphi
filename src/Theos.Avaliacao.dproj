@@ -115,6 +115,37 @@
         <DCCReference Include="Controller\Theos.Controller.Calculadora.pas"/>
         <DCCReference Include="Api\Theos.Api.Calculadora.pas"/>
         <DCCReference Include="Lib\Theos.Lib.Nullable.pas"/>
+        <DCCReference Include="Dao\Theos.Dao.DB.pas"/>
+        <DCCReference Include="Lib\Theos.Lib.Resource.pas"/>
+        <DCCReference Include="View\Theos.View.Funcionario.Lista.pas">
+            <Form>ViewFuncionarioLista</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="View\Theos.View.Funcionario.Ficha.pas">
+            <Form>ViewFuncionarioFicha</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="Controller\Theos.Controller.Funcionario.Lista.pas"/>
+        <DCCReference Include="Model\Theos.Model.Funcionario.pas"/>
+        <DCCReference Include="Model\Theos.Model.Dependente.pas"/>
+        <DCCReference Include="Controller\Theos.Controller.Funcionario.Ficha.pas"/>
+        <DCCReference Include="Dao\Theos.Dao.Operacao.pas"/>
+        <DCCReference Include="Api\Theos.Api.Pessoa.pas"/>
+        <DCCReference Include="View\Theos.View.Funcionario.Base.pas">
+            <Form>ViewFuncionarioBase</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="Controller\Theos.Controller.Funcionario.Base.pas"/>
+        <DCCReference Include="View\Theos.View.Dependente.Lista.pas">
+            <Form>ViewDependenteLista</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="Controller\Theos.Controller.Dependente.Lista.pas"/>
+        <DCCReference Include="Controller\Theos.Controller.Dependente.Ficha.pas"/>
+        <DCCReference Include="View\Theos.View.Dependente.Ficha.pas">
+            <Form>ViewDependenteFicha</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>

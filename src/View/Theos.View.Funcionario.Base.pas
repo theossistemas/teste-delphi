@@ -1,15 +1,15 @@
-unit Theos.View.Principal;
+unit Theos.View.Funcionario.Base;
 
 interface
 
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls;
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ExtCtrls;
 
 type
-  TViewPrincipal = class(TForm)
-    BtnCalculadora: TButton;
-    BtnFuncionario: TButton;
+  TViewFuncionarioBase = class(TForm)
+    PnlFuncionario: TPanel;
+    PnlDependente: TPanel;
   private
     { Private declarations }
   public

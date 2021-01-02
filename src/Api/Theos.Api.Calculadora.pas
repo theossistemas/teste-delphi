@@ -28,7 +28,7 @@ type
                Divisao = ord(TConstantes.DIVISAO),
                Igual = ord(TConstantes.IGUAL));
 
-  TCalculadora = class
+  TCalculadora = class sealed
   strict private
     FResultado: Nullable<Double>;
     FPrimeiraVez: Boolean;
@@ -63,7 +63,7 @@ type
     procedure RealizaOperacao;
 
     function VintePorcentoDaBase: Double;
-    function GerarValorPercentual(const Percentual: Double): Double;
+    class function GerarValorPercentual(const Percentual: Double): Double;
   end;
 
 implementation
@@ -164,7 +164,7 @@ begin
   end;
 end;
 
-function TCalculadora.GerarValorPercentual(const Percentual: Double): Double;
+class function TCalculadora.GerarValorPercentual(const Percentual: Double): Double;
 begin
   const DIVISOR = 100;
   result := Percentual / DIVISOR;
@@ -184,8 +184,8 @@ end;
 
 function TCalculadora.GetImpostoB: Double;
 begin
-  const NUMERO_MAGICO_15 = 15;
-  result := ImpostoA - NUMERO_MAGICO_15;
+  const VALOR_SUBTRAIR = 15;
+  result := ImpostoA - VALOR_SUBTRAIR;
 end;
 
 function TCalculadora.GetImpostoC: Double;

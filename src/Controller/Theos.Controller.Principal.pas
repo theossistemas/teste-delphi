@@ -4,30 +4,33 @@ interface
 
 uses
   Vcl.Forms, System.SysUtils,
-  Theos.Controller.Calculadora,
-  View.Principal;
 
-resourcestring
-  MENSAGEM_ERRO_CREATE_SINGLETON = 'Apenas uma instância da classe %s permitida no Padrão Singleton';
+  Theos.Lib.Resource,
+  View.Principal,
+
+  Theos.Controller.Calculadora,
+
+  Theos.Controller.Funcionario.Base;
 
 type
   TControllerPrincipal = class sealed
+  private
+    class var
+      FInstance: TControllerPrincipal;
   strict private
     type
-      ECreateSingleton = class(Exception);
+      ECreateSingletonTControllerPrincipal = class(Exception);
 
     var
       FView: TViewPrincipal;
 
-    class var
-      FInstance: TControllerPrincipal;
-
     constructor CreatePrivate;
     class function GetInstance: TControllerPrincipal; static;
     procedure Init;
+    procedure BindEvents;
 
-    procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure BtnCalculadoraClick(Sender: TObject);
+    procedure BtnFuncionarioClick(Sender: TObject);
   public
     class property Instance: TControllerPrincipal read GetInstance;
 
@@ -50,7 +53,7 @@ end;
 
 constructor TControllerPrincipal.Create;
 begin
-  raise ECreateSingleton.CreateFmt(MENSAGEM_ERRO_CREATE_SINGLETON, [Self.ClassName]);
+  raise ECreateSingletonTControllerPrincipal.CreateFmt(MENSAGEM_ERRO_CREATE_SINGLETON, [Self.ClassName]);
 end;
 
 constructor TControllerPrincipal.CreatePrivate;
@@ -61,15 +64,8 @@ end;
 
 destructor TControllerPrincipal.Destroy;
 begin
-  FView.Release;
   FView := nil;
   inherited Destroy;
-end;
-
-procedure TControllerPrincipal.FormClose(Sender: TObject; var Action: TCloseAction);
-begin
-  if Assigned(FInstance) then
-    FreeAndNil(FInstance);
 end;
 
 class function TControllerPrincipal.GetInstance: TControllerPrincipal;
@@ -82,8 +78,28 @@ end;
 procedure TControllerPrincipal.Init;
 begin
   Application.CreateForm(TViewPrincipal, FView);
-  FView.OnClose := Self.FormClose;
-  FView.BtnCalculadora.OnClick := BtnCalculadoraClick;
+  BindEvents;
 end;
 
+procedure TControllerPrincipal.BindEvents;
+begin
+  FView.BtnCalculadora.OnClick := BtnCalculadoraClick;
+  FView.BtnFuncionario.OnClick := BtnFuncionarioClick;
+end;
+
+procedure TControllerPrincipal.BtnFuncionarioClick(Sender: TObject);
+begin
+  var ControllerFuncionarioBase := TControllerFuncionarioBase.Create;
+  try
+    ControllerFuncionarioBase.ShowModal;
+  finally
+    ControllerFuncionarioBase.Free;
+  end;
+end;
+
+initialization
+
+finalization
+  if Assigned(TControllerPrincipal.FInstance) then
+    FreeAndNil(TControllerPrincipal.FInstance);
 end.

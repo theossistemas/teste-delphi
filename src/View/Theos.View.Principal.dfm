@@ -2,8 +2,8 @@ object ViewPrincipal: TViewPrincipal
   Left = 0
   Top = 0
   Caption = 'ViewPrincipal'
-  ClientHeight = 241
-  ClientWidth = 213
+  ClientHeight = 238
+  ClientWidth = 238
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -21,5 +21,13 @@ object ViewPrincipal: TViewPrincipal
     Height = 25
     Caption = 'Calculadora'
     TabOrder = 0
+  end
+  object BtnFuncionario: TButton
+    Left = 32
+    Top = 80
+    Width = 153
+    Height = 25
+    Caption = 'Funcion'#225'rio'
+    TabOrder = 1
   end
 end

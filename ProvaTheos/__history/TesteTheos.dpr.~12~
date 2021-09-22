@@ -1,0 +1,25 @@
+program TesteTheos;
+
+uses
+  Vcl.Forms,
+  uInicio in 'C:\Form\uInicio.pas' {frm_Inicio},
+  uPessoa in 'C:\Form\uPessoa.pas',
+  uFuncionario in 'C:\Clases\uFuncionario.pas',
+  uDependente in 'C:\Clases\uDependente.pas',
+  uCadastroFuncionario in 'C:\Form\uCadastroFuncionario.pas' {frm_CadastroFuncionario},
+  DataModule in 'Dm\DataModule.pas' {dm: TDataModule},
+  uCalculadora in 'Form\uCalculadora.pas' {fmr_Calculadora},
+  uCadastroDependente in 'Form\uCadastroDependente.pas' {frm_CadastroDependente},
+  uCalculo in 'Classes\uCalculo.pas';
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(Tfrm_Inicio, frm_Inicio);
+  Application.CreateForm(Tdm, dm);
+  Application.CreateForm(Tfmr_Calculadora, fmr_Calculadora);
+  Application.CreateForm(Tfrm_CadastroDependente, frm_CadastroDependente);
+  Application.Run;
+end.

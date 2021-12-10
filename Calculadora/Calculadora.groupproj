@@ -1,0 +1,48 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{AF79E0B9-6BDB-40E1-8E93-377D6D533F79}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="project\Calculator.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="test\TestCalculatorTax.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="Calculator">
+        <MSBuild Projects="project\Calculator.dproj"/>
+    </Target>
+    <Target Name="Calculator:Clean">
+        <MSBuild Projects="project\Calculator.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Calculator:Make">
+        <MSBuild Projects="project\Calculator.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TestCalculatorTax">
+        <MSBuild Projects="test\TestCalculatorTax.dproj"/>
+    </Target>
+    <Target Name="TestCalculatorTax:Clean">
+        <MSBuild Projects="test\TestCalculatorTax.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TestCalculatorTax:Make">
+        <MSBuild Projects="test\TestCalculatorTax.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="Calculator;TestCalculatorTax"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="Calculator:Clean;TestCalculatorTax:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="Calculator:Make;TestCalculatorTax:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

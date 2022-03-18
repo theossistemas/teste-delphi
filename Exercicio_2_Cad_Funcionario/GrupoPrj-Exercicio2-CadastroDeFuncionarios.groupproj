@@ -1,0 +1,48 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{4B45D869-81A9-499D-BD1B-CC0EAB9C7123}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="SistemaCalculaImposto\CadastroDeFuncionarios.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="TesteUnitario\TesteCadastroDeFuncionarios.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="CadastroDeFuncionarios">
+        <MSBuild Projects="SistemaCalculaImposto\CadastroDeFuncionarios.dproj"/>
+    </Target>
+    <Target Name="CadastroDeFuncionarios:Clean">
+        <MSBuild Projects="SistemaCalculaImposto\CadastroDeFuncionarios.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="CadastroDeFuncionarios:Make">
+        <MSBuild Projects="SistemaCalculaImposto\CadastroDeFuncionarios.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TesteCadastroDeFuncionarios">
+        <MSBuild Projects="TesteUnitario\TesteCadastroDeFuncionarios.dproj"/>
+    </Target>
+    <Target Name="TesteCadastroDeFuncionarios:Clean">
+        <MSBuild Projects="TesteUnitario\TesteCadastroDeFuncionarios.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TesteCadastroDeFuncionarios:Make">
+        <MSBuild Projects="TesteUnitario\TesteCadastroDeFuncionarios.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="CadastroDeFuncionarios;TesteCadastroDeFuncionarios"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="CadastroDeFuncionarios:Clean;TesteCadastroDeFuncionarios:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="CadastroDeFuncionarios:Make;TesteCadastroDeFuncionarios:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

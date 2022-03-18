@@ -1,0 +1,48 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{B58931A2-5BCD-4064-B975-6680C3905760}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="Calculadora\CalculadoraTheos.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="TesteCalculadora\TesteCalculadora.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="CalculadoraTheos">
+        <MSBuild Projects="Calculadora\CalculadoraTheos.dproj"/>
+    </Target>
+    <Target Name="CalculadoraTheos:Clean">
+        <MSBuild Projects="Calculadora\CalculadoraTheos.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="CalculadoraTheos:Make">
+        <MSBuild Projects="Calculadora\CalculadoraTheos.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TesteCalculadora">
+        <MSBuild Projects="TesteCalculadora\TesteCalculadora.dproj"/>
+    </Target>
+    <Target Name="TesteCalculadora:Clean">
+        <MSBuild Projects="TesteCalculadora\TesteCalculadora.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TesteCalculadora:Make">
+        <MSBuild Projects="TesteCalculadora\TesteCalculadora.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="CalculadoraTheos;TesteCalculadora"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="CalculadoraTheos:Clean;TesteCalculadora:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="CalculadoraTheos:Make;TesteCalculadora:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

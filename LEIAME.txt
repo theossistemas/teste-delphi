@@ -1,0 +1,12 @@
+Para a aplicação de Cadastro de Funcionário foi adotado o banco SQLite.
+Criar um banco de dados com o auxílio de um SGBD, dar um nome para ele.
+	Exemplo: "Dados.db"
+Dentro do banco criado é só rodar o arquivo "Script.sql" que se encontra no diretório "Script".
+Feito isso, temos que informar o nome do banco no arquio "app.ini" que se encontra no mesmo diretório do executável da aplicação:
+	..\Win32\Debug
+Dentro do arquivo app.ini devemos informar como no exemplo:
+		[Conexao]
+		Base=Dados.db
+		
+Para este teste, o banco já esta criado com as devidas tabelas.
+

@@ -1,0 +1,36 @@
+unit unControllerFuncionario;
+
+interface
+
+uses
+  Funcionario, unDAOFuncionario;
+
+type
+
+  TControllerFuncionario = class
+  public
+    function Salvar(Entidade: TFuncionario): Boolean;
+  end;
+
+implementation
+
+{ TControllerFuncionario }
+
+function TControllerFuncionario.Salvar(Entidade: TFuncionario): Boolean;
+var
+  lResultado: Boolean;
+begin
+  lResultado := False;
+  try
+    if Entidade.Id = 0 then
+       TDAOFuncionario.Insert(Entidade)
+//    else
+//      TDAOFuncionario.Atualizar(Entidade)
+        ;
+    lResultado := True;
+  finally
+    Result := lResultado;
+  end;
+end;
+
+end.

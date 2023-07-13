@@ -1,0 +1,121 @@
+unit unDAOFuncionario;
+
+interface
+
+uses
+  unConection, Funcionario;
+
+type
+
+  TDAOFuncionario = class
+  private
+    class procedure ExecutarQuery(var Query: TQuery; objFuncionario: TFuncionario);
+  public
+    class procedure Insert(objFuncionario: TFuncionario);
+    class procedure Update(objFuncionario: TFuncionario);
+    class procedure Delete(objFuncionario: TFuncionario);
+  end;
+
+implementation
+
+{ TDAOFuncionario }
+
+class procedure TDAOFuncionario.Delete(objFuncionario: TFuncionario);
+const
+  SQL_DELETE: string = (
+    'DELETE FROM FUNCIONARIO WHERE ID = :ID'
+  );
+begin
+  if not Assigned(objFuncionario) then
+    Exit;
+
+   var Query := TConexao.GetQuery;
+   try
+     try
+       Query.SQL.Text := SQL_DELETE;
+       Query.Close;
+       Query.ParamByName('ID').AsInteger := objFuncionario.Id;
+       Query.ExecSQL;
+       Query.Close;
+     except
+       TConexao.GetInstance.RollbackRetaining;
+     end;
+   finally
+     Query.DisposeOf;
+   end;
+end;
+
+class procedure TDAOFuncionario.ExecutarQuery(var Query: TQuery; objFuncionario: TFuncionario);
+begin
+ Query.Close;
+ Query.ParamByName('ID').AsInteger := objFuncionario.Id;
+ Query.ParamByName('NOME').AsString := objFuncionario.Nome;
+ Query.ParamByName('CPF').AsString := objFuncionario.CPF;
+ Query.ParamByName('SALARIO').AsFloat := objFuncionario.Salario;
+ Query.ExecSQL;
+ Query.Close;
+end;
+
+class procedure TDAOFuncionario.Insert(objFuncionario: TFuncionario);
+const
+  SQL_INSERT: string = (
+    'INSERT INTO FUNCIONARIO (' + sLineBreak +
+    '     ID,' + sLineBreak +
+    '     NOME,' + sLineBreak +
+    '     CPF,' + sLineBreak +
+    '     SALARIO' + sLineBreak +
+    ') VALUES (' + sLineBreak +
+    '     :ID,' + sLineBreak +
+    '     :NOME,' + sLineBreak +
+    '     :CPF,' + sLineBreak +
+    '     :SALARIO' + sLineBreak +
+    ')'
+  );
+begin
+  if not Assigned(objFuncionario) then
+    Exit;
+
+   var Query := TConexao.GetQuery;
+   var NextId := TConexao.GetNextId('FUNCIONARIO', 'ID');
+
+   try
+     try
+       objFuncionario.Id := NextId;
+       Query.SQL.Text := SQL_INSERT;
+       ExecutarQuery(Query, objFuncionario);
+     except
+       TConexao.GetInstance.RollbackRetaining;
+     end;
+   finally
+     Query.DisposeOf;
+   end;
+end;
+
+class procedure TDAOFuncionario.Update(objFuncionario: TFuncionario);
+const
+  SQL_UPDATE: string = (
+    'UPDATE FUNCIONARIO SET (' + sLineBreak +
+    '   NOME = :NOME,' + sLineBreak +
+    '   CPF = :CPF,' + sLineBreak +
+    '   SALARIO = :SALARIO' + sLineBreak +
+    'WHERE' + sLineBreak +
+    '   ID = :ID'
+  );
+begin
+  if not Assigned(objFuncionario) then
+    Exit;
+
+   var Query := TConexao.GetQuery;
+   try
+     try
+       Query.SQL.Text := SQL_UPDATE;
+       ExecutarQuery(Query, objFuncionario);
+     except
+       TConexao.GetInstance.RollbackRetaining;
+     end;
+   finally
+     Query.DisposeOf;
+   end;
+end;
+
+end.

@@ -1,0 +1,103 @@
+unit unDAODependente;
+
+interface
+
+uses
+  unConection, Dependente;
+
+type
+
+  TDAODependente = class
+  private
+    class procedure ExecutarQuery(var Query: TQuery; objDependente: TDependente);
+  public
+    class procedure Insert(objDependente: TDependente);
+    class procedure Update(objDependente: TDependente);
+    class procedure Delete(objDependente: TDependente);
+  end;
+
+implementation
+
+{ TDAODependente }
+
+class procedure TDAODependente.Delete(objDependente: TDependente);
+const
+  SQL_DELETE: string = (
+    'DELETE FROM DEPENDENTE WHERE ID = :ID'
+  );
+begin
+  if not Assigned(objDependente) then
+    Exit;
+
+   var Query := TConexao.GetQuery;
+   try
+     try
+       Query.SQL.Text := SQL_DELETE;
+       Query.Close;
+       Query.ParamByName('ID').AsInteger := objDependente.Id;
+       Query.ExecSQL;
+       Query.Close;
+     except
+       TConexao.GetInstance.RollbackRetaining;
+     end;
+   finally
+     Query.DisposeOf;
+   end;
+end;
+
+class procedure TDAODependente.ExecutarQuery(var Query: TQuery;
+  objDependente: TDependente);
+begin
+  Query.Close;
+  Query.ParamByName('ID').AsInteger := objDependente.Id;
+  Query.ParamByName('ID_FUNCIONARIO').AsInteger := objDependente.IdFuncionario;
+  Query.ParamByName('NOME').AsString := objDependente.Nome;
+  Query.ParamByName('CALCULAIR').AsInteger := Integer(objDependente.CalculaIR);
+  Query.ParamByName('CALCULAINSS').AsInteger := Integer(objDependente.CalculaINSS);
+  Query.ExecSQL;
+  Query.Close;
+end;
+
+class procedure TDAODependente.Insert(objDependente: TDependente);
+const
+  SQL_INSERT: string = (
+    'INSERT INTO DEPENDENTE (' + sLineBreak +
+    '     ID,' + sLineBreak +
+    '     ID_FUNCIONARIO,' + sLineBreak +
+    '     NOME,' + sLineBreak +
+    '     CALCULAIR,' + sLineBreak +
+    '     CALCULAINSS' + sLineBreak +
+    ') VALUES (' + sLineBreak +
+    '     :ID,' + sLineBreak +
+    '     :ID_FUNCIONARIO,' + sLineBreak +
+    '     :NOME,' + sLineBreak +
+    '     :CALCULAIR,' + sLineBreak +
+    '     :CALCULAINSS' + sLineBreak +
+    ')'
+  );
+begin
+  if not Assigned(objDependente) then
+    Exit;
+
+   var Query := TConexao.GetQuery;
+   var NextId := TConexao.GetNextId('DEPENDENTE', 'ID');
+
+   try
+     try
+       objDependente.Id := NextId;
+       Query.SQL.Text := SQL_INSERT;
+       ExecutarQuery(Query, objDependente);
+     except
+       TConexao.GetInstance.RollbackRetaining;
+     end;
+   finally
+     Query.DisposeOf;
+   end;
+end;
+
+class procedure TDAODependente.Update(objDependente: TDependente);
+begin
+
+end;
+
+end.

@@ -1,0 +1,98 @@
+unit unClasseImpostos;
+
+interface
+
+uses
+  System.SysUtils;
+
+type
+
+  TImposto = class
+  public
+    class function CalculaImposto(nValor: Double): Double; virtual; abstract;
+  end;
+
+
+  TImpostoA = class(TImposto)
+  public
+    class function CalculaImposto(nValor: Double): Double; override;
+  end;
+
+  TImpostoB = class(TImposto)
+  public
+    class function CalculaImposto(nValor: Double): Double; override;
+  end;
+
+  TImpostoC = class(TImposto)
+  public
+    class function CalculaImposto(nValor: Double): Double; override;
+  end;
+
+
+implementation
+
+{ TImpostoA }
+
+class function TImpostoA.CalculaImposto(nValor: Double): Double;
+var
+  nResultado: Double;
+begin
+  nResultado := 0;
+  try
+    nResultado := (nValor * 20 / 100) - 500;
+
+    if (nResultado < 0) then
+      nResultado := 0;
+
+  finally
+    Result := nResultado;
+  end;
+end;
+
+{ TImpostoB }
+
+class function TImpostoB.CalculaImposto(nValor: Double): Double;
+var
+  nResultado: Double;
+  ImpA: TImpostoA;
+begin
+  nResultado := 0;
+  ImpA := TImpostoA.Create;
+  try
+    nResultado := ImpA.CalculaImposto(nValor) - 15;
+
+    if (nResultado < 0) then
+      nResultado := 0;
+
+  finally
+    Result := nResultado;
+    FreeAndNil(ImpA);
+  end;
+end;
+
+{ TImpostoC }
+
+class function TImpostoC.CalculaImposto(nValor: Double): Double;
+var
+  nResultado: Double;
+  ImpA: TImpostoA;
+  ImpB: TImpostoB;
+begin
+  nResultado := 0;
+  ImpA := TImpostoA.Create;
+  ImpB := TImpostoB.Create;
+
+  try
+     nResultado := ImpA.CalculaImposto(nValor) + ImpB.CalculaImposto(nValor);
+
+    if (nResultado < 0) then
+      nResultado := 0;
+
+  finally
+    Result := nResultado;
+    FreeAndNil(ImpA);
+    FreeAndNil(ImpB);
+  end;
+end;
+
+end.

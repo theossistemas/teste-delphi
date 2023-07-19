@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2023/06/28 01:42:31.000.690,=C:\Users\Ricardo - Notebook\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2023/07/06 14:34:05.000.940,=C:\Users\Ricardo - Notebook\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2023/07/06 16:52:39.000.838,=C:\Users\Ricardo - Notebook\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2023/07/06 16:56:26.000.912,D:\Ricardo\TesteTheos\unPrincipal.dfm=C:\Users\Ricardo - Notebook\Documents\Embarcadero\Studio\Projects\Unit1.dfm</Transaction>
+    <Transaction>2023/07/06 16:56:26.000.912,D:\Ricardo\TesteTheos\unPrincipal.pas=C:\Users\Ricardo - Notebook\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2023/07/06 16:56:33.000.158,D:\Ricardo\TesteTheos\TesteTheos.dproj=C:\Users\Ricardo - Notebook\Documents\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
+    <Transaction>2023/07/06 17:01:05.000.637,=D:\Ricardo\TesteTheos\Classes\unClasses.pas</Transaction>
+    <Transaction>2023/07/07 09:58:31.000.730,D:\Ricardo\TesteTheos\Classes\unClasses.pas=</Transaction>
+    <Transaction>2023/07/07 09:58:41.000.075,=D:\Ricardo\TesteTheos\Classes\unClasseCalculadora.pas</Transaction>
+    <Transaction>2023/07/07 10:00:02.000.923,=D:\Ricardo\TesteTheos\Unit1.pas</Transaction>
+    <Transaction>2023/07/07 10:13:38.000.995,D:\Ricardo\TesteTheos\Unit1.pas=D:\Ricardo\TesteTheos\Classes\unClasseImpostos.pas</Transaction>
+    <Transaction>2023/07/07 14:53:24.000.585,D:\Ricardo\TesteTheos\TesteTheos.dproj=D:\teste-delphi\Calculadora\Calculadora.dproj</Transaction>
+    <Transaction>2023/07/07 14:56:52.000.308,D:\Ricardo\TesteTheos\Classes\unClasseImpostos.pas=</Transaction>
+    <Transaction>2023/07/07 14:56:57.000.194,D:\Ricardo\TesteTheos\Classes\unClasseCalculadora.pas=</Transaction>
+    <Transaction>2023/07/07 14:58:00.000.475,=D:\teste-delphi\Calculadora\Classes\unClasseImpostos.pas</Transaction>
+    <Transaction>2023/07/07 14:58:00.000.439,=D:\teste-delphi\Calculadora\Classes\unClasseCalculadora.pas</Transaction>
+    <Transaction>2023/07/07 21:39:46.000.220,=D:\teste-delphi\Calculadora\unPrincipal.pas</Transaction>
+    <Transaction>2023/07/19 00:59:02.022,D:\teste-delphi\Calculadora\unPrincipal.pas=</Transaction>
+    <Transaction>2023/07/19 00:59:02.105,D:\teste-delphi\Calculadora\Classes\unClasseCalculadora.pas=</Transaction>
+    <Transaction>2023/07/19 00:59:15.818,=D:\teste-delphi\Calculadora\unPrincipal.pas</Transaction>
+    <Transaction>2023/07/19 00:59:23.197,=D:\teste-delphi\Calculadora\Classes\unClasseCalculadora.pas</Transaction>
+  </Transactions>
+</BorlandProject>

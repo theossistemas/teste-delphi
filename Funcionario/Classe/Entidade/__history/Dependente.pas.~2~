@@ -1,0 +1,24 @@
+unit Dependente;
+
+interface
+
+type
+
+  TDependente = class
+  private
+    FId: Integer;
+    FIdFuncionario: Integer;
+    FNome: string;
+    FIsCalculaIR: Boolean;
+    FIsCalculaINSS: Boolean;
+  public
+    property Id: Integer read FId write FId;
+    property IdFuncionario: Integer read FIdFuncionario write FIdFuncionario;
+    property Nome: string read FNome write FNome;
+    property IsCalculaIR: Boolean read FIsCalculaIR write FIsCalculaIR;
+    property IsCalculaINSS: Boolean read FIsCalculaINSS write FIsCalculaINSS;
+  end;
+
+implementation
+
+end.

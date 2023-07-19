@@ -1,0 +1,55 @@
+unit unDAODependente;
+
+interface
+
+uses
+  unConection, Dependente;
+
+type
+
+  TDAODependente = class
+    class procedure Insert(objDependente: TDependente);
+    class procedure Update(objDependente: TDependente);
+    class procedure Delete(objDependente: TDependente);
+  end;
+
+implementation
+
+{ TDAODependente }
+
+class procedure TDAODependente.Delete(objDependente: TDependente);
+const
+  SQL_DELETE: string = (
+    'DELETE FROM DEPENDENTE WHERE ID = :ID'
+  );
+begin
+  if not Assigned(objDependente) then
+    Exit;
+
+   var Query := TConexao.GetQuery;
+   try
+     try
+       Query.SQL.Text := SQL_DELETE;
+       Query.Close;
+       Query.ParamByName('ID').AsInteger := objDependente.Id;
+       Query.ExecSQL;
+       Query.Close;
+     except
+       TConexao.GetInstance.RollbackRetaining;
+     end;
+   finally
+     Query.DisposeOf;
+   end;
+end;
+
+class procedure TDAODependente.Insert(objDependente: TDependente);
+begin
+
+end;
+
+class procedure TDAODependente.Update(objDependente: TDependente);
+begin
+
+end;
+
+end.

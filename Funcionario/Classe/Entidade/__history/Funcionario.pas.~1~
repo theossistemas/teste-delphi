@@ -1,0 +1,25 @@
+unit Funcionario;
+
+interface
+
+type
+
+  TFuncionario = class
+  private
+    Fid: Integer;
+    FNome: string;
+    FCPF: string;
+    FSalario: Double;
+  public
+    property Id: Integer  read FId write FId;
+    property Nome: string read FNome write FNome;
+    property CPF: string read FCPF write FCPF;
+    property Salario: Double read FSalario write FSalario;
+
+    constructor Create;
+  end;
+
+
+implementation
+
+end.

@@ -1,0 +1,35 @@
+unit unControllerDependente;
+
+interface
+
+uses
+  Dependente, unDAODependente;
+
+type
+
+  TControllerDependente = class
+  public
+    function Salvar(Entidade: TDependete): Boolean;
+  end;
+
+implementation
+
+{ TControllerDependente }
+
+function TControllerDependente.Salvar(Entidade: TDependete): Boolean;
+var
+  lResultado: Boolean;
+begin
+  lResultado := False;
+  try
+    if Entidade.Id = 0 then
+       TDAODependente.Insert(Entidade)
+    else
+      TDAODependente.Update(Entidade);
+    lResultado := True;
+  finally
+    Result := lResultado;
+  end;
+end;
+
+end.

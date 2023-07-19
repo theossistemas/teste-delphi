@@ -1,0 +1,15 @@
+program CalculoFuncionario;
+
+uses
+  Vcl.Forms,
+  unPrincipal in 'View\unPrincipal.pas' {frmPrincipal},
+  Funcionario in 'Classe\Entidade\Funcionario.pas';
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(TfrmPrincipal, frmPrincipal);
+  Application.Run;
+end.

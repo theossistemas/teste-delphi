@@ -101,10 +101,10 @@
         <DCCReference Include="unPrincipal.pas">
             <Form>frmPrincipal</Form>
         </DCCReference>
-        <DCCReference Include="Classes\unClasseCalculadora.pas"/>
         <DCCReference Include="Classes\unClasseImpostos.pas">
             <Form>$R *.res</Form>
         </DCCReference>
+        <DCCReference Include="Classes\unClasseCalculadora.pas"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>

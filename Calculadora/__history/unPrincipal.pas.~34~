@@ -35,7 +35,7 @@ type
     edtImpostoA: TEdit;
     btnImpostoB: TBitBtn;
     edtImpostoB: TEdit;
-    btnImpostoC: TBitBtn;
+    btnImpostC: TBitBtn;
     edtImpostoC: TEdit;
     btnLimparImpostos: TBitBtn;
     btnSinalDecimal: TBitBtn;
@@ -61,7 +61,7 @@ type
     procedure btnLimparImpostosClick(Sender: TObject);
     procedure btnImpostoAClick(Sender: TObject);
     procedure btnImpostoBClick(Sender: TObject);
-    procedure btnImpostoCClick(Sender: TObject);
+    procedure btnImpostCClick(Sender: TObject);
     procedure btnSinalDecimalClick(Sender: TObject);
     procedure CalculadoraKeyPress(Sender: TObject; var Key: Char);
     procedure FormKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
@@ -469,6 +469,17 @@ begin
   edtImpostoC.Clear;
 end;
 
+procedure TfrmPrincipal.btnImpostCClick(Sender: TObject);
+begin
+  if TCalculadora.agurdandoResultado then
+  begin
+    btnResultado.Click;
+    TCalculadora.agurdandoResultado := False;
+  end;
+
+  CalcularImpostoC();
+end;
+
 procedure TfrmPrincipal.btnImpostoAClick(Sender: TObject);
 begin
   if TCalculadora.agurdandoResultado then
@@ -489,17 +500,6 @@ begin
   end;
 
   CalcularImpostoB();
-end;
-
-procedure TfrmPrincipal.btnImpostoCClick(Sender: TObject);
-begin
-  if TCalculadora.agurdandoResultado then
-  begin
-    btnResultado.Click;
-    TCalculadora.agurdandoResultado := False;
-  end;
-
-  CalcularImpostoC();
 end;
 
 procedure TfrmPrincipal.CalcularImpostoA;

@@ -35,7 +35,7 @@ type
     edtImpostoA: TEdit;
     btnImpostoB: TBitBtn;
     edtImpostoB: TEdit;
-    btnImpostoC: TBitBtn;
+    btnImpostC: TBitBtn;
     edtImpostoC: TEdit;
     btnLimparImpostos: TBitBtn;
     btnSinalDecimal: TBitBtn;
@@ -61,7 +61,7 @@ type
     procedure btnLimparImpostosClick(Sender: TObject);
     procedure btnImpostoAClick(Sender: TObject);
     procedure btnImpostoBClick(Sender: TObject);
-    procedure btnImpostoCClick(Sender: TObject);
+    procedure btnImpostCClick(Sender: TObject);
     procedure btnSinalDecimalClick(Sender: TObject);
     procedure CalculadoraKeyPress(Sender: TObject; var Key: Char);
     procedure FormKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
@@ -369,6 +369,42 @@ begin
   edtVisor.SelStart := Length(edtVisor.Text);
 end;
 
+procedure TfrmPrincipal.CalcularImpostoA;
+var
+  Imposto: TImposto;
+begin
+  Imposto := TImpostoA.Create;
+  try
+    edtImpostoA.Text := FormatFloat(FORMATO_VALOR, Imposto.CalculaImposto(StrToFloatDef(edtVisor.Text, 0)));
+  finally
+    Imposto.Free;
+  end;
+end;
+
+procedure TfrmPrincipal.CalcularImpostoB;
+var
+  Imposto: TImposto;
+begin
+  Imposto := TImpostoB.Create;
+  try
+    edtImpostoB.Text := FormatFloat(FORMATO_VALOR, Imposto.CalculaImposto(StrToFloatDef(edtVisor.Text, 0)));
+  finally
+    Imposto.Free;
+  end;
+end;
+
+procedure TfrmPrincipal.CalcularImpostoC;
+var
+  Imposto: TImposto;
+begin
+  Imposto := TImpostoC.Create;
+  try
+    edtImpostoC.Text := FormatFloat(FORMATO_VALOR, Imposto.CalculaImposto(StrToFloatDef(edtVisor.Text, 0)));
+  finally
+    Imposto.Free;
+  end;
+end;
+
 procedure TfrmPrincipal.DestruirObjetos;
 begin
   if Assigned(OperacaoSoma) then
@@ -456,17 +492,15 @@ begin
   FErro := not status;
 end;
 
-
-procedure TfrmPrincipal.btnLimparImpostosClick(Sender: TObject);
+procedure TfrmPrincipal.btnImpostCClick(Sender: TObject);
 begin
-  LimparCamposImpostos();
-end;
+  if TCalculadora.agurdandoResultado then
+  begin
+    btnResultado.Click;
+    TCalculadora.agurdandoResultado := False;
+  end;
 
-procedure TfrmPrincipal.LimparCamposImpostos;
-begin
-  edtImpostoA.Clear;
-  edtImpostoB.Clear;
-  edtImpostoC.Clear;
+  CalcularImpostoC();
 end;
 
 procedure TfrmPrincipal.btnImpostoAClick(Sender: TObject);
@@ -491,51 +525,16 @@ begin
   CalcularImpostoB();
 end;
 
-procedure TfrmPrincipal.btnImpostoCClick(Sender: TObject);
+procedure TfrmPrincipal.btnLimparImpostosClick(Sender: TObject);
 begin
-  if TCalculadora.agurdandoResultado then
-  begin
-    btnResultado.Click;
-    TCalculadora.agurdandoResultado := False;
-  end;
-
-  CalcularImpostoC();
+  LimparCamposImpostos();
 end;
 
-procedure TfrmPrincipal.CalcularImpostoA;
-var
-  Imposto: TImposto;
+procedure TfrmPrincipal.LimparCamposImpostos;
 begin
-  Imposto := TImpostoA.Create;
-  try
-    edtImpostoA.Text := FormatFloat(FORMATO_VALOR, Imposto.CalculaImposto(StrToFloatDef(edtVisor.Text, 0)));
-  finally
-    Imposto.Free;
-  end;
-end;
-
-procedure TfrmPrincipal.CalcularImpostoB;
-var
-  Imposto: TImposto;
-begin
-  Imposto := TImpostoB.Create;
-  try
-    edtImpostoB.Text := FormatFloat(FORMATO_VALOR, Imposto.CalculaImposto(StrToFloatDef(edtVisor.Text, 0)));
-  finally
-    Imposto.Free;
-  end;
-end;
-
-procedure TfrmPrincipal.CalcularImpostoC;
-var
-  Imposto: TImposto;
-begin
-  Imposto := TImpostoC.Create;
-  try
-    edtImpostoC.Text := FormatFloat(FORMATO_VALOR, Imposto.CalculaImposto(StrToFloatDef(edtVisor.Text, 0)));
-  finally
-    Imposto.Free;
-  end;
+  edtImpostoA.Clear;
+  edtImpostoB.Clear;
+  edtImpostoC.Clear;
 end;
 
 end.

@@ -359,14 +359,14 @@ object frmPrincipal: TfrmPrincipal
       Alignment = taRightJustify
       TabOrder = 3
     end
-    object btnImpostoC: TBitBtn
+    object btnImpostC: TBitBtn
       Left = 3
       Top = 86
       Width = 75
       Height = 25
       Caption = 'Imposto C'
       TabOrder = 4
-      OnClick = btnImpostoCClick
+      OnClick = btnImpostCClick
     end
     object edtImpostoC: TEdit
       Left = 84

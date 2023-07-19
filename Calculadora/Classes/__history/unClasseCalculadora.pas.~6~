@@ -7,7 +7,7 @@ uses
 
 type
 
-  EExceptionDivisao = class(Exception);
+  EExceptionDivZero = class(Exception);
 
   TTipoOperacao = (tpoNada, tpoSoma, tpoSubtracao, tpoMultiplicacao, tpoDivisao);
 
@@ -112,10 +112,7 @@ begin
         if nNumeroAtual = 0 then
         begin
           //nResultado := 0
-          if nResultado = 0 then
-            raise EExceptionDivisao.Create(MENSAGEM_RESULTADO_INDEFINIDO)
-          else
-            raise EExceptionDivisao.Create(MENSAGEM_DIVISAO_POR_ZERO);
+          raise EExceptionDivZero.Create(MENSAGEM_DIVISAO_POR_ZERO);
         end
         else
           nResultado := nResultado / nNumeroAtual;
@@ -141,10 +138,7 @@ begin
         if nNumeroAtual = 0 then 
         begin
           //nResultado := 0
-          if nNumeroAnterior = 0 then
-            raise EExceptionDivisao.Create(MENSAGEM_RESULTADO_INDEFINIDO)
-          else
-            raise EExceptionDivisao.Create(MENSAGEM_DIVISAO_POR_ZERO);
+          raise EExceptionDivZero.Create(MENSAGEM_DIVISAO_POR_ZERO);
         end
         else
           nResultado := nNumeroAnterior / nNumeroAtual;
